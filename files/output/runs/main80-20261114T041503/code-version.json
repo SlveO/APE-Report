@@ -1,0 +1,5 @@
+{
+  "observed_HEAD": "ref: refs/heads/main",
+  "observed_existing_commit": "52513bcb0c3145aedec26636eb59f7c3deabb856",
+  "working_code_identity": "source-files.json and full source snapshots; direct byte comparison on resume"
+}

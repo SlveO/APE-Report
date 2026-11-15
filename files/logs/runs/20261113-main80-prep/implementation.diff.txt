@@ -1,0 +1,3002 @@
+--- existing-HEAD/ape/ape_llama.py
++++ working/ape/ape_llama.py
+@@ -187,6 +187,11 @@
+     )
+     value_states = torch.cat([attn_output_context.unsqueeze(-2), attn_output_other.unsqueeze(-2)], dim=-2)
+     attn_output = torch.matmul(attn_weights, value_states).squeeze(dim=-2)
++    observer = getattr(self, "ape_observer", None)
++    if observer is not None:
++        observer(self, query_states, key_states_context, key_states_other,
++                 value_states_context, value_states_other, attn_weights, attn_output,
++                 temperature)
+     attn_output = attn_output.reshape(bsz, q_len, self.hidden_size)
+ 
+     attn_output = self.o_proj(attn_output)
+@@ -339,4 +344,4 @@
+         if isinstance(module, LlamaAttention):
+             model._modules[name].forward = types.MethodType(
+                 partial(llama_attention_prefill_query, temperature=temperature, scale=scale), model._modules[name]
+-            )+            )
+--- existing-HEAD/experiments/Longbench/pred_parallel9.py
++++ working/experiments/Longbench/pred_parallel9.py
+@@ -1,306 +1,14 @@
+-import os
+-from datasets import load_dataset
+-import torch
+-import json
+-from transformers import AutoTokenizer, LlamaTokenizer, LlamaForCausalLM, AutoModelForCausalLM
+-from tqdm import tqdm
+-import numpy as np
+-import random
+-import argparse
+-from llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
+-import torch.distributed as dist
+-import torch.multiprocessing as mp
+-import copy
+-import math
++"""LongBench v3 entry: the shared, budgeted MAIN80 campaign.
+ 
+-from ape import enable_llama_attention_prefill_prefix, enable_llama_attention_prefill_context, enable_llama_attention_prefill_query
++Defaults and all three datasets are frozen by campaign.json / the data manifest.
++T/S are passed by the shared worker through the public APE API. No short-ID
++filtering or unbudgeted multi-GPU prediction loop remains here.
++"""
++from pathlib import Path
++import sys
+ 
+-def parse_args(args=None):
+-    parser = argparse.ArgumentParser()
+-    parser.add_argument('--model', type=str, default=None, choices=["llama2-7b-chat-4k", "longchat-v1.5-7b-32k", "xgen-7b-8k", "internlm-7b-8k", "chatglm2-6b", "chatglm2-6b-32k", "chatglm3-6b-32k", "vicuna-v1.5-7b-16k", "llama3-8b-instruct", "llama3.1-8b-instruct", "mistral-7b", "gemma"])
+-    parser.add_argument('--e', action='store_true', help="Evaluate on LongBench-E")
+-    return parser.parse_args(args)
++sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
++from main80.campaign import main
+ 
+-# This is the customized building prompt for chat models
+-def build_chat(tokenizer, prompt, model_name):
+-    if "chatglm3" in model_name:
+-        prompt = tokenizer.build_chat_input(prompt)
+-    elif "chatglm" in model_name:
+-        prompt = tokenizer.build_prompt(prompt)
+-    elif "longchat" in model_name or "vicuna" in model_name:
+-        from fastchat.model import get_conversation_template
+-        conv = get_conversation_template("vicuna")
+-        conv.append_message(conv.roles[0], prompt)
+-        conv.append_message(conv.roles[1], None)
+-        prompt = conv.get_prompt()
+-    elif "llama2" in model_name:
+-        prompt = f"[INST]{prompt}[/INST]"
+-    elif "mistral" in model_name:
+-        prompt = f"<s>[INST]{prompt}[/INST]"
+-    elif "gemma" in model_name:
+-        prompt = f"<bos><start_of_turn>user\n{prompt}<end_of_turn>\n<start_of_turn>model\n"
+-    elif "llama3" in model_name:
+-        prompt = f"<|begin_of_text|>\n<|start_header_id|>user<|end_header_id|>\n{prompt}\n<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>"
+-    elif "xgen" in model_name:
+-        header = (
+-            "A chat between a curious human and an artificial intelligence assistant. "
+-            "The assistant gives helpful, detailed, and polite answers to the human's questions.\n\n"
+-        )
+-        prompt = header + f" ### Human: {prompt}\n###"
+-    elif "internlm" in model_name:
+-        prompt = f"<|User|>:{prompt}<eoh>\n<|Bot|>:"
+-    return prompt
+-
+-def build_prefix(tokenizer, prompt, model_name):
+-    if "mistral" in model_name:
+-        prompt = f"<s>[INST]{prompt}"
+-    elif "gemma" in model_name:
+-        prompt = f"<bos><start_of_turn>user\n{prompt}"
+-    elif "llama3" in model_name:
+-        prompt = f"<|begin_of_text|>\n<|start_header_id|>user<|end_header_id|>\n{prompt}"
+-    return prompt
+-
+-def build_suffix(tokenizer, prompt, model_name):
+-    if "mistral" in model_name:
+-        prompt = f"{prompt}[/INST]"
+-    elif "gemma" in model_name:
+-        prompt = f"{prompt}<end_of_turn>\n<start_of_turn>model\n"
+-    elif "llama3" in model_name:
+-        prompt = f"{prompt}\n<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>"
+-    return prompt
+-
+-def post_process(response, model_name):
+-    if "xgen" in model_name:
+-        response = response.strip().replace("Assistant:", "")
+-    elif "internlm" in model_name:
+-        response = response.split("<eoa>")[0]
+-    return response
+-
+-def split_tensor(tensor, split_size):
+-    # Get the size of the first dimension
+-    first_dim_size = tensor.size(0)
+-    
+-    # Calculate the number of splits
+-    num_splits = (first_dim_size + split_size - 1) // split_size
+-    
+-    # Use torch.split to divide the tensor
+-    splits = torch.split(tensor, split_size)
+-    
+-    # Convert each split tensor to a list
+-    result = list(splits)
+-    
+-    return result
+-
+-
+-def get_pred(rank, world_size, data, max_length, max_gen, prompt_format, dataset, device, model_name, model2path, out_path):
+-    device = torch.device(f'cuda:{rank}')
+-    model, tokenizer = load_model_and_tokenizer(model2path[model_name], model_name, device)
+-    for json_obj in tqdm(data):
+-        if json_obj["length"] < 8000:
+-            continue
+-        prompt = prompt_format.format(**json_obj)
+-        instruction = ""
+-        document = ""
+-        query = ""
+-        prompt_split = prompt.split("\n\r\r\r")
+-        assert len(prompt_split) == 3
+-        #print(prompt_split)
+-        #instruction = prompt_split[0]
+-        document = prompt_split[1]
+-        query = prompt_split[0] + prompt_split[2]
+-        if dataset not in ["lcc", "repobench-p"]:
+-            instruction = build_prefix(tokenizer, instruction, model_name)
+-            query = build_suffix(tokenizer, query, model_name)
+-        with torch.no_grad():
+-            instruction_input_ids = tokenizer(instruction, truncation=False, return_tensors="pt", add_special_tokens=False).input_ids
+-            query_input_ids = tokenizer(query, truncation=False, return_tensors="pt").input_ids
+-            len_instruction = instruction_input_ids.shape[1]
+-            len_query = query_input_ids.shape[1]
+-            document_input_ids = tokenizer(document, add_special_tokens=False, return_tensors='pt').input_ids
+-            len_document = len(document_input_ids[0])
+-            length = 7500
+-            n = math.ceil(len(document_input_ids[0]) / length)
+-            length = (len_document + (n-1)) // n
+-            insert_idx = (n+1) // 2
+-            padding = torch.ones(size=(1, n * length - len(document_input_ids[0])), dtype=document_input_ids.dtype, device=document_input_ids.device) * tokenizer.pad_token_id
+-            document_input_ids = torch.cat([document_input_ids[:, :-(n - insert_idx) * length], padding, document_input_ids[:, -(n - insert_idx) * length:]], dim=-1)
+-            documents_input_ids = document_input_ids.reshape(-1, length)
+-            
+-            enable_llama_attention_prefill_prefix(model)
+-            past_key_values = None
+-            outputs = model(
+-                instruction_input_ids.to(model.device),
+-                past_key_values=past_key_values,
+-                use_cache=True,
+-            )
+-            past_key_values_instruct = outputs.past_key_values
+-            past_key_values = list(outputs.past_key_values)
+-            input_ids = instruction_input_ids
+-            documents = split_tensor(documents_input_ids, 5)
+-
+-            enable_llama_attention_prefill_context(model)
+-            for document_input_ids in documents:
+-                document_mask = (document_input_ids != tokenizer.pad_token_id).reshape(-1)
+-                len_document = (document_input_ids != tokenizer.pad_token_id).sum(dim=1)
+-                temperature = torch.cat([torch.full((int(length),), len_document.sum()/(length * len_document.shape[0])) for length in len_document])
+-                past_key_values_local = []
+-                for past_key_value in past_key_values_instruct:
+-                    bsz, _ = document_input_ids.shape
+-                    past_key = past_key_value[0].repeat(bsz, 1, 1, 1)
+-                    past_value = past_key_value[1].repeat(bsz, 1, 1, 1)
+-                    past_position = past_key_value[2]
+-                    past_key_values_local.append((past_key, past_value, past_position))
+-                outputs = model(
+-                    document_input_ids.to(model.device),
+-                    past_key_values=past_key_values_local,
+-                    use_cache=True,
+-                )
+-                past_key_values_local = outputs.past_key_values
+-                input_ids = torch.cat([input_ids, document_input_ids.flatten()[document_mask].unsqueeze(0)], dim=-1)
+-                past_key_values_new = []
+-                for past_key_value_global, past_key_value_local in zip(past_key_values, past_key_values_local):
+-                    #print(past_key_value_local[0].shape, past_key_value_global[0].shape, document_mask.shape)
+-                    bsz, num_heads, seq_len, _ = past_key_value_local[0].size()
+-                    past_key = torch.cat([past_key_value_global[0], 
+-                                          past_key_value_local[0][:, :, len_instruction:, :].transpose(1, 2).flatten(0, 1)[document_mask].unsqueeze(0).transpose(1, 2)], dim=2)
+-                    past_value = torch.cat([past_key_value_global[1], 
+-                                            past_key_value_local[1][:, :, len_instruction:, :].transpose(1, 2).flatten(0, 1)[document_mask].unsqueeze(0).transpose(1, 2)], dim=2) 
+-                    past_position = torch.cat([past_key_value_global[2],
+-                                               past_key_value_local[2][:, len_instruction:].repeat(bsz, 1).flatten()[document_mask].unsqueeze(0)], dim=1)
+-                    past_key_values_new.append((past_key, past_value, past_position))
+-                past_key_values = past_key_values_new
+-            past_key_values_new = []
+-            for past_key_value in past_key_values:
+-                past_key_values_new.append((past_key_value[0], past_key_value[1], past_key_value[2], True))
+-            del past_key_values
+-            del past_key_values_instruct
+-            del past_key_values_local
+-            del outputs
+-            input_ids = torch.cat([input_ids, query_input_ids], dim=-1)
+-            context_length = input_ids.shape[-1]
+-            generation_kwargs = {}
+-            #generation_kwargs["cache_implementation"] = None
+-            enable_llama_attention_prefill_query(model)
+-            output = model.generate(
+-                input_ids=input_ids.to(model.device),
+-                max_new_tokens=max_gen,
+-                num_beams=1,
+-                do_sample=False,
+-                temperature=1.0,
+-                past_key_values=past_key_values_new,
+-                **generation_kwargs
+-            )[0]
+-        pred = tokenizer.decode(output[context_length:], skip_special_tokens=True)
+-        pred = post_process(pred, model_name)
+-        with open(out_path, "a", encoding="utf-8") as f:
+-            json.dump({"pred": pred, "answers": json_obj["answers"], "all_classes": json_obj["all_classes"], "length": json_obj["length"]}, f, ensure_ascii=False)
+-            f.write('\n')
+-    dist.destroy_process_group()
+-
+-def seed_everything(seed):
+-    torch.manual_seed(seed)
+-    torch.cuda.manual_seed(seed)
+-    np.random.seed(seed)
+-    random.seed(seed)
+-    torch.backends.cudnn.benchmark = False
+-    torch.backends.cudnn.deterministic = True
+-    torch.cuda.manual_seed_all(seed)
+-
+-def load_model_and_tokenizer(path, model_name, device):
+-    if "chatglm" in model_name or "internlm" in model_name or "xgen" in model_name:
+-        tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
+-        model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, torch_dtype=torch.bfloat16).to(device)
+-    elif "llama2" in model_name:
+-        #replace_llama_attn_with_flash_attn()
+-        tokenizer = LlamaTokenizer.from_pretrained(path)
+-        model = LlamaForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+-        from modeling_llama_parallel import enable_llama_parallel_attention
+-        enable_llama_parallel_attention(model)
+-    elif "llama3" in model_name:
+-        #replace_llama_attn_with_flash_attn()
+-        tokenizer = AutoTokenizer.from_pretrained(path)
+-        model = AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+-        #from modeling_llama_parallel import enable_llama_parallel_attention
+-        #enable_llama_parallel_attention(model)
+-    elif "mistral" in model_name:
+-        tokenizer = AutoTokenizer.from_pretrained(path)
+-        model = AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+-        from modeling_mistral_parallel import enable_mistral_parallel_attention
+-        enable_mistral_parallel_attention(model)
+-    elif "gemma" in model_name:
+-        tokenizer = AutoTokenizer.from_pretrained(path)
+-        model = AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
+-        from modeling_gemma_parallel import enable_gemma_parallel_attention
+-        enable_gemma_parallel_attention(model)
+-    elif "longchat" in model_name or "vicuna" in model_name:
+-        from fastchat.model import load_model
+-        replace_llama_attn_with_flash_attn()
+-        model, _ = load_model(
+-            path,
+-            device='cpu',
+-            num_gpus=0,
+-            load_8bit=False,
+-            cpu_offloading=False,
+-            debug=False,
+-        )
+-        model = model.to(device)
+-        model = model.bfloat16()
+-        tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True, use_fast=False)
+-    model = model.eval()
+-    if tokenizer.pad_token:
+-        pass
+-    elif tokenizer.unk_token:
+-        tokenizer.pad_token_id = tokenizer.unk_token_id
+-    elif tokenizer.eos_token:
+-        tokenizer.pad_token_id = tokenizer.eos_token_id
+-    return model, tokenizer
+-
+-if __name__ == '__main__':
+-    seed_everything(42)
+-    args = parse_args()
+-    world_size = torch.cuda.device_count()
+-    mp.set_start_method('spawn', force=True)
+-
+-    model2path = json.load(open("config/model2path.json", "r"))
+-    model2maxlen = json.load(open("config/model2maxlen.json", "r"))
+-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+-    model_name = args.model
+-    # define your model
+-    max_length = model2maxlen[model_name]
+-    if args.e:
+-        #datasets = ["qasper", "multifieldqa_en", "gov_report", "samsum"]
+-        datasets = ["gov_report", "multi_news"]
+-    else:
+-        #datasets = ["multi_news"]
+-        datasets = ["narrativeqa", "qmsum", "musique"]
+-    # we design specific prompt format and max generation length for each task, feel free to modify them to optimize model output
+-    dataset2prompt = json.load(open("config/dataset2prompt3.json", "r"))
+-    dataset2maxlen = json.load(open("config/dataset2maxlen.json", "r"))
+-    # predict on each dataset
+-    if not os.path.exists("pred_parallel"):
+-        os.makedirs("pred_parallel")
+-    if not os.path.exists("pred_parallel_e"):
+-        os.makedirs("pred_parallel_e")
+-    for dataset in datasets:
+-        if args.e:
+-            data = load_dataset('THUDM/LongBench', f"{dataset}_e", split='test')
+-            if not os.path.exists(f"pred_parallel_e/{model_name}"):
+-                os.makedirs(f"pred_parallel_e/{model_name}")
+-            out_path = f"pred_parallel_e/{model_name}/{dataset}.jsonl"
+-        else:
+-            data = load_dataset('THUDM/LongBench', dataset, split='test')
+-            if not os.path.exists(f"pred_parallel/{model_name}"):
+-                os.makedirs(f"pred_parallel/{model_name}")
+-            out_path = f"pred_parallel/{model_name}/{dataset}.jsonl"
+-        prompt_format = dataset2prompt[dataset]
+-        max_gen = dataset2maxlen[dataset]
+-        data_all = [data_sample for data_sample in data]
+-        data_subsets = [data_all[i::world_size] for i in range(world_size)]
+-        processes = []
+-        for rank in range(world_size):
+-            p = mp.Process(target=get_pred, args=(rank, world_size, data_subsets[rank], max_length, \
+-                        max_gen, prompt_format, dataset, device, model_name, model2path, out_path))
+-            p.start()
+-            processes.append(p)
+-        for p in processes:
+-            p.join()
++if __name__ == "__main__":
++    main()
+--- /dev/null
++++ APE/main80/__init__.py
+@@ -0,0 +1 @@
++"""APE v3.0 campaign. No downloads or model execution at import time."""
+--- /dev/null
++++ APE/main80/campaign.py
+@@ -0,0 +1,542 @@
++"""Detached, single-instance, 80-hour controller. Does not query GPU/resources."""
++import argparse
++import ctypes
++import fcntl
++import json
++import math
++import os
++import shutil
++import signal
++import subprocess
++import sys
++import threading
++import time
++import traceback
++from collections import defaultdict
++from datetime import datetime, timezone
++from pathlib import Path
++from statistics import mean
++
++from .common import Ledger, ROOT, append_json, identity, inside, now, read_json, read_records, write_json
++from .jobs import JobFactory, STAGES
++from .report import export
++from .rules import freeze_rule, select_exploration
++
++PYTHON = '/home/shenxiaoyang/miniconda3/envs/ape/bin/python'
++BASE = ROOT / 'output/runs'
++REQUIRED_CHECKS = ('data', 'methods_cpu', 'methods_full_model', 'cache_generation', 'recovery', 'background', 'scope', 'scoring')
++
++
++def validate(config):
++    fixed = {'protocol': 'ape-plan-exec/v1', 'task_id': 'MAIN80', 'plan_version': 'v3.0',
++             'model': 'models/Llama-3.1-8B-Instruct', 'physical_gpu': 0, 'dtype': 'bfloat16',
++             'batch_size': 1, 'do_sample': False, 'num_beams': 1, 'seed': 42, 'budget_seconds': 288000}
++    for key, value in fixed.items():
++        if config.get(key) != value:
++            raise ValueError(f'fixed campaign protocol mismatch: {key}')
++    for key in ('data', 'model', 'prep_review'):
++        inside(config[key])
++    review = read_json(config['prep_review'])
++    if review.get('role') != 'PLANNER' or review.get('status') != 'ACCEPTED':
++        raise ValueError('PREP has not been accepted by PLANNER')
++    for name in REQUIRED_CHECKS:
++        check = review.get('checks', {}).get(name, {})
++        if check.get('status') != 'PASS' or not check.get('evidence'):
++            raise ValueError(f'missing preparation check: {name}')
++        for path in check['evidence']:
++            if not inside(path).is_file():
++                raise ValueError(f'missing evidence: {path}')
++    if not review.get('frozen_inputs'):
++        raise ValueError('PREP review lacks directly comparable frozen inputs/code')
++    for item in review['frozen_inputs']:
++        if inside(item['path']).read_bytes() != inside(item['accepted_copy']).read_bytes():
++            raise ValueError(f'input/code changed after PREP acceptance: {item["path"]}')
++    if review.get('runtime_versions') != runtime_versions():
++        raise ValueError('effective dependency versions changed after PREP acceptance')
++    for item in review.get('model_required_files', []):
++        if inside(config['model']).joinpath(item['path']).stat().st_size != item['bytes']:
++            raise ValueError(f'model structure changed after PREP acceptance: {item["path"]}')
++    frozen = read_json(f'{config["data"]}/frozen.json')
++    if frozen.get('counts') != {'longbench': 600, 'litm': 1500, 'doc2dial': 500}:
++        raise ValueError('frozen dataset counts mismatch')
++    return review
++
++
++def runtime_versions():
++    from importlib.metadata import version
++    return {name: version(name) for name in ('torch', 'transformers', 'tokenizers', 'flash-attn', 'numpy', 'regex',
++        'sacrebleu', 'portalocker', 'colorama', 'tabulate', 'lxml', 'safetensors')}
++
++
++def source_files(config):
++    code = sorted((ROOT / 'APE/main80').glob('*.py')) + [ROOT / 'APE/ape/ape_llama.py', ROOT / 'APE/ape/__init__.py', ROOT / 'scripts/with_env.sh', ROOT / 'scripts/run_campaign.sh']
++    data = [inside(f'{config["data"]}/frozen.json')]
++    frozen = read_json(data[0])
++    data.extend(inside(f'{config["data"]}/{name}') for name in frozen['files'])
++    model = [inside(config['model']) / name for name in ('config.json', 'generation_config.json', 'tokenizer.json', 'tokenizer_config.json', 'special_tokens_map.json', 'model.safetensors.index.json')]
++    return code + data + model + [inside(config['prep_review'])]
++
++
++def snapshot(directory, config, resume=False):
++    destination = directory / 'snapshot'
++    files = source_files(config)
++    names = [str(p.relative_to(ROOT)) for p in files]
++    if resume:
++        if read_json(directory / 'source-files.json') != names:
++            raise ValueError('source file set changed; not an identical resume')
++        for path in files:
++            original = destination / path.relative_to(ROOT)
++            if original.read_bytes() != path.read_bytes():
++                raise ValueError(f'content changed; cannot impersonate same campaign: {path.relative_to(ROOT)}')
++        for name in ('candidates.json', 'rule.json'):
++            artifact, sealed = directory / name, destination / 'generated' / name
++            if sealed.exists() and not artifact.exists():
++                # The canonical sealed file is committed first, before dependents.
++                # A crash before publishing its identical presentation copy is safe.
++                write_json(artifact, read_json(sealed))
++                append_json(directory / 'events.jsonl', {'event': 'generated_artifact_restored', 'at': now(), 'name': name, 'basis': 'committed immutable content copy; no generation repeated'})
++            if artifact.exists() != sealed.exists() or (artifact.exists() and artifact.read_bytes() != sealed.read_bytes()):
++                raise ValueError(f'frozen generated artifact changed: {name}')
++    else:
++        for path in files:
++            target = destination / path.relative_to(ROOT)
++            target.parent.mkdir(parents=True, exist_ok=True)
++            shutil.copyfile(path, target)
++        write_json(directory / 'source-files.json', names)
++        # Read an existing commit reference; do not compute Git/blob digests.
++        head = (ROOT / 'APE/.git/HEAD').read_text().strip()
++        if head.startswith('ref: '):
++            ref = ROOT / 'APE/.git' / head[5:]
++            observed = ref.read_text().strip() if ref.is_file() else 'packed ref; see existing HEAD'
++        else:
++            observed = head
++        write_json(directory / 'code-version.json', {'observed_HEAD': head, 'observed_existing_commit': observed,
++            'working_code_identity': 'source-files.json and full source snapshots; direct byte comparison on resume'})
++
++
++def seal_generated(directory, name, content):
++    artifact = directory / name
++    sealed = directory / 'snapshot/generated' / name
++    sealed.parent.mkdir(parents=True, exist_ok=True)
++    if sealed.exists():
++        old = read_json(sealed)
++        comparable = {k: v for k, v in old.items() if k != 'frozen_at'}
++        if comparable != content:
++            raise ValueError(f'cannot replace frozen {name}')
++    else:
++        if artifact.exists():
++            raise ValueError(f'unsealed generated artifact requires review: {name}')
++        write_json(sealed, {**content, 'frozen_at': now()})
++    if artifact.exists():
++        if sealed.read_bytes() != artifact.read_bytes():
++            raise ValueError(f'sealed {name} changed')
++    else:
++        write_json(artifact, read_json(sealed))
++
++
++def _parent_death():
++    """Only our child: exit on controller failure; terminal exit is harmless."""
++    parent = os.getppid()
++    ctypes.CDLL(None).prctl(1, signal.SIGTERM)
++    if os.getppid() != parent:
++        os._exit(91)
++
++
++def start_browser(directory, url):
++    previous, _ = read_records(directory / 'browser-launches.jsonl')
++    profile = inside(f'.runtime/browser/{directory.name}/{len(previous)}')
++    profile.mkdir(parents=True, exist_ok=True)
++    browser = shutil.which('google-chrome') or shutil.which('firefox')
++    if not browser:
++        raise RuntimeError('no installed browser for independent monitor window')
++    if 'firefox' in browser:
++        command = [browser, '--no-remote', '--new-instance', '--profile', str(profile), '--new-window', url]
++    else:
++        command = [browser, f'--user-data-dir={profile}', '--new-window', '--no-first-run', '--no-default-browser-check',
++                   '--disable-gpu', '--disable-dev-shm-usage', '--disable-background-networking',
++                   '--disable-component-update', '--disable-sync', '--metrics-recording-only', url]
++    log = (directory / 'browser.log').open('ab')
++    p = subprocess.Popen(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
++    log.close()
++    write_json(directory / 'browser.json', {'pid': p.pid, 'command': command, 'url': url, 'at': now()})
++    append_json(directory / 'browser-launches.jsonl', {'pid': p.pid, 'command': command, 'url': url, 'at': now()})
++    return p
++
++
++def confirm_browser(directory, since, timeout=15):
++    end = time.monotonic() + timeout
++    while time.monotonic() < end:
++        receipts, _ = read_records(directory / 'browser-seen.jsonl')
++        if any(r.get('rendered') is True and r.get('at', '') >= since and
++               any(browser in r.get('user_agent', '') for browser in ('Firefox/', 'Chrome/')) for r in receipts):
++            return
++        time.sleep(0.2)
++    raise RuntimeError('independent browser did not render this campaign page')
++
++
++def launch_monitor(directory):
++    old = directory / 'monitor.json'
++    if old.exists():
++        import urllib.request
++        state = read_json(old)
++        try:
++            with urllib.request.urlopen(state['url'] + 'status.json', timeout=2) as response:
++                if json.load(response)['campaign'] == directory.name:
++                    return state['url']
++        except (OSError, ValueError):
++            pass
++    log = (directory / 'monitor.log').open('ab')
++    subprocess.Popen([PYTHON, '-B', '-u', '-m', 'main80.monitor', '--directory', str(directory), '--campaign', directory.name],
++                     cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
++    log.close()
++    deadline = time.monotonic() + 5
++    while time.monotonic() < deadline:
++        if old.exists():
++            state = read_json(old)
++            # A fresh monitor replaces its file; verify the actual endpoint below.
++            import urllib.request
++            try:
++                with urllib.request.urlopen(state['url'] + 'status.json', timeout=1) as response:
++                    if json.load(response)['campaign'] == directory.name:
++                        return state['url']
++            except (OSError, ValueError):
++                pass
++        time.sleep(0.1)
++    raise RuntimeError('monitor did not start')
++
++
++def bucket(length):
++    return min((4096, 8192, 16384, 32768, 65536, 131072), key=lambda x: abs(math.log2(max(length or 1, 1) / x)))
++
++
++def speed_key(method, length):
++    return ('ape' if method.startswith('ape_') else method, bucket(length))
++
++
++def rates(records):
++    values = defaultdict(list)
++    for r in records:
++        if r['status'] == 'success' and r['key']['stage'] != 'attention':
++            # Cold and hot requests cannot share a latency estimate.
++            cache = 'hot_recovered' if r.get('timing_condition') == 'recovered_application_GPU_KV' else r.get('cache_mode', 'cold')
++            key = (*speed_key(r['method'], r['L']), cache)
++            values[key].append(r['total_seconds'])
++    return [{'method': k[0], 'length_bucket': k[1], 'cache_mode': k[2], 'count': len(v),
++             'mean': mean(v), 'low': min(v), 'high': max(v)} for k, v in sorted(values.items())]
++
++
++def estimate(jobs, ledger, speed, conservative=False, partial=False):
++    total_low, total_high = 0.0, 0.0
++    observed_jobs = 0
++    by_key = {(r['method'], r['length_bucket'], r['cache_mode']): r for r in speed if r['count'] >= 3}
++    for job in jobs:
++        if ledger.finished(job['key']):
++            continue
++        method, length = speed_key(job['method'], job['key']['L'])
++        cache = job['cache']
++        observation = by_key.get((method, length, cache))
++        proxy = False
++        if observation is None and conservative and cache in {'hot', 'search'}:
++            observation = by_key.get((method, length, 'cold'))
++            proxy = observation is not None
++        if observation is None:
++            # No invented speed for an unobserved method/length/cache stratum.
++            if partial:
++                continue
++            return None
++        observed_jobs += 1
++        total_low += 0 if proxy else observation['low']
++        total_high += observation['high']
++    return (total_low, total_high) if observed_jobs or not partial else None
++
++
++def all_jobs(factory, limits, candidates):
++    # Conservative validation count before exploration completes (three distinct choices).
++    temporary = candidates or {'global': [0.5, 0.5], 'cells': {f'{l}/{n}': [0.7, 0.7] for l in (4096, 8192, 16384) for n in (4, 8, 16)}}
++    return [j for stage in STAGES for j in factory.make(stage, limits, temporary)]
++
++
++def selected_records(ledger, jobs, directory):
++    groups = defaultdict(list)
++    for job in jobs:
++        key = job['key']
++        groups[(key['sample_id'], key['L'], key['N'])].append(key)
++    paired = []
++    for group, keys in groups.items():
++        if all(ledger.outcome(key) is not None for key in keys):
++            paired.extend(ledger.outcome(key) for key in keys)
++        else:
++            append_json(directory / 'events.jsonl', {'event': 'invalid_pair_excluded', 'at': now(),
++                'sample_cell': group, 'missing_keys': [k for k in keys if ledger.outcome(k) is None],
++                'basis': 'failed or missing output; never score-based, no replacement'})
++    return paired
++
++
++def update_status(directory, state, factory, candidates=None, final=False):
++    ledger = Ledger(directory / 'attempts.jsonl')
++    expected = all_jobs(factory, state['limits'], candidates)
++    elapsed = max(0, time.time() - state['started_epoch'])
++    speed = rates(ledger.records)
++    eta = estimate(expected, ledger, speed)
++    forecast = estimate(expected, ledger, speed, conservative=True)
++    forecast_complete = forecast is not None
++    if forecast is None:
++        forecast = estimate(expected, ledger, speed, conservative=True, partial=True)
++    notices, _ = read_records(directory / 'events.jsonl')
++    noteworthy = [e for e in notices if e['event'] in {'sampling_reduced', 'system_error', 'budget_blocked', 'deadline', 'sample_error', 'source_incomplete'}]
++    heartbeat = read_json(directory / 'worker-state.json') if (directory / 'worker-state.json').exists() else {}
++    stamp = time.time()
++    status = {'campaign': directory.name, 'state': state['state'], 'stage': state.get('stage'), 'updated_at': now(),
++        'completed': sum(ledger.done(j['key']) for j in expected), 'planned': len(expected),
++        'processed_including_failed': sum(ledger.finished(j['key']) for j in expected),
++        'failed': sum(r['status'] != 'success' for r in ledger.records),
++        'elapsed_seconds': elapsed, 'remaining_seconds': max(0, state['deadline_epoch'] - stamp),
++        'eta_range': [datetime.fromtimestamp(stamp + x, timezone.utc).isoformat() for x in eta] if eta else None,
++        'rates': speed, 'current_job': heartbeat.get('job'), 'notices': noteworthy[-10:], 'monitor_url': state.get('monitor_url'),
++        'budget_forecast_seconds': forecast, 'forecast_complete': forecast_complete,
++        'forecast_policy': 'observed strata; cold upper bound for unseen search/hot only; incomplete forecast covers known strata only, unknown future costs remain unestimated; not a reliable ETA'}
++    write_json(directory / 'status.json', status)
++    write_json(directory / 'state.json', state)
++    if final:
++        export(directory, factory, state['limits'], expected)
++    return forecast, ledger, expected
++
++
++def reduce_budget(directory, state, factory, candidates):
++    eta, ledger, expected = update_status(directory, state, factory, candidates)
++    if eta is None:
++        return
++    locked = set()
++    if 'explore' in state['completed_stages']:
++        locked.add('explore')
++    if 'validation' in state['completed_stages']:
++        locked.add('validation')
++    if 'longbench_final' in state['completed_stages']:
++        locked.add('test')
++    if 'doc2dial' in state['completed_stages']:
++        locked.update(('litm', 'doc2dial'))
++    while eta[1] + state['export_reserve_seconds'] > state['deadline_epoch'] - time.time():
++        lower = factory.lower(state['limits'], locked)
++        if lower is None:
++            state['state'] = 'BLOCKED'
++            append_json(directory / 'events.jsonl', {'event': 'budget_blocked', 'at': now(), 'estimate_seconds': eta, 'limits': state['limits']})
++            return
++        before = factory.selected_ids(state['limits'])
++        state['limits'] = lower
++        after = factory.selected_ids(lower)
++        write_json(directory / 'sampling.json', after)
++        append_json(directory / 'events.jsonl', {'event': 'sampling_reduced', 'at': now(), 'estimate_seconds': eta,
++            'remaining_seconds': state['deadline_epoch'] - time.time(), 'before_ids': before, 'after_ids': after,
++            'reason': 'observed method/length stratified speed; no score used'})
++        expected = all_jobs(factory, lower, candidates)
++        eta = estimate(expected, ledger, rates(ledger.records), conservative=True)
++        if eta is None:
++            eta = estimate(expected, ledger, rates(ledger.records), conservative=True, partial=True)
++        if eta is None:
++            break
++
++
++def stop_own_worker(worker):
++    if worker is not None and worker.poll() is None:
++        try:
++            os.killpg(worker.pid, signal.SIGTERM)
++        except ProcessLookupError:
++            return
++        try:
++            worker.wait(timeout=5)
++        except subprocess.TimeoutExpired:
++            os.killpg(worker.pid, signal.SIGKILL)
++            worker.wait(timeout=5)
++
++
++def control(directory, lock_fd):
++    config = read_json(directory / 'config.json')
++    validate(config)
++    snapshot(directory, config, resume=True)
++    state = read_json(directory / 'state.json')
++    factory = JobFactory(config['data'])
++    candidates = read_json(directory / 'candidates.json') if (directory / 'candidates.json').exists() else None
++    worker = None
++    try:
++        state['state'] = 'RUNNING'
++        state['controller_pid'] = os.getpid()
++        update_status(directory, state, factory, candidates)
++        state['monitor_url'] = launch_monitor(directory)
++        browser_started = now()
++        start_browser(directory, state['monitor_url'])
++        confirm_browser(directory, browser_started)
++        # Wall-clock budget starts before the first formal worker, including loading.
++        for stage in STAGES:
++            if stage in state['completed_stages']:
++                continue
++            if time.time() >= state['deadline_epoch']:
++                raise TimeoutError('80-hour deadline reached')
++            state['stage'] = stage
++            reduce_budget(directory, state, factory, candidates)
++            if state['state'] == 'BLOCKED':
++                break
++            jobs = factory.make(stage, state['limits'], candidates)
++            methods = list(dict.fromkeys(j['method'] for j in jobs))
++            for method in methods:
++                ledger = Ledger(directory / 'attempts.jsonl')
++                # An explicit sample error remains terminal unless a new authorized
++                # correction creates a new campaign; do not silently retry generations.
++                if any(r['status'] == 'system_error' for r in ledger.records):
++                    raise RuntimeError('unresolved systematic error; dependent execution remains stopped for PLANNER review')
++                terminal_data = {identity(r['key']) for r in ledger.records if r['status'] == 'sample_error'}
++                pending = [j for j in jobs if j['method'] == method and not ledger.done(j['key']) and identity(j['key']) not in terminal_data]
++                if not pending:
++                    continue
++                serial = len(list((directory / 'workers').glob('*.bundle.json'))) if (directory / 'workers').exists() else 0
++                stem = directory / 'workers' / f'{serial:03d}-{stage}-{method}'
++                stem.parent.mkdir(parents=True, exist_ok=True)
++                rule_path = str(directory / 'rule.json') if (directory / 'rule.json').exists() and stage not in {'explore', 'validation', 'attention'} else None
++                bundle = {'model': config['model'], 'data': config['data'], 'method': method, 'jobs': pending,
++                    'ledger': str(directory / 'attempts.jsonl'), 'events': str(directory / 'events.jsonl'),
++                    'heartbeat': str(directory / 'worker-state.json'), 'selection': str(directory / 'sampling.json'),
++                    'attention': str(directory / 'attention.jsonl'), 'rule': rule_path, 'deadline_epoch': state['deadline_epoch']}
++                bundle_path = str(stem) + '.bundle.json'
++                write_json(bundle_path, bundle)
++                command = [PYTHON, '-B', '-u', '-m', 'main80.worker', '--bundle', bundle_path]
++                append_json(directory / 'events.jsonl', {'event': 'worker_started', 'at': now(), 'stage': stage, 'method': method, 'command': command, 'cwd': str(ROOT)})
++                with Path(str(stem) + '.stdout').open('ab') as out, Path(str(stem) + '.stderr').open('ab') as err:
++                    worker = subprocess.Popen(command, cwd=ROOT, stdout=out, stderr=err, start_new_session=True, preexec_fn=_parent_death)
++                # Deadline termination must remain independent of JSON/status/export IO.
++                def expire(owned=worker):
++                    if owned.poll() is None:
++                        stop_own_worker(owned)
++                        write_json(directory / 'deadline-event.json', {'at': now(), 'owned_worker_pid': owned.pid})
++                watchdog = threading.Timer(max(0, state['deadline_epoch'] - time.time()), expire)
++                watchdog.daemon = True
++                watchdog.start()
++                write_json(directory / 'worker.json', {'pid': worker.pid, 'command': command, 'cwd': str(ROOT), 'started_at': now()})
++                last_estimate = time.monotonic()
++                while worker.poll() is None:
++                    remaining = state['deadline_epoch'] - time.time()
++                    if remaining <= 0:
++                        stop_own_worker(worker)
++                        raise TimeoutError('80-hour deadline reached')
++                    try:
++                        worker.wait(timeout=min(5, remaining))
++                    except subprocess.TimeoutExpired:
++                        pass
++                    if time.time() >= state['deadline_epoch']:
++                        stop_own_worker(worker)
++                        raise TimeoutError('80-hour deadline reached')
++                    update_status(directory, state, factory, candidates)
++                    if time.monotonic() - last_estimate >= 600:
++                        reduce_budget(directory, state, factory, candidates)
++                        last_estimate = time.monotonic()
++                        if state['state'] == 'BLOCKED':
++                            stop_own_worker(worker)
++                append_json(directory / 'events.jsonl', {'event': 'worker_ended', 'at': now(), 'stage': stage, 'method': method, 'exit_code': worker.returncode})
++                watchdog.cancel()
++                watchdog.join(timeout=1)
++                if time.time() >= state['deadline_epoch']:
++                    raise TimeoutError('80-hour deadline reached')
++                if worker.returncode != 0:
++                    raise RuntimeError(f'worker stopped: {stage}/{method}, exit {worker.returncode}')
++                if state['state'] == 'BLOCKED':
++                    break
++            if state['state'] == 'BLOCKED':
++                break
++            ledger = Ledger(directory / 'attempts.jsonl')
++            if stage == 'explore':
++                candidates = select_exploration(selected_records(ledger, factory.make(stage, state['limits'], candidates), directory))
++                seal_generated(directory, 'candidates.json', candidates)
++            elif stage == 'validation':
++                rule = freeze_rule(selected_records(ledger, factory.make(stage, state['limits'], candidates), directory), candidates)
++                seal_generated(directory, 'rule.json', {**rule, 'frozen_before': 'length_check/attention/test'})
++            elif stage == 'attention':
++                from .plots import render
++                append_json(directory / 'events.jsonl', {'event': 'attention_figures_exported', 'at': now(), 'figures': render(directory)})
++            state['completed_stages'].append(stage)
++            append_json(directory / 'events.jsonl', {'event': 'stage_submitted', 'at': now(), 'stage': stage})
++            update_status(directory, state, factory, candidates, final=True)
++        if state['state'] == 'RUNNING':
++            state['state'] = 'SUBMITTED'
++    except BaseException as exc:
++        stop_own_worker(worker)
++        state['state'] = 'BLOCKED'
++        append_json(directory / 'events.jsonl', {'event': 'deadline' if isinstance(exc, TimeoutError) else 'system_error', 'at': now(),
++            'type': type(exc).__name__, 'error': str(exc), 'traceback': traceback.format_exc()})
++    finally:
++        update_status(directory, state, factory, candidates, final=True)
++        write_json(directory / 'delivery.json', {'role': 'EXECUTOR', 'status': state['state'], 'at': now(),
++            'evidence': ['summary.json', 'incomplete.json', 'attempts.jsonl', 'events.jsonl', 'rule.json'], 'requires_PLANNER_review': True})
++        os.close(lock_fd)
++
++
++def launch(config_path=None, campaign=None):
++    lock_path = inside('.runtime/main80.lock')
++    lock_path.parent.mkdir(parents=True, exist_ok=True)
++    lock = lock_path.open('a+')
++    try:
++        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
++    except BlockingIOError:
++        raise ValueError('a MAIN80 controller already holds the single-instance lock')
++    if campaign:
++        if Path(campaign).name != campaign:
++            raise ValueError('campaign must be an ID, not a path')
++        directory = inside(BASE / campaign)
++        config = read_json(directory / 'config.json')
++        validate(config)
++        snapshot(directory, config, resume=True)
++        state = read_json(directory / 'state.json')
++        if state['state'] == 'SUBMITTED' or time.time() >= state['deadline_epoch']:
++            raise ValueError('campaign finished or deadline expired; cannot resume')
++        if any(r['status'] == 'system_error' for r in Ledger(directory / 'attempts.jsonl').records):
++            raise ValueError('systematic failure requires PLANNER correction/review; dependent work cannot auto-resume')
++        if config_path and read_json(config_path) != config:
++            raise ValueError('configuration changed; create a new campaign')
++    else:
++        config = read_json(config_path)
++        validate(config)
++        campaign = datetime.now(timezone.utc).strftime('main80-%Y%m%dT%H%M%S')
++        directory = inside(BASE / campaign)
++        directory.mkdir(parents=True, exist_ok=False)
++        write_json(directory / 'config.json', config)
++        snapshot(directory, config)
++        factory = JobFactory(config['data'])
++        epoch = time.time()
++        write_json(directory / 'sampling.json', factory.selected_ids(factory.initial_limits()))
++        write_json(directory / 'state.json', {'campaign': campaign, 'state': 'RUNNING', 'stage': 'baseline',
++            'started_at': now(), 'started_epoch': epoch, 'deadline_epoch': epoch + 288000,
++            'export_reserve_seconds': 900, 'limits': factory.initial_limits(), 'completed_stages': []})
++    command = [PYTHON, '-B', '-u', '-m', 'main80.campaign', '_control', '--campaign', campaign, '--lock-fd', str(lock.fileno())]
++    with (directory / 'controller.log').open('ab') as log:
++        process = subprocess.Popen(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT,
++                                   start_new_session=True, pass_fds=(lock.fileno(),))
++    write_json(directory / 'launcher.json', {'controller_pid': process.pid, 'cwd': str(ROOT), 'command': command, 'at': now()})
++    lock.close()
++    print(json.dumps({'campaign': campaign, 'controller_pid': process.pid, 'directory': str(directory),
++                      'status_command': f'bash scripts/run_campaign.sh status --campaign {campaign}'}, ensure_ascii=False))
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('action', choices=('start', 'resume', 'status', 'check', '_control'))
++    parser.add_argument('--config')
++    parser.add_argument('--campaign')
++    parser.add_argument('--lock-fd', type=int)
++    args = parser.parse_args()
++    if args.action == 'start':
++        if not args.config:
++            parser.error('--config required')
++        launch(args.config)
++    elif args.action == 'resume':
++        launch(args.config, args.campaign)
++    elif args.action == 'status':
++        if not args.campaign or Path(args.campaign).name != args.campaign:
++            parser.error('valid --campaign required')
++        from .monitor import current_status
++        print(json.dumps(current_status(inside(BASE / args.campaign)), ensure_ascii=False, indent=2))
++    elif args.action == 'check':
++        validate(read_json(args.config))
++        print('PREP accepted and frozen campaign configuration valid; no worker started')
++    else:
++        control(inside(BASE / args.campaign), args.lock_fd)
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ APE/main80/common.py
+@@ -0,0 +1,137 @@
++"""Workspace confinement, durable records and identity by direct comparison."""
++import json
++import os
++from datetime import datetime, timezone
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[2]
++PROTOCOL = 'ape-plan-exec/v1'
++
++
++def now():
++    return datetime.now(timezone.utc).isoformat()
++
++
++def inside(path):
++    path = Path(path)
++    if not path.is_absolute():
++        path = ROOT / path
++    if not path.resolve().is_relative_to(ROOT):
++        raise ValueError(f'path leaves workspace: {path}')
++    for part in [path, *path.parents]:
++        if part == ROOT.parent:
++            break
++        if part.is_symlink():
++            raise ValueError(f'symlink is not a writable asset: {part}')
++    return path
++
++
++def read_json(path):
++    return json.loads(inside(path).read_text())
++
++
++def write_json(path, value):
++    path = inside(path)
++    path.parent.mkdir(parents=True, exist_ok=True)
++    tmp = path.with_name(path.name + '.tmp')
++    with tmp.open('w') as f:
++        json.dump(value, f, ensure_ascii=False, indent=2, allow_nan=False)
++        f.write('\n')
++        f.flush()
++        os.fsync(f.fileno())
++    tmp.replace(path)
++
++
++def identity(value):
++    """A reversible representation, never a digest."""
++    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
++
++
++def append_json(path, value):
++    path = inside(path)
++    path.parent.mkdir(parents=True, exist_ok=True)
++    # Preserve even a torn last record. The reader reports it, never truncates it.
++    with path.open('ab+') as f:
++        if f.tell():
++            f.seek(-1, os.SEEK_END)
++            if f.read(1) != b'\n':
++                f.seek(0, os.SEEK_END)
++                f.write(b'\n')
++        f.seek(0, os.SEEK_END)
++        f.write((identity(value) + '\n').encode())
++        f.flush()
++        os.fsync(f.fileno())
++
++
++def read_records(path):
++    path = inside(path)
++    good, incomplete = [], []
++    if path.exists():
++        with path.open('rb') as f:
++            for n, line in enumerate(f, 1):
++                try:
++                    good.append(json.loads(line))
++                except (json.JSONDecodeError, UnicodeDecodeError):
++                    incomplete.append({'line': n, 'bytes': len(line)})
++    return good, incomplete
++
++
++def empty_generated_response(record):
++    return (record.get('status') == 'sample_error' and isinstance(record.get('answer'), str)
++            and not record['answer'].strip() and bool(record.get('output_token_ids')))
++
++
++class Ledger:
++    def __init__(self, path):
++        self.path = inside(path)
++        self.records, self.incomplete = read_records(path)
++        self.success = {}
++        self.scored = {}
++        self.terminal = set()
++        self.attempts = {}
++        for record in self.records:
++            key = identity(record['key'])
++            self.attempts[key] = max(self.attempts.get(key, 0), record['attempt'])
++            if record['status'] in {'success', 'sample_error'}:
++                self.terminal.add(key)
++            if record['status'] == 'success':
++                if key in self.success:
++                    raise ValueError('duplicate successful job in ledger')
++                self.success[key] = record
++                self.scored[key] = record
++            elif empty_generated_response(record) and key not in self.success:
++                self.scored[key] = dict(record, score=0.0)
++        events, _ = read_records(self.path.with_name('events.jsonl'))
++        for event in events:
++            if event.get('event') == 'request_started':
++                key = identity(event['key'])
++                self.attempts[key] = max(self.attempts.get(key, 0), event['attempt'])
++
++    def done(self, key):
++        return identity(key) in self.success
++
++    def outcome(self, key):
++        return self.scored.get(identity(key))
++
++    def finished(self, key):
++        return identity(key) in self.terminal
++
++    def next_attempt(self, key):
++        return self.attempts.get(identity(key), 0) + 1
++
++    def add(self, record):
++        key = identity(record['key'])
++        if key in self.success:
++            raise ValueError('cannot overwrite a successful answer')
++        if record['attempt'] != self.next_attempt(record['key']):
++            raise ValueError('attempt sequence mismatch')
++        append_json(self.path, record)
++        self.records.append(record)
++        self.attempts[key] = record['attempt']
++        if record['status'] in {'success', 'sample_error'}:
++            self.terminal.add(key)
++        if record['status'] == 'success':
++            self.success[key] = record
++            self.scored[key] = record
++        elif empty_generated_response(record):
++            self.scored[key] = dict(record, score=0.0)
+--- /dev/null
++++ APE/main80/data.py
+@@ -0,0 +1,345 @@
++"""Data provenance, group-safe splits and evidence-preserving token construction.
++
++No network operations. Unresolved origins are errors, never synthetic group IDs.
++"""
++import gzip
++import json
++import random
++import re
++from collections import Counter, defaultdict
++from pathlib import Path
++
++from .common import inside, write_json
++from .rules import COUNTS, DATASETS, LENGTHS
++
++
++def json_rows(path):
++    path = inside(path)
++    opener = gzip.open if path.suffix == '.gz' else open
++    with opener(path, 'rt', encoding='utf-8') as f:
++        if path.name.endswith(('.jsonl', '.jsonl.gz')):
++            return [json.loads(line) for line in f if line.strip()]
++        return json.load(f)
++
++
++def question_key(text):
++    return ' '.join(text.casefold().split())
++
++
++def public_passages(text):
++    headers = list(re.finditer(r'(?m)^Passage \d+:\n([^\n]+)\n', text))
++    return [(question_key(h.group(1)), h.start(), headers[i+1].start() if i+1 < len(headers) else len(text)) for i, h in enumerate(headers)]
++
++
++def mapped_evidence(row, candidate, dataset):
++    """Resolve original document identity independently of versioned evidence text.
++
++    LongBench expands original Wikipedia paragraphs to full articles. If an
++    original evidence sentence changed, retain the whole matching public support
++    article. This is conservative and may render short constructions inapplicable.
++    """
++    context = row['context']
++    if dataset == 'qasper':
++        title = ''.join(candidate['paper_title'].casefold().split())
++        if title not in ''.join(context.casefold().split()):
++            words = re.findall(r'\w+', context.casefold())
++            public_ngrams = {tuple(words[i:i+8]) for i in range(len(words)-7)}
++            shared = [a for a in candidate['paper_identity_anchors'] if tuple(a) in public_ngrams]
++            if len(shared) < 3:
++                raise ValueError('original paper identity lacks title or three exact body anchors')
++        fallback = [(0, len(context))]
++        materials = candidate['documents']
++    else:
++        passages = public_passages(context)
++        lookup = defaultdict(list)
++        for title, a, b in passages:
++            lookup[f'wikipedia:{title}'].append((a, b))
++        if any(d not in lookup for d in candidate['documents']):
++            raise ValueError('original support title absent from public passages')
++        fallback = [span for d in candidate['documents'] for span in lookup[d]]
++        materials = sorted(lookup)
++    if not candidate['evidence']:
++        return [], 'no_annotated_evidence', materials
++    try:
++        return find_spans(context, candidate['evidence']), 'exact_evidence_with_whitespace_alignment', materials
++    except ValueError:
++        return sorted(set(fallback)), 'whole_public_support_document_version_changed', materials
++
++
++def find_spans(text, evidence):
++    """Whitespace-flexible exact evidence matching; every occurrence is retained."""
++    spans = []
++    for item in evidence:
++        if not item.strip():
++            raise ValueError('blank evidence annotation')
++        pattern = r'\s+'.join(re.escape(word) for word in item.split())
++        found = [(m.start(), m.end()) for m in re.finditer(pattern, text)]
++        if not found:
++            raise ValueError(f'evidence not present in public context: {item[:100]!r}')
++        spans.extend(found)
++    if not spans:
++        raise ValueError('no recoverable supporting evidence')
++    return sorted(set(spans))
++
++
++def source_index(qasper, hotpotqa, musique):
++    """Original authors' schemas, indexed by normalized question."""
++    index = {d: defaultdict(list) for d in DATASETS}
++    for paper_id, paper in qasper.items():
++        words = re.findall(r'\w+', ' '.join(p for section in paper['full_text'] for p in section['paragraphs']).casefold())
++        anchors = [words[i:i+8] for i in range(0, len(words)-7, 40)]
++        for qa in paper['qas']:
++            evidence = []
++            for annotation in qa['answers']:
++                answer = annotation.get('answer', annotation)
++                evidence.extend(answer.get('evidence', []))
++            index['qasper'][question_key(qa['question'])].append({
++                'source_id': qa['question_id'], 'documents': [f'qasper-paper:{paper_id}'],
++                'evidence': evidence, 'paper_title': paper['title'], 'paper_identity_anchors': anchors, 'unanswerable': not evidence})
++    for qa in hotpotqa:
++        context, supports = qa['context'], qa['supporting_facts']
++        paragraphs = dict(zip(context['title'], context['sentences'])) if isinstance(context, dict) else dict(context)
++        facts = list(zip(supports['title'], supports['sent_id'])) if isinstance(supports, dict) else supports
++        titles = sorted(set(title for title, _ in facts))
++        invalid = [(title, sentence) for title, sentence in facts if title not in paragraphs or not 0 <= sentence < len(paragraphs[title])]
++        evidence = [paragraphs[title][sentence] for title, sentence in facts if (title, sentence) not in invalid]
++        index['hotpotqa'][question_key(qa['question'])].append({
++            'source_id': qa.get('_id', qa.get('id')), 'documents': [f'wikipedia:{question_key(t)}' for t in titles],
++            'evidence': evidence, 'origin_issue': invalid})
++    for qa in musique:
++        supports = [p for p in qa['paragraphs'] if p['is_supporting']]
++        index['musique'][question_key(qa['question'])].append({
++            'source_id': qa['id'], 'documents': sorted(set(f'wikipedia:{question_key(p["title"])}' for p in supports)),
++            'evidence': [p['paragraph_text'] for p in supports]})
++    return index
++
++
++def map_longbench(raw, index):
++    mapped, errors = [], []
++    for dataset in DATASETS:
++        rows = raw[dataset]
++        if len(rows) != 200 or len({r['_id'] for r in rows}) != 200:
++            raise ValueError(f'{dataset} must contain 200 unique public IDs')
++        for row in rows:
++            candidates = index[dataset].get(question_key(row['input']), [])
++            valid = []
++            for candidate in candidates:
++                if candidate.get('origin_issue'):
++                    continue
++                try:
++                    spans, policy, materials = mapped_evidence(row, candidate, dataset)
++                    # A no-evidence Qasper answer is still a valid baseline ID.
++                    # It is explicitly inapplicable to evidence-preserving development.
++                    if not spans and dataset != 'qasper':
++                        continue
++                    valid.append((candidate, spans, policy, materials))
++                except ValueError:
++                    continue
++            identities = {tuple(c['documents']) for c, *_ in valid}
++            if not valid or len(identities) != 1:
++                errors.append({'dataset': dataset, 'public_id': row['_id'], 'question': row['input'],
++                    'candidate_count': len(candidates), 'matched_count': len(valid), 'reason': 'missing_or_ambiguous_source_mapping'})
++                continue
++            candidate, spans, policy, materials = valid[0]
++            # Multiple source questions sharing the same evidence group are harmless;
++            # union their evidence rather than choosing by answer/model score.
++            spans = sorted(set(x for _, ss, *_ in valid for x in ss))
++            mapped.append({'sample_id': f'{dataset}:{row["_id"]}', 'public_id': row['_id'], 'dataset': dataset,
++                'question': row['input'], 'document': row['context'], 'answers': row['answers'],
++                'source_ids': sorted(set(c['source_id'] for c, *_ in valid)), 'support_documents': candidate['documents'],
++                'input_documents': materials, 'evidence_mapping_policy': sorted(set(p for _, _, p, _ in valid)),
++                'evidence_char_spans': spans, 'original_length_field': row.get('length'),
++                'original_document_count': len(materials), 'support_document_count': len(candidate['documents'])})
++    return mapped, errors
++
++
++def split_groups(rows):
++    """Union equal evidence sets and equal normalized questions across datasets."""
++    parent = list(range(len(rows)))
++    def root(i):
++        while parent[i] != i:
++            parent[i] = parent[parent[i]]
++            i = parent[i]
++        return i
++    def union(i, j):
++        a, b = root(i), root(j)
++        parent[max(a, b)] = min(a, b)
++    seen_docs, seen_questions = {}, {}
++    for i, r in enumerate(rows):
++        evidence_key = tuple(sorted(r['support_documents']))
++        q = question_key(r['question'])
++        for seen, key in ((seen_docs, evidence_key), (seen_questions, q)):
++            if key in seen:
++                union(i, seen[key])
++            else:
++                seen[key] = i
++    grouped = defaultdict(list)
++    for i, r in enumerate(rows):
++        grouped[root(i)].append(r)
++    groups = sorted(grouped.values(), key=lambda g: min(r['sample_id'] for r in g))
++    # Per-dataset strata with a deterministic home for cross-dataset components.
++    rng = random.Random(42)
++    ordered = []
++    for d in DATASETS:
++        stratum = [g for g in groups if min((DATASETS.index(r['dataset']) for r in g)) == DATASETS.index(d)]
++        rng.shuffle(stratum)
++        ordered.extend(stratum)
++    targets = {'explore': dict(zip(DATASETS, (17, 17, 16))), 'validation': dict(zip(DATASETS, (13, 13, 14)))}
++    remaining = ordered[:]
++    for split, target in targets.items():
++        actual = Counter()
++        picked = []
++        for group in remaining:
++            counts = Counter(r['dataset'] for r in group)
++            before = sum(abs(target[d] - actual[d]) for d in DATASETS)
++            after = sum(abs(target[d] - actual[d] - counts[d]) for d in DATASETS)
++            if after < before:
++                for r in group:
++                    r['split'] = split
++                actual.update(counts)
++                picked.append(group)
++        remaining = [g for g in remaining if g not in picked]
++    for group in remaining:
++        for r in group:
++            r['split'] = 'test'
++    for group in groups:
++        # Group identity describes evidence documents, never an arbitrary sample ID.
++        gid = sorted({(r['dataset'], tuple(r['support_documents'])) for r in group})
++        for r in group:
++            r['group'] = [[d, list(docs)] for d, docs in gid]
++    # Nested orders interleave datasets. They are frozen before any generation.
++    order = {}
++    for split in ('explore', 'validation', 'test'):
++        queues = {d: [r['sample_id'] for g in ordered for r in g if r['dataset'] == d and r['split'] == split] for d in DATASETS}
++        order[split] = []
++        while any(queues.values()):
++            for d in DATASETS:
++                if queues[d]:
++                    order[split].append(queues[d].pop(0))
++    report = overlap_report(rows)
++    report['targets'] = targets
++    report['actual'] = {split: dict(Counter(r['dataset'] for r in rows if r['split'] == split)) for split in order}
++    return order, report
++
++
++def overlap_report(rows):
++    from .common import identity
++    report = {}
++    for a, b in (('explore', 'validation'), ('explore', 'test'), ('validation', 'test')):
++        left, right = [r for r in rows if r['split'] == a], [r for r in rows if r['split'] == b]
++        groups = set(identity(r['group']) for r in left) & set(identity(r['group']) for r in right)
++        questions = set(question_key(r['question']) for r in left) & set(question_key(r['question']) for r in right)
++        documents = set(d for r in left for d in r.get('input_documents', r['support_documents'])) & set(d for r in right for d in r.get('input_documents', r['support_documents']))
++        support_documents = set(d for r in left for d in r['support_documents']) & set(d for r in right for d in r['support_documents'])
++        if groups or questions:
++            raise ValueError('development/test evidence group or question leakage')
++        report[f'{a}/{b}'] = {'evidence_group_overlap': sorted(groups), 'question_overlap': sorted(questions), 'single_document_overlap': sorted(documents), 'support_document_overlap': sorted(support_documents)}
++    return report
++
++
++def intervals(indices):
++    result = []
++    for i in sorted(indices):
++        if result and result[-1][1] == i:
++            result[-1][1] += 1
++        else:
++            result.append([i, i + 1])
++    return result
++
++
++def construct(row, length, tokenizer, donors, supplement_reviews, donor_cache=None):
++    from .metrics import normalize
++    tokenized = tokenizer(row['document'], add_special_tokens=False, return_offsets_mapping=True)
++    tokens, offsets = tokenized['input_ids'], tokenized['offset_mapping']
++    evidence = {i for i, (s, e) in enumerate(offsets) if e > s and any(s < b and e > a for a, b in row['evidence_char_spans'])}
++    if not evidence or len(evidence) > length:
++        return {'applicable': False, 'reason': 'no_evidence_or_evidence_exceeds_target', 'L': length}
++    # Distance to evidence on both sides, with original order as deterministic tie.
++    distance = [len(tokens) + 1] * len(tokens)
++    previous = -len(tokens) - 1
++    for i in range(len(tokens)):
++        if i in evidence:
++            previous = i
++        distance[i] = i - previous
++    previous = 2 * len(tokens) + 1
++    for i in range(len(tokens) - 1, -1, -1):
++        if i in evidence:
++            previous = i
++        distance[i] = min(distance[i], previous - i)
++    keep = sorted(sorted(range(len(tokens)), key=lambda i: (distance[i], i))[:length])
++    selected = [tokens[i] for i in keep]
++    position = {old: new for new, old in enumerate(keep)}
++    evidence_positions = sorted(position[i] for i in evidence)
++    supplement = []
++    for donor in donors:
++        if len(selected) == length:
++            break
++        if donor['split'] == 'test' or donor['group'] == row['group']:
++            continue
++        if set(row['support_documents']) & set(donor['support_documents']):
++            continue
++        # Human/source-backed negative evidence certification, never inferred from score.
++        review = supplement_reviews.get(row['sample_id'], {}).get(donor['sample_id'])
++        if not review or review.get('contains_additional_answer_evidence') is not False or not review.get('basis'):
++            continue
++        if donor_cache is not None:
++            if donor['sample_id'] not in donor_cache:
++                donor_cache[donor['sample_id']] = tokenizer.encode(donor['document'], add_special_tokens=False)
++            more = donor_cache[donor['sample_id']]
++        else:
++            more = tokenizer.encode(donor['document'], add_special_tokens=False)
++        approved = review.get('approved_token_intervals', [])
++        used_intervals = []
++        for a, b in approved:
++            if not 0 <= a < b <= len(more):
++                raise ValueError('reviewed donor interval is outside its actual source')
++            fragment = more[a:b]
++            text = ' ' + normalize(tokenizer.decode(fragment)) + ' '
++            if any(normalize(answer) and ' ' + normalize(answer) + ' ' in text for answer in row['answers']):
++                raise ValueError('reviewed supplement still contains a standard answer')
++            take = min(length - len(selected), len(fragment))
++            selected.extend(fragment[:take])
++            used_intervals.append([a, a + take])
++            if len(selected) == length:
++                break
++        if used_intervals:
++            supplement.append({'sample_id': donor['sample_id'], 'source_token_intervals': used_intervals,
++                'source_documents': donor['input_documents'],
++                'review': {k: review[k] for k in ('basis', 'contains_additional_answer_evidence', 'review_ref', 'reviewed_by') if k in review}})
++    if len(selected) != length:
++        return {'applicable': False, 'reason': 'insufficient_verified_development_supplement', 'L': length,
++                'available_tokens': len(selected), 'retained_source_intervals': intervals(keep)}
++    return {'applicable': True, 'L': length, 'document_tokens': selected,
++            'retained_source_intervals': intervals(keep), 'deleted_source_intervals': intervals(set(range(len(tokens))) - set(keep)),
++            'supplement_sources': supplement, 'evidence_token_intervals': intervals(evidence_positions),
++            'cross_block_evidence': {str(n): [span for span in intervals(evidence_positions) if (span[0] * n // length) != ((span[1] - 1) * n // length)] for n in COUNTS}}
++
++
++def check_litm(variants):
++    indexed = {}
++    for pos, rows in variants.items():
++        by_q = {}
++        for row in rows:
++            key = question_key(row['question'])
++            if key in by_q:
++                raise ValueError('duplicate LITM question')
++            if len(row['ctxs']) != 20 or not row['ctxs'][int(pos)].get('isgold'):
++                raise ValueError('LITM document count/gold position mismatch')
++            if sum(bool(d.get('isgold')) for d in row['ctxs']) != 1:
++                raise ValueError('LITM must have one gold')
++            by_q[key] = row
++        indexed[int(pos)] = by_q
++    common = sorted(set.intersection(*(set(v) for v in indexed.values())))
++    valid = []
++    for key in common:
++        items = [indexed[p][key] for p in (0, 9, 19)]
++        documents = [sorted((d['title'], d['text']) for d in r['ctxs']) for r in items]
++        if not all(r['question'] == items[0]['question'] and sorted(r['answers']) == sorted(items[0]['answers']) for r in items):
++            raise ValueError('LITM question/answer versions differ')
++        if not all(d == documents[0] for d in documents):
++            raise ValueError('LITM document sets differ')
++        valid.append(key)
++    random.Random(42).shuffle(valid)
++    if len(valid) < 500:
++        raise ValueError('fewer than 500 fully paired LITM questions')
++    return valid[:500], indexed
+--- /dev/null
++++ APE/main80/diagnostics.py
+@@ -0,0 +1,54 @@
++"""Diagnostic-only token probabilities, checked against actual APE output.
++
++The branch masses alone are not token attention. Reconstruct the within-branch
++softmax, multiply by actual BF16 branch mass, then compare weighted values.
++"""
++import math
++
++import torch
++
++from .common import append_json
++
++
++class AttentionCapture:
++    def __init__(self, model, output, metadata):
++        self.model, self.output, self.metadata = model, output, metadata
++        self.step = {}
++
++    def __enter__(self):
++        for i in (0, 15, 31):
++            attention = self.model.model.layers[i].self_attn
++            attention.ape_observer = self.callback(i)
++        return self
++
++    def callback(self, layer):
++        def capture(module, q, kc, ko, vc, vo, mass, actual, temperature):
++            step = self.step.get(layer, 0)
++            self.step[layer] = step + 1
++            heads = [0, 8, 16, 24]
++            qi = q[0, heads, -1].float()
++            context_logits = torch.einsum('hd,hkd->hk', qi, kc[0, heads].float()) / (math.sqrt(module.head_dim) * temperature)
++            other_logits = torch.einsum('hd,hkd->hk', qi, ko[0, heads].float()) / math.sqrt(module.head_dim)
++            # The last query position sees every cached/request token (causal tail).
++            pc, po = context_logits.softmax(-1), other_logits.softmax(-1)
++            branch = mass[0, -1, heads, 0].float()
++            wc, wo = pc * branch[:, :1], po * branch[:, 1:]
++            reconstruction = torch.einsum('hk,hkd->hd', wc, vc[0, heads].float()) + torch.einsum('hk,hkd->hd', wo, vo[0, heads].float())
++            target = actual[0, -1, heads].float()
++            max_abs = float((reconstruction - target).abs().max())
++            # Quantized flash outputs and BF16 branch mixing introduce rounding.
++            tolerance = 0.03 + 0.02 * float(target.abs().max())
++            if max_abs > tolerance:
++                raise RuntimeError(f'token attention reconstruction mismatch: {max_abs} > {tolerance}')
++            p = module.len_prefix
++            # Restore physical cache order: shared prefix, all documents, request.
++            weights = torch.cat([wo[:, :p], wc, wo[:, p:]], dim=-1)
++            append_json(self.output, {**self.metadata, 'layer': layer, 'heads': heads, 'step': step,
++                'query_kind': 'query_last_token' if step == 0 else 'decode_token',
++                'max_abs_output_error': max_abs, 'tolerance': tolerance,
++                'token_probabilities': weights.cpu().tolist(), 'branch_masses': branch.cpu().tolist()})
++        return capture
++
++    def __exit__(self, *exc):
++        for i in (0, 15, 31):
++            del self.model.model.layers[i].self_attn.ape_observer
+--- /dev/null
++++ APE/main80/freeze.py
+@@ -0,0 +1,159 @@
++"""Resolve public origins, freeze split/order and construct development inputs.
++
++Run only after asset acquisition. Emits unresolved mappings instead of freezing them.
++"""
++import argparse
++import random
++
++from transformers import AutoTokenizer
++
++from .common import ROOT, inside, read_json, write_json
++from .data import check_litm, construct, json_rows, map_longbench, source_index, split_groups
++from .rules import DATASETS, LENGTHS
++
++CHAT_START = '<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n'
++CHAT_END = '<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'
++
++
++def longbench_prompt(row, templates):
++    prefix, suffix = templates[row['dataset']].split('{context}')
++    return {**row, 'prefix': CHAT_START + prefix, 'suffix': suffix.format(input=row['question']) + CHAT_END,
++            'max_new_tokens': 128 if row['dataset'] == 'qasper' else 32,
++            'scorer': 'LongBench_v1_qa_f1'}
++
++
++def litm_rows(raw, prompt):
++    order, indexed = check_litm(raw)
++    rows = []
++    for i, key in enumerate(order):
++        for pos in (0, 9, 19):
++            r = indexed[pos][key]
++            before, after = prompt.rstrip('\n').split('{search_results}')
++            rows.append({'sample_id': f'litm:{i:04d}', 'dataset': 'litm', 'question': r['question'], 'answers': r['answers'],
++                'position': pos, 'split': 'test', 'group': ['litm-question', r['question']],
++                'document': '\n'.join(f'Document [{j+1}](Title: {d["title"]}) {d["text"]}' for j, d in enumerate(r['ctxs'])),
++                'prefix': CHAT_START + before.format(question=r['question']),
++                'suffix': after.format(question=r['question']) + CHAT_END,
++                'max_new_tokens': 128, 'original_document_count': 20, 'scorer': 'LITM_best_subspan_em',
++                'public_document_ids': [d.get('id') for d in r['ctxs']]})
++    return rows, [f'litm:{i:04d}' for i in range(len(order))]
++
++
++def doc2dial_rows(dial, documents):
++    def text2line(text):
++        return text.replace('\n', '\t').replace('\r', '\t').strip()
++    def tag(role, text):
++        return f'<{role}>\t{text2line(text)}'
++    rows = []
++    for domain, docs in dial['dial_data'].items():
++        for doc_id, conversations in docs.items():
++            doc = documents['doc_data'][domain][doc_id]
++            for conversation in conversations:
++                history = []
++                for turn in conversation['turns']:
++                    if turn['role'] == 'agent' and turn['references'] and history:
++                        sample_id = f'{conversation["dial_id"]}_{turn["turn_id"] - 1}'
++                        suffix = '\t'.join([tag('last_turn', history[-1]['utterance'])] + [tag(t['role'], t['utterance']) for t in reversed(history)])
++                        rows.append({'sample_id': sample_id, 'dataset': 'doc2dial', 'split': 'test',
++                            'group': ['doc2dial', domain, doc_id], 'source': {'domain': domain, 'doc_id': doc_id, 'dial_id': conversation['dial_id'], 'target_turn': turn['turn_id']},
++                            'answers': [text2line(turn['utterance'])], 'history': [dict(t) for t in history], 'history_turn_ids': [t['turn_id'] for t in history],
++                            'prefix': CHAT_START + tag('title', doc_id) + '\t<doc_context>\t',
++                            'document': text2line(doc['doc_text']), 'suffix': '\t' + suffix + CHAT_END,
++                            'max_new_tokens': 128, 'original_document_count': 1, 'scorer': 'DialDoc21_sacrebleu',
++                            'template_adaptation': 'official tags/text2line/reverse history; all earlier turns retained; full document before request history for reusable document-only KV'})
++                    # Unlike the historical reference script, do not omit ungrounded history.
++                    history.append({'turn_id': turn['turn_id'], 'role': turn['role'], 'utterance': turn['utterance']})
++    rows.sort(key=lambda r: r['sample_id'])
++    if len({r['sample_id'] for r in rows}) != len(rows):
++        raise ValueError('duplicate Doc2Dial public request IDs')
++    random.Random(42).shuffle(rows)
++    if len(rows) < 500:
++        raise ValueError('Doc2Dial has fewer than 500 grounded target turns')
++    rows = rows[:500]
++    return rows, [r['sample_id'] for r in rows]
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--sources', default='data_sources.json')
++    parser.add_argument('--output', default='datasets/frozen-main80')
++    args = parser.parse_args()
++    config = read_json(args.sources)
++    output = inside(args.output)
++    if (output / 'frozen.json').exists():
++        raise ValueError('frozen manifest exists; use a distinct output for a new dataset version')
++    qasper = {}
++    for path in config['qasper_origins']:
++        qasper.update(json_rows(path))
++    index = source_index(qasper, json_rows(config['hotpotqa_origin']), json_rows(config['musique_origin']))
++    raw = {d: json_rows(config['longbench'][d]) for d in DATASETS}
++    rows, errors = map_longbench(raw, index)
++    write_json(output / 'mapping-errors.json', errors)
++    if errors:
++        raise ValueError(f'{len(errors)} unresolved original mappings; data not frozen')
++    order, report = split_groups(rows)
++    templates = read_json(config['longbench_templates'])
++    rows = [longbench_prompt(r, templates) for r in rows]
++    tokenizer = AutoTokenizer.from_pretrained(str(inside(config['model'])), local_files_only=True, trust_remote_code=False)
++    reviews = read_json(config['supplement_reviews']) if config.get('supplement_reviews') else {}
++    dev = [r for r in rows if r['split'] != 'test']
++    by_id = {r['sample_id']: r for r in rows}
++    donors = [by_id[i] for split in ('explore', 'validation') for i in order[split]]
++    constructions, applicability = [], []
++    donor_cache = {}
++    for row in dev:
++        for length in (*LENGTHS, 6144, 12288):
++            result = construct(row, length, tokenizer, donors, reviews, donor_cache)
++            applicability.append({'sample_id': row['sample_id'], 'dataset': row['dataset'], 'split': row['split'],
++                                  **{k: v for k, v in result.items() if k != 'document_tokens'}})
++            if result['applicable']:
++                constructions.append({**row, **result})
++    for split in ('explore', 'validation'):
++        for d in DATASETS:
++            for length in LENGTHS:
++                if not any(r['split'] == split and r['dataset'] == d and r['L'] == length for r in constructions):
++                    write_json(output / 'applicability.json', applicability)
++                    raise ValueError(f'no verified applicable development sample for {split}/{d}/{length}')
++    original_orders = {k: list(v) for k, v in order.items()}
++    # Freeze nested orders by data applicability only, before any model output.
++    for split in ('explore', 'validation'):
++        queues = {}
++        for d in DATASETS:
++            ids = [sid for sid in order[split] if by_id[sid]['dataset'] == d]
++            complete = {sid for sid in ids if all(any(c['sample_id'] == sid and c['L'] == l for c in constructions) for l in LENGTHS)}
++            queues[d] = [sid for sid in ids if sid in complete] + [sid for sid in ids if sid not in complete]
++        order[split] = []
++        while any(queues.values()):
++            for d in DATASETS:
++                if queues[d]:
++                    order[split].append(queues[d].pop(0))
++    nested = {}
++    for split, levels in (('explore', (len(order['explore']), 35, 20, 10, 6)), ('validation', (len(order['validation']), 30, 20, 10))):
++        nested[split] = {}
++        for size in dict.fromkeys(levels):
++            chosen = order[split][:size]
++            missing = [[d, l] for d in DATASETS for l in LENGTHS if not any(c['sample_id'] in chosen and c['dataset'] == d and c['L'] == l for c in constructions)]
++            nested[split][str(size)] = {'sample_ids': chosen, 'missing_dataset_length_cells': missing, 'valid': not missing}
++    write_json(output / 'nested-coverage.json', nested)
++    if any(not check['valid'] for levels in nested.values() for check in levels.values()):
++        raise ValueError('an authorized nested subset loses dataset/144-configuration coverage')
++    litm, litm_order = litm_rows({int(p): json_rows(path) for p, path in config['litm'].items()}, inside(config['litm_prompt']).read_text())
++    doc, doc_order = doc2dial_rows(json_rows(config['doc2dial_dialogues']), json_rows(config['doc2dial_documents']))
++    for row in [*rows, *litm, *doc]:
++        row['_length'] = len(tokenizer.encode(row['document'], add_special_tokens=False))
++    write_json(output / 'longbench.json', rows)
++    write_json(output / 'development.json', constructions)
++    write_json(output / 'litm.json', litm)
++    write_json(output / 'doc2dial.json', doc)
++    write_json(output / 'applicability.json', applicability)
++    write_json(output / 'split-report.json', report)
++    write_json(output / 'frozen.json', {'protocol': 'ape-v3-data', 'sources': config, 'counts': {'longbench': 600, 'litm': 1500, 'doc2dial': 500},
++        'orders': {**order, 'litm': litm_order, 'doc2dial': doc_order}, 'original_group_orders': original_orders,
++        'nested_order_policy': 'Within each dataset: all-three-length applicable first, then others, preserving seeded group order in each class; interleave datasets. Frozen before model execution.',
++        'files': ['longbench.json', 'development.json', 'litm.json', 'doc2dial.json', 'applicability.json', 'split-report.json', 'nested-coverage.json'],
++        'construction_policy': 'verified evidence only; absent negative-evidence supplement review becomes inapplicable, never score-based replacement'})
++    print(f'frozen {len(rows)} LongBench IDs, {len(constructions)} development inputs, {len(litm)} position inputs, {len(doc)} application requests')
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ APE/main80/jobs.py
+@@ -0,0 +1,103 @@
++"""Frozen stage DAG; only preauthorized nested sample counts may change."""
++from itertools import product
++
++from .common import identity, read_json
++from .rules import COUNTS, DATASETS, DEFAULT, LENGTHS, PARAMS
++
++STAGES = ('baseline', 'explore', 'validation', 'length_check', 'attention', 'longbench_final', 'litm', 'doc2dial')
++DEPENDENCIES = {'baseline': [], 'explore': ['baseline'], 'validation': ['explore'],
++                'length_check': ['validation'], 'attention': ['validation'],
++                'longbench_final': ['length_check', 'attention'], 'litm': ['longbench_final'], 'doc2dial': ['litm']}
++
++
++class JobFactory:
++    def __init__(self, frozen):
++        self.directory = frozen
++        self.manifest = read_json(f'{frozen}/frozen.json')
++        self.tables = {name: read_json(f'{frozen}/{name}.json') for name in ('longbench', 'development', 'litm', 'doc2dial')}
++        self.orders = self.manifest['orders']
++
++    def job(self, stage, table, i, method, param=None, n=None, cache='cold', labels=None):
++        row = self.tables[table][i]
++        key = {'stage': stage, 'sample_id': row['sample_id'], 'method': method,
++               'L': row.get('L', row.get('_length')), 'N': n, 'position': row.get('position'),
++               'parameters': list(param) if param is not None else None, 'cache': cache}
++        return {'key': key, 'table': table, 'index': i, 'method': method, 'param': list(param) if param else None,
++                'N': n, 'cache': cache, 'logical_labels': labels or [method], 'max_new_tokens': row['max_new_tokens']}
++
++    def make(self, stage, limits, candidates=None):
++        jobs = []
++        if stage == 'baseline':
++            for method in ('sequential', 'pcw', 'ape_default'):
++                jobs.extend(self.job(stage, 'longbench', i, method) for i in range(len(self.tables['longbench'])))
++        elif stage in {'explore', 'validation'}:
++            split = stage if stage == 'explore' else 'validation'
++            selected = self.orders[split][:limits[split]]
++            for sid in selected:
++                for i, row in enumerate(self.tables['development']):
++                    if row['sample_id'] != sid or row['L'] not in LENGTHS:
++                        continue
++                    for n in COUNTS:
++                        if stage == 'explore':
++                            choices = {p: ['grid_search'] for p in PARAMS}
++                        else:
++                            choices = {}
++                            for label, p in (('default', DEFAULT), ('global', candidates['global']), ('cell', candidates['cells'][f'{row["L"]}/{n}'])):
++                                choices.setdefault(tuple(p), []).append(label)
++                        jobs.extend(self.job(stage, 'development', i, 'ape_fixed', p, n, 'search', labels) for p, labels in choices.items())
++        elif stage == 'length_check':
++            # Fixed first ten validation IDs, independent of validation scores or shrinking.
++            selected = self.orders['validation'][:10]
++            for method in ('ape_fixed', 'ape_dynamic'):
++                for i, row in enumerate(self.tables['development']):
++                    if row['sample_id'] in selected and row['L'] in (6144, 12288):
++                        jobs.extend(self.job(stage, 'development', i, method, n=n) for n in COUNTS)
++        elif stage == 'attention':
++            for d in DATASETS:
++                for length, n in ((4096, 4), (16384, 16)):
++                    eligible = {r['sample_id']: i for i, r in enumerate(self.tables['development']) if r['dataset'] == d and r['split'] == 'explore' and r['L'] == length}
++                    first = next(s for s in self.orders['explore'] if s in eligible)
++                    choices = {}
++                    for label, p in (('default', DEFAULT), ('exploration_cell_best', tuple(candidates['cells'][f'{length}/{n}']))):
++                        choices.setdefault(p, []).append(label)
++                    for p, labels in choices.items():
++                        jobs.append(self.job(stage, 'development', eligible[first], 'ape_fixed', p, n, 'cold', ['diagnostic_only', *labels]))
++        elif stage == 'longbench_final':
++            selected = self.orders['test'][:limits['test']]
++            for method in ('ape_fixed', 'ape_dynamic'):
++                jobs.extend(self.job(stage, 'longbench', i, method) for i, row in enumerate(self.tables['longbench']) if row['sample_id'] in selected)
++        elif stage in {'litm', 'doc2dial'}:
++            selected = self.orders[stage][:limits[stage]]
++            for method in ('sequential', 'ape_fixed', 'ape_dynamic'):
++                for sid in selected:
++                    for i, row in enumerate(self.tables[stage]):
++                        if row['sample_id'] == sid:
++                            jobs.append(self.job(stage, stage, i, method))
++                            if stage == 'doc2dial':
++                                jobs.append(self.job(stage, stage, i, method, cache='hot'))
++        else:
++            raise ValueError(stage)
++        keys = [identity(j['key']) for j in jobs]
++        if len(keys) != len(set(keys)):
++            raise ValueError('duplicate scheduled key')
++        return jobs
++
++    def initial_limits(self):
++        return {**{s: len(self.orders[s]) for s in ('explore', 'validation', 'test')}, 'litm': 500, 'doc2dial': 500}
++
++    def lower(self, limits, locked=()):
++        for names, levels in ((('explore',), (35, 20, 10, 6)), (('validation',), (30, 20, 10)),
++                              (('test',), (300, 150, 90)), (('litm', 'doc2dial'), (300, 200, 100))):
++            if any(name in locked for name in names):
++                continue
++            current = min(limits[n] for n in names)
++            below = [n for n in levels if n < current]
++            if below:
++                updated = dict(limits)
++                for name in names:
++                    updated[name] = below[0]
++                return updated
++        return None
++
++    def selected_ids(self, limits):
++        return {name: self.orders[name][:n] for name, n in limits.items()}
+--- /dev/null
++++ APE/main80/methods.py
+@@ -0,0 +1,240 @@
++"""One model per worker. PCW uses ordinary causal Llama, never APE patches.
++
++PCW merge/positions follow AI21Labs/Parallel-Context-Windows/pcw_wrapper.py.
++The stock Transformers 4.44.2 Llama implements GQA and Llama-3.1 RoPE.
++"""
++import random
++import time
++from dataclasses import dataclass
++
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++from ape import enable_attention_prefill_prefix, enable_attention_prefill_context, enable_attention_prefill_query
++from .rules import DEFAULT, choose
++
++METHODS = ('sequential', 'pcw', 'ape_default', 'ape_fixed', 'ape_dynamic')
++
++
++class SampleError(ValueError):
++    def __init__(self, message, evidence=None):
++        super().__init__(message)
++        self.evidence = evidence or {}
++
++
++def chunks(tokens, count=None, maximum=7500):
++    if not tokens:
++        raise SampleError('empty document')
++    if count is None:
++        return [tokens[i:i + maximum] for i in range(0, len(tokens), maximum)]
++    if not 1 <= count <= len(tokens):
++        raise SampleError('invalid actual chunk count')
++    q, r = divmod(len(tokens), count)
++    lengths = [q + (i < r) for i in range(count)]
++    result, start = [], 0
++    for length in lengths:
++        result.append(tokens[start:start + length])
++        start += length
++    assert sum(result, []) == tokens
++    return result
++
++
++def merge_pcw(windows, lengths):
++    """Longest first (stable tie), one BOS; KV remains in compact GQA layout."""
++    longest = max(range(len(lengths)), key=lengths.__getitem__)
++    order = [longest] + [i for i in range(len(lengths)) if i != longest]
++    cache = tuple(tuple(torch.cat([windows[i][layer][kv][:, :, (0 if i == longest else 1):, :] for i in order], dim=2)
++                        for kv in (0, 1)) for layer in range(len(windows[0])))
++    return cache, max(lengths), order
++
++
++def merge_ape(prefix, windows):
++    p = prefix[0][0].shape[2]
++    return tuple((torch.cat([pre[0]] + [w[layer][0][:, :, p:] for w in windows], dim=2),
++                  torch.cat([pre[1]] + [w[layer][1][:, :, p:] for w in windows], dim=2),
++                  torch.cat([pre[2]] + [w[layer][2][:, p:] for w in windows], dim=1),
++                  len(windows)) for layer, pre in enumerate(prefix))
++
++
++@dataclass
++class Encoded:
++    cache: tuple
++    next_position: int
++    request_tokens: list
++    order: list
++    document_length: int
++    block_lengths: list
++    cache_key: tuple
++
++
++class Engine:
++    def __init__(self, model, tokenizer, method, *, device='cuda:0'):
++        if method not in METHODS:
++            raise ValueError(method)
++        self.model, self.tokenizer, self.method = model.eval(), tokenizer, method
++        self.device = torch.device(device)
++        self.encoded = None
++        self.stage_calls = {'prefix': 0, 'context': 0, 'query': 0}
++        self.stage = None
++        self.hook = model.model.layers[0].self_attn.register_forward_hook(self._observed)
++
++    def _observed(self, module, args, output):
++        if self.stage is not None:
++            self.stage_calls[self.stage] += 1
++
++    @classmethod
++    def load(cls, path, method):
++        random.seed(42)
++        torch.manual_seed(42)
++        torch.cuda.manual_seed(42)
++        tokenizer = AutoTokenizer.from_pretrained(str(path), local_files_only=True, trust_remote_code=False)
++        model = AutoModelForCausalLM.from_pretrained(str(path), local_files_only=True, trust_remote_code=False,
++                    use_safetensors=True, torch_dtype=torch.bfloat16, low_cpu_mem_usage=True,
++                    attn_implementation='flash_attention_2').to('cuda:0').eval()
++        return cls(model, tokenizer, method)
++
++    def sync(self):
++        if self.device.type == 'cuda':
++            torch.cuda.synchronize(self.device)
++
++    def tensor(self, tokens):
++        return torch.tensor([tokens], device=self.device, dtype=torch.long)
++
++    def forward(self, tokens, cache=None, position=None, logits=False):
++        inputs = self.tensor(tokens)
++        kwargs = {'input_ids': inputs, 'past_key_values': cache, 'use_cache': True, 'return_dict': True}
++        if position is not None:
++            kwargs['position_ids'] = torch.arange(position, position + len(tokens), device=self.device).unsqueeze(0)
++        output = self.model.model(**kwargs)
++        last = self.model.lm_head(output.last_hidden_state[:, -1:, :])[:, -1, :] if logits else None
++        return output.past_key_values, last
++
++    def prepare(self, row):
++        """Pre-tokenized dev documents remain exact; no chat BOS is inferred."""
++        encode = lambda text: self.tokenizer.encode(text, add_special_tokens=False)
++        prefix = encode(row['prefix'])
++        suffix = encode(row['suffix'])
++        document = row['document_tokens'] if 'document_tokens' in row else encode(row['document'])
++        if not prefix or prefix[0] != self.tokenizer.bos_token_id or prefix.count(self.tokenizer.bos_token_id) != 1:
++            raise SampleError('common prefix must contain exactly one initial BOS')
++        if self.tokenizer.bos_token_id in document + suffix:
++            raise SampleError('unexpected BOS inside document/request')
++        parts = chunks(document, count=row.get('N'))
++        if row.get('L') is not None and len(document) != row['L']:
++            raise SampleError('frozen exact length mismatch')
++        if len(prefix) + len(document) + len(suffix) + row['max_new_tokens'] > self.model.config.max_position_embeddings:
++            raise SampleError('full public input exceeds model window; no silent truncation')
++        return prefix, parts, suffix
++
++    def encode(self, prefix, parts, suffix, cache_key):
++        self.stage = None
++        if self.method == 'sequential':
++            cache, _ = self.forward(prefix + sum(parts, []))
++            return Encoded(cache, len(prefix) + sum(map(len, parts)), suffix, list(range(len(parts))), sum(map(len, parts)), list(map(len, parts)), cache_key)
++        if self.method == 'pcw':
++            # Each independent window starts with its own BOS. The request has none.
++            windows = [self.forward([self.tokenizer.bos_token_id] + p, position=0)[0] for p in parts]
++            cache, position, order = merge_pcw(windows, [len(p) + 1 for p in parts])
++            return Encoded(cache, position, prefix[1:] + suffix, order, sum(map(len, parts)), list(map(len, parts)), cache_key)
++        enable_attention_prefill_prefix('llama3.1-8b-instruct', self.model)
++        self.stage = 'prefix'
++        pre, _ = self.forward(prefix)
++        enable_attention_prefill_context('llama3.1-8b-instruct', self.model)
++        self.stage = 'context'
++        windows = [self.forward(p, cache=pre, position=len(prefix))[0] for p in parts]
++        cache = merge_ape(pre, windows)
++        return Encoded(cache, len(prefix) + max(map(len, parts)), suffix, list(range(len(parts))), sum(map(len, parts)), list(map(len, parts)), cache_key)
++
++    @torch.inference_mode()
++    def restore_cache(self, row, param=DEFAULT, rule=None):
++        """Rebuild only lost document KV on resume, without another answer."""
++        self.sync()
++        started = time.perf_counter()
++        prefix, parts, suffix = self.prepare(row)
++        if self.method == 'ape_dynamic':
++            param = choose(rule, sum(map(len, parts)), len(parts))
++        elif self.method == 'ape_default':
++            param = DEFAULT
++        elif self.method == 'ape_fixed' and rule is not None:
++            param = tuple(rule['fixed'])
++        key = (self.method, tuple(prefix if self.method != 'pcw' else [self.tokenizer.bos_token_id]),
++               tuple(tuple(p) for p in parts), tuple(param))
++        self.encoded = self.encode(prefix, parts, suffix, key)
++        self.sync()
++        return time.perf_counter() - started
++
++    @torch.inference_mode()
++    def run(self, row, *, param=DEFAULT, rule=None, cache_mode='cold'):
++        if cache_mode not in {'cold', 'hot', 'search'}:
++            raise ValueError(cache_mode)
++        self.sync()
++        if self.device.type == 'cuda':
++            torch.cuda.reset_peak_memory_stats(self.device)
++        started = time.perf_counter()
++        before_calls = self.stage_calls.copy()
++        prefix, parts, suffix = self.prepare(row)
++        select_start = time.perf_counter()
++        if self.method == 'ape_dynamic':
++            if rule is None:
++                raise ValueError('dynamic rule is not frozen')
++            param = choose(rule, sum(map(len, parts)), len(parts))
++        elif self.method == 'ape_default':
++            param = DEFAULT
++        elif self.method == 'ape_fixed' and rule is not None:
++            param = tuple(rule['fixed'])
++        selection_seconds = time.perf_counter() - select_start
++        # KV encoding for APE is T/S-independent. Search reuse is explicitly labelled;
++        # application cache identities include actual configuration and method.
++        encoding_param = None if cache_mode == 'search' else tuple(param)
++        key = (self.method, tuple(prefix if self.method != 'pcw' else [self.tokenizer.bos_token_id]),
++               tuple(tuple(p) for p in parts), encoding_param)
++        get_start = time.perf_counter()
++        hit = cache_mode != 'cold' and self.encoded is not None and self.encoded.cache_key == key
++        cache_get_seconds = time.perf_counter() - get_start
++        if cache_mode == 'hot' and not hit:
++            raise ValueError('hot request has no matching in-process GPU cache')
++        build_start = time.perf_counter()
++        if not hit:
++            self.encoded = None
++            self.encoded = self.encode(prefix, parts, suffix, key)
++        self.sync()
++        build_seconds = time.perf_counter() - build_start if not hit else 0.0
++        encoded = self.encoded
++        # History/question are intentionally never part of cached KV.
++        request = prefix[1:] + suffix if self.method == 'pcw' else suffix
++        if self.method.startswith('ape_'):
++            enable_attention_prefill_query('llama3.1-8b-instruct', self.model, float(param[0]), float(param[1]))
++            self.stage = 'query'
++        else:
++            self.stage = None
++        cache, logits = self.forward(request, cache=encoded.cache, position=encoded.next_position, logits=True)
++        eos = self.model.generation_config.eos_token_id
++        stops = set(eos if isinstance(eos, list) else [eos])
++        tokens = []
++        ttft = None
++        for step in range(row['max_new_tokens']):
++            token = int(logits.argmax(dim=-1).item())
++            self.sync()
++            if ttft is None:
++                ttft = time.perf_counter() - started
++            tokens.append(token)
++            if token in stops or step + 1 == row['max_new_tokens']:
++                break
++            cache, logits = self.forward([token], cache=cache, position=encoded.next_position + len(request) + step, logits=True)
++        self.sync()
++        answer = self.tokenizer.decode(tokens, skip_special_tokens=True)
++        total = time.perf_counter() - started
++        result = {'answer': answer, 'output_token_ids': tokens, 'output_tokens': len(tokens),
++                'L': encoded.document_length, 'N': len(parts), 'block_lengths': encoded.block_lengths,
++                'original_document_count': row.get('original_document_count'), 'window_order': encoded.order,
++                'query_start_position': encoded.next_position, 'prefix_tokens': len(prefix), 'request_tokens': len(request),
++                'T': param[0] if self.method.startswith('ape_') else None, 'S': param[1] if self.method.startswith('ape_') else None,
++                'cache_mode': cache_mode, 'cache_hit': hit, 'timing_condition': 'search_immutable_KV' if cache_mode == 'search' else 'application_GPU_KV' if cache_mode == 'hot' else 'cold',
++                'cache_build_seconds': build_seconds, 'cache_get_seconds': cache_get_seconds, 'dynamic_selection_seconds': selection_seconds,
++                'ttft_seconds': ttft, 'total_seconds': total,
++                'peak_allocated_bytes': torch.cuda.max_memory_allocated(self.device) if self.device.type == 'cuda' else None,
++                'peak_reserved_bytes': torch.cuda.max_memory_reserved(self.device) if self.device.type == 'cuda' else None,
++                'stage_calls': {k: self.stage_calls[k] - before_calls[k] for k in before_calls}}
++        if not answer.strip():
++            raise SampleError('empty model output', result)
++        return result
+--- /dev/null
++++ APE/main80/metrics.py
+@@ -0,0 +1,49 @@
++"""Definitions from LongBench, Lost in the Middle, and DialDoc21.
++
++Sources and downloaded originals are listed in SOURCES.md. All scoring joins by ID.
++"""
++import re
++import string
++from collections import Counter
++
++
++def normalize(text):
++    text = ''.join(c for c in text.lower() if c not in string.punctuation)
++    return ' '.join(re.sub(r'\b(a|an|the)\b', ' ', text).split())
++
++
++def qa_f1(prediction, answer):
++    pred, ref = normalize(prediction).split(), normalize(answer).split()
++    shared = sum((Counter(pred) & Counter(ref)).values())
++    if shared == 0:
++        return 0.0
++    precision, recall = shared / len(pred), shared / len(ref)
++    return 2 * precision * recall / (precision + recall)
++
++
++def best_subspan_em(prediction, answers):
++    return float(any(normalize(answer) in normalize(prediction) for answer in answers))
++
++
++def score(dataset, prediction, answers):
++    if not prediction.strip() or not answers:
++        raise ValueError('empty prediction or reference cannot be marked successful')
++    if dataset in {'qasper', 'hotpotqa', 'musique'}:
++        return max(qa_f1(prediction, a) for a in answers)
++    if dataset == 'litm':
++        return best_subspan_em(prediction, answers)
++    if dataset == 'doc2dial':
++        import sacrebleu
++        return sacrebleu.corpus_bleu([prediction], [[answers[0]]]).score
++    raise ValueError(f'unknown scoring protocol: {dataset}')
++
++
++def corpus_doc2dial(records, reference_by_id):
++    """Official sacrebleu defaults; explicit ID join avoids order-based mis-scoring."""
++    import sacrebleu
++    ids = [r['sample_id'] for r in records]
++    if len(set(ids)) != len(ids) or set(ids) != set(reference_by_id):
++        raise ValueError('Doc2Dial prediction/reference IDs do not align')
++    metric = sacrebleu.metrics.BLEU()
++    result = metric.corpus_score([r['answer'] for r in records], [[reference_by_id[i] for i in ids]])
++    return {'score': result.score, 'signature': str(metric.get_signature())}
+--- /dev/null
++++ APE/main80/monitor.py
+@@ -0,0 +1,119 @@
++"""Local-only campaign UI with five-second updates and browser render receipt."""
++import argparse
++import json
++import mimetypes
++import os
++import time
++from datetime import datetime
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from pathlib import Path
++from urllib.parse import urlparse
++
++from .common import append_json, inside, now, read_json, write_json
++
++HTML = '''<!doctype html><html lang="zh-CN"><meta charset="utf-8">
++<meta name="viewport" content="width=device-width, initial-scale=1"><title>APE · MAIN80</title>
++<style>
++:root{color-scheme:light;--ink:#171a20;--muted:#535b66;--line:#dce0e5;--accent:#155db3;--bad:#a31926;--good:#146340}
++*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#fff;font:14px/1.5 system-ui,sans-serif}
++main{max-width:1120px;margin:auto;padding:28px 24px}header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);gap:24px}
++h1{font-size:24px;line-height:1.2;font-weight:600;text-wrap:balance}h2{font-size:17px;font-weight:600;margin:30px 0 12px}p{margin:12px 0}
++.meta,small{color:var(--muted)}.strip{display:flex;flex-wrap:wrap;gap:28px;padding:20px 0;border-bottom:1px solid var(--line)}.number{display:block;font-size:23px;line-height:1.3;font-variant-numeric:tabular-nums}
++progress{width:100%;height:14px;accent-color:var(--accent)}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;text-align:left}
++th{font-weight:600;color:var(--muted)}td,th{padding:10px 12px;border-bottom:1px solid var(--line)}td:first-child,th:first-child{padding-left:0}
++.scroll{overflow-x:auto}.bad{color:var(--bad)}.good{color:var(--good)}a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
++pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f8;padding:16px;font-size:12px}.job{font-family:ui-monospace,monospace;font-size:12px;overflow-wrap:anywhere}
++@media(max-width:600px){main{padding:18px 16px}header{display:block}.strip{gap:16px}.number{font-size:20px}td,th{white-space:nowrap}}
++</style><main><header><h1>APE / <span id="campaign">加载中</span></h1><p class="meta" id="updated">每5秒更新</p></header>
++<p id="state" role="status" aria-live="polite">正在读取实际运行状态…</p>
++<div class="strip"><div>成功 / 计划<strong class="number" id="counts">—</strong></div><div>失败 attempts<strong class="number" id="failed">—</strong></div><div>已用 / 剩余预算<strong class="number" id="budget">—</strong></div><div>预计完成<strong class="number" id="eta">暂不可可靠估计</strong></div></div>
++<p class="meta">连续80小时预算</p><progress id="time" max="288000" value="0" aria-label="已用墙钟预算"></progress>
++<h2>当前任务</h2><p class="job" id="job">—</p>
++<h2>实际速度</h2><div class="scroll"><table><thead><tr><th>方法</th><th>缓存</th><th>文档长度</th><th>有效观测</th><th>秒 / 回答</th><th>观测范围</th></tr></thead><tbody id="rates"></tbody></table></div>
++<h2>记录与交付</h2><p><a href="artifacts/attempts.jsonl">逐题原始记录</a> · <a href="artifacts/events.jsonl">事件与变更</a> · <a href="artifacts/sampling.json">当前样本ID</a> · <a href="artifacts/summary.json">汇总</a> · <a href="artifacts/incomplete.json">未完成清单</a></p>
++<h2>抽样变更与错误</h2><pre id="events">暂无</pre><p class="meta">GPU0 · BF16 · seed42 · greedy。模型加载单列；搜索缓存计时不作冷启动加速结论。</p></main>
++<script>
++const $=id=>document.getElementById(id);const hours=s=>(s/3600).toFixed(2)+'h';
++async function update(){try{const r=await fetch('status.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();
++$('campaign').textContent=d.campaign;$('updated').textContent='更新 '+new Date(d.updated_at).toLocaleTimeString();$('state').textContent=d.state+' · '+(d.stage||'准备');$('state').className=d.state==='RUNNING'?'good':d.state==='BLOCKED'?'bad':'';
++$('counts').textContent=d.completed+' / '+d.planned;$('failed').textContent=d.failed;$('budget').textContent=hours(d.elapsed_seconds)+' / '+hours(d.remaining_seconds);$('eta').textContent=d.eta_range?d.eta_range.map(x=>new Date(x).toLocaleString()).join(' — '):'暂不可可靠估计';$('time').value=d.elapsed_seconds;
++$('job').textContent=JSON.stringify(d.current_job||{},null,2);$('rates').replaceChildren();for(const x of d.rates||[]){let tr=document.createElement('tr');for(const v of [x.method,x.cache_mode,x.length_bucket,x.count,x.mean.toFixed(2),x.low.toFixed(2)+'–'+x.high.toFixed(2)]){let td=document.createElement('td');td.textContent=v;tr.append(td)}$('rates').append(tr)}$('events').textContent=JSON.stringify(d.notices||[],null,2)
++}catch(e){$('state').textContent='连接失败：'+e.message+'，5秒后重试';$('state').className='bad'}}
++update();setInterval(update,5000);fetch('seen',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rendered:true,title:document.title,width:innerWidth})});
++</script></html>'''
++
++
++def current_status(directory):
++    status = read_json(directory / 'status.json')
++    if status.get('state') == 'RUNNING':
++        age = time.time() - datetime.fromisoformat(status['updated_at']).timestamp()
++        if age > 60:
++            status['state'] = 'STALE'
++            status['notices'] = status.get('notices', []) + [{'event': 'controller_heartbeat_stale', 'seconds': age}]
++    if (directory / 'state.json').exists():
++        state = read_json(directory / 'state.json')
++        if 'started_epoch' in state:
++            status['elapsed_seconds'] = max(0, time.time() - state['started_epoch'])
++            status['remaining_seconds'] = max(0, state['deadline_epoch'] - time.time())
++    return status
++
++
++def serve(directory, campaign, port=0):
++    directory = inside(directory)
++    prefix = f'/campaign/{campaign}/'
++    class Handler(BaseHTTPRequestHandler):
++        def log_message(self, *args):
++            pass
++
++        def send(self, content, kind, status=200):
++            self.send_response(status)
++            self.send_header('Content-Type', kind)
++            self.send_header('Content-Length', str(len(content)))
++            self.send_header('Cache-Control', 'no-store')
++            self.send_header('X-Content-Type-Options', 'nosniff')
++            self.end_headers()
++            self.wfile.write(content)
++
++        def do_GET(self):
++            route = urlparse(self.path).path
++            if route == prefix:
++                self.send(HTML.encode(), 'text/html; charset=utf-8')
++            elif route == prefix + 'status.json':
++                self.send(json.dumps(current_status(directory)).encode(), 'application/json')
++            elif route.startswith(prefix + 'artifacts/'):
++                name = route.removeprefix(prefix + 'artifacts/')
++                allowed = {'attempts.jsonl', 'events.jsonl', 'sampling.json', 'summary.json', 'incomplete.json'}
++                if name in allowed and (directory / name).exists():
++                    self.send((directory / name).read_bytes(), 'application/json')
++                else:
++                    self.send(b'Artifact not yet available', 'text/plain', 404)
++            else:
++                self.send(b'Not found', 'text/plain', 404)
++
++        def do_POST(self):
++            if urlparse(self.path).path != prefix + 'seen':
++                self.send(b'Not found', 'text/plain', 404)
++                return
++            n = int(self.headers.get('Content-Length', '0'))
++            if not 0 < n < 4096:
++                self.send(b'Invalid receipt', 'text/plain', 400)
++                return
++            receipt = json.loads(self.rfile.read(n))
++            append_json(directory / 'browser-seen.jsonl', {'at': now(), 'campaign': campaign,
++                'user_agent': self.headers.get('User-Agent'), **receipt})
++            self.send(b'ok', 'text/plain')
++    server = ThreadingHTTPServer(('127.0.0.1', port), Handler)
++    write_json(directory / 'monitor.json', {'pid': __import__('os').getpid(), 'url': f'http://127.0.0.1:{server.server_port}{prefix}', 'started_at': now()})
++    server.serve_forever()
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--directory', required=True)
++    parser.add_argument('--campaign', required=True)
++    args = parser.parse_args()
++    serve(args.directory, args.campaign)
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ APE/main80/plots.py
+@@ -0,0 +1,48 @@
++"""Standalone SVG scientific figures from verified diagnostic numbers."""
++from collections import defaultdict
++
++from .common import identity, inside, read_records, write_json
++
++
++def render(directory):
++    import matplotlib
++    matplotlib.use('Agg')
++    import matplotlib.pyplot as plt
++    import numpy as np
++    directory = inside(directory)
++    records, incomplete = read_records(directory / 'attention.jsonl')
++    cases = defaultdict(list)
++    for record in records:
++        cases[identity(record['key'])].append(record)
++    output = directory / 'attention-figures'
++    output.mkdir(parents=True, exist_ok=True)
++    index = []
++    for number, (key, rows) in enumerate(cases.items()):
++        fig, axes = plt.subplots(3, 1, figsize=(11, 7), constrained_layout=True)
++        for ax, layer in zip(axes, (0, 15, 31)):
++            layer_rows = sorted((r for r in rows if r['layer'] == layer), key=lambda r: r['step'])
++            if not layer_rows:
++                ax.set_title(f'Layer {layer}: no recorded steps')
++                continue
++            bins = (max(len(r['token_probabilities'][0]) for r in layer_rows) + 63) // 64
++            matrix = np.full((len(layer_rows), bins), np.nan)
++            for i, row in enumerate(layer_rows):
++                weights = np.asarray(row['token_probabilities'], dtype=float).mean(axis=0)
++                for b in range(bins):
++                    segment = weights[b*64:(b+1)*64]
++                    if len(segment):
++                        matrix[i, b] = segment.sum()
++            image = ax.imshow(matrix, aspect='auto', interpolation='nearest', cmap='viridis', vmin=0)
++            ax.set_title(f'Layer {layer}; mean of heads 0, 8, 16, 24; mass per 64-token bin')
++            ax.set_ylabel('Actual query/decode step')
++            ax.set_xlabel('Physical cache token index / 64 (prefix, documents, request)')
++            fig.colorbar(image, ax=ax, label='Attention mass')
++        metadata = rows[0]['key']
++        fig.suptitle(f'{metadata["sample_id"]} | L={metadata["L"]}, N={metadata["N"]}, T/S={metadata["parameters"]}', fontsize=11)
++        name = f'attention-{number:03d}.svg'
++        fig.savefig(output / name, format='svg')
++        plt.close(fig)
++        index.append({'figure': name, 'key': metadata, 'raw_records': len(rows), 'aggregation': 'mean of four specified heads; sum over contiguous64 token bins',
++            'maximum_output_reconstruction_error': max(r['max_abs_output_error'] for r in rows)})
++    write_json(output / 'index.json', {'figures': index, 'incomplete_raw_lines': incomplete, 'raw_numbers': '../attention.jsonl'})
++    return len(index)
+--- /dev/null
++++ APE/main80/prep_gpu.py
+@@ -0,0 +1,92 @@
++"""Finite, synthetic, full-model correctness checks. Never a research stage."""
++import argparse
++import json
++import time
++from functools import partial
++
++import torch
++
++from ape import enable_attention_prefill_query
++from .common import inside, now, write_json
++from .diagnostics import AttentionCapture
++from .freeze import CHAT_END, CHAT_START
++from .methods import Engine
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--method', choices=('sequential', 'pcw', 'ape_default', 'ape_fixed'), required=True)
++    parser.add_argument('--output', required=True)
++    args = parser.parse_args()
++    output = inside(args.output)
++    output.mkdir(parents=True, exist_ok=True)
++    loaded = time.perf_counter()
++    engine = Engine.load(inside('models/Llama-3.1-8B-Instruct'), args.method)
++    engine.sync()
++    load_seconds = time.perf_counter() - loaded
++    row = {'prefix': CHAT_START + 'Use the following two sources.\n',
++           'document': 'Source A: The blue lake is named Azure Lake.\nSource B: The green river is named Emerald River.\n',
++           'suffix': '\nQuestion: What is the blue lake called? Answer with its name only.\n' + CHAT_END,
++           'N': 2, 'max_new_tokens': 8, 'original_document_count': 2}
++    prefix, parts, suffix = engine.prepare(row)
++    total_input = len(prefix) + sum(map(len, parts)) + len(suffix)
++    assert total_input <= 256, 'finite short correctness input only'
++    assert engine.model.dtype == torch.bfloat16
++    assert engine.model.config.num_key_value_heads == 8
++    with torch.inference_mode():
++        if args.method == 'ape_fixed':
++            with AttentionCapture(engine.model, output / 'token-attention.jsonl', {'test': 'synthetic_full_model_correctness'}):
++                cold = engine.run(row)
++        else:
++            cold = engine.run(row)
++        original = tuple(tuple(t.clone() if torch.is_tensor(t) else t for t in layer) for layer in engine.encoded.cache)
++        hot = engine.run(row, cache_mode='hot')
++        assert cold['output_token_ids'] == hot['output_token_ids']
++        for old_layer, layer in zip(original, engine.encoded.cache):
++            for old, new in zip(old_layer, layer):
++                if torch.is_tensor(old):
++                    assert torch.equal(old, new), 'query mutated reusable document KV'
++        # Simulate interruption after cold success: rebuild KV only, then hot decode.
++        engine.encoded = None
++        rebuild_seconds = engine.restore_cache(row)
++        recovered = engine.run(row, cache_mode='hot')
++        assert recovered['output_token_ids'] == cold['output_token_ids']
++        changed = engine.run(dict(row, suffix='\nQuestion: What is the green river called? Give its name only.\n' + CHAT_END), cache_mode='hot')
++        checks = {'cold_hot_same_tokens': True, 'immutable_document_KV': True,
++                  'resume_KV_only_rebuild': True, 'changed_question_fresh_generation': changed['request_tokens'] > 0}
++        if args.method == 'pcw':
++            document = sum(parts, [])
++            encoded = engine.encode([engine.tokenizer.bos_token_id], [document], suffix, ())
++            _, separate = engine.forward(suffix, encoded.cache, encoded.next_position, True)
++            _, complete = engine.forward([engine.tokenizer.bos_token_id] + document + suffix, position=0, logits=True)
++            delta = float((separate.float() - complete.float()).abs().max())
++            torch.testing.assert_close(separate, complete, atol=0.3, rtol=0.01)
++            assert separate.argmax(-1).item() == complete.argmax(-1).item()
++            checks.update(single_window_equivalence=True, single_window_max_BF16_logit_delta=delta,
++                          unique_BOS_and_longest_start=encoded.cache[0][0].shape[2] == 1 + len(document) and encoded.next_position == 1 + len(document))
++        if args.method.startswith('ape_'):
++            assert cold['stage_calls']['prefix'] == 1 and cold['stage_calls']['context'] == 2 and cold['stage_calls']['query'] >= 1
++            encoded = engine.encoded
++            logits = []
++            for t, s in ((0.9, 0.9), (0.5, 0.7)):
++                enable_attention_prefill_query('llama3.1-8b-instruct', engine.model, t, s)
++                bound = engine.model.model.layers[0].self_attn.forward.__func__
++                assert isinstance(bound, partial) and bound.keywords == {'temperature': t, 'scale': s}
++                _, value = engine.forward(suffix, encoded.cache, encoded.next_position, True)
++                logits.append(value)
++            delta = float((logits[0].float() - logits[1].float()).abs().max())
++            assert delta > 0, 'T/S did not affect full-model query logits'
++            checks.update(official_three_stage_calls=True, public_T_S_interface=True, T_S_logit_delta=delta)
++    result = {'role': 'EXECUTOR', 'status': 'SUBMITTED', 'method': args.method, 'at': now(),
++        'model': 'models/Llama-3.1-8B-Instruct', 'physical_gpu': 0, 'dtype': str(engine.model.dtype),
++        'load_seconds': load_seconds, 'input_tokens': total_input, 'max_new_tokens': 8,
++        'request_generations': 4, 'common_content_token_ids': prefix + sum(parts, []) + suffix,
++        'cold': cold, 'hot': hot, 'recovered_hot': recovered, 'changed_question': changed,
++        'recovery_build_seconds': rebuild_seconds, 'checks': checks,
++        'scope': 'finite synthetic correctness; no benchmark answers or formal speed conclusions'}
++    write_json(output / 'result.json', result)
++    print(json.dumps({'method': args.method, 'checks': checks, 'input_tokens': total_input, 'generations': 4}), flush=True)
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ APE/main80/report.py
+@@ -0,0 +1,91 @@
++"""Truthful partial exports; corpus BLEU and quality comparisons join by ID."""
++import csv
++from collections import defaultdict
++from statistics import mean, median
++
++from .common import Ledger, inside, now, write_json
++from .metrics import corpus_doc2dial
++
++
++def export(directory, factory, limits, expected):
++    directory = inside(directory)
++    ledger = Ledger(directory / 'attempts.jsonl')
++    selected = factory.selected_ids(limits)
++    successes = list(ledger.success.values())
++    # Empty outputs are failed requests, but their official zero score must not
++    # disappear from a quality comparison merely because another method answered.
++    outcomes = list(ledger.scored.values())
++    empty_failures = [r for r in outcomes if r['status'] != 'success']
++    groups = defaultdict(list)
++    retained = []
++    for r in outcomes:
++        stage = r['key']['stage']
++        scope = {'longbench_final': 'test'}.get(stage, stage)
++        if scope in selected and r['sample_id'] not in selected[scope]:
++            continue
++        groups[(stage, r['dataset'], r['method'], r.get('position'), r.get('cache_mode'))].append(r)
++        retained.append(r)
++    quality = []
++    for (stage, dataset, method, position, cache), rows in groups.items():
++        entry = {'stage': stage, 'dataset': dataset, 'method': method, 'position': position, 'cache_mode': cache,
++                 'n': len(rows), 'mean_sample_score': mean(r['score'] for r in rows),
++                 'scope': 'available valid scoring outcomes; empty generated responses retain official zero and failed status; compare methods using paired sections'}
++        if dataset == 'doc2dial':
++            refs = {r['sample_id']: r['answers'][0] for r in factory.tables['doc2dial'] if r['sample_id'] in selected['doc2dial']}
++            complete_refs = {r['sample_id']: refs[r['sample_id']] for r in rows}
++            entry['corpus_bleu'] = corpus_doc2dial(rows, complete_refs)
++        entry['mean_ttft_seconds'] = mean(r['ttft_seconds'] for r in rows)
++        entry['median_total_seconds'] = median(r['total_seconds'] for r in rows)
++        quality.append(entry)
++    # Baseline on full600 and the final test subset must never be conflated.
++    baseline_test = []
++    for dataset in ('qasper', 'hotpotqa', 'musique'):
++        for method in ('sequential', 'pcw', 'ape_default', 'ape_fixed', 'ape_dynamic'):
++            stages = {'baseline'} if method in ('sequential', 'pcw', 'ape_default') else {'longbench_final'}
++            rows = [r for r in retained if r['key']['stage'] in stages and r['dataset'] == dataset and r['method'] == method and r['sample_id'] in selected['test']]
++            baseline_test.append({'dataset': dataset, 'method': method, 'n': len(rows), 'selected_test_ids': [r['sample_id'] for r in rows], 'mean_f1': mean(r['score'] for r in rows) if rows else None})
++    paired = []
++    for dataset in ('qasper', 'hotpotqa', 'musique'):
++        rows_by_method = {m: {r['sample_id']: r for r in retained if r['dataset'] == dataset and r['method'] == m and r['key']['stage'] in {'baseline', 'longbench_final'} and r['sample_id'] in selected['test']}
++                          for m in ('sequential', 'pcw', 'ape_default', 'ape_fixed', 'ape_dynamic')}
++        ids = sorted(set.intersection(*(set(v) for v in rows_by_method.values())))
++        paired.append({'dataset': dataset, 'paired_n': len(ids), 'sample_ids': ids,
++                       'mean_f1': {m: mean(rows_by_method[m][i]['score'] for i in ids) if ids else None for m in rows_by_method}})
++    pending = [job['key'] for job in expected if not ledger.done(job['key'])]
++    errors = [r for r in ledger.records if r['status'] != 'success']
++    litm_conditions = [(m, p) for m in ('sequential', 'ape_fixed', 'ape_dynamic') for p in (0, 9, 19)]
++    litm_by = {(m, p): {r['sample_id']: r for r in retained if r['dataset'] == 'litm' and r['method'] == m and r['position'] == p} for m, p in litm_conditions}
++    litm_ids = sorted(set(selected['litm']).intersection(*(set(v) for v in litm_by.values())))
++    litm_paired = {'selected_n': len(selected['litm']), 'paired_n': len(litm_ids), 'sample_ids': litm_ids,
++        'excluded_ids': sorted(set(selected['litm']) - set(litm_ids)), 'methods': {}}
++    for method in ('sequential', 'ape_fixed', 'ape_dynamic'):
++        litm_paired['methods'][method] = {'position_accuracy': {str(p): mean(litm_by[method, p][i]['score'] for i in litm_ids) if litm_ids else None for p in (0, 9, 19)},
++            'overall_accuracy': mean(litm_by[method, p][i]['score'] for i in litm_ids for p in (0, 9, 19)) if litm_ids else None}
++    doc_conditions = [(m, c) for m in ('sequential', 'ape_fixed', 'ape_dynamic') for c in ('cold', 'hot')]
++    doc_by = {(m, c): {r['sample_id']: r for r in retained if r['dataset'] == 'doc2dial' and r['method'] == m and r['cache_mode'] == c} for m, c in doc_conditions}
++    doc_ids = sorted(set(selected['doc2dial']).intersection(*(set(v) for v in doc_by.values())))
++    doc_paired = {'selected_n': len(selected['doc2dial']), 'paired_n': len(doc_ids), 'sample_ids': doc_ids,
++        'excluded_ids': sorted(set(selected['doc2dial']) - set(doc_ids)), 'conditions': []}
++    refs = {r['sample_id']: r['answers'][0] for r in factory.tables['doc2dial'] if r['sample_id'] in doc_ids}
++    for method, cache in doc_conditions:
++        rows = [doc_by[method, cache][i] for i in doc_ids]
++        doc_paired['conditions'].append({'method': method, 'cache_mode': cache,
++            'corpus_bleu': corpus_doc2dial(rows, refs) if rows else None,
++            'mean_ttft_seconds': mean(r['ttft_seconds'] for r in rows) if rows else None,
++            'mean_total_seconds': mean(r['total_seconds'] for r in rows) if rows else None,
++            'mean_resume_cache_rebuild_seconds': mean(r.get('resume_cache_rebuild_seconds', 0) for r in rows) if rows else None})
++    write_json(directory / 'incomplete.json', {'at': now(), 'pending_jobs': pending, 'failed_attempts': errors, 'incomplete_lines': ledger.incomplete})
++    result = {'at': now(), 'status': 'SUBMITTED' if not pending else 'PARTIAL', 'requires_PLANNER_review': True,
++              'quality': quality, 'longbench_test_by_method': baseline_test, 'longbench_five_method_paired': paired,
++              'litm_paired': litm_paired, 'doc2dial_paired': doc_paired,
++              'successful_records': len(successes), 'retained_analysis_scope_records': len(retained),
++              'failed_empty_responses_scored_zero': len(empty_failures),
++              'outside_current_sample_scope': len(outcomes) - len(retained), 'pending': len(pending), 'failed_attempts': len(errors),
++              'limits': limits, 'scores_are_observations_not_claimed_improvements': True}
++    write_json(directory / 'summary.json', result)
++    columns = ['sample_id', 'dataset', 'method', 'split', 'L', 'N', 'T', 'S', 'position', 'cache_mode', 'score', 'ttft_seconds', 'total_seconds', 'output_tokens', 'peak_allocated_bytes', 'peak_reserved_bytes', 'status', 'attempt']
++    with (directory / 'results.csv').open('w') as f:
++        writer = csv.DictWriter(f, fieldnames=columns, extrasaction='ignore')
++        writer.writeheader()
++        writer.writerows(ledger.records)
++    return result
+--- /dev/null
++++ APE/main80/rules.py
+@@ -0,0 +1,78 @@
++"""Predeclared 144 configurations and validation-only rule selection."""
++import math
++from itertools import product
++from statistics import mean
++
++LENGTHS = (4096, 8192, 16384)
++COUNTS = (4, 8, 16)
++PARAMS = tuple(product((0.5, 0.7, 0.9, 1.0), repeat=2))
++DEFAULT = (0.9, 0.9)
++DATASETS = ('qasper', 'hotpotqa', 'musique')
++
++
++def tie_key(param):
++    t, s = param
++    return ((t - 0.9) ** 2 + (s - 0.9) ** 2, t, s)
++
++
++def nearest(length, count):
++    if length <= 0 or count <= 0:
++        raise ValueError('L and N must be positive')
++    return min(product(LENGTHS, COUNTS), key=lambda cell: (
++        (math.log2(length) - math.log2(cell[0])) ** 2 + (math.log2(count) - math.log2(cell[1])) ** 2,
++        cell[0], cell[1]))
++
++
++def balanced_score(records, cells=None):
++    cells = list(cells or product(LENGTHS, COUNTS))
++    groups = {(d, l, n): [] for d in DATASETS for l, n in cells}
++    for r in records:
++        key = (r['dataset'], r['L'], r['N'])
++        if key in groups:
++            groups[key].append(r['score'])
++    missing = [key for key, values in groups.items() if not values]
++    if missing:
++        raise ValueError(f'incomplete balanced rule selection: {missing}')
++    return mean(mean(v) for v in groups.values())
++
++
++def select_exploration(records):
++    if any(r['split'] != 'explore' for r in records):
++        raise ValueError('only exploration records may choose candidates')
++    by_param = {p: [r for r in records if (r['T'], r['S']) == p] for p in PARAMS}
++    # Every parameter must use the same IDs in each cell.
++    identities = [sorted((r['dataset'], r['sample_id'], r['L'], r['N']) for r in rows) for rows in by_param.values()]
++    if not all(i == identities[0] for i in identities):
++        raise ValueError('unpaired exploration results')
++    global_best = min(PARAMS, key=lambda p: (-balanced_score(by_param[p]), tie_key(p)))
++    per_cell = {f'{l}/{n}': min(PARAMS, key=lambda p: (-balanced_score(by_param[p], [(l, n)]), tie_key(p))) for l, n in product(LENGTHS, COUNTS)}
++    return {'global': list(global_best), 'cells': {k: list(v) for k, v in per_cell.items()}}
++
++
++def freeze_rule(records, candidates):
++    if any(r['split'] != 'validation' for r in records):
++        raise ValueError('only validation may freeze the rule')
++    def rows(param, cell=None):
++        return [r for r in records if (r['T'], r['S']) == tuple(param) and (cell is None or (r['L'], r['N']) == cell)]
++    fixed_options = {DEFAULT, tuple(candidates['global'])}
++    # Check pairing separately per candidate / cell, including deduplicated runs.
++    for l, n in product(LENGTHS, COUNTS):
++        choices = fixed_options | {tuple(candidates['cells'][f'{l}/{n}'])}
++        ids = [sorted((r['dataset'], r['sample_id']) for r in rows(p, (l, n))) for p in choices]
++        if not ids[0] or not all(x == ids[0] for x in ids):
++            raise ValueError('unpaired validation results')
++    fixed = min(fixed_options, key=lambda p: (-balanced_score(rows(p)), tie_key(p)))
++    cells, scores = {}, {}
++    for l, n in product(LENGTHS, COUNTS):
++        p = tuple(candidates['cells'][f'{l}/{n}'])
++        best_score = balanced_score(rows(p, (l, n)), [(l, n)])
++        fixed_score = balanced_score(rows(fixed, (l, n)), [(l, n)])
++        cells[f'{l}/{n}'] = list(p if best_score > fixed_score else fixed)
++        scores[f'{l}/{n}'] = {'candidate': best_score, 'fixed': fixed_score}
++    return {'protocol': 'ape-v3-nine-cell', 'fixed': list(fixed), 'cells': cells, 'validation_scores': scores,
++            'mapping': 'Euclidean log2(L),log2(actual_N); ties smaller L then N; clamp boundaries'}
++
++
++def choose(rule, length, count):
++    l, n = nearest(length, count)
++    return tuple(rule['cells'][f'{l}/{n}'])
+--- /dev/null
++++ APE/main80/selftest.py
+@@ -0,0 +1,323 @@
++"""Finite correctness tests, separate from formal campaign and research timing."""
++import argparse
++import copy
++import io
++import json
++import tempfile
++import unittest
++from collections import Counter
++from pathlib import Path
++
++from .common import Ledger, ROOT, append_json, inside, read_json, read_records, write_json
++from .data import construct, split_groups
++from .metrics import best_subspan_em, corpus_doc2dial, qa_f1
++from .rules import COUNTS, DATASETS, DEFAULT, LENGTHS, PARAMS, choose, freeze_rule, nearest, select_exploration
++
++
++class ProtocolTests(unittest.TestCase):
++    def test_torn_resume_and_failed_attempts(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            path = Path(tmp) / 'ledger.jsonl'
++            key = {'sample': 'q1', 'T': 0.9}
++            ledger = Ledger(path)
++            ledger.add({'key': key, 'attempt': 1, 'status': 'sample_error'})
++            with path.open('ab') as f:
++                f.write(b'{"key":')
++            ledger = Ledger(path)
++            self.assertEqual(len(ledger.incomplete), 1)
++            ledger.add({'key': key, 'attempt': 2, 'status': 'success'})
++            restored = Ledger(path)
++            self.assertTrue(restored.done(key))
++            self.assertEqual(len(restored.incomplete), 1)
++            self.assertEqual(restored.next_attempt(key), 3)
++            self.assertFalse(restored.done({'sample': 'q1', 'T': 0.7}))
++            with self.assertRaises(ValueError):
++                restored.add({'key': key, 'attempt': 3, 'status': 'success'})
++            self.assertIn(b'{"key":\n', path.read_bytes())
++
++    def test_workspace_escape(self):
++        with self.assertRaises(ValueError):
++            inside(ROOT / '../outside')
++
++    def test_groups_and_duplicate_questions(self):
++        rows = []
++        for d in DATASETS:
++            for i in range(100):
++                rows.append({'sample_id': f'{d}:{i}', 'dataset': d, 'question': f'{d} q{i}', 'support_documents': [f'{d}-doc{i//2}']})
++        rows[0]['question'] = rows[100]['question'] = 'Same normalized question'
++        order, report = split_groups(rows)
++        self.assertEqual(rows[0]['split'], rows[100]['split'])
++        self.assertEqual(rows[0]['split'], rows[1]['split'])
++        self.assertEqual(sum(map(len, order.values())), 300)
++        self.assertTrue(all(not v['evidence_group_overlap'] for k, v in report.items() if '/' in k))
++
++    def test_exact_construction_and_unreviewed_supplement(self):
++        class Tokenizer:
++            def __call__(self, text, **kw):
++                return {'input_ids': list(range(len(text))), 'offset_mapping': [(i, i+1) for i in range(len(text))]}
++            def encode(self, text, **kw):
++                return list(range(len(text)))
++        row = {'document': 'abcdefghijklmnop', 'evidence_char_spans': [[4, 7], [10, 12]], 'sample_id': 'a', 'answers': ['xyz'], 'split': 'explore', 'group': ['a'], 'support_documents': ['a']}
++        result = construct(row, 9, Tokenizer(), [], {})
++        self.assertTrue(result['applicable'])
++        self.assertEqual(len(result['document_tokens']), 9)
++        self.assertTrue(set([4, 5, 6, 10, 11]).issubset(result['document_tokens']))
++        self.assertEqual(result['document_tokens'], sorted(result['document_tokens']))
++        donor = {**row, 'sample_id': 'b', 'group': ['b'], 'support_documents': ['b']}
++        self.assertFalse(construct(row, 20, Tokenizer(), [donor], {})['applicable'])
++
++    def test_144_balanced_selection_and_validation_fallback(self):
++        records = []
++        for d in DATASETS:
++            for length in LENGTHS:
++                for n in COUNTS:
++                    for t, s in PARAMS:
++                        records.append({'dataset': d, 'sample_id': d, 'split': 'explore', 'L': length, 'N': n, 'T': t, 'S': s,
++                            'score': 1.0 if (t, s) == (0.7, 0.9) else 0.0})
++        candidates = select_exploration(records)
++        self.assertEqual(candidates['global'], [0.7, 0.9])
++        validation = [dict(r, split='validation', score=0.5) for r in records if (r['T'], r['S']) in {DEFAULT, (0.7, 0.9)}]
++        rule = freeze_rule(validation, candidates)
++        self.assertEqual(rule['fixed'], list(DEFAULT))
++        self.assertTrue(all(p == list(DEFAULT) for p in rule['cells'].values()))
++        self.assertEqual(nearest(1, 1), (4096, 4))
++        self.assertEqual(nearest(1000000, 100), (16384, 16))
++        with self.assertRaises(ValueError):
++            select_exploration([dict(records[0], split='test')])
++
++    def test_scoring_id_alignment(self):
++        self.assertEqual(qa_f1('The red red', 'red'), 2/3)
++        self.assertEqual(best_subspan_em('It is New York city.', ['New York']), 1)
++        predictions = [{'sample_id': 'a', 'answer': 'The cat sat on the mat.'}, {'sample_id': 'b', 'answer': 'A bird sings a lovely song.'}]
++        refs = {'b': 'A bird sings a lovely song.', 'a': 'The cat sat on the mat.'}
++        self.assertAlmostEqual(corpus_doc2dial(predictions, refs)['score'], 100)
++        with self.assertRaises(ValueError):
++            corpus_doc2dial(predictions, {'a': refs['a']})
++        with self.assertRaises(ValueError):
++            corpus_doc2dial([predictions[0], predictions[0]], refs)
++
++    def test_interrupted_attempt_keeps_unique_number(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            path = Path(tmp) / 'attempts.jsonl'
++            key = {'sample': 'interrupted', 'T': 0.9}
++            append_json(Path(tmp) / 'events.jsonl', {'event': 'request_started', 'key': key, 'attempt': 1})
++            restored = Ledger(path)
++            self.assertEqual(restored.next_attempt(key), 2)
++            restored.add({'key': key, 'attempt': 2, 'status': 'success'})
++            self.assertTrue(Ledger(path).done(key))
++
++    def test_generated_rule_identity_and_config_snapshot(self):
++        from unittest.mock import patch
++        from .campaign import snapshot, seal_generated
++        with tempfile.TemporaryDirectory() as tmp:
++            directory = Path(tmp)
++            source = directory / 'code.py'
++            source.write_text('value = 1\n')
++            with patch('main80.campaign.source_files', return_value=[source]):
++                snapshot(directory, {})
++                seal_generated(directory, 'rule.json', {'fixed': [0.9, 0.9]})
++                snapshot(directory, {}, resume=True)
++                (directory / 'rule.json').unlink()
++                snapshot(directory, {}, resume=True)
++                self.assertEqual(read_json(directory / 'rule.json')['fixed'], [0.9, 0.9])
++                write_json(directory / 'rule.json', {'fixed': [0.5, 0.5]})
++                with self.assertRaises(ValueError):
++                    snapshot(directory, {}, resume=True)
++                (directory / 'rule.json').write_bytes((directory / 'snapshot/generated/rule.json').read_bytes())
++                source.write_text('value = 2\n')
++                with self.assertRaises(ValueError):
++                    snapshot(directory, {}, resume=True)
++
++    def test_unknown_hot_speed_does_not_hide_known_budget_cost(self):
++        from .campaign import estimate
++        class Empty:
++            def done(self, key):
++                return False
++            def finished(self, key):
++                return False
++        jobs = [{'key': {'L': 4096}, 'method': 'ape_fixed', 'cache': 'hot'}, {'key': {'L': 8192}, 'method': 'pcw', 'cache': 'cold'}]
++        speed = [{'method': 'ape', 'length_bucket': 4096, 'cache_mode': 'cold', 'count': 3, 'low': 4.0, 'high': 8.0}]
++        self.assertIsNone(estimate(jobs, Empty(), speed))
++        self.assertIsNone(estimate(jobs, Empty(), speed, conservative=True))
++        self.assertEqual(estimate(jobs, Empty(), speed, conservative=True, partial=True), (0, 8))
++
++    def test_empty_outputs_remain_failed_and_do_not_remove_search_pairs(self):
++        from .campaign import selected_records
++        with tempfile.TemporaryDirectory() as tmp:
++            directory = Path(tmp)
++            ledger = Ledger(directory / 'attempts.jsonl')
++            first = {'sample_id': 'q1', 'L': 4096, 'N': 4, 'parameters': [0.5, 0.5]}
++            second = dict(first, parameters=[0.9, 0.9])
++            ledger.add({'key': first, 'attempt': 1, 'status': 'sample_error', 'answer': '  ', 'output_token_ids': [0]})
++            ledger.add({'key': second, 'attempt': 1, 'status': 'success', 'answer': 'valid', 'score': 0.5})
++            restored = Ledger(directory / 'attempts.jsonl')
++            self.assertFalse(restored.done(first))
++            self.assertTrue(restored.finished(first))
++            self.assertEqual(restored.outcome(first)['score'], 0)
++            paired = selected_records(restored, [{'key': first}, {'key': second}], directory)
++            self.assertEqual(len(paired), 2)
++            self.assertEqual(paired[0]['status'], 'sample_error')
++
++    def test_worker_resume_after_empty_cold_preserves_zero_and_recovery_time(self):
++        import time
++        from types import SimpleNamespace
++        from unittest.mock import patch
++        from .worker import execute
++        from .methods import SampleError
++        calls = []
++        class FakeEngine:
++            def __init__(self):
++                self.encoded = None
++                self.device = SimpleNamespace(type='cpu')
++            def sync(self):
++                pass
++            def restore_cache(self, row, param, rule):
++                calls.append('KV_only')
++                self.encoded = object()
++                return 5.0
++            def run(self, row, **kwargs):
++                calls.append(kwargs['cache_mode'])
++                self.encoded = object()
++                raise SampleError('empty model output', {'answer': '\n\n', 'output_token_ids': [0],
++                    'output_tokens': 1, 'ttft_seconds': 1.0, 'total_seconds': 2.0, 'L': 4096, 'N': 4,
++                    'T': 0.9, 'S': 0.9, 'cache_mode': kwargs['cache_mode']})
++        with tempfile.TemporaryDirectory() as tmp:
++            directory = Path(tmp)
++            row = {'sample_id': 'd1', 'dataset': 'doc2dial', 'split': 'test', 'group': ['doc'], 'answers': ['reference']}
++            write_json(directory / 'doc2dial.json', [row])
++            key = {'stage': 'doc2dial', 'sample_id': 'd1', 'L': 4096, 'N': None, 'cache': 'cold'}
++            cold = {'key': key, 'table': 'doc2dial', 'index': 0, 'method': 'sequential', 'param': None, 'N': None, 'cache': 'cold', 'logical_labels': ['sequential']}
++            hot = dict(cold, key=dict(key, cache='hot'), cache='hot')
++            bundle = {'model': str(directory), 'data': str(directory), 'method': 'sequential', 'ledger': str(directory / 'attempts.jsonl'),
++                      'events': str(directory / 'events.jsonl'), 'heartbeat': str(directory / 'heartbeat.json'), 'deadline_epoch': time.time()+30}
++            with patch('main80.worker.Engine.load', side_effect=lambda *args: FakeEngine()):
++                execute(dict(bundle, jobs=[cold]))
++                execute(dict(bundle, jobs=[hot]))
++            ledger = Ledger(directory / 'attempts.jsonl')
++            self.assertEqual(calls, ['cold', 'KV_only', 'hot'])
++            self.assertEqual(len(ledger.scored), 2)
++            self.assertFalse(ledger.done(key))
++            self.assertEqual(ledger.outcome(hot['key'])['score'], 0)
++            self.assertEqual(ledger.outcome(hot['key'])['ttft_seconds'], 6)
++            self.assertEqual(ledger.outcome(hot['key'])['total_seconds'], 7)
++
++    def test_single_instance_lock_survives_launcher_exit(self):
++        import fcntl
++        import subprocess
++        import sys
++        with tempfile.TemporaryDirectory() as tmp:
++            path = Path(tmp) / 'campaign.lock'
++            lock = path.open('a+')
++            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
++            child = subprocess.Popen([sys.executable, '-B', '-c', 'import time;time.sleep(10)'],
++                start_new_session=True, pass_fds=(lock.fileno(),))
++            lock.close()
++            try:
++                with path.open('a+') as second:
++                    with self.assertRaises(BlockingIOError):
++                        fcntl.flock(second, fcntl.LOCK_EX | fcntl.LOCK_NB)
++                    child.terminate()
++                    child.wait(timeout=5)
++                    fcntl.flock(second, fcntl.LOCK_EX | fcntl.LOCK_NB)
++            finally:
++                if child.poll() is None:
++                    child.kill()
++                    child.wait(timeout=5)
++
++
++class StockMethodTests(unittest.TestCase):
++    def setUp(self):
++        import torch
++        from transformers import LlamaConfig, LlamaForCausalLM
++        from .methods import Engine
++        torch.manual_seed(42)
++        config = LlamaConfig(vocab_size=64, hidden_size=32, intermediate_size=64, num_hidden_layers=2,
++            num_attention_heads=4, num_key_value_heads=2, max_position_embeddings=512, bos_token_id=1, eos_token_id=63,
++            rope_scaling={'rope_type': 'llama3', 'factor': 8.0, 'low_freq_factor': 1.0, 'high_freq_factor': 4.0, 'original_max_position_embeddings': 64})
++        config._attn_implementation = 'eager'
++        model = LlamaForCausalLM(config).eval()
++        class Tokenizer:
++            bos_token_id = 1
++            def encode(self, text, **kw):
++                return [int(x) for x in text.split()]
++            def decode(self, tokens, **kw):
++                return ' '.join(map(str, tokens))
++        self.engine = Engine(model, Tokenizer(), 'pcw', device='cpu')
++
++    def tearDown(self):
++        self.engine.hook.remove()
++
++    def test_pcw_single_window_equivalence(self):
++        import torch
++        with torch.inference_mode():
++            encoded = self.engine.encode([1], [[3, 4, 5]], [6, 7], ())
++            _, logits = self.engine.forward([6, 7], encoded.cache, encoded.next_position, True)
++            _, reference = self.engine.forward([1, 3, 4, 5, 6, 7], position=0, logits=True)
++        torch.testing.assert_close(logits, reference, atol=1e-6, rtol=1e-5)
++        self.assertEqual(encoded.next_position, 4)
++
++    def test_pcw_unequal_windows_against_full_mask_reference(self):
++        import torch
++        windows = [[3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
++        query = [13, 14]
++        with torch.inference_mode():
++            encoded = self.engine.encode([1], windows, query, ())
++            self.assertEqual(encoded.order, [1, 0, 2])
++            self.assertEqual(encoded.next_position, 5)
++            self.assertEqual(encoded.cache[0][0].shape, (1, 2, 11, 8))
++            _, actual = self.engine.forward(query, encoded.cache, encoded.next_position, True)
++            tokens, positions, starts = [], [], []
++            for i in encoded.order:
++                starts.append(len(tokens))
++                part = [1] + windows[i]
++                tokens.extend(part)
++                positions.extend(range(len(part)))
++            query_start = len(tokens)
++            tokens.extend(query)
++            positions.extend(range(5, 7))
++            mask = torch.full((1, 1, len(tokens), len(tokens)), torch.finfo(torch.float32).min)
++            for start, end in zip(starts, starts[1:] + [query_start]):
++                for i in range(start, end):
++                    mask[0, 0, i, start:i+1] = 0
++            for i in range(query_start, len(tokens)):
++                mask[0, 0, i, :i+1] = 0
++                mask[0, 0, i, starts[1:]] = torch.finfo(torch.float32).min
++            output = self.engine.model(input_ids=torch.tensor([tokens]), position_ids=torch.tensor([positions]), attention_mask=mask, use_cache=False)
++            reference = output.logits[:, -1]
++        torch.testing.assert_close(actual, reference, atol=1e-6, rtol=1e-5)
++
++    def test_hot_cache_immutable_and_new_history_regenerates(self):
++        import torch
++        row = {'prefix': '1', 'document_tokens': [3, 4, 5, 6, 7], 'suffix': '8 9', 'N': 2, 'max_new_tokens': 4}
++        cold = self.engine.run(row)
++        snapshot = tuple(tuple(t.clone() for t in layer) for layer in self.engine.encoded.cache)
++        hot = self.engine.run(row, cache_mode='hot')
++        self.assertEqual(cold['output_token_ids'], hot['output_token_ids'])
++        self.assertTrue(hot['cache_hit'])
++        for a, b in zip(snapshot, self.engine.encoded.cache):
++            for x, y in zip(a, b):
++                self.assertTrue(torch.equal(x, y))
++        row['suffix'] = '10 11 12'
++        changed = self.engine.run(row, cache_mode='hot')
++        self.assertTrue(changed['cache_hit'])
++        self.assertEqual(changed['request_tokens'], 3)
++        with self.assertRaises(ValueError):
++            self.engine.run(dict(row, document_tokens=[22, 23, 24]), cache_mode='hot')
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--suite', choices=('protocol', 'methods_cpu'), required=True)
++    parser.add_argument('--output', required=True)
++    args = parser.parse_args()
++    suite = unittest.defaultTestLoader.loadTestsFromTestCase(ProtocolTests if args.suite == 'protocol' else StockMethodTests)
++    stream = io.StringIO()
++    result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
++    inside(args.output).parent.mkdir(parents=True, exist_ok=True)
++    inside(args.output).write_text(stream.getvalue())
++    print(stream.getvalue())
++    raise SystemExit(0 if result.wasSuccessful() else 1)
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ APE/main80/validate_data.py
+@@ -0,0 +1,110 @@
++"""Verify actual frozen source reconstruction, evidence, pairing and history."""
++from collections import Counter
++from itertools import product
++
++from transformers import AutoTokenizer
++
++from .common import read_json, write_json, now
++from .data import json_rows, overlap_report, question_key
++from .freeze import CHAT_END, CHAT_START
++from .jobs import JobFactory
++from .methods import chunks
++from .metrics import normalize
++from .rules import COUNTS, DATASETS, LENGTHS, PARAMS
++
++
++def main():
++    factory = JobFactory('datasets/frozen-main80')
++    config = read_json('data_sources.json')
++    tokenizer = AutoTokenizer.from_pretrained(config['model'], local_files_only=True, trust_remote_code=False)
++    base = factory.tables['longbench']
++    by_id = {r['sample_id']: r for r in base}
++    for dataset in DATASETS:
++        public = {r['_id']: r for r in json_rows(config['longbench'][dataset])}
++        selected = [r for r in base if r['dataset'] == dataset]
++        assert len(selected) == 200 and len({r['public_id'] for r in selected}) == 200
++        assert {r['public_id'] for r in selected} == set(public)
++        for row in selected:
++            original = public[row['public_id']]
++            assert row['document'] == original['context'] and row['question'] == original['input'] and row['answers'] == original['answers']
++            assert row['source_ids'] and row['support_documents']
++    overlap = overlap_report(base)
++    tokenized = {}
++    offsets = {}
++    for row in base:
++        encoded = tokenizer(row['document'], add_special_tokens=False, return_offsets_mapping=True)
++        tokenized[row['sample_id']], offsets[row['sample_id']] = encoded['input_ids'], encoded['offset_mapping']
++        assert len(encoded['input_ids']) == row['_length']
++    verified = 0
++    for row in factory.tables['development']:
++        original = by_id[row['sample_id']]
++        assert row['split'] in ('explore', 'validation')
++        source = tokenized[row['sample_id']]
++        retained = [i for a, b in row['retained_source_intervals'] for i in range(a, b)]
++        assert retained == sorted(set(retained))
++        keep = set(retained)
++        evidence = {i for i, (a, b) in enumerate(offsets[row['sample_id']]) if a < b and any(a < y and b > x for x, y in original['evidence_char_spans'])}
++        assert evidence and evidence <= keep
++        reconstructed = [source[i] for i in retained]
++        for supplement in row['supplement_sources']:
++            donor = by_id[supplement['sample_id']]
++            assert donor['split'] in ('explore', 'validation') and donor['group'] != original['group']
++            assert supplement['review']['contains_additional_answer_evidence'] is False and supplement['review']['basis']
++            for a, b in supplement['source_token_intervals']:
++                fragment = tokenized[donor['sample_id']][a:b]
++                assert 0 <= a < b <= len(tokenized[donor['sample_id']])
++                text = ' ' + normalize(tokenizer.decode(fragment)) + ' '
++                assert not any(normalize(answer) and ' ' + normalize(answer) + ' ' in text for answer in row['answers'])
++                reconstructed.extend(fragment)
++        assert reconstructed == row['document_tokens'] and len(reconstructed) == row['L']
++        for n in COUNTS:
++            parts = chunks(reconstructed, count=n)
++            assert len(parts) == n and sum(parts, []) == reconstructed
++        verified += 1
++    coverage = read_json('datasets/frozen-main80/nested-coverage.json')
++    for split, levels in coverage.items():
++        for n, check in levels.items():
++            assert check['valid'] and not check['missing_dataset_length_cells']
++    # Every applicable exploration input retains all 16 T/S, all three block counts.
++    for size in (50, 35, 20, 10, 6):
++        limits = dict(factory.initial_limits(), explore=size)
++        jobs = factory.make('explore', limits)
++        for d, length, n, param in product(DATASETS, LENGTHS, COUNTS, PARAMS):
++            assert any(factory.tables[j['table']][j['index']]['dataset'] == d and j['key']['L'] == length and j['N'] == n and tuple(j['param']) == param for j in jobs)
++    litm = factory.tables['litm']
++    assert len(litm) == 1500
++    originals = {p: {question_key(r['question']): r for r in json_rows(path)} for p, path in config['litm'].items()}
++    prompt = __import__('pathlib').Path(config['litm_prompt']).read_text().rstrip('\n')
++    for sid in factory.orders['litm']:
++        versions = [r for r in litm if r['sample_id'] == sid]
++        assert sorted(r['position'] for r in versions) == [0, 9, 19]
++        for row in versions:
++            raw = originals[str(row['position'])][question_key(row['question'])]
++            docs = '\n'.join(f'Document [{i+1}](Title: {d["title"]}) {d["text"]}' for i, d in enumerate(raw['ctxs']))
++            assert row['document'] == docs and row['answers'] == raw['answers']
++            assert row['prefix'] + docs + row['suffix'] == CHAT_START + prompt.format(question=row['question'], search_results=docs) + CHAT_END
++    raw_dial = json_rows(config['doc2dial_dialogues'])
++    originals = {d['dial_id']: d for documents in raw_dial['dial_data'].values() for conversations in documents.values() for d in conversations}
++    assert len(factory.tables['doc2dial']) == 500
++    for row in factory.tables['doc2dial']:
++        conversation = originals[row['source']['dial_id']]
++        previous = [t for t in conversation['turns'] if t['turn_id'] < row['source']['target_turn']]
++        assert row['history'] == [{k: t[k] for k in ('turn_id', 'role', 'utterance')} for t in previous]
++        assert row['history_turn_ids'] == [t['turn_id'] for t in previous]
++        assert all(t['utterance'].replace('\n', '\t').replace('\r', '\t').strip() in row['suffix'] for t in previous)
++    applicability = read_json('datasets/frozen-main80/applicability.json')
++    report = {'role': 'PLANNER', 'status': 'PASS', 'at': now(), 'longbench_ids': dict(Counter(r['dataset'] for r in base)),
++        'splits': {s: len(factory.orders[s]) for s in ('explore', 'validation', 'test')},
++        'verified_constructed_inputs': verified, 'development_grid_counts': dict(Counter(f'{r["split"]}/{r["dataset"]}/{r["L"]}' for r in factory.tables['development'] if r['L'] in LENGTHS)),
++        'inapplicable': [r for r in applicability if not r['applicable']],
++        'nested_144_configuration_coverage': True, 'paired_litm_questions': 500, 'complete_history_doc2dial': 500,
++        'group_and_single_document_overlap': overlap,
++        'evidence_mapping_policy_counts': dict(Counter(p for r in base for p in r['evidence_mapping_policy'])),
++        'raw_public_content_unchanged': True, 'supplement_sources_development_only': True,
++        'no_model_generation_or_formal_timing': True}
++    write_json('logs/runs/20261113-main80-prep/data-validation.json', report)
++    print('PASS: 600 source IDs, every constructed token/evidence interval, all allowed nested144 levels, LITM500 triples, Doc2Dial500 full histories')
++
++
++if __name__ == '__main__':
++    main()
+--- /dev/null
++++ APE/main80/worker.py
+@@ -0,0 +1,121 @@
++"""Serial GPU worker, launched by the campaign controller in a fresh process."""
++import argparse
++import sys
++import time
++import traceback
++
++from .common import Ledger, ROOT, append_json, identity, inside, now, read_json, write_json
++from .diagnostics import AttentionCapture
++from .methods import Engine, SampleError
++from .metrics import score
++
++
++def recovery_timing(result, seconds, peak=None):
++    result = dict(result, resume_cache_rebuild_seconds=seconds)
++    if seconds:
++        result['gpu_hot_ttft_after_rebuild_seconds'] = result['ttft_seconds']
++        result['gpu_hot_total_after_rebuild_seconds'] = result['total_seconds']
++        result['ttft_seconds'] += seconds
++        result['total_seconds'] += seconds
++        result['timing_condition'] = 'recovered_application_GPU_KV'
++        for name, value in (peak or {}).items():
++            result['resume_cache_rebuild_' + name] = value
++            result[name] = max(result.get(name) or 0, value)
++    return result
++
++
++def execute(bundle):
++    model_path = inside(bundle['model'])
++    ledger = Ledger(bundle['ledger'])
++    tables = {}
++    started = time.perf_counter()
++    engine = Engine.load(model_path, bundle['method'])
++    engine.sync()
++    append_json(bundle['events'], {'event': 'model_loaded', 'at': now(), 'method': bundle['method'], 'seconds': time.perf_counter() - started})
++    rule = read_json(bundle['rule']) if bundle.get('rule') else None
++    successful = 0
++    for job in bundle['jobs']:
++        if time.time() >= bundle['deadline_epoch']:
++            raise TimeoutError('campaign deadline reached')
++        if ledger.done(job['key']):
++            continue
++        if bundle.get('selection'):
++            selected = read_json(bundle['selection'])
++            scope = {'longbench_final': 'test'}.get(job['key']['stage'], job['key']['stage'])
++            if scope in selected and job['key']['sample_id'] not in selected[scope]:
++                continue
++        if job['table'] not in tables:
++            tables[job['table']] = read_json(f'{bundle["data"]}/{job["table"]}.json')
++        row = dict(tables[job['table']][job['index']])
++        if job['N'] is not None:
++            row['N'] = job['N']
++        write_json(bundle['heartbeat'], {'state': 'RUNNING', 'at': now(), 'job': job['key'], 'pid': __import__('os').getpid()})
++        record = {'key': job['key'], 'attempt': ledger.next_attempt(job['key']), 'started_at': now(),
++            'sample_id': row['sample_id'], 'dataset': row['dataset'], 'split': row['split'], 'group': row['group'],
++            'source': row.get('source', row.get('source_ids')), 'method': job['method'],
++            'reference_answers': row['answers'], 'logical_labels': job['logical_labels'], 'position': row.get('position')}
++        append_json(bundle['events'], {'event': 'request_started', 'at': now(), 'key': job['key'], 'attempt': record['attempt']})
++        request_start = time.perf_counter()
++        try:
++            param = tuple(job['param'] or (0.9, 0.9))
++            recovery_build = 0.0
++            recovery_peak = {}
++            if job['cache'] == 'hot':
++                cold_key = dict(job['key'], cache='cold')
++                if ledger.outcome(cold_key) is None:
++                    raise SampleError('hot request lacks a completed paired cold generation')
++                if engine.encoded is None:
++                    if engine.device.type == 'cuda':
++                        import torch
++                        engine.sync()
++                        torch.cuda.reset_peak_memory_stats(engine.device)
++                    recovery_build = engine.restore_cache(row, param, rule)
++                    if engine.device.type == 'cuda':
++                        recovery_peak = {'peak_allocated_bytes': torch.cuda.max_memory_allocated(engine.device),
++                                         'peak_reserved_bytes': torch.cuda.max_memory_reserved(engine.device)}
++                    append_json(bundle['events'], {'event': 'resume_cache_rebuilt', 'at': now(), 'key': job['key'],
++                        'seconds': recovery_build, 'generation_repeated': False, 'included_in_total_response_and_ttft': True})
++            if job['key']['stage'] == 'attention':
++                with AttentionCapture(engine.model, bundle['attention'], {'key': job['key'], 'T': param[0], 'S': param[1], 'diagnostic_roles': job['logical_labels']}):
++                    result = engine.run(row, param=param, cache_mode=job['cache'])
++            else:
++                result = engine.run(row, param=param, rule=rule, cache_mode=job['cache'])
++            record.update(recovery_timing(result, recovery_build, recovery_peak))
++            if job['cache'] == 'hot':
++                cold = ledger.outcome(dict(job['key'], cache='cold'))
++                if cold['output_token_ids'] != result['output_token_ids']:
++                    raise RuntimeError('cold/hot greedy outputs differ for the same request and immutable cache')
++            record.update(status='success', score=score(row['dataset'], result['answer'], row['answers']))
++            successful += 1
++        except SampleError as e:
++            record.update(recovery_timing(e.evidence, recovery_build, recovery_peak) if e.evidence else {})
++            record.update(status='sample_error', error=str(e), elapsed_seconds=time.perf_counter() - request_start)
++            if isinstance(e.evidence.get('answer'), str) and not e.evidence['answer'].strip() and e.evidence.get('output_token_ids'):
++                record.update(score=0.0, score_status='official_empty_response_zero; request remains failed')
++                if job['cache'] == 'hot':
++                    cold = ledger.outcome(dict(job['key'], cache='cold'))
++                    if cold is not None and cold['output_token_ids'] != record['output_token_ids']:
++                        record.update(status='system_error', error='cold/hot greedy token mismatch, including empty response', ended_at=now())
++                        ledger.add(record)
++                        raise RuntimeError(record['error'])
++            append_json(bundle['events'], {'event': 'sample_error', 'at': now(), 'key': job['key'], 'error': str(e)})
++        except BaseException as e:
++            record.update(status='system_error', error_type=type(e).__name__, error=str(e), traceback=traceback.format_exc(),
++                          elapsed_seconds=time.perf_counter() - request_start, ended_at=now())
++            ledger.add(record)
++            raise
++        record['ended_at'] = now()
++        ledger.add(record)
++        append_json(bundle['events'], {'event': 'request_ended', 'at': now(), 'key': job['key'], 'attempt': record['attempt'], 'status': record['status']})
++    write_json(bundle['heartbeat'], {'state': 'SUBMITTED', 'at': now(), 'successful_this_worker': successful})
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--bundle', required=True)
++    args = parser.parse_args()
++    execute(read_json(args.bundle))
++
++
++if __name__ == '__main__':
++    main()

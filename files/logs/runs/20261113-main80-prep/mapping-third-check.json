@@ -1,0 +1,4709 @@
+{
+  "mapped": 12,
+  "errors": [
+    {
+      "dataset": "qasper",
+      "public_id": "db6c4d611b78c840972b57ee0b245003566b982feaff1084",
+      "question": "What is the GhostVLAD approach?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "e419f2bff9d2ab7c3b60b3250caccd2d9ae1285ec3e8e818",
+      "question": "By how much does their model outperform the state of the art results?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "9fb085a1f47673d1907f2378c90843b4b6e8622a14fe1fa9",
+      "question": "What additional features and context are proposed?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "14e88916523197e066dbb743339685621db47c4beb503abb",
+      "question": "Which Facebook pages did they look at?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c109a25d23a8c5c95af8697ef1ac51cd3bee93c67521af6d",
+      "question": "Do the hashtag and SemEval datasets contain only English data?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "072d3de1a7122730a13a31db3eede4113af2d920814f0aaa",
+      "question": "What type of evaluation is proposed for this task?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "8fa5af6a36dd0b6b73900b2ec6f6e43a652a3e7d2b827a58",
+      "question": "What are the datasets used for evaluation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816",
+      "question": "How does this approach compare to other WSD approaches employing word embeddings?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "91dd7b7a6ead4025763812d70dc51c6674b0acf31bd5a5f0",
+      "question": "How does their ensemble method work?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "fe6e5087f91071369646d9d868d784a290d0d13013292b61",
+      "question": "What are the sources of the datasets?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "51b9066a5f2845e2fdf0d1dcde6833f70ae49ed01aa306db",
+      "question": "what language does this paper focus on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "bae15e10e0f414a92fb0e943871ed25c3fc16183a3028012",
+      "question": "What sentiment analysis dataset is used?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d022dfe02fb2a55b4baa40fe436f616aecd3f3ced1a58d7c",
+      "question": "What accuracy does the proposed system achieve?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "43279ddf85ada1b163aa1b316a4df1418957058206501c26",
+      "question": "Did they experiment with this new dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f27a64d129091a6c8973c001ff789b8f68955b8ff0ae70af",
+      "question": "What datasets are used?",
+      "candidate_count": 12,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c47ca982b6c4681c4741d4708801fa79a3e1cab17d0a2c4a",
+      "question": "Which stock market sector achieved the best performance?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "1614ea21f8d039debfc655015f8133d0ef220837804ddf62",
+      "question": "what NMT models did they compare with?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "159a474e0a7155a2d0b984cbb5215cdc853d721605b90154",
+      "question": "What are the three regularization terms?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d426a2d42f3dffc8771498ba64ed0e383b91939398e83dce",
+      "question": "What are the baselines?",
+      "candidate_count": 22,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "680ef767fe2a990615d0bc1cb1bf5f7d23c8766209138826",
+      "question": "By how much did they improve?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "04af9dc96013a1bc7faecbc589f7ea5c207e92c7d9a3495e",
+      "question": "what was the baseline?",
+      "candidate_count": 25,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3b069a546d5417be546f57d02981cf5ac68b4d3d6c55624a",
+      "question": "What metrics are used for evaluation?",
+      "candidate_count": 7,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ebd4ae480fe1596841b2132e96f40eac8437c800db8ef59e",
+      "question": "What is the attention module pretrained on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "036bfbdbfff8294f59afd5860663bbb4349924c9853b2151",
+      "question": "What kind of stylistic features are obtained?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "8595332098adaabcfd8ae199f754a9b06cdde08cdd4cc64a",
+      "question": "What architecture does the encoder have?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3ca65b23b3cb316653709b469b4a9b42b790e0350c76ae1a",
+      "question": "Is WordNet useful for taxonomic reasoning for this task?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+      "question": "what were the baselines?",
+      "candidate_count": 15,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "18576b9ee9994a46dc0c7d916a009ff6d0964991541010ee",
+      "question": "How many users do they look at?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "86c75d2a9157cb601a49f8424fa1e6e90fcd724132490bbd",
+      "question": "What metrics are used for evaluation?",
+      "candidate_count": 7,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b72f9154e71c03d0403e06e50063325961ea2ad27c245763",
+      "question": "What labels do they create on their dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "2ecd2808617740f222a4e2f3b2df546da046d876b1580952",
+      "question": "How much data is needed to train the task-specific encoder?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "bfc5d4d72997fdcc0107cd5cab9b9718777c43b86be45eb2",
+      "question": "What is the improvement in performance for Estonian in the NER task?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "65f7bdb541fd6f01fe866dcf694891f92533186085fcba20",
+      "question": "What background do they have?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "091b4028a3b5e9d8248c58f17a62fd16c878da69693cfbfb",
+      "question": "LDA is an unsupervised method; is this paper introducing an unsupervised approach to spam detection?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "93004cdb0e6d24f5de0568ed952fd50655e42900dc9dbfdb",
+      "question": "Which languages are similar to each other?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3598040772b4950e6241b50125f7ab7038a8149060e3c381",
+      "question": "which lstm models did they compare with?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ecf37304ab84334d46491b0bd3d8bdc7cda33d54a15870f0",
+      "question": "How large is their data set?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "1a1daeb5809cde7c7131d972f42ee43654a378c78d5182c8",
+      "question": "How were the human judgements assembled?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d1d93cefe6e2c643ecf128643f9362e3fa137ff54253a3ec",
+      "question": "Do they test their framework performance on commonly used language pairs, such as English-to-German?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "92da01e7242f30f5266e431b4269fee1b0ca5fcc23aee095",
+      "question": "How are models evaluated in this human-machine communication game?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b5f62b7acf975c5454df077adf727c1bcc62985be5e5a660",
+      "question": "What evaluation metrics are looked at for classification tasks?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c92d96ed55bc5dcd92f963d3c5d26e52661b74e71090f24a",
+      "question": "What are the source and target domains?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "eeab2b9167f294f68d3058752acc01e1145eb7d89437d5c4",
+      "question": "what previous RNN models do they compare with?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d5280384a4496ef3358dc45dc0199b9198bd0d927be302ef",
+      "question": "What neural network modules are included in NeuronBlocks?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "0b90a0a4b2cdceda62a9e2b165f0cfa1a34d34d800a46086",
+      "question": "what datasets did they use?",
+      "candidate_count": 15,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+      "question": "What were the baselines?",
+      "candidate_count": 15,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "443d051a54d96c296d9135dad3794d09f89ff91d6433d092",
+      "question": "What are the languages they use in their experiment?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c2df5ec4b6b7dd1c56e05d6b3c0e244d0c44d68f117caf0e",
+      "question": "What other tasks do they test their method on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "e0a92574e7c31adb9146851dcc95729b585305d15cf491d4",
+      "question": "Do they use pretrained embeddings?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f545e80cf01375e891406755e35019032cb4b7621338b707",
+      "question": "Was PolyReponse evaluated against some baseline?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "43ffd7775c3b4a541e227c120bffcc7c7b31fb184ba94d69",
+      "question": "How do they obtain psychological dimensions of people?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "90b2dc5aba0e95b2f541da4efa36c414b93bb33d56f2c31e",
+      "question": "What argument components do the ML methods aim to identify?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "7e339da53449dbd58a1e815d55e440e712af6a1950f342b7",
+      "question": "Ngrams of which length are aligned using PARENT?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+      "question": "How large is the Twitter dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "388c857ed1b4175e114a0ce9f3489766797a32cd183f10ff",
+      "question": "What are the 12 languages covered?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "2589b46ee58a7600e17fa89a0d4fffd9a0faf1df49b3c035",
+      "question": "What are two datasets model is applied to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "4c9552eec5c238657f8ed5237bf66067d3fdda2409a903b6",
+      "question": "Were any of the pipeline components based on deep learning models?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "bee3efb92996570d990ab04bfdf054835ef720b9dd1c6f5a",
+      "question": "How is the quality of the data empirically evaluated? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "7e2663bb13493e18205f6aab469fee8b2a9df281a0ba0e2a",
+      "question": "How do they combine audio and text sequences in their RNN?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "6b9d0c1e63714067fc0b54c024dc065e63f64cbaf44ab4d0",
+      "question": "by how much did their model improve?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ea58638e132307bb3f2c24abeb0e2d07eaf162e3e1d12b57",
+      "question": "how many humans evaluated the results?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3dd2d62c046f3b559c34003f570ed35211000500b8f0145f",
+      "question": "Which basic neural architecture perform best by itself?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d230ce079b2e4ecf5d9a987fb750dcbc319a537bdcfcc3d4",
+      "question": "what is the source of the data?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "89a4fd3fce6114c3401790c6f9b5243fda094597657f348a",
+      "question": "What machine learning and deep learning methods are used for RQE?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "9c46084d667b60a92a3cebfb8fa56436fa1497668ce2af56",
+      "question": "What is the benchmark dataset and is its quality high?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f755dcbd288905ec07a63f18ddee7ed22103c45e887a091e",
+      "question": "What architecture does the decoder have?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "db4afd55783aaf6d069c5228152492cf0804e9cf310cb238",
+      "question": "Do they report results only on English data?",
+      "candidate_count": 36,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d25cf05e9fda9bdadb01c26a57122079766a565269fac749",
+      "question": "What is best performing model among author's submissions, what performance it had?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f55efaaee938369fc4be8a430e531c164168be643b3cfe57",
+      "question": "what was the baseline?",
+      "candidate_count": 25,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "6ceab4edd1d0e37d217958e7e962697124ccb6a4f449f4af",
+      "question": "What was their highest recall score?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "710f7452388fe5d22e2329697dbc4fa17d2c9a53daedafa6",
+      "question": "What embedding techniques are explored in the paper?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d7fcca67f5487a55282f8217e4f05bc54ee67e2ddb578e73",
+      "question": "How do they match words before reordering them?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "901f735b1582acacb606002ab77c6c7a3fe6017d38349aa2",
+      "question": "Does the paper explore extraction from electronic health records?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "17a2b96e126ab914e1179b4794d18513627ade82d5c35554",
+      "question": "Who were the experts used for annotation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "6eec5b0ef38f64f6a545677f730b4ea1c980db6d380de966",
+      "question": "What models are used for painting embedding and what for language style transfer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d696cd0b146419d53d72071d8b8949fc562ea4addb87eb96",
+      "question": "On top of BERT does the RNN layer work better or the transformer layer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "04174ea6c9849bfa946452cdbc20fc0c4ff9d27596099dcc",
+      "question": "Do the authors hypothesize that humans' robustness to noise is due to their general knowledge?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b805e336d2e8cce895100cfde3a536e632ddd5296ddece21",
+      "question": "What cyberbulling topics did they address?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "06baf6c4ae0f97a3131aa06bfa2b4878bd99ef96659cbf9c",
+      "question": "How do they obtain the new context represetation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ac6538e9c173ba7b453d6bf62480d56eb3761b5f6f73c328",
+      "question": "How many different types of entities exist in the dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "8f650cd8021e553a4106d292af9908f29595f88fc39385b2",
+      "question": "How much higher quality is the resulting annotated data?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "07484380079dcec47eb573ab62eaff39a1a44b32006ec74e",
+      "question": "How big is imbalance in analyzed corpora?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "65e11f98300887fc3b0d3912db406f8d8825d3f61c7a12a2",
+      "question": "What dataset does this approach achieve state of the art results on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "4f6f6dfa672ed697a94d1d1ee528e50645f01f568707b0b5",
+      "question": "What are strong baselines model is compared to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "4a244628cbffa02d2240d412aeeed45c53fec95e66595a00",
+      "question": "What type of classifiers are used?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "4f1d5a7b6c42269c845959f8a8d7ef95cb7e0c122c9a721c",
+      "question": "Which toolkits do they use?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "5f7af98db66df4388108e26cde4781423ca2580bb48de4fa",
+      "question": "On what datasets are experiments performed?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "a80067307d72e349f14a1f6765d914acf0b43764afe77ab7",
+      "question": "what are the existing approaches?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f3aba3579b9e3373ce708f10b33510d6a198c3bae58c5ad7",
+      "question": "Do they use attention?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "466bd29bcab1cdfdef327777808236bd2677e2a54414a32a",
+      "question": "What datasets did they use for evaluation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "6a78dbe4f8e30d35c13ea1f80e52df286f9e1f664f9c3d98",
+      "question": "Were any of these tasks evaluated in any previous work?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "188fe9331293312465b4564e11ab36dfbcb37191e62a969c",
+      "question": "Is datasets for sentiment analysis balanced?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "0e83a6f7ee840931e1851402cc87bd34f52fe8bfa4dc1cab",
+      "question": "What is the invertibility condition?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "894a0e08b526f2093c854d91c680190c898ae6acbc1ba131",
+      "question": "How does proposed qualitative annotation schema looks like?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "0ce1ee7ab0f1557704a9d7f937e6f5182c665687a3e2b0d9",
+      "question": "what are the sizes of both datasets?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ecb62b0ffa918a2faef02edcbcab0090da78c2c6e92612d1",
+      "question": "What are the baselines?",
+      "candidate_count": 22,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "03ac54754b9162f6632212ca481920db17fc953e73af3a1f",
+      "question": "Which natural language(s) are studied in this paper?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "32e71ab83380bf828bc42ff6e76f4e8ae42d356a6988a79c",
+      "question": "What models are used in the experiment?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "37f06d3a413beef1661730ae1049e7adccd6308032ae1fc5",
+      "question": "Do the answered questions measure for the usefulness of the answer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d17f6335089f3dd922f3d5400e3fc2ad1ca15202f4ac6467",
+      "question": "what pretrained word embeddings were used?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d3dac3676da5685f20bae39814f760368752f5bd8db93500",
+      "question": "What were their results on the new dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "4eb3ad14a5fbb16b03f54ef42febd2f167f8b2a9f5a26343",
+      "question": "What is the combination of rewards for reinforcement learning?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3b83a9c5c4dc7fa170724ce8378a276b8cbef90a62b13603",
+      "question": "What limitations do the authors demnostrate of their model?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "88d89e5b02c860bd1fdac17796e2b6048a6d2b86950c4c12",
+      "question": "Which existing benchmarks did they compare to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3278efeb1fb7f569dfd6ef8627cdefb5955b93b612fe2902",
+      "question": "How is the dataset of hashtags sourced?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "06feabc1e5ca23dbfd79cbb2ea42b436c85bf6ac6a8d4b14",
+      "question": "what accents are present in the corpus?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "26eccf323630722b689e91abd27fbbae0da4097e74865c33",
+      "question": "What can word subspace represent?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "8861331a4438449d0fd62132eff72f24413fab1daf990780",
+      "question": "What baseline model is used?",
+      "candidate_count": 6,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3bb91d7f22ae15ff9fc6475233052ad0981ad7e812f7eaa7",
+      "question": "Is SemCor3.0 reflective of English language data in general?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "e73ea6012e4dfc66d353142915ef35e7ea2c315e1566adfe",
+      "question": "How big is Augmented LibriSpeech dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "981e544c9c90888f266707622e41e2c06b1b9b8ce6af525f",
+      "question": "What dataset did they use?",
+      "candidate_count": 12,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "168484fbdc83fc2e0c374e1d92ed08edca0c33669cd88a33",
+      "question": "Do they use large or small BERT?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "a65a814bec0bd2085660d75fc5eeb39935a7cea44abab2b1",
+      "question": "Are the automatically constructed datasets subject to quality control?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "df3b5e07ec132472a8fc5b7f30b6ce3d942c8488a3d8ff7c",
+      "question": "Are the images from a specific domain?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f4aa62dcbb2bac20bc9ef1361ad811d6822f66df83f0930d",
+      "question": "What was their performance on emotion detection?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b69e327bf637183397c7d975df8e1c45fa1ad9866b71e6d1",
+      "question": "Is Arabic one of the 11 languages in CoVost?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "6f949074854fa472b5be66cc1c3cf9d2c3dfe301bd437515",
+      "question": "How do they define robustness of a model?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c509e3bda123ac08967781ad78a55a157b876e9d0aa97adc",
+      "question": "What other sentence embeddings methods are evaluated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "76f663a13234c9da9f1d78c72b52d73ab37da0977e0001d8",
+      "question": "What are method's improvements of F1 for NER task for English and Chinese datasets?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "e57ea6390f796b88ab34da666c6576609db900eb9d0d9b24",
+      "question": "On which tasks do they test their conflict method?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "debdd11c3c5802df0fbef5055ef8d57888c833e2a230e0b9",
+      "question": "Which baselines did they compare against?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f028740d1aa46f5337578cc37bb55f6c8ac0864856b26096",
+      "question": "What is te core component for KBQA?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "78ec3790de7582388e6f9f2e428ddd2f6cccef851a8fcd57",
+      "question": "What are the baseline models?",
+      "candidate_count": 8,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c6464e3b2dbf1c8412496fdef56cafcccd0ccb9dd1937886",
+      "question": "Which methods are considered to find examples of biases and unwarranted inferences??",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "aaaf5a6e22afc0f84ee63ab9e8dfe9484462ef105aa44ec6",
+      "question": "What language do they explore?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "1b96562949f4722fed7766bb0be032ca10cb98c89192068f",
+      "question": "Which models did they experiment with?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "08034d93200eb0b2207fc07921f81e95f4a801c0961f3724",
+      "question": "Do they report results only on English data?",
+      "candidate_count": 36,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "36dd6c4714fb80bd70d4dc3805324eb2055fe272b85fa5c0",
+      "question": "What summarization algorithms did the authors experiment with?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "37555b3a43b9c65a02a522310fe737913a5863a33bf81c32",
+      "question": "What was the previous state of the art for this task?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c6bf18dbbe6ad2c777f3b2db9f35a1b23c9e3ec2d138b186",
+      "question": "Which component is the least impactful?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d0c52dceef7d3b347e2f4543e601576d4d68324e7c543a6d",
+      "question": "What is the corpus used for the task?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "5acdda9ea1342cee04400bab5f4e3d23f394c14fa42f784d",
+      "question": "Which 7 Indian languages do they experiment with?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "7fc2e4d78ed71fd9cb767560f9f8f69124754bf212e2e3dc",
+      "question": "What is the model performance on target language reading comprehension?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c3dc6e575eeee19145547b339ae1c7af914dfde59a652000",
+      "question": "How big is the difference in performance between proposed model and baselines?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "a8f155f6d0b86040e21fdb913b07c5fa675b82dbacc0674e",
+      "question": "How much improvement is gained from Adversarial Reward Augmented Maximum Likelihood (ARAML)?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f7c52845824592155b90b879209bfaf82e6a8598c9cb9db0",
+      "question": "What evidence do the authors present that the model can capture some biases in data annotation and collection?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "e48405471fa8e3af3ddf67e7e9deb109523dfab05dc9d659",
+      "question": "Were other baselines tested to compare with the neural baseline?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "9c060535b14310dff1d863489d6ecd52f7ecffda0dcc9fcb",
+      "question": "What is the size of the dataset?",
+      "candidate_count": 17,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c624b6d8a5c2cbf6ad3c24de6e42d7b1b6504fe608ee3733",
+      "question": "What are method improvements of F1 for paraphrase identification?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "7fb2af0c4759875dc623bdfa5024e13f06a9288f1930470a",
+      "question": "What datasets are used?",
+      "candidate_count": 12,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ec83bdfec205fe7374404faa05fe5420a2a7922e251c573d",
+      "question": "What data was presented to the subjects to elicit event-related responses?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "57de270868df43af983000c70076588676aaf9bfb5fbfca5",
+      "question": "Which baselines are used for evaluation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "bd9de91e4f20f4d0e8cbd1d442c97022e5410cc9a814aa0e",
+      "question": "What learning models are used on the dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "0d39f8e4a71796ad340444ae3e5fe23b51beb9f47247d8a1",
+      "question": "What language model architectures are used?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "677dad703988e8f26b322211803fad38ffe9e58d1725f51a",
+      "question": "How are weights dynamically adjusted?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3c1ef39c9ae5336afa8c7d3501bd8d24dc655c17ebf6c75f",
+      "question": "What are the results from these proposed strategies?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "aad6558e94d7056e2b8acd03fbdac6448c16b0bf28d1f033",
+      "question": "What does an individual model consist of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "4b9e15e7e39589f3a953e9e6637e00c28269be034f93c00b",
+      "question": "How is non-standard pronunciation identified?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "715229da03cdd7077f0ea02c5b4f67489abe24d42e4ece22",
+      "question": "What is a semicharacter architecture?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b96a5e2e8d4b32aff5401e97c66942bf33f6c3c62a43609d",
+      "question": "which languages are explored?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "757c3e92861be1ad45a06d157bb10fe162bd2163bc3baa6c",
+      "question": "Is the data de-identified?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "1fc62062641bf85a160d7465aefb91870235e6c815b392cf",
+      "question": "What was the baseline used?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ea4db579b5224fe0fa413ee436a5f4f56777dfa3e25d99d7",
+      "question": "Why masking words in the decoder is helpful?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f3b5a2a6642523c5347d7612ee64a3378c6592ea58a0857e",
+      "question": "Which dataset do they use?",
+      "candidate_count": 18,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "10f50fd914b227d12f503b3ef4ac5fe772e70f44557c17b5",
+      "question": "What features are used?",
+      "candidate_count": 3,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "a49d38fea6e6ffd631d227f17753ce20624d17bd8a04ee03",
+      "question": "How is the dataset annotated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+      "question": "Which eight NER tasks did they evaluate on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c09598fc924dab440fb92fcd82dff116759ed11f5947b3c0",
+      "question": "How was the training data translated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "679cbfcf05ceb304bfbc0f4ea24597aeff90611a76a374a2",
+      "question": "What model did they use for their system?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "03e03cd498cae30eb47667209de54bfe6545647ddfe4457d",
+      "question": "What was the baseline for this task?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "acb71edfecd0645219cfd258956141fe666557f8debad399",
+      "question": "How is the political bias of different sources included in the model?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "72bf7a9599ea8ea1cf309f0dfe07f16f2e05d59ff82f4a37",
+      "question": "Where does the ancient Chinese dataset come from?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "85a7083bae278e83df0fea37003937a9294638f488a18a83",
+      "question": "In what language are the tweets?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "6ab7a0f094ebc681c85b0bdbf251970c5fc6bc638da5e3b5",
+      "question": "which chinese datasets were used?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c8ddf1d2e1192893ee5bf9e0ffdeb6762a7a2f719d299c28",
+      "question": "How many layers does the UTCNN model have?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3f3d64d45cd4761fa7a9da94fbc4c41b27f3a7b856117638",
+      "question": "what dataset is used in this paper?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "806667777a33e5aede1bd3a62cbb5562f99b2223f68b98fe",
+      "question": "What are the clinical datasets used in the paper?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ed98266f89745750cb92ebc16c941888f1b0291d405d14e2",
+      "question": "What traditional linguistics features did they use?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ede810c7fa069014dc1b6fe66c54079ce1fe81903c684600",
+      "question": "What metrics are used to establish that this makes chatbots more knowledgeable and better at learning and conversation? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "be6e56c9310a931e883d529da75b125058563bcf4d8d16d0",
+      "question": "Do they employ their indexing-based method to create a sample of a QA Wikipedia dataset?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "78224546bfb859e5412a0d5ef1b030ea0b3844c9987c79ff",
+      "question": "What experiments are conducted?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "34e4bb298d4e2c19c2fce8670a00196cddd9f361eeb09a9a",
+      "question": "How does Gaussian-masked directional multi-head attention works?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b80ef6cf65d0728f2a3a6c812d50121f97dc555c71d8871d",
+      "question": "What types of social media did they consider?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "c6aff9577f2b48117cc4b4d11e8acfc1ffb55ec48717b69b",
+      "question": "What are the network's baseline features?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "9c415874c0c9fba5d1111bf3d9cb379fcbeff17fcccb560a",
+      "question": "Which hyperparameters were varied in the experiments on the four tasks?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "021d8b537118d33026257c7aa79d0405d126e2d35962d221",
+      "question": "What were the scores of their system?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "3b3fcd0ee773501a21c5eb6159746fa29bdc3498329525e5",
+      "question": "How large is the corpus?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "ca91b274c44baec976e7acbd926d7d823fd5a81e34dfcce1",
+      "question": "Is it possible to convert a cloze-style questions to a naturally-looking questions?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "eb64a6b64d9837a23cd1824be1986861b0b23d98ff1c52b1",
+      "question": "What NLP tasks do they consider?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b5481f9dfee2d9dd2154b3396a702c72f00b86508b001651",
+      "question": "What previous methods is their model compared to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "0012658ce252037bf12bb47de21ea785b1ee2731e5bd809f",
+      "question": "How larger are the training sets of these versions of ELMo compared to the previous ones?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "547c0b203cd3f5e26ebf4709ca03599db12e8d1bb08bc1ba",
+      "question": "How many sentences does the dataset contain?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "d999910bed46747299b4c315cc345dc978d979252f65d39e",
+      "question": "Which models/frameworks do they compare to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "b3d9af44008c13b316e929ad00b8eeea477fdbf5aa50eab7",
+      "question": "Does their NER model learn NER from both text and images?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "2f457d7ab54cb1afc5be7e5171425354617f49b8f75d90fa",
+      "question": "Do they evaluate only on English datasets?",
+      "candidate_count": 10,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "160075b535e7b0c17c873ce4ffc5bfc9735ba43fcff32757",
+      "question": "What was their highest MRR score?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "dd771b6e98a15ceb55e41e4c6e948e1ab1248d51111fb5c1",
+      "question": "What datasets do they evaluate on?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "f0f715a6867aa0e4b6ef1eab6827162fba00296faa55114e",
+      "question": "How do the authors evidence the claim that many engineers find it a big overhead to choose from multiple frameworks, models and optimization techniques?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "qasper",
+      "public_id": "9de7829de79f59d8deeb2d8ecc1652d081394c258cbce691",
+      "question": "On which benchmarks they achieve the state of the art?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "fc6267db9ba02bbb251960231bc87251c581110e4e2b5f3f",
+      "question": "Which case was brought to court first Miller v. California or Gates v. Collier ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d542fcd45bbf5112eee9127f04ae060a887c8ef2050aa160",
+      "question": "The actor that plays Phileas Fogg in \"Around the World in 80 Days\", co-starred with Gary Cooper in a 1939 Goldwyn Productions film based on a novel by what author?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "cb9214532284b8202912b1b75592832daef0b109593185a0",
+      "question": "Prior to playing for Michigan State, Keith Nichol played football for a school located in what city?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "105e7f4d337799315ddf870acc4ff2a62a1e6cdf489086cd",
+      "question": "Gary L. Bennett was a part of the space missions that have a primary destination of what celestial body?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5ff08452b84748458e71d82a6d387599969311fd61cd8fd1",
+      "question": "Was Atom Egoyans biggest commercial success on stage or on film?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "97b31d6d7a9137c220726ad51a6dca3e957e2c94ce5e65b8",
+      "question": "Celebrity Fifteen to One has had more than one appearance by an English writer and former Conservative Member of what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "11a7ad9d646184c16480376226d58f1b2754b095563c8344",
+      "question": "Thirukkalacherry is a village in which Indian town?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3dd1ade26fd583844dd2af051d61eb20856ccc8e23abae59",
+      "question": "Which is a flowering plant, Pueraria or Pleiospilos?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f039fe9cc81a0a312f9899beca2fe26b710bf8c3aa23a4d9",
+      "question": "After Russell D. Moore served at the Southern Baptist Theological Seminary he became the President of The Ethics & Religious Liberty Commission (ERLC) in what year?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a30caa5dafcc37835bfe4093f129017adf4c814e9016e10d",
+      "question": "For which band, was the female member of Fitz and The Tantrums, the front woman for ten years ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "72feb2a8e5b92548a357bfc11e94050464f93f1ce286418c",
+      "question": "When was the American singer, songwriter, record producer, dancer and actress born who's second studio album is Chapter II?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "77439b0a62b6de3a022b1d7a5678c1c00fa8d9af42fea1bf",
+      "question": "The Greatest Event in Television History aired on the channel that was founded by whom?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "21bc398556b5612bf0437043cd2800e943bab5929c4bccc5",
+      "question": "Who starred in her final film role in the 1964 film directed by the man who also did Vera Cruz and Kiss Me Deadly?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e0998dbc2db68c7b18adff7fcc67081acc865c974b721312",
+      "question": "Finally includes the song that peaked at what on the US Hot 100",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "139d2fcf8763003414ebd0187eb30b94930de13c4ab754a0",
+      "question": "What are some other areas that share a common deer species with the forests of Mara and Mondrem?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c261ca6aeaf366815232e91db1ef4dc8408cec3750c38ee9",
+      "question": "Professional cyclist Sara Symington competed in which Olympic Games held in Sydeney, Australia?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ab016faac478c4acc6e9ed3ed87f9e29dbed47fd946be244",
+      "question": "Which retired Argentine footballer who played as a forward was a main player for Valencia CF?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "cae319fad2385d30d79efac0fb61e58518fbdc0703be3b0f",
+      "question": "What actor was also a president that Richard Darman worked with when they were in office?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e4df9576e5cd102024e81baf94a43325335d0ba2d8892041",
+      "question": "The song that came out ahead of The Wanted's \"Lightning\" on the UK Singles Chart was featured on which album?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5e3362de0244d2b96c83958c4d3229151999292c369b0197",
+      "question": "Name a member of a British-American supergroup who recored a version of Nobody's child in 1990",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "fda38e0c47dcd2b4f1de4adefeb00ab431221c0ef9adeb31",
+      "question": "What Friday night programming block included what collective series that includes \"Whatever Happened to... Robot Jones?\"?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ef245cc27251f559f3cd900c11c7bf9f303eec3c4b346802",
+      "question": "Where does the city situated where Kellyville Ridge is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3a75aba6bc2496016339474aef28ffdc9dbebdc00ccc166b",
+      "question": "Oak Beach, New York and Great South Bay are both situated between what same island?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3dc3db870ea907282d3160c597c4d618ae6ba2a6bdd712bb",
+      "question": "Who is a guest in the final two episodes of season eighteen of South Park?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "26a5366c80c3a569c474a3990f3383beb125d34149e8ed3e",
+      "question": "Robbie Tucker plays in what series that follows a group of friends who run an Irish bar?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "6eafb48c7a974b5097cb4752eb3853dbac8f622173d24e44",
+      "question": "High School Confidential, an eight part documentary followed twelve high school teenagers from a high school in Overland Park, Kansas that ranked what in the 2009 Newsweek ranking of the top 1,500 high schools in the United States?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "1ceb1c91662d241b3421853112a91b5868d1b81fe3b88ce4",
+      "question": "The large subunit and small subunit that use two types of RNA are major components that make up what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "7e525340152c2f4b26d7fba85c680dde7b75af77356a7c22",
+      "question": "Whiich genus has more species, Dracula or Pistacia?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b6352c61b4a748448ce38882861cd5ae5f7f2869a81e92a1",
+      "question": "Band-e-Amir Dragons is named after the lakes in which Afghan national park?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4b83e873a551cd83a2e409d2b4467f74dd332326fcbca843",
+      "question": "The 1958 Pro Bowl was played at the California stadium that is the home for which college?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "cb677158d6f710ab0cb440b2024cc61c942a1ea4a963087d",
+      "question": "Yau Ma Tei North is a district of a city with how many citizens?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4b1df711ec0557b9df23de534c1ce99b7f37528f643b8c29",
+      "question": "Spider9 was founded in 2011 by the head of which subsidiary of Wanxiang Group?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "02c6e6b95d2a200df20bea7495469c79b1d89ed560890ee3",
+      "question": "What is the population of the city at which the transmitter of WLLZ-LP was placed? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3056e292ff1583fe84207873be57c6ec28c28b425087ca84",
+      "question": "Charles Haughey held what position when he dissolved the list of members who were elected to the lower house of the Oireachtas of Ireland on 25 May 1989?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "9729ff4cf6a13382c88896cf5a5b176d082cc1137c66b38b",
+      "question": "What city, located in Lincoln County, Montana, United States, is Vegepet based in?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "220230ff5154e6f0ccad63965d06ce69a9226bd72cc32fa4",
+      "question": "McLaren MP4/11 was driven by what Finnish former professional racing driver",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "01aff89f9ce55470c12450b595c268a225a638582dac204f",
+      "question": "Which of the movie which has Rich Lee 3-D previsualizations was directed by Francis Lawrence?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b785963089bd7f81ee294751c688af85bfe2863dba623373",
+      "question": "Who choreographed one who is said to be the last muse for the choreographer and starred in the Nutcracker?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "72a769d6d0fd1c5c90974e60ab97e88e6853b9115a7fb85e",
+      "question": "Which utility holding company did Alfred A. Marcus work as a consultant?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "207efa55e96afdf705e48bc57b58fc8232bb972a47073d50",
+      "question": "Which film was released first, Summer Magic or Around the World in 80 Days?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ec3b5bcfa070b047c769413b99a2f32e4f5d2f803cf81a43",
+      "question": "The physicist who is responsible for identifying the Rabi cycle won what award?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ed6c85899d2a29f6dc8e02ba62bc8f1b1043a8c135fdd132",
+      "question": "For what type of work is the production company for The Year Without a Santa Claus best known?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4c34b33d7a545c4eba3848d54fc4568fdf186e849897aa6e",
+      "question": "Which three-time Olivier Award winning English actress starred in the 1981 BBC television serial, Sons and Lovers?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "74ae5bfc8bdac7b560ec92b71604e86654f87b8f7fcbb30a",
+      "question": "The historical Nimavar school in the Nimavar Bazaar, or bazar, is located in which country?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "75f3798af3596cffefe8b932a00b1976f3f25fa0f42089fc",
+      "question": "Which name adopted by African-American activist Allen Donaldson co-found Black Power movement of the 1960s and 1970s",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "eac05e5d0936f802e28b0c5081a2c2a1a94fe4f2c20cb2df",
+      "question": "Which person is known for playing in punk bands, Keith Morris or Rome Ramirez?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "1a71b5a73ffb21cb52d41e09b1f861748b60f1e59273a080",
+      "question": "Arnold Richards was the former chair of what organization that is a member of the Center for Jewish History?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "963e90eba94bba5bf5cf56755032d7bd4a3e4e225d3b8d14",
+      "question": "When was the plaintiff in the 1892 Barbed Wire Patent Case born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "99635fd2d7a227cb3360253cf0f5759ed87bbac33593d830",
+      "question": "Which mountain is higher, Tongshanjiabu or Himalchuli?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "76096cce081ab5b9ef72be19076ee0a79d9e9239474e8b73",
+      "question": "When did the place in Canada where François Beaucourt (1740-1794) was mainly active acquired its present name?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "670498f9d7fd2582c5791cad2fe212f580d316fa49a8a984",
+      "question": "Who gave the mother of Alberic II of Spoleto the title \"patricia\" of Rome?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "2903a54db35e788f31a967bdfa021d64ac18ed7e1aed919a",
+      "question": "What football club plays in the area between the old tool gates: Brook Bar and Trafford bar?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a7c311f9f6423063e02c8236bdd83cc8059fcb9fe78b4fff",
+      "question": "Are Stanley Elkin and Anne Tyler from the same country?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "afa4eccc7b711ace3270c9cbcd784c971a4f0f8d22629ebf",
+      "question": "Sand Lake Baptist Church is located in a hamlet with a population of what at the 2010 census?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "fddb2049ab13cf002eb07f658ae13d9f99d83538ed881e9b",
+      "question": "What championship did the person who substituted for Simon Pagenaud secure a contract to drive in 2017?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "87fd3f0590498461d595ff1823632c79b66cf313cf55fbb3",
+      "question": "Are Yoo-hoo and Faygo both carbonated drinks?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "47b3fb2eb0b90839a7887fa2138662a58c0170c96479190a",
+      "question": "After coaching the red raiders to several winning seasons, where does Mike Leach currently coach at?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4b0f3138abafd9fe2f3a16c3b2ffd55199bc3771070b5cd9",
+      "question": "The Huskies football team were invited to the Alamo Bowl where they were defeated by a team coached by Art Briles and who played their home games at what statium?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ff048b34a9405c880ccf710acdf1a53244e6039cb76c793a",
+      "question": "Luther: The Calling is based on the BBC crime drama comprising six episodes that were run in which year?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d9f5437fa85841cb12798def39a30721d3d2d140b4982854",
+      "question": "How are elephants connected to Gajabrishta?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "93d2774c99edbde88789a9f989642ff160871ca09e66e46a",
+      "question": "What is the nationality of the author of Fifty Shades Freed?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "de85aaa5c535ba20bdcad5fbabfe13a03687374265a57b44",
+      "question": "Were the Tundra Mine and Negus Mine located in the same country?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "232c2ba7b8bb5f22b77e5c55961d0cd0fe673d26870e157b",
+      "question": "When did the animated series Kent Scott wrote end after beginning in September of 2002 on \"Nick on CBS\"?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "780b1664552881f2c14a0d943e746855f83709a5399bb4aa",
+      "question": "What American actress stars in Tainted?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "0a44085d7963681015a69416470b86da02135ac722d6301b",
+      "question": "Jolyon James performed the role of Moonshadow in a musical by a composer of what nationality?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f1c0b9a9ec47ccda8ba4b1be0ca7083b961ba0f06b2a4df7",
+      "question": "What Nobel Laureate teaches at  Chapman University?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "75439ed8609c12817aaee0fa4f749aebb3e4a36dfa72390e",
+      "question": "Which California band, whose debut album Adrenaline appeared in 1995, has been referred to as \"the Radiohead of metal\"?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "8a5d7c131d291d2c7cf2c20ea36a629f969402e0c50a8a8a",
+      "question": "What was the population in 2010 of the town where The Stelljes House is located ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "cf16ba255ad4b7b0fdae56093ac7d5fb58487dc24f2659e2",
+      "question": "Which country is home to Alsa Mall and Spencer Plaza?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "9a19f9594aa73716dd38bcbd5ff1c04e57a6649800570f80",
+      "question": "Are Mick Jagger and Brett Scallions both musicians?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "0879d3f078165bdc1aabca26c8526e66d3959e8ab2c6d903",
+      "question": "When was Erik Watts' father born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "98bf7e9946e86278d6d2b938d751861981c5fe14c356ea68",
+      "question": "Morgan Paull played Dave Holden in a 1982 film loosely adapted from a novel by what author?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "6320310adc4a826b1bb240c63ac1735b7b29e93a59782364",
+      "question": "What was the Roud Folk Song Index of the nursery rhyme inspiring What Are Little Girls Made Of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "11b4c60bf00735e20ae817b940d86aa8922e2fcdaa3a0b47",
+      "question": "Which is in the pop genre, Capital Cities or Tweaker?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c47c8d3b1917f017cafaecbb4cddd6b92171854247957c08",
+      "question": "Who was born first,  Morgan Llywelyn or Robert Jordan?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f536646dd72a8a4f5ebddec61a67b8319dc9187d47bb7fc6",
+      "question": "The winner of the the London Riders' Championship in 1953 scored how many points in the 1952 Individual Speedway World Championship?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "6e541b3b8fc7e59da0da6548a17932b403b2e865d4036982",
+      "question": "A wide receiver for the Toronto Argonauts played college football for a team that represents the University of Oklahoma, which belongs to what conference?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "6eca7d7affce3375ec084f6356c6fc8ddf75eda0f6a4382f",
+      "question": "In which six Western European territories have Celtic languages or cultural traits survived?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5e7675388334946fc508c4c8ac4ab0c491910fcc0e048bfd",
+      "question": "SR connector is based on the connector that is often used for what type of cable?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "8bcda9c521bb7cb5dcd9a8d4987bd5bcf4ec455a84c62f81",
+      "question": "Which is farther north, Steel Venom or Wicked Twister?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "1d81e1f410acc77f1d9a844f811045c2cecb0fdc9e717d41",
+      "question": "Which filmmaker was known for animation, Lev Yilmaz or Pamela B. Green?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "77a3188a3b97619e1661cc289bb1a951308223219592696b",
+      "question": "Who was the gunman of the hostage crisis which Chris Reason was awarded the Graham Perkin Australian Journalist of the Year Award for his coverage of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a16ac581bde4459861c8681858b07f82363f66142beed4c2",
+      "question": "1920 Politics was a Republican political strategy to reassert the authority of the white race in which US state?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "81d43196cac0effe1645b207f826a30550efc3126c35371e",
+      "question": "In what event was Harold Davis a former record holder, but now is held by Usain Bolt?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3e4cce5082e968aec7f0c008b1acbd111f505d0579d1c9ee",
+      "question": "Why did the CEO of the football team based in Denver, Colorado step down in 2014?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "9dc6d234e2406aef691ea02ddc2064f343fc30cbc534c937",
+      "question": "Are Pothos and Tibouchina Aubl both flowering genus of plants?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "7bb5645d62fc946b46910757e007f59e87f52bbf8535da58",
+      "question": "The Pluralist school is said to have included what creator of the theory of atomism? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "21849142d27a4c8410bf8e8042f016054a0a0493e0e8b6e6",
+      "question": "Which City in the Miami metropolitan area is home to the Primetime Race Group?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "73d978e7e37a9c7475daa9151f9ead2bd3042e72988cafdd",
+      "question": "What type of structure does 277 Park Avenue and 126 Madison Avenue have in common?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f5ca9a0360773900f848072d3d7c63034922bdd0e6925e64",
+      "question": "Operation light house was an experiment by Wernher von Braun and another man born in what year?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e7875d33cdf7138818681e7bb2a13310bba28ea94550d64f",
+      "question": "Which conference is the team for which Justin Bannan played college football currently a member of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "561c378ca284bab34f735f05e21dae8653ca251f6480d6e4",
+      "question": "What time did the show, in which Gordon Burns was the host, usually air on Monday?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4aee23759e842807b156492356b920a11236c7ea3da20732",
+      "question": "Are Werther and The Odyssey both operas?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3df75e9b85781f83af8d3011cedb0c5fc6725f3489e48e54",
+      "question": "What occupation is shared by both Marge Piercy and Richard Aldington?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "6d8f9be94b67277442c42aa9b437edaf901efec0d0959bda",
+      "question": "Are both Duke Energy and Affiliated Managers Group based in Massachusetts?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b7af427ee230063a2aabb35691c7a81670c0b7e85ac3b7b2",
+      "question": "How many marchers were in the protest that Pelham D. Glassford ended? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "666b2401378aceb59c9a4d6cc75b006f7c6af8a00c7d6f19",
+      "question": "Where is the airline company that operated United Express Flight 3411 on April 9, 2017 on behalf of United Express headquartered?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a2bb6c8de2a57c51b35e9d5c005cf46e1c0457f4086ef77d",
+      "question": "What was the first year a scientific journal published by an organization located in the Bronx was published?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "9fe92e20febe504670266d638939a94fc57c3cf8fe9cf948",
+      "question": "The owner of radio station KWPW has the same name as an American character actor. What is it?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "203709148e7052e14bf493f95037458b606b42f2fff54c79",
+      "question": "Brigadier Stanley James Ledger Hill was attached to the command post of which senior British Army officer born on July 10, 1886?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "2bfda75e23447ca7e3213d01331c31816f30190a2ff6df71",
+      "question": "Bill Bryson grew up in a city that is the seat of which county ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f1ea70c4e2c13d2fda1feda75a72a345c0e91f083220e95a",
+      "question": "Who was the last monarch of England to be overthrown before The English General Election, 1690?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "60ec93a22fbcb65eeadd9f1d2b3c8e4ed44d3a2c4285b168",
+      "question": "What song from the fourth studio album made by The Who reached No.4 on the UK charts and No. 19 o nthe U.S. \"Billboard\" Hot 100?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "bcd98af30c2eb7ce1233459715d27f428b111d12fea529b4",
+      "question": "Angelspit toured the United States with an American electronic music duo from Orlando, Florida, that formed in what year?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4636487a1855382398fe1e54284cb7dd3d7b8d178ac4a476",
+      "question": "Migene González-Wippler is leading expert on a religion that developed among which ethnic group ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a93aa642fb8802a99b36cd62febe1c4e995096a9320b00c5",
+      "question": "Henry Roth and Lewis Mumford are both this nationality?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "9336554e511e88766228ffa1acd1c6f82c9a41046514c253",
+      "question": "Who did Fredric Rieders tesify agains who had killed as many as 60 patients and recieved three consecutive life terms to be served in Florence Colorado?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "fbd2e6218ec7c8fc1a90b05bf6858a15d376704a278fa79f",
+      "question": "Who was born first, Juan Rulfo or John le Carré?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "0aaabfd136117761896b5931d7b468ff8c61909e00140470",
+      "question": "Where is the company that created Doravirine ( from?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d18fde9d0b8da2a2febb67a679847ee4ee3259e85a9565f4",
+      "question": "What year was the author of Cock and Bull born? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5affd6b287c8ce97502760e33a71598e8eee24b78c3dd95c",
+      "question": "On May 25, 2017 Greg Gianforte won the special election following the resignation of a politican that current holds what position?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "56dbceaf2e826fbb177035f03d7a263d62365856f21f39da",
+      "question": "The Red Queen's Race is a science fiction short story that uses the Red Queen's race from a novel by Lewis Carroll that is the sequel to what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ee07a420f322205e992788e25c0b256cadcd99abd359ff0f",
+      "question": "What was the home city of the author of the famous novel tracing the life of a male roe deer from his birth onward?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "795ed5382ff9378f90123aedc2b638c049411295c5678466",
+      "question": "Are Tantrix and Personal Preference both types of games?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4d6aafffd109cb61fd543f44bda770fda0cf1e1c3798548b",
+      "question": "1956 Night Series Cup games were played at what inner suburb of Melbourne that is 3km south of Melbourne's central business district?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "7528b0be35e8e6007f07c98b9f2d45ee1c854298134aba5c",
+      "question": "Sarah Price and Rob Schneider are both what profession? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "38bd41e515abf2a44d29c593748db043ba2276d93938fdad",
+      "question": "What rule-class city of 26,595 contains the neighborhood Plainview?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e54d1e07a1fc2ce2afdf7e75f79561d8fe0abd22f4d8bd53",
+      "question": "Who directed the film where Susanne Pollatschek voiced Olivia Flaversham?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "034b6ac41cd902b7fbde6b304eb2930d8eea616924ba461f",
+      "question": "What public radio network in New York has allowed Eric Plakun to dis his psychiatric work?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b4dfcf1c4f152ba5684531d0eaa43f33ec5b185b92a36884",
+      "question": "Don Holmes played for the football club that is based in what eastern suburb of Perth?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+      "question": "Hardley Flood is an area of lagoons that support populations of the waterfowl that are a medium sized version of what animal?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3faa54c1f192293c709684aa60c6e2e8cfe34ff55c8b6248",
+      "question": "Which is a shrub, Mimosa or Cryptocoryne?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "9303f959145f198df63d2d7ec604a9d6efcb3e8daca89e91",
+      "question": "What types of activities occur in both the Bennington and Bridgewater Triangles?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a18c0ece7c2ae88d2f9f3ffc5eaa13297a1b5d0125a172ad",
+      "question": "Carlos Salazar Lomelín is the CEO of which Mexican multinational beverage retailer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "22a4122731366b93dd7495f9cb64b9312537fbe85797efbc",
+      "question": "Who stars in the title role of a Netflix show co-created by Robert Carlock?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c16a3dd0b5b97180359715cab5c41d528cf2a99e2744f037",
+      "question": "Are Yut and Tsuro both board games?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d7d92c85b8becc33e60fc03507933f8eaf53b5e1067286de",
+      "question": "What is the name of this suburb within the Central Coast Council local government area, where Tessa, of Microwave Jenny, grew up?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "480b33cc38878ea4fe81b796d09ba2d10cca554611e323ec",
+      "question": "What city in the Philippines is home to the Robinsons Galleria and the 4th largest shopping mall in the world?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ad26b1fdaa97e8ef1c290a41a9151cc6b453756cb2715176",
+      "question": "What organization does Sandra Pizzarello and Doctorate have in common?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "78e73e15102e688a5b5f43155b11658907db8caa30fdb16e",
+      "question": "Did Qionghai or Suining  have a population of 658,798 in 2002? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e5e18488f0e900206332a857f70da66dc59829937c913ff0",
+      "question": "What form of play does Yameen and Activision have in common?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "887be3f3f2080532b3c0f1dc4d26be4f8a06030bf2e68a1a",
+      "question": "Are both Frank Lloyd and Olivier Assayas American film directors?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "2bf8384417cec2f1a2d43a2602326d90a97622d87898b1cc",
+      "question": "What was the nationality and profession of the person responsible for the concept of a dimensionless number in physics and engineering?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "826474c90684b1813df9324f779959a5e060d1cfc893a85f",
+      "question": "Santa Bring My Baby Back was released on which fourth Elvis studio album in 1957?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "54d1487358089d52613d8e6970c3efdd5c56d112159d2810",
+      "question": "Camp Courtney was named after the Major killed in action at the battle codenamed what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5748ce1eca37fc55596e58fcff71e45363396002d28e0af9",
+      "question": "Baraki Barak District is situated in the western part of a province whose capital is what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+      "question": "Who is a winner of the 2013 6 Hours of Silverstone a co-commentator for?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "efc793ac73a0341a7cc35ea6872a89be3d4fed5f64c1e043",
+      "question": "The \"New York Times\" bestselling book \"The 50th Law\" contains lessons and anecdotes from this historical figure who was a classical Greek (Athenian) philosopher who is known mainly through the writings of which philosopher?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b3647c02310a89ccb2822c163da3bead1ad3cd21948d4769",
+      "question": "Where is the host of the American survival skills reality show, The Island, originally from?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "dc14a859291c1d678432626f6f7974f8ecca536f4b7bdd6c",
+      "question": "Who was born later, Jerry Garcia or Joe Gooch?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "75d66ce7bb5fbcea2d942895c0b10144ba9a94282e2e9f15",
+      "question": "What do Lavinia Greenlaw and Nâzım Hikmet have in common?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ea58013717bdbe9f0bad1991ed03d1afe3208bf514d9a2cd",
+      "question": "Le Rêve was created by the director behind what Cirque du Soleil production from 1998 onward?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "228572a285ddcbb4947f362c07531238d1eec58e0fe0cfc6",
+      "question": "Where is the University Joe Odom played football for located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "1650b91e6fb722111b6461fc9524295246c3bd3b1a342267",
+      "question": "Roger Stuart Woolhouse is a biographer of a philosopher commonly known as what ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e9b828ee7169d1978f3bcb6de5bbb0f54f9ee3bfc0ffdb8b",
+      "question": "National Firearms Agreement was in response to the Port Arthur massacre that killed how many people?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "88b095fb93df1d962625daa1796a46ce4721c316b0ab819b",
+      "question": "The telenova \"El Ardiente Secreto\" was based ona novel published under what pen name?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "690c31a6d6263dacd649fefc5b5cfa94210205fdcdb43905",
+      "question": "Are both French Spaniel and Beagle universally recognized breeds?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e9348ea3d217789522ba17d5dd2c69c01bacc9d677c614a4",
+      "question": "In what year did the Tornoto International Film Fesitval premiere a movie produced by BBC Films?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "781060824875cb0343a110f5e6f83d46e638cbb89e2ad7c6",
+      "question": "The FIBT World Championships 1960 took place in a town located in which part of Italy ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "8e9e0bac1908657b2f48452fe70dd4f7ab765b9633b75627",
+      "question": "When was the club formed, for which Adam  Johnson played as well as Middlesbrough and Watford ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e8ba4badc3c5d30cc0942ede8df86a72257c492c07025dab",
+      "question": "In modern history of Syria this kingdom lasted for only four months, this kingdom surrendered to who?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3f17f12cfde4c677f3af81362ce1df42f949bee1ceae40f4",
+      "question": "An American who is a German literature translator and did a thesis on an Austrian prodigy born in 1874 taught at which university?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "83df22880fee9f761464404ca2ff6ab21954e6b0827b4142",
+      "question": "What past honoree from the New Dramatists Organization is a powerful baritone who won the Tony Award for Best Actor in 2000?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3518c800877d0b8cc48ca575de745502b472a139564ffa46",
+      "question": "3 Arts Entertainment had at least one coalition with what streaming service, with its 13-episode, 2015 season of a Tina Fey created sitcom?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3acb0cc0a04a3f71078ee120e1b7ca4f089548b7cc8a8056",
+      "question": "Were the board games, Clans and Drunter und Drüber, both created by Leo Colovini?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "90caafc7fe51eee4143874971f67bb3e0107d26179c437f7",
+      "question": "Broadbent Arena and Freedom Hall are landmarks of which U.S. city?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "8fddd32ef1d88a5f8fde49152fc015eb80b3d60d1108d073",
+      "question": "What side-scrolling platform game had Christian Whitehead as project lead?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "bb5fb55b76b2e47a59f48907aca9db96fafabd5b874e83cf",
+      "question": "Which racecar driver who performed in the 1971 Canadian Grand Prix was born in 1937?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e0a5da9581af9a4a573423cbdcf207c5436dc35ff8a9d380",
+      "question": "What career led Brandon James Routh to move to the city where Brian Ralston lives?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d136a5063f8e7f5594182b51b05d626ca0671aea2ba22226",
+      "question": "What was the first film scored by the man who composed the soundtrack for Udhayam NH4?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "07f505d321fd7a7c04e158059cb69ac3ac7ecdebfb03037d",
+      "question": "What is the day of the horse race of which ESPN covers both the post position draw and the undercard races?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "019dbd177ddcff6752aaabc8c0e459f3ae4003f718bd672b",
+      "question": "Kevin Yorn an American entertainment attorney who represents an Australian actor who  played the role of Josh Taylor in what soap opera?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a1cce86489841f2514678029dbe95b7289b9d47f52f44939",
+      "question": "What stagecoach robber did Frederick John Fulton prosecute?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4b753aee2d76b79f12f1b8708dd61bde51405af6fe602520",
+      "question": "H-63 is a highway that runs near the county seat of what Michigan county?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "0118217cf85bd94f6a5f65952212eb05e7176fd3b18c694a",
+      "question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c9f8b2166f7c44bf2e0843b2c77fb9fa5738af275555ca73",
+      "question": "Which ocean would the ingredients likely come from for the She-crab soup?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "a3859ad1c8ffbce9bb2952f83cb463cc7051072c38eb8d70",
+      "question": "What profession do Raj Kapoor and Mike Cahill share?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4567b6935bf5c64a1974b1089d67d176d9acac6b29836cb7",
+      "question": "The 2011 La Manga Cup was won by Viking, who beat which Norwegian football club from the town of Kristiansand, currently playing in Tippeligaen having been promoted from Adeccoligaen in 2012?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f327fe18cfe320df9685d7195f33d41745a432e769476dd0",
+      "question": "What colors are worn by the Oregon Duck, mascot of the University of Oregon athletic teams?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4cdf613f05eaa834f5867ee486ec94d47587f09b5a7bb6db",
+      "question": "What is the character of fictional character Claire Fraser in a British-American television drama series developed by Ronald D. Moore ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "1df269c3eca341348a837f39c628f59aa40d663c07875d24",
+      "question": "For what ogranization does a commentator of Press TV serve as associate director?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d6fe5bc54941b566b3c88598bbc459ee4d7098d6c6f22c4d",
+      "question": "What else was Baghdad known as during the Abbasid Caliphate?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d3249d0550c7105bdd4ed60c9ca9d955db08d362574c2086",
+      "question": "Leonard Logsdail had a cameo role in the biographical film directed by whom?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "7d3bc2e36b406094cb586b4eeb07f13a7f1ac9dfbdce7d1f",
+      "question": "Which composer was wrote his music most recently, Michael Tippett or Luigi Cherubini?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "bf8ee342564ae21a17b169023f83a20220a63198827a0232",
+      "question": "The Panel with striding lion  was one of many that lined the way north of the gate to the inner city of what location?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c274ce731f680eb107c70386e2e341615378165ecc22799e",
+      "question": "What Lithuanian producer is best known for a song that was one of the most popular songs in Ibiza in 2014?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "861e7d3ba836f6a816d0265dc1c9f5566ef4d22b8de223ca",
+      "question": "John Paesano wrote which film for DreamWorks Dragons?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "6c64a81fa526cb96d0a191d9cbd85a7e917b5d4f03b316d7",
+      "question": "The player who laid motionless for ten minutes in the Todd Bertuzzi–Steve Moore incident was born in which year ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b84411acb9b2e39a68f92ed9e164eb053d3dd9ba4160f0af",
+      "question": "Who had the lowest vocal range in Cosmos?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "de202b6e76dc82831c7f14a6d4346d84b0c0e5e3783356cf",
+      "question": "Havelock Ellis and Arnold Bennett were both what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "e0873e8c51c3e473d614f6ff9705557ec2f37972ec4be718",
+      "question": "In 135 BC, a second campaign was sent to intervene in a war between Minyue and another ancient kingdom established at the collapse of whom?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c1cfe7334235bf4a9ef11293d8be2d4055a70ac89334be2c",
+      "question": "What title did the author of Det norske Theater's first production hold ? ",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "de89026c970fbb6dff04176107b9cf20407d155bc1ae2eec",
+      "question": "Where did the punter for the Dallas Cowboys in the 1980s play college football?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c6c1401ec6e635eac28b985621cf59bde9e416cac2b30080",
+      "question": "Are Dutch Smoushond and Sussex Spaniel's both dog breeds?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "3ece2c87c1ddea4a504fd1c67fe75d34ca8f818bd9ea15d0",
+      "question": "Which band, Matthew Good Band or Switchfoot is still together?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "ce14f5dd15a5819d08a11f04e015e35a6f3640119973f806",
+      "question": "Are Portland International Airport and Gerald R. Ford International Airport both located in Oregon?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d3b2acfdec13f925424cd7d96b689557edfd08e6dd6177b7",
+      "question": "Who won more awards, Brothers Quay or Jake Kasdan?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c5d6aa8cb0ad17a88eb66d578e86f783e3ac1f3684df9425",
+      "question": "How long is the river The Atherton Bridge spans?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "31386c51d334a83befff8c1264657e197fad8b2885906939",
+      "question": "Why is Bangor Daily News talkin about Sawin Millett?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "27190bb50ab7e97f74e2feec7dc3ef037f1a1c74d335ecb1",
+      "question": "Who did the actor that plays Sean Tully defeat in a dancing contest?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "b524574cca42824f963480aae00867719108113389d087d3",
+      "question": "What river does Waterloo Bridge and London Eye have in common?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "d3b197d5b4da1198fc9c232524faced0f528b89f919b8061",
+      "question": "Which is a beauty magazine, Allure or Claudia?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "0d6a7aae6f7e00180107c47a73dedda18caf3949666c4d55",
+      "question": "Which American actor portray Steve Urkel in \"Family Matters\"",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c5f1f53de09eb82eae93ae68a9581141a8cc8f3df6851926",
+      "question": "What lake in Australia is named after a Scottish Knight?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5fc84dadeb648a27c3aaa64698a5bec5d2ef23eb32e22e44",
+      "question": "How many records did the singer who sang \"Four Seasons of Love\" sell worldwide?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "40b5d54934bcf22bb9267e605c49d46509f3bd41b1a34c31",
+      "question": "what is the group called that Dianne Morgan and Joe Wilkinson a part of in the BBC comedy \"Two Episodes of Mash\"",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "c9ee71b5dc7f5a4538d7727c95f80c174d3c9819dfbeac5a",
+      "question": "The 53rd National Hockey League All-Star Game took place at the indoor arena that was completed in what year?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "4670f2a542ac06d27e47a74a042cf57f743fba34722a7dc5",
+      "question": "What is the first name of the author who wrote the play in which Rønnaug Alten made her stage debut at Den Nationale Scene in 1930 as \"Viola\"?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+      "question": "Which artist is known for his work on Marvel Team-Up and Batman: Son of the Demon?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "hotpotqa",
+      "public_id": "5da42038bb9d29bb30e4094504ad06dc2d43afa373568686",
+      "question": "Are both Kaiping and Pingxiang, Guangxi located in Guandong Province?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "4c114f84ca41284c0845705943adc10b70a4fd3e8d0ca295",
+      "question": "Who plays the wife of the producer of Here Comes the Boom in Grown Ups?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "4606a3d2fbbd29e034c815d51bd05e8d5481860ad8c1e7ef",
+      "question": "What was the person who provided evidence to suggest the existence of the neutron a participant of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "b5e26a0b0703d3a7b6b9ae4fd8627043ee84005137f515cd",
+      "question": "In which borough was Callum McManaman born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e9a0c409564baa2cadde3aa638d789031755b0ca9b72c63b",
+      "question": "Who is the child of the Italian navigator who sailed for England and explored the eastern coast of the continent Francisco Bojado's birthplace is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "b129c8e6a0b184509c1a36a6b8b5703c924ee965727e79bc",
+      "question": "Who is the spouse of the actor who played hannibal smith in the a team?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "685f8561239902c340fcf6b70d5ddc919b62aaf2b543ae3f",
+      "question": "When was the last time Peter Till's sports team beat the winner of the 1894-95 FA Cup?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "32b91f4d1aef1cc3c103e544e4fca9025ed7e6d677dbe380",
+      "question": "Who is the child of the cast member of Green Ice?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "936ced65be306aaccf844e11a0e0ef544d44a2a7edec8f14",
+      "question": "How many times did plague occur in the birthplace of La Silvia's composer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e3d8c2e853ea5a5ce78f9285d01c0b9b6ba832bd1027699d",
+      "question": "When did military instruction start at the place where Larry Alcala was educated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "fa5051512fcaa4d026335b0dc206addf60f317d85cc8998b",
+      "question": "What is the experimental satellite being forerunner to communication satellite of INSAT-4CR's manufacturer called?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "220004b7b3836d023f1e416666c0d8d43ae75a77c1a8bdd0",
+      "question": "Who was the first African American student at the university Robert Khayat was educated at?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7d7eb390be7dc75ca61b5eda6a9d9b36372273d1bd42646a",
+      "question": "Who gives out the prize named after the author of Lectures on Jurisprudence?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "70a325ff2a0681bc4f6fd064f47bf88b4551447ac97dea96",
+      "question": "Who is Frances Freeling Broderip's sibling?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a148671baac67e52fbe07df27c3b4293f351a1d1b5d9a517",
+      "question": "Who is the spouse of the person who voices Jarvis in Iron Man?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "26bd6d08ea272ac11bebcf5250b16ff90f92352cdac405c1",
+      "question": "What is the source of the river that is the mouth of the Caledon River?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "1f4b2eebc578880d3f401476be8e933f743e77a865a31902",
+      "question": "What is the name of the famous bridge located in the birthplace of the composer of Nulla in mundo pax sincera?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "606e28838e5641e3dab2482d21f65cf2915cacdf6d63b454",
+      "question": "When did the party that gained control of Congress in the midterm elections in 1946 take control of the government branch that determines the rules of the US House?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8fc8fb567703000eb6065c007e97841b11c9595b8862197b",
+      "question": "Where did the producer of Julius Caesar study or work?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "30dac2419bdedc98a7dac06e6d4c8046262c2d0197c2b7f9",
+      "question": "Mehmet Hayri Tarhan's birthplace is the capital of what municipality?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "936a34800c73e9d077b058fda4576fc45f8cb03bfae99c04",
+      "question": "What is the performer of Heartbeat named after?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e956e4868d588132bd2de1926dc446d0975c2d7a45090cad",
+      "question": "The author of Elizabeth and After attended which university?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8f9aa7e502ca3fcd999cb05b87a6aa78ef4c4af96cbe3199",
+      "question": "What year did the publisher of Labyrinth end?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "865a174ebe32ad81f573feb122198c1f16e6f2fd6c3fdda5",
+      "question": "The food safety system of the agency that has the authority to decide if a drug is marketed otc or prescription is known as?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "177dde027032c5c71bf88fd4676536c0bef7d79d43c32659",
+      "question": "Who is the president of the newly declared independent country that has a Commission of Truth and Friendship with the country where Ambelau is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "78b24e393c76b4fcd88852e310548721c5eea12bb8848aca",
+      "question": "Who was the British general in the battle named after the birth city of the person who recorded Mother-in-Law?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "096c9e28af3c91a52463c424203181b2a9c114c3b782dbf5",
+      "question": "Where is Sean Hampton's birth place in the state of Florida?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ecfec467704be2a08675527e8f1733d9fbb51309454145ef",
+      "question": "Who is the president of the group Kim Un-yong is a member of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "9724776e8c8210a47eae48302b73a9e2603c238d417a63f2",
+      "question": "During the war in which The Things They Carried is set, when was conscription introduced by the country where the film Grievous Bodily Harm was later released?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "2df2586b40a9e5928817855c3b3a44c45b0809376372f38d",
+      "question": "Who is the president of the new country who has jointly established a Commission on Truth and Friendship with the birth country of Satyo Husodo?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f4f04befbe7bb6e1ca4055ffd495356951166e116a15b3de",
+      "question": "Who is the spouse of the current queen of England?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "94e583be9e34ba8c8cec05546807a1516b652c80be180e9b",
+      "question": "In which year did Taifa of Francisco Giner de los Rios' birthplace cease to exist?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "334f6b3c862e350efb163f95dd0e7f59e2928309909f66e7",
+      "question": "What did M. King Hubbert's employer announce it was in the process of doing in April 2010?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8cad76dd1dfee0d4847e99f55e46c401a1087fde2aee2cc8",
+      "question": "Who did the person considered the founder of three major monotheistic religions marry after the death of Sarah?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a9233be5f19b456544331e69848af8bbf56256ce9ed0da78",
+      "question": "In what region of the country of S-Fone is The place of birth of John Phan located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "102eaee0943270c43f63b7d45a0088f6a8515e51a126d925",
+      "question": "Along with the Closer performer, what notable pop artist started out his career on adult contemporary radio?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "de9c2fbc33bc6136a3a0598a7a1ad678882b4a8613f3900b",
+      "question": "The Live Life Loud album's band signed to which label?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "74528b7f4e2b5d4c1667751615829ad5e7dfd81f9eb55e0c",
+      "question": "Who is the child of Sigrid Eskilsdotter's child?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "5c835b4c358e5f2e8c577dbc38c4857599539968e593a322",
+      "question": "What is the record label of the Metalworks Studio founder?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7e5b1ed484b4c095dbb201b8edc746f9f6e6202d1809a2f2",
+      "question": "Who is the president of the new country that jointly established a Commission of Truth and Friendship with the country that broadcasts Dahsyat?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "70444bcfcd30c497b730b5b408990ea2c672ec03caa5235f",
+      "question": "How many times did the plague occur in the city where Flora's painter died?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e62b87ef31160a755763a2c665a516dbcbcf1f116050019b",
+      "question": "What is the seat of the county sharing a border with the county in which Valley New School is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "442e302cee202c213a085d6aa1caf87e3aebf6b954c690b0",
+      "question": "What is the highest city in the state where Dell ranks sixth by revenue?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "17b78fd666e796626d85eb44cacd4bd767b9b6fd2f35c86a",
+      "question": "What specific part of the book where the quote \"by the skin of your teeth\" comes from document reference for Mary?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "97d4194eb1fc6ee16c04f46d93fd5df5fd2ff5c60056799f",
+      "question": "What is the seat of the county sharing a border with the county in which J. P. Hayes was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "338a13d60af61b3eeb099758086e6b1522a9adcd8f6cb207",
+      "question": "How many times did plague occur in the place where Venus with a Mirror's creator died?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "73b7efc9538e65dda454b5be9d9b84a35decf082cd4091be",
+      "question": "What is the source of the river Orlam clans crossed to migrate to Namibia?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6cbb382cf679c0cf091fbf0d3c6d9638bffbc8ea039ca8b2",
+      "question": "Why was Common Sense, by the same author as Rights of Man, an important work?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "96dfe963511d7bdd2daeda35b9fab72c44dcca15fbb91fba",
+      "question": "In which county was Larkin I. Smith born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f6ab8327fd10a883614cd3f571224c82f1cb7073de8a1143",
+      "question": "What movie did the person who acted in the comedy film Crime School win his only Oscar for?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "61193402df0b1548ecd9c722ee89b4354d336ded37b4cf49",
+      "question": "with what movie did Mary Philips' husband win his only oscar?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "074cbee8a17dcc448865addb33f8269d21c814d1c0b73e84",
+      "question": "The all time top goal scorer in premier league in one season is a member of what team?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0da7802e47b081fc2cc573f1d9559abcdd232d4733081512",
+      "question": "Where is the province of Gonbad-e Qabus County located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ce2f0aec72fade99a1be4add19d9e6364caf398a4586c902",
+      "question": "Who wrote the song turn me on that is performed by performer of Feelin' the Same Way?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0b0b3547496ed078cb19ec901a35f071b7b3cf138fdf2e60",
+      "question": "What institute did the actor playing the voice of John Smith in Pocahontas attend?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0942aa56c94ac545c00849686583273efd664347084e9682",
+      "question": "Who led the muslim forces to retake the proposed embassy destination?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "16db4ccc32ee8b04e3daee094ef5e8cfb985a4f0c2c999d5",
+      "question": "Which is the body of water near George Mills' place of birth?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8267f95a2928cb63203d20da0079d98138d4f58281fc4e9e",
+      "question": "When did the party who gained control of congress in the midterm elections in 1946 take control of the determiner of rules of the US House and US Senate?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "9f271f822294cc528b1f20904bb7694884af4084e086d20f",
+      "question": "Who does the Nothing Suits Me Like a Suit artist play in Batman Under the Red Hood?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "92a5f365ee7514ded1c6f5dac8470281083060c3e6ec7594",
+      "question": "When was the death penalty abolished in the country near the country where the writer of The Book Thief is a citizen of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a4d8d097bd76b3030a954d9943fd96cdbb51393ce75c43a5",
+      "question": "What is the seat of the county sharing a border with the county in which Miller Electric is headquartered?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8e2a26fbfbcf2d28b9873a39bac21802372e822d41cdaa2b",
+      "question": "Who is the brother of the Nothin' My Love Can't Fix performer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0140a933eed826f1c48d9a9c5c4717965cf982f1d749be6a",
+      "question": "Who is the brother of the Melissa and Joey Theme Song singer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "64bae1eefc192258c2e5d8ecab71b8a02fc5a3d104c0fc21",
+      "question": "When was the last time the team that Arthur James was a member of beat the 1894-95 FA cup winner?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e935f6dea75d4f17c5f98b7e255950372a22ab83f9632876",
+      "question": "Who started the foundation that developed the Free Software Directory?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "fe052f64d5c1f66bd84e1f2dc6df342b1ea10d2763c22a90",
+      "question": "What pantheon is the God of the underworld in ancient Egypt a part of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "02bd004f6306542bfdf5e166da61b306b5cf5f2faf50f796",
+      "question": "Where was the president born on the fourth of July born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e42937544d09a6051fc8507e1d3f89fe49b68d1300a44aa7",
+      "question": "Who play's Marty's girlfriend in back to the future?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "05f1867336770bf201cf9a88de60e2b9bdd893efe98d9593",
+      "question": "What is the record label for the band which performed Pythons?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ebaefb7e8412f8323769c1e4ee596d5135b609ae76514273",
+      "question": "Who is the employer of the person Mach's principle was named after?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e5d8a267444a8532a875af8cfb8b07e6f6d02d6e85148540",
+      "question": "What is the life expectancy of the type of retriever named after the body of water the Patuxent River turns into?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "648de9dea3ad81e8ac733acd312913385129ab16dd091834",
+      "question": "Who is the president of the newly declared independent country that is part of the Commission of Truth and Friendship with the country where Sambas is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "3fb64043e4ebb85b0e1d08ca7112c56185d90becb1f4ad11",
+      "question": "What is the capital of the country it is about?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "c341a480cb5616540b22eb1018953ba04aa96dac5e286674",
+      "question": "The league playing in the Thursday night football game is a type of what?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f6564f948dc28ef7be445d610eb42c1a6a6042d47e62e7a6",
+      "question": "A participant of the Battle of Brechin is an instance of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7ac9fed94844e0922433d13032d684b7336219240499d6c1",
+      "question": "What is the symbol of the Saints from the city that is the location of Blanton's manufacturer's headquarters called?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0675535ed1dda2d20a6a2d41fb4e8d2a6cacd6c6d953cafd",
+      "question": "What mythology is the city where Eutychides was born in a part of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f182c6355042dd18a7d42f9275c46f1ee0c985e5ae5c6001",
+      "question": "What is the oldest college in the state that contains Borough House Plantation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7a9091fd0314d17f4fb7683cc0a078b04501e3fbc1f64b42",
+      "question": "What county shares a border with the other county, that contains the city, that is the birthplace of the performer of Never Gonna Fall in Love Again?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "c44fa02fb87c848c0ab4d0a254787e29540715ef86fff95a",
+      "question": "What city was the author of What We Talk About When We Talk About love born in?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e1be2d43c39ecba4174621ae6f571ae04eac92cfd209b786",
+      "question": "What undertaking included the person who discovered that the number of protons in each element's atoms is unique?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "59f0697aa3d51324795d9f102b93756a0f7bc68f5ebf4922",
+      "question": "What was the story of the character from The Bourne Deception based on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "b4a033f133679fb6a0a2351544933c5537546d947ad50c8f",
+      "question": "Which two features were played up the person who had the biggest net worth in 2017?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "aa614fdaaaefd5d4baa2796deb3b5f0067e79500b88427e5",
+      "question": "Who is one of the members of the music group that performed \"Good Little Girls\"?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8bfb0eda3aaa2bad57532c81e874d3a974843ffd3ef0778c",
+      "question": "How many times did plague occur in the place where Bajazet's composer was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0efe9b8bd5ade04ff3030e3d944b21b0ac4aa9527e17bde6",
+      "question": "What year did the company that published Starship Command end?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "027361f7300c0643dc5b5eb887d180e4917f12f6c1418ccb",
+      "question": "Who is the spouse of the child of Peter Andreas Heiberg?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "011cb0e253041c568db1d0b01a34fa26ff951bbbdebbd887",
+      "question": "What character in A League of their Own was played by the actress who played Thelma in the movie Thelma and Louise?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "79669636487de3810792f2a9a1b4a7c253da580013d1d2fb",
+      "question": "What is the abbreviated name of the exclusive platform of the video game named for the league with a halftime event just before the publishers clearing house sweepstakes drawing.",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "bb809fb19df4d4c9b91facb813364d3590aeee692296fcfd",
+      "question": "When was the last time the sports team Alan O'Neil was a member of beat the winner of the 1894-95 FA cup?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "db14f1320cc3442cb2416f65c437cd0ee74449baf687602b",
+      "question": "Who is the spouse of the person who plays Batman in the Lego Batman Movie?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "037dbe8ccac208d33dfbd28d6fdc319f88b1c2c2bd4ba060",
+      "question": "By how much of the population of the region where Baton a feu originated reduced by the black death?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0da908a928c375084638f1e0ab10c329679eaacae7e4ffe0",
+      "question": "When did the explorer reach the headquarters location of the group Con-Test's record label is part of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f9a50652b4e5d7000c42ae27b2477a54d2a88cfceec0ec3b",
+      "question": "What is the name of the castle in the city where the performers of Spirit If.. became a band?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a4c716e09434218a16bdfed465322e369606bd38f23d815a",
+      "question": "Who wrote a book about growing up in the same nationality as the man who produced The Wild Women of Chastity Gulch?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "b2aec8a779fa030aae7a64520ebfdf3461750764aa79eb93",
+      "question": "Who is the spouse of the actor of Ethan in A Dog's Purpose?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "efa92baf3840922c7dc00ba73ad729345a2b12035fa39071",
+      "question": "Who is the federal leader of the party that Pierre-Hugues Boisvenu is a member of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "5188d3c87c6fead7f796c62c3f1bd13ea8576bab724ea06d",
+      "question": "At what local time does the country where Fuser and Alberto meet the indigenous couple traveling to look for work change their clocks for DST?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "046a6c5856736e4dc6f532658038afabde83e9c71507832f",
+      "question": "When did the place of birth of the performer of Mother-in-Law elect its first black Mayor?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "296a82255560704f3fd8c8ea411827192d0eceddbf38ce4c",
+      "question": "When was the last time Ken Faulkner's team beat the 1894-95 FA Cup winner?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "38da792d05c3f8c7220c951b8d66f7400debb80114932a80",
+      "question": "In what year was Twilight Princess from the game series on which The Legend of Neil was based originally planned for release?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "458b3f8687920863190957c08123f885c60989f59bf40681",
+      "question": "What is the mascot of the school that owns Goss Stadium at Coleman Field?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "5a79dda7bfdfb77d539fe80abea20ca003c2fe0496b89c02",
+      "question": "Who is the spouse of the actor that plays vision in avengers age of ultron?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0b0d46b9b937c43da535ef8109b75a460051e57f97a3f7a2",
+      "question": "Who was the spouse of the leading lady in Gone With the wind?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "34145b6ab1de0faafa932494ca91bdfdf740ba41ecb21879",
+      "question": "Who was the mother of the person who found the sacred writings that became the Book of Mormon?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ea32ca3702e3eedd278c8c77153712c07dbb5dd7025d8c3d",
+      "question": "Who is the mayor presiding now where Merrill Elam was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "3fe817c10d1006cd821b07586f51302a3263884e83211ba8",
+      "question": "What county shares a border with the county where She Did It's performer was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "1335c327548140bd1173eba9b1270d67dd4f7aafce0560a4",
+      "question": "What is the experimental satellite which was the forerunner to the communication satellite of the operator of GSAT-7 called?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+      "question": "What watercourse is the river on which the Lostock Dam is located the mouth of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "d1dd79fae1af699056a39a08906166201387b89c3f596266",
+      "question": "There is a state A where Storm of the Century was filmed based on the book by the author who wrote a short story featuring the author of This Is My God. What is the population of state A?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "3b133029d40cc58823d90a6f9176ea531c8c30fb88c31736",
+      "question": "What is the capital of the county that shares a border with the county where KRSU is licensed to broadcast?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "163a438b614948528acdb5901ad522af7911b4e43c7a656a",
+      "question": "Kiwil's birth country participated in a Commission of Truth and Friendship. Who is the president of the other country that participated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7f312e928558afc3dff5d7cc445ea322ace2d93b1762ff98",
+      "question": "Who is the child of the male star of the 1921 film Money?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a8db3b0b50151b8616d23b55f0f359f2ef9ba8fff740c3f2",
+      "question": "What is the symbol of the Saints from the headquarters location of Ten High's manufacturer called?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "c858bf26a171d617a8decbb3a67e082b577a5a1166ca15b2",
+      "question": "Which country has a body of water that was inspiration for the name of the Mara Region?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "afc0480fd5bd6216e2a3d23c5e65a198b98e9730c5a26471",
+      "question": "Along with the subject of The One That Got Away, what notable pop artist started out his career on adult contemporary radio?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "d1ff18285ee3c6148bb4f8466a3d65d965432b694aba3ac7",
+      "question": "Who is the federal leader of the political party Ken Epp belongs to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "19e28bddd1e5817780ebfba2ff23817578fb6e01289caa3a",
+      "question": "Where is the country with ISO code ISO 3166-2:CV located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ab8516f170dcda1b95db028a8c4f8ee112c157548f800484",
+      "question": "Who did the person portraying Batman in the Justice League movie play in Dazed and Confused?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8daaf871ac6117a987a5461e5a0cfc553ef30e1f47800200",
+      "question": "In Batman Under the Red Hood, who does the actor of Barney Stinson from How I Met Your Mother play?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a6005b1ac2dec9c661b1dec2b0d4e27939a56dff3d049992",
+      "question": "What did the singer of \"Moon River\" in the movie Breakfast at Tiffany win a Tony for?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "3770e097bb92f794adf6bd2a09ec1f40441a5d76820f71f7",
+      "question": "Where is the headquarter of the Radio Television of the country whose co-official language is the same as the one Politika is written in?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "88d9867cb4a10c547384a02cb1758981b8989081fd1bba53",
+      "question": "What is the source of the river of which Kraai River is a tributary?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "22129e25d4587923fcde7881c2d6d6ea393fe1a5615db2bd",
+      "question": "Who played the girlfriend of Chance's voice actor in Homeward Bound in Back to the Future?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "fefac36b35cb4347cc12c1f4b449f55f907eb074ff9bd548",
+      "question": "Who is the voice of the character in Spongebob Squarepants with the same name as the creature that annelid larvae live like?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7b7acfdf920adc600a78d5e07adbb139447a4f4c05cdeb97",
+      "question": "Between which years did war with the person for whom Pyrrhic victory is named occur?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "51cd91435004d29ca0defa249c04567792bba4ae689bcaff",
+      "question": "MV Miralda's owner announced it was in the process of doing what in April 2010?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "73c99907f8558b45cbd409c4453f2b005668503f8dd77cb1",
+      "question": "When did the Battle at Choo Hoey's birthplace end?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "80eb4cdc289c327a7ce40633b12e1a144052165599d2521a",
+      "question": "Who is the president of the newly declared independent country that is part of the Commission of Truth and Friendship with the country where Sumardi was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0531724f1691e4d2a1e819d1e68c14edb61a1036ee25a862",
+      "question": "Who wrote the song The Story sung by the performer of Give Up the Ghost?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "d93d09390c108e43314b165e4eb32b63bee4bd289164c233",
+      "question": "Where did they film The Beach in the country where Siddhi Savetsila was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "2b182c3ce4bb7bb2c28fc1f86d7a76591488e7d2aef1bb35",
+      "question": "Who is the author of Growing Up this nationality of the creator MacGruder and Loud?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6d57f1e891250f9822eaef55f6f86661ba65ea90141fdb3f",
+      "question": "In which county did Snappy Tomato Pizza form?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "d38330e71e4ccaf9dacb5743005ac48880a86ad157c0e89d",
+      "question": "What other recognition did the Oscar winner for Best Actor in 2006 receive?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ce71ae05a05aa362e3dbea2e924d208ae29dd534690e3018",
+      "question": "What is the Smile performer's birthday?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "df9f245c11ea8e93377a4587fc28c07c08b6f43bb7cd5cd4",
+      "question": "What record label does the performer of Emotional Rain belong to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6ce26ac59b2882dc391635da186779e5b8ed5a0b0354da10",
+      "question": "When did the majority party in the House of Representatives gain control of the body which approves members of the Cabinet?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "c48373896fd9da5b8e7f7565c18ffa921992f00d45147aeb",
+      "question": "What is the manufacturer of the Kentucky Tavern headquarters location saints symbol called?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6e64c9c62d8e1170c6341cde12aa2fe75a35762012ab8d30",
+      "question": "In which county was Zhu Qinan born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "554fd0d8696f182e7802bf42d669102e4227ba40f8a6bd4f",
+      "question": "Who sings Home Alone Tonight with the Rain is a Good Thing singer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "1ce9a8820397755fa8fd2d5add9bdb9edea86671fa14468c",
+      "question": "What is the name of the castle in the city where the performer of Never Too Loud was formed?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "9ad33ca0b5a3f7c880fc6f40db3d7de9c369111c302c9dfd",
+      "question": "Who is the sibling of the actress that played the little girl in Miracle on 34th street 1947?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "236a7ebf10d9e19269a51d46f62df7d301f6a475aed06dd8",
+      "question": "What city is the star of 'Three Strangers in Rome' from?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "16de423a865eb739d3ec248429096218820feb176cb1b5af",
+      "question": "What else happened in the northern part of Erich Zakowski's birthplace in the now Russian area?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "37fb18d72ff590a69ba9588553a36989161f9b48c72dfe29",
+      "question": "In which county is Southern Maryland Electric Cooperative headquartered?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "034a82714302b4b4a869310daace9e08bb18dc7fc3a81206",
+      "question": "When did the party that controls the House of Representatives take control of the branch who determines the rules of the US house and Senate?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+      "question": "What series of wins did the sports team that the all time highest goal scorer in spain national team was a member or achieve in 2009?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f11250d4b392a30f6d22566d5167dee1464544f525c2975c",
+      "question": "In Grown Ups, who plays the wife of the actor who produced The Chosen One?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "9aea23787e6ee6df485a6b02ad5e2c185b44b9611ce8b921",
+      "question": "Who does the performer of Don't Be Cruel play in the wire?",
+      "candidate_count": 2,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ede452592bbb410b3678e75fc6aaaeeda204fffc69034041",
+      "question": "When did Burroughs Corporation merge to form a new corporation?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6c52099d688bcf9f3be62de4417112635370c9d72b748084",
+      "question": "When did the country, whose co-official language was used by the director of Group Portrait with a Lady, first attend the Olympics as an independent team?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a621901602313fe0bb3278547bfd2dc7a7eeb93905d04b78",
+      "question": "Who followed Menucha Rochel Slonim's father?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "efa29c58c4ed7403a39deb68f6f52c1fdcc617e0fbdd9a5c",
+      "question": "Who started out his career on adult contemporary radio along with the performer of All That Echoes?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "abfa7716b861cb828af918cd5b406139e40afec4dfe84446",
+      "question": "Who is the head of the developer of Simon?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+      "question": "When was the last time the team that Terry Twell was a member of beat the 194-95 winner of the FA Cup?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "2e723619f6cb5b2fe9cffb3e419841f96bbfd79a13f07f18",
+      "question": "Who is the father of the artist who painted Head I?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "704dd451c50a536eb50a9d580b8a57aa8203bd76d1862ef6",
+      "question": "Where is the origin of the river Augrabies Falls is part of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "d51c30bc9bcc9c9daace1edac5bc07ded7df39ad346f4c04",
+      "question": "The BBC Footballer of the Year is a member of which team?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "f1ae33d3867ac32d4bf685be6b8eadd99847853869184186",
+      "question": "Where was the person who acted in the film Sous les pieds des femmes born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7478cc3ae7b060de1b7b2a1c61c1354a0b6a822b61349cad",
+      "question": "How many people were in British Colonies where does the london broil cut come from ?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "afd66c76fbcbd6fd65cfccf021882c773e57478071afaa65",
+      "question": "Who is the spouse of the person who voices Jarvis in the Avengers Age of Ultron?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "b15f31c4855a276dae1e56de0784c6eab14eb4621012cc10",
+      "question": "Which county shares a border with the county where the most populous city in the state where Redan High School is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "3601e9951ec350c2c121a537f60a7347d545f015663316d5",
+      "question": "The rapper who owns Aspiro was inspired by what when writing Song Cry?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "9747157702dd161d08b47a241d23256b0055cd503ee4dadf",
+      "question": "What administrative territorial entity includes the place that KTRP is licensed to broadcast to?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e349bd0727c841c1b6a985bbf6c1b043efcad758e078e1df",
+      "question": "In A League of Their Own, who played the husband of the actress who played Thelma in Thelma and Louise?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "04c783fe592055e55b17ada8341007b7125bf0a326f9c58b",
+      "question": "What is the former name of the country where Atika Suri studied?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "8a986323dbd4e14655caf5775eb54c222bc8081f890cadb6",
+      "question": "What province shares a border with the province where Lago District is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ac92ae6728bdfb340f9270a188da65795eec3273550ca498",
+      "question": "Who published Communications of the organization that Andries van Dam is a member of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ebd4b995b91cadca20e7b463a7eeb03130f2aa06a4ac30a8",
+      "question": "What county shares a border with Cedar Springs?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a39f4cbf6b6f7cb942cd2ce0e1234cae29855f2eaffc1be9",
+      "question": "What administrative territorial entity is the owner of Ciudad Deportiva located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "bfcfaa4a93f27ba34411adfc4a326e54fa373314b0ba15ab",
+      "question": "Who is the son of the Italian navigator who explored the eastern coast of the continent Ulises Solís' birthplace is located in for England?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "fd437e73a2d708b551e27a13db723a6aa13ca01f70d63cd1",
+      "question": "Who played the monarch at the end of WW2 in The King's Speech?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "fe8275738f337cc423752bea9b254da45cecdf2559f38352",
+      "question": "What is the place of birth of who does the voice of stan on the series that Insecurity is part of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "c6fe007044674795d280bb474e2adc9dc8bacd8853a9cef5",
+      "question": "Where did they film The Beach in the country where Pao Sarasin was born?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "ccbb33282bd009f7844ad8305fadb84e7ede51932fc6a36d",
+      "question": "What is the competition that the 1965 Federation Cup is part of named after?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "b6f4cf7f8c262ad66ad3a336c1b5f0dc86e9c8c308b86180",
+      "question": "Who is the president of the newly declared independent country that is part of the Commission of Truth and Friendship with the country where Kotamadya is located?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "cb9b4679117faad98b982edb6bb06b9a24ec472f8542da17",
+      "question": "In the King's Speech, who played the person who was the King of England in 1950?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "251bc5c07407b64179dd8add58471e71c3433c6f7efc073a",
+      "question": "What is the body of water by the area where Athlete was formed?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "9cf11c3026ea59b7e28ae4488918a9822f86c5efc4db5883",
+      "question": "What award did the author of The Happy Journey to Trenton and Camden receive?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "72265eb89876baa2a8ab23c14ad61073f5d9f26c471e1ff9",
+      "question": "Where was the designer of the Lap Engine educated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "d79a4697ef5b7302ea7cb8a81107a462d699843688a3050d",
+      "question": "Who is the father of the Labo M performer?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a3854b7b279e499bd9263a9c581a5efb025fea9efefa00e6",
+      "question": "Why did Roncalli leave the place of death of the maker of The Gozzi Altarpiece?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "dc7a928fdebf66b8a407ec96057d15ff1fc3a243bb3d87f1",
+      "question": "Who gives out the award named after the person who argued that colonies were redundant?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "1c37a1eea570e7c4746847d7c009499ef543fa2bc6df0eb3",
+      "question": "In 1990, who became the president of the country that Germany invaded?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "09a0e0e18bb78cacdb1e7ec97e97e72798517afc88bed4c1",
+      "question": "What is the name for the mouth of the watercourse of the body of water by Rotterdam Centrum?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "77351e24c1b3474414472073259cea34aa2b7c63234264a6",
+      "question": "Who sings Home Alone Tonight with the singer of \"I Don't Want This Night to End\"?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "40e8c816ba317d696267cad7f758b7be88c0c90eccd2d3ce",
+      "question": "What company is the school where Lawrence Landweber was educated a part of?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a6e0032c62ece331c56364ced53e1c4076c303e4ae287074",
+      "question": "What is the capital of the county that shares a border with the county where WAPL is licensed to broadcast?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "28e93095b912403dad071f2821bcf6c6bef250f5c506ccc7",
+      "question": "Who was the first black student admitted to where Robert Khayat was educated?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "45b3ff5fd17fddc64c647566139dadd2693cf4488c0e6ec7",
+      "question": "Who did the original voice of the character played by mila kunis in the cleveland show?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "6448aa2df921d10654846a32887ee601b9456dd05da18428",
+      "question": "What is the record label of the co-writer and recording artist of Permission to Fly?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "0d59b836b70226e7bbd830db4030b09426a37d8543da426d",
+      "question": "What record label is the performer who released All Your Faded Things on?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "64219602b22a98429c3bc6a9c49ae282dd39e6a1b29debe7",
+      "question": "What is another notable work made by the author of Miss Sara Sampson?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "7e74ad75b51dd675970fecb014631c801252981eb2a657d1",
+      "question": "When did the majority party in the body which determines rules of the US House and US Senate gain control of the House?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "170fdcb3bc67d3485e1d9119c94ecb4accbd49d1a5b342ee",
+      "question": "In what year did Margaret Knox's spouse pass away?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17",
+      "question": "The city where Dmitry Borisovich was born is located where in Russia?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "e34d03a801bfa0de0ee1f5ecd06dbee378a6410d5555f7fe",
+      "question": "What league includes the operating group of Al Janoub Stadium?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "1c5e70656ffbd6ba33bd853ce406b5efd495e16a3610ed9f",
+      "question": "When was the kingdom that Heptarchy was part of abolished?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "665c0eff8918d3eeecbdd3439e19c078253bde37c2977f2c",
+      "question": "What is the average salary of a working person with the same nationality as the producer of The Wild Women of Chastity Gulch?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    },
+    {
+      "dataset": "musique",
+      "public_id": "1f2d53ab7c6e9f6ae863e4bedf1091966ccc1cfb68374b35",
+      "question": "The city that Psycho Donuts is located in is in which county?",
+      "candidate_count": 1,
+      "matched_count": 0,
+      "reason": "missing_or_ambiguous_source_mapping"
+    }
+  ]
+}

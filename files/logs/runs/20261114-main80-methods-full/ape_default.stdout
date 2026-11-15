@@ -1,0 +1,1 @@
+{"method": "ape_default", "checks": {"cold_hot_same_tokens": true, "immutable_document_KV": true, "resume_KV_only_rebuild": true, "changed_question_fresh_generation": true, "official_three_stage_calls": true, "public_T_S_interface": true, "T_S_logit_delta": 3.046875}, "input_tokens": 54, "generations": 4}

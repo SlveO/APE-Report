@@ -1,0 +1,137 @@
+"""Workspace confinement, durable records and identity by direct comparison."""
+import json
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+PROTOCOL = 'ape-plan-exec/v1'
+
+
+def now():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def inside(path):
+    path = Path(path)
+    if not path.is_absolute():
+        path = ROOT / path
+    if not path.resolve().is_relative_to(ROOT):
+        raise ValueError(f'path leaves workspace: {path}')
+    for part in [path, *path.parents]:
+        if part == ROOT.parent:
+            break
+        if part.is_symlink():
+            raise ValueError(f'symlink is not a writable asset: {part}')
+    return path
+
+
+def read_json(path):
+    return json.loads(inside(path).read_text())
+
+
+def write_json(path, value):
+    path = inside(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + '.tmp')
+    with tmp.open('w') as f:
+        json.dump(value, f, ensure_ascii=False, indent=2, allow_nan=False)
+        f.write('\n')
+        f.flush()
+        os.fsync(f.fileno())
+    tmp.replace(path)
+
+
+def identity(value):
+    """A reversible representation, never a digest."""
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
+
+
+def append_json(path, value):
+    path = inside(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    # Preserve even a torn last record. The reader reports it, never truncates it.
+    with path.open('ab+') as f:
+        if f.tell():
+            f.seek(-1, os.SEEK_END)
+            if f.read(1) != b'\n':
+                f.seek(0, os.SEEK_END)
+                f.write(b'\n')
+        f.seek(0, os.SEEK_END)
+        f.write((identity(value) + '\n').encode())
+        f.flush()
+        os.fsync(f.fileno())
+
+
+def read_records(path):
+    path = inside(path)
+    good, incomplete = [], []
+    if path.exists():
+        with path.open('rb') as f:
+            for n, line in enumerate(f, 1):
+                try:
+                    good.append(json.loads(line))
+                except (json.JSONDecodeError, UnicodeDecodeError):
+                    incomplete.append({'line': n, 'bytes': len(line)})
+    return good, incomplete
+
+
+def empty_generated_response(record):
+    return (record.get('status') == 'sample_error' and isinstance(record.get('answer'), str)
+            and not record['answer'].strip() and bool(record.get('output_token_ids')))
+
+
+class Ledger:
+    def __init__(self, path):
+        self.path = inside(path)
+        self.records, self.incomplete = read_records(path)
+        self.success = {}
+        self.scored = {}
+        self.terminal = set()
+        self.attempts = {}
+        for record in self.records:
+            key = identity(record['key'])
+            self.attempts[key] = max(self.attempts.get(key, 0), record['attempt'])
+            if record['status'] in {'success', 'sample_error'}:
+                self.terminal.add(key)
+            if record['status'] == 'success':
+                if key in self.success:
+                    raise ValueError('duplicate successful job in ledger')
+                self.success[key] = record
+                self.scored[key] = record
+            elif empty_generated_response(record) and key not in self.success:
+                self.scored[key] = dict(record, score=0.0)
+        events, _ = read_records(self.path.with_name('events.jsonl'))
+        for event in events:
+            if event.get('event') == 'request_started':
+                key = identity(event['key'])
+                self.attempts[key] = max(self.attempts.get(key, 0), event['attempt'])
+
+    def done(self, key):
+        return identity(key) in self.success
+
+    def outcome(self, key):
+        return self.scored.get(identity(key))
+
+    def finished(self, key):
+        return identity(key) in self.terminal
+
+    def next_attempt(self, key):
+        return self.attempts.get(identity(key), 0) + 1
+
+    def add(self, record):
+        key = identity(record['key'])
+        if key in self.success:
+            raise ValueError('cannot overwrite a successful answer')
+        if record['attempt'] != self.next_attempt(record['key']):
+            raise ValueError('attempt sequence mismatch')
+        append_json(self.path, record)
+        self.records.append(record)
+        self.attempts[key] = record['attempt']
+        if record['status'] in {'success', 'sample_error'}:
+            self.terminal.add(key)
+        if record['status'] == 'success':
+            self.success[key] = record
+            self.scored[key] = record
+        elif empty_generated_response(record):
+            self.scored[key] = dict(record, score=0.0)

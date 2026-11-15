@@ -1,0 +1,27 @@
+{
+  "authorization_ref": "U_MAIN80",
+  "asset_manifest": "datasets/raw-main80/ASSET_MANIFEST.json",
+  "model": "models/Llama-3.1-8B-Instruct",
+  "longbench": {
+    "qasper": "datasets/raw-main80/longbench/qasper.jsonl",
+    "hotpotqa": "datasets/raw-main80/longbench/hotpotqa.jsonl",
+    "musique": "datasets/raw-main80/longbench/musique.jsonl"
+  },
+  "qasper_origins": [
+    "datasets/raw-main80/origins/qasper-train-v0.3.json",
+    "datasets/raw-main80/origins/qasper-dev-v0.3.json",
+    "datasets/raw-main80/origins/qasper-test-v0.3.json"
+  ],
+  "hotpotqa_origin": "datasets/raw-main80/origins/hotpot_distractor_validation.json",
+  "musique_origin": "datasets/raw-main80/origins/musique_ans_v1.0_dev.jsonl",
+  "longbench_templates": "datasets/raw-main80/references/longbench_dataset2prompt.json",
+  "litm": {
+    "0": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz",
+    "9": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz",
+    "19": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz"
+  },
+  "litm_prompt": "datasets/raw-main80/references/litm_qa.prompt",
+  "doc2dial_dialogues": "datasets/raw-main80/doc2dial/doc2dial_dial_validation.json",
+  "doc2dial_documents": "datasets/raw-main80/doc2dial/doc2dial_doc.json",
+  "supplement_reviews": "datasets/prepared-main80/supplement-reviews.json"
+}

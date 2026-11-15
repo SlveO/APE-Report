@@ -1,0 +1,270 @@
+{
+  "protocol": "ape-plan-exec/v1",
+  "task_id": "MAIN80-SUPPLEMENTS-SEMANTIC-REVIEW",
+  "role": "EXECUTOR",
+  "authorization_ref": "U_MAIN80",
+  "assignment": "PLANNER direct READY finite review assignment",
+  "status": "SUBMITTED",
+  "claimed_at": "2026-11-14T03:25:03.517868+00:00",
+  "input": "logs/runs/20261113-main80-prep/supplement-proposals.json",
+  "input_snapshot": "logs/runs/20261114-main80-supplements-review/input.snapshot.json",
+  "counts": {
+    "proposals": 88,
+    "catalog_paragraphs": 395
+  },
+  "scope": "Read-only semantic review of development-pool donor proposals; writes restricted to this exclusive delivery directory. No model calls, scores, GPU, downloads, dependency changes or hashes.",
+  "commands": [
+    {
+      "cmd": "pwd",
+      "exit_code": 0
+    },
+    {
+      "cmd": "cat /home/shenxiaoyang/project/AGENTS.md /home/shenxiaoyang/project/ape/AGENTS.md",
+      "exit_code": 0
+    },
+    {
+      "cmd": "cat docs/EXPERIMENT_PLAN.md scripts/with_env.sh",
+      "exit_code": 0
+    },
+    {
+      "cmd": "rg -n 'supplement|补充|READY|U_MAIN80|MAIN80' docs/REPRODUCTION_STAGE.md",
+      "exit_code": 0
+    },
+    {
+      "cmd": "sed -n '45,85p' docs/REPRODUCTION_STAGE.md",
+      "exit_code": 0
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B - (inline schema inspection)",
+      "exit_code": 0
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py targets 0 30",
+      "started_at": "2026-11-14T03:25:35.096694+00:00",
+      "ended_at": "2026-11-14T03:25:35.121510+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py targets 30 60",
+      "started_at": "2026-11-14T03:25:44.354638+00:00",
+      "ended_at": "2026-11-14T03:25:44.377996+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py targets 60 88",
+      "started_at": "2026-11-14T03:25:44.558319+00:00",
+      "ended_at": "2026-11-14T03:25:44.583118+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 0 80",
+      "started_at": "2026-11-14T03:25:50.824944+00:00",
+      "ended_at": "2026-11-14T03:25:50.848640+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 80 160",
+      "started_at": "2026-11-14T03:26:01.304907+00:00",
+      "ended_at": "2026-11-14T03:26:01.328211+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 160 240",
+      "started_at": "2026-11-14T03:26:09.198928+00:00",
+      "ended_at": "2026-11-14T03:26:09.222263+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 240 271",
+      "started_at": "2026-11-14T03:26:13.598220+00:00",
+      "ended_at": "2026-11-14T03:26:13.621134+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 271 301",
+      "started_at": "2026-11-14T03:26:21.604418+00:00",
+      "ended_at": "2026-11-14T03:26:21.627194+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 301 338",
+      "started_at": "2026-11-14T03:26:25.761057+00:00",
+      "ended_at": "2026-11-14T03:26:25.783748+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 338 366",
+      "started_at": "2026-11-14T03:26:30.837238+00:00",
+      "ended_at": "2026-11-14T03:26:30.860869+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/read_review_input.py catalog 366 395",
+      "started_at": "2026-11-14T03:26:46.089709+00:00",
+      "ended_at": "2026-11-14T03:26:46.112847+00:00",
+      "exit_code": 0,
+      "purpose": "Emit complete input text for semantic review; emitted is not itself a semantic safety verdict."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/build_review.py",
+      "started_at": "2026-11-14T03:32:21.843609+00:00",
+      "ended_at": "2026-11-14T03:32:21.894509+00:00",
+      "exit_code": 0,
+      "purpose": "Materialize manually recorded semantic decisions; no model or score involved."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/validate_review.py",
+      "started_at": "2026-11-14T03:33:05.090150+00:00",
+      "ended_at": "2026-11-14T03:33:05.229908+00:00",
+      "exit_code": 0,
+      "purpose": "Check IDs, subset/order/partition, retained-only evidence flag, supplied split/document metadata and direct input-content equality."
+    },
+    {
+      "cmd": "bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B logs/runs/20261114-main80-supplements-review/submit_review.py",
+      "started_at": "2026-11-14T03:34:25.543340+00:00",
+      "ended_at": "2026-11-14T03:34:25.543562+00:00",
+      "exit_code": 0,
+      "purpose": "Record the completed finite review delivery as SUBMITTED for PLANNER inspection."
+    }
+  ],
+  "reviewed_catalog_ranges": [
+    [
+      0,
+      79
+    ],
+    [
+      80,
+      159
+    ],
+    [
+      160,
+      239
+    ],
+    [
+      240,
+      270
+    ],
+    [
+      271,
+      300
+    ],
+    [
+      301,
+      337
+    ],
+    [
+      338,
+      365
+    ],
+    [
+      366,
+      394
+    ]
+  ],
+  "reviewed_target_ranges": [
+    [
+      0,
+      29
+    ],
+    [
+      30,
+      59
+    ],
+    [
+      60,
+      87
+    ]
+  ],
+  "review_record": {
+    "planner": "PLANNER",
+    "conclusion": "pending; executor did not ACCEPT or freeze data"
+  },
+  "semantic_review_completed_at": "2026-11-14T03:32:21.894523+00:00",
+  "coverage_note": "Ranges are inclusive and refer to insertion order in input.snapshot.json. Complete text was emitted in finite batches and actually read; semantic verdicts are recorded per selected target, not inferred from the read commands or lexical filters.",
+  "summary": {
+    "target_count": 88,
+    "catalog_paragraphs_read": 395,
+    "targets_with_retained_safe_paragraphs": 87,
+    "targets_with_rejections": 5,
+    "targets_with_no_approved_paragraphs": [
+      "qasper:df3b5e07ec132472a8fc5b7f30b6ce3d942c8488a3d8ff7c"
+    ],
+    "proposed_target_paragraph_pairs": 7533,
+    "approved_target_paragraph_pairs": 7281,
+    "rejected_target_paragraph_pairs": 252
+  },
+  "validation_delivery": "logs/runs/20261114-main80-supplements-review/validation.json",
+  "observed_review_environment": {
+    "python_executable": "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "python_version": "3.10.20",
+    "python_no_user_site_flag": 1,
+    "python_dont_write_bytecode": true,
+    "environment": {
+      "PYTHONNOUSERSITE": "1",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONPATH": "/home/shenxiaoyang/project/ape/.overlays/main80-scoring:/home/shenxiaoyang/project/ape/.overlays/core-tf44:/home/shenxiaoyang/project/ape/APE",
+      "TMPDIR": "/home/shenxiaoyang/project/ape/.runtime/tmp",
+      "XDG_CACHE_HOME": "/home/shenxiaoyang/project/ape/.runtime/cache",
+      "HF_HOME": "/home/shenxiaoyang/project/ape/.runtime/hf",
+      "TORCH_HOME": "/home/shenxiaoyang/project/ape/.runtime/torch",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_DATASETS_OFFLINE": "1",
+      "CUDA_VISIBLE_DEVICES": "0"
+    },
+    "imports_for_review": [
+      "Python standard library only"
+    ],
+    "model_path": null,
+    "gpu_or_tokenizer_execution": false
+  },
+  "input_read_attempts": [
+    {
+      "purpose": "Initial schema inspection",
+      "result": "Complete schema and first item emitted; no semantic decision made."
+    },
+    {
+      "purpose": "Initial all-target dump including long ID-index lists",
+      "result": "Tool output truncated; it was not used as proof of full coverage. All targets and selections were subsequently emitted/read in three bounded batches with compact ordered indexes."
+    },
+    {
+      "purpose": "Bounded complete-text reads",
+      "result": "All 395 catalog paragraphs and 88 targets read in the recorded batches; no output truncation in these batches."
+    }
+  ],
+  "time_recording_limitations": "The first rule/schema shell reads preceded the claim record and did not separately capture UTC start/end timestamps; their command exit codes are preserved from actual tool results. No unobserved timestamps were reconstructed. Subsequent bounded-read/materialization/validation commands captured UTC start/end.",
+  "observed_code": {
+    "review_only": true,
+    "git_version_not_requested_or_computed": true,
+    "entry_point": "scripts/with_env.sh (read before use; not modified)",
+    "delivered_scripts": [
+      "read_review_input.py",
+      "build_review.py",
+      "validate_review.py",
+      "submit_review.py"
+    ],
+    "upstream_experiment_code_not_executed_or_changed": true
+  },
+  "submitted_at": "2026-11-14T03:34:25.543596+00:00",
+  "deliveries": [
+    "logs/runs/20261114-main80-supplements-review/review.json",
+    "logs/runs/20261114-main80-supplements-review/review.md",
+    "logs/runs/20261114-main80-supplements-review/execution.json",
+    "logs/runs/20261114-main80-supplements-review/validation.json",
+    "logs/runs/20261114-main80-supplements-review/input.snapshot.json",
+    "logs/runs/20261114-main80-supplements-review/read_review_input.py",
+    "logs/runs/20261114-main80-supplements-review/build_review.py",
+    "logs/runs/20261114-main80-supplements-review/validate_review.py",
+    "logs/runs/20261114-main80-supplements-review/submit_review.py"
+  ]
+}

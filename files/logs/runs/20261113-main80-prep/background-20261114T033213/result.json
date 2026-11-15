@@ -1,0 +1,19 @@
+{
+  "role": "PLANNER",
+  "status": "PASS",
+  "at": "2026-11-14T03:32:21.841433+00:00",
+  "monitor_url": "http://127.0.0.1:39099/campaign/background-20261114T033213/",
+  "directory": "/home/shenxiaoyang/project/ape/logs/runs/20261113-main80-prep/background-20261114T033213",
+  "launcher_exited_while_child_continued": true,
+  "actual_browser_rendered": true,
+  "five_second_HTML_refresh": true,
+  "counts_before": "1 / 12",
+  "counts_after": "6 / 12",
+  "independent_deadline_watchdog": true,
+  "screenshots": [
+    "monitor-1100.png",
+    "monitor-420.png"
+  ],
+  "formal_campaign_started": false,
+  "no_model_or_GPU_execution": true
+}

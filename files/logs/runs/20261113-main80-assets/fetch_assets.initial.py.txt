@@ -1,0 +1,174 @@
+"""Authorized, resumable public HTTPS acquisition; never computes file digests."""
+import argparse
+import concurrent.futures
+import json
+import os
+import threading
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+LOG = ROOT / 'logs/runs/20261113-main80-assets'
+RAW = ROOT / 'datasets/raw-main80'
+MODEL = ROOT / 'models/Llama-3.1-8B-Instruct'
+LOCK = threading.Lock()
+
+
+def now():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def event(record):
+    with LOCK, (LOG / 'events.jsonl').open('a') as f:
+        f.write(json.dumps({'time': now(), **record}, ensure_ascii=False) + '\n')
+        f.flush()
+        os.fsync(f.fileno())
+
+
+def get_json(url, target):
+    fetch(url, target, 'source metadata; remote mutable branch', expected=None)
+    return json.loads(target.read_text())
+
+
+def fetch(url, target, license_note, expected=None):
+    target = Path(target)
+    assert target.is_relative_to(ROOT) and target.resolve().is_relative_to(ROOT)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        if expected is not None and target.stat().st_size != expected:
+            raise RuntimeError('existing target size differs; preserve and inspect: ' + str(target.relative_to(ROOT)))
+        event({'action': 'reuse_existing', 'path': str(target.relative_to(ROOT)), 'bytes': target.stat().st_size})
+        return target
+    event({'action': 'source_declared_before_fetch', 'url': url, 'target': str(target.relative_to(ROOT)), 'format': target.suffix, 'license': license_note, 'failure_policy': 'retain_partial_no_substitution', 'expected_bytes': expected})
+    partial = target.with_name(target.name + '.partial')
+    for attempt in range(1, 4):
+        offset = partial.stat().st_size if partial.exists() else 0
+        if expected is not None and offset == expected:
+            partial.rename(target)
+            return target
+        headers = {'User-Agent': 'APE-MAIN80-research-acquisition/1.0'}
+        if offset:
+            headers['Range'] = f'bytes={offset}-'
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=45) as r:
+                if offset and r.status != 206:
+                    abandoned = partial.with_name(partial.name + f'.range-ignored-{time.time_ns()}')
+                    partial.rename(abandoned)
+                    event({'action': 'range_ignored_preserved', 'path': str(abandoned.relative_to(ROOT)), 'bytes': offset})
+                    offset = 0
+                response_length = r.headers.get('Content-Length')
+                event({'action': 'response', 'target': str(target.relative_to(ROOT)), 'attempt': attempt, 'http_status': r.status, 'offset': offset, 'content_length': response_length, 'content_range': r.headers.get('Content-Range'), 'content_type': r.headers.get('Content-Type')})
+                written = offset
+                last_report = time.monotonic()
+                with partial.open('ab' if offset else 'xb') as f:
+                    while True:
+                        chunk = r.read(8 * 1024 * 1024)
+                        if not chunk:
+                            break
+                        f.write(chunk)
+                        written += len(chunk)
+                        if time.monotonic() - last_report >= 30:
+                            f.flush()
+                            event({'action': 'progress', 'target': str(target.relative_to(ROOT)), 'bytes': written})
+                            last_report = time.monotonic()
+                    f.flush()
+                    os.fsync(f.fileno())
+                if response_length is not None and written - offset != int(response_length):
+                    raise RuntimeError('response body length mismatch')
+                if expected is not None and written != expected:
+                    raise RuntimeError('expected file size mismatch')
+                partial.rename(target)
+                event({'action': 'completed', 'target': str(target.relative_to(ROOT)), 'bytes': written, 'attempt': attempt})
+                print(json.dumps({'completed': str(target.relative_to(ROOT)), 'bytes': written}), flush=True)
+                return target
+        except Exception as e:
+            event({'action': 'failure', 'target': str(target.relative_to(ROOT)), 'attempt': attempt, 'exception': type(e).__name__, 'http_code': getattr(e, 'code', None), 'reason_type': type(getattr(e, 'reason', None)).__name__})
+            if attempt == 3:
+                raise RuntimeError(f'acquisition failed: {target.relative_to(ROOT)} ({type(e).__name__}, HTTP {getattr(e, "code", None)})') from None
+            time.sleep(min(2 ** attempt, 8))
+
+
+def model():
+    url = 'https://modelscope.cn/api/v1/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/repo/files?Revision=master&Recursive=true'
+    metadata = get_json(url, LOG / 'model-files-source.json')
+    files = {r['Path']: r for r in metadata['Data']['Files'] if r['Type'] == 'blob'}
+    required = ['LICENSE', 'README.md', 'USE_POLICY.md', 'config.json', 'generation_config.json', 'model.safetensors.index.json', 'special_tokens_map.json', 'tokenizer.json', 'tokenizer_config.json'] + [f'model-{i:05d}-of-00004.safetensors' for i in range(1, 5)]
+    assert len(required) == 13 and all(name in files for name in required)
+    note = 'Meta Llama 3.1 Community License + USE_POLICY; ModelScope user-uploaded LLM-Research mirror, not official Meta release; master is mutable retrieval branch'
+    manifest = {'source': 'LLM-Research/Meta-Llama-3.1-8B-Instruct', 'fetch_branch': 'master', 'immutable_revision_claimed': False, 'official_meta_publication_claimed': False, 'format': 'safetensors', 'license': note, 'observed_at': now(), 'required_files': [{k: files[n].get(k) for k in ('Path', 'Size', 'Revision')} for n in required]}
+    (LOG / 'model-manifest.json').write_text(json.dumps(manifest, indent=2))
+    def one(name):
+        endpoint = 'https://modelscope.cn/api/v1/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/repo?' + urllib.parse.urlencode({'Revision': 'master', 'FilePath': name})
+        return fetch(endpoint, MODEL / name, note, files[name]['Size'])
+    for name in required[:9]:
+        one(name)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+        for result in pool.map(one, required[9:]):
+            pass
+
+
+def refs():
+    refs = {
+        'pcw_wrapper.py.txt': ('AI21Labs/Parallel-Context-Windows/main/pcw_wrapper.py', 'MIT; inspect fetched LICENSE'),
+        'pcw_modeling_llama.py.txt': ('AI21Labs/Parallel-Context-Windows/main/modeling_llama_with_pcw.py', 'MIT; inspect fetched LICENSE'),
+        'pcw_LICENSE.txt': ('AI21Labs/Parallel-Context-Windows/main/LICENSE', 'repository license'),
+        'pcw_README.md': ('AI21Labs/Parallel-Context-Windows/main/README.md', 'repository README'),
+        'longbench_metrics.py.txt': ('THUDM/LongBench/main/LongBench/metrics.py', 'MIT code; dataset origin licenses apply'),
+        'longbench_dataset2prompt.json': ('THUDM/LongBench/main/LongBench/config/dataset2prompt.json', 'MIT code'),
+        'longbench_dataset2maxlen.json': ('THUDM/LongBench/main/LongBench/config/dataset2maxlen.json', 'MIT code'),
+        'longbench_LICENSE.txt': ('THUDM/LongBench/main/LICENSE', 'repository license'),
+        'longbench_task.md': ('THUDM/LongBench/main/LongBench/task.md', 'dataset construction and original sources'),
+        'litm_metrics.py.txt': ('nelson-liu/lost-in-the-middle/main/src/lost_in_the_middle/metrics.py', 'MIT code; NQ/Wikipedia original licenses apply'),
+        'litm_get_qa_responses.py.txt': ('nelson-liu/lost-in-the-middle/main/scripts/get_qa_responses_from_llama2.py', 'MIT code; prompt source'),
+        'litm_LICENSE.txt': ('nelson-liu/lost-in-the-middle/main/LICENSE', 'repository license'),
+        'doc2dial_sharedtask_utils.py.txt': ('doc2dial/sharedtask-dialdoc2021/master/scripts/sharedtask_utils.py', 'author official evaluation source; license per dataset source'),
+        'doc2dial_README.md': ('doc2dial/sharedtask-dialdoc2021/master/README.md', 'author public task README'),
+        'doc2dial_DATA_README.md': ('doc2dial/sharedtask-dialdoc2021/master/data/doc2dial/DATA_README.md', 'author public data README'),
+        'musique_README.md': ('StonyBrookNLP/musique/main/README.md', 'CC BY 4.0 dataset'),
+        'musique_download_data.sh.txt': ('StonyBrookNLP/musique/main/download_data.sh', 'CC BY 4.0 dataset'),
+    }
+    for name, (source, note) in refs.items():
+        try:
+            fetch('https://raw.githubusercontent.com/' + source, RAW / 'references' / name, note)
+        except RuntimeError as e:
+            print(str(e), flush=True)
+
+
+def data():
+    todo = [
+        ('https://huggingface.co/datasets/THUDM/LongBench/resolve/main/data.zip', 'longbench/data.zip', 'LongBench v1 dataset card and original source licenses; main mutable'),
+        ('https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-dev-v0.3.tgz', 'origins/qasper-dev-v0.3.tgz', 'QASPER CC BY 4.0; original author S3 version v0.3'),
+        ('https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-v0.3.tgz', 'origins/qasper-test-v0.3.tgz', 'QASPER CC BY 4.0; original author S3 version v0.3'),
+        ('https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/data/doc2dial/v1.0.1/doc2dial_doc.json', 'doc2dial/doc2dial_doc.json', 'Doc2Dial author release v1.0.1; license statement to be saved from author metadata'),
+        ('https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/data/doc2dial/v1.0.1/doc2dial_dial_validation.json', 'doc2dial/doc2dial_dial_validation.json', 'Doc2Dial author release v1.0.1; license statement to be saved from author metadata'),
+    ]
+    for pos in (0, 9, 19):
+        name = f'nq-open-20_total_documents_gold_at_{pos}.jsonl.gz'
+        todo.append(('https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/qa_data/20_total_documents/' + name, 'litm/' + name, 'MIT repository; NQ CC BY-SA 3.0, Wikipedia CC BY-SA source; main mutable'))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+        futures = [pool.submit(fetch, url, RAW / name, note) for url, name, note in todo]
+        for f in concurrent.futures.as_completed(futures):
+            try:
+                f.result()
+            except RuntimeError as e:
+                print(str(e), flush=True)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('mode', choices=['model', 'refs', 'data'])
+    args = parser.parse_args()
+    LOG.mkdir(parents=True, exist_ok=True)
+    event({'action': 'command_start', 'mode': args.mode})
+    rc = 0
+    try:
+        globals()[args.mode]()
+    except Exception as e:
+        event({'action': 'command_error', 'mode': args.mode, 'exception': type(e).__name__})
+        raise
+    finally:
+        event({'action': 'command_end', 'mode': args.mode})

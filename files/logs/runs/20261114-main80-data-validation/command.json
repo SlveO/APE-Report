@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "-m",
+    "main80.validate_data"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at": "2026-11-14T03:39:33.918799+00:00",
+  "status": "SUBMITTED",
+  "ended_at": "2026-11-14T03:40:02.656494+00:00",
+  "exit_code": 0
+}

@@ -1,0 +1,13 @@
+{
+  "role": "EXECUTOR",
+  "status": "SUBMITTED",
+  "at": "2026-11-14T15:43:25.787891+00:00",
+  "evidence": [
+    "summary.json",
+    "incomplete.json",
+    "attempts.jsonl",
+    "events.jsonl",
+    "rule.json"
+  ],
+  "requires_PLANNER_review": true
+}

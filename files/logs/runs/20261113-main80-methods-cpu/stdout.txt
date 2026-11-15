@@ -1,0 +1,9 @@
+test_hot_cache_immutable_and_new_history_regenerates (__main__.StockMethodTests) ... ok
+test_pcw_single_window_equivalence (__main__.StockMethodTests) ... ok
+test_pcw_unequal_windows_against_full_mask_reference (__main__.StockMethodTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.182s
+
+OK
+

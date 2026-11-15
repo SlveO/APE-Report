@@ -1,0 +1,28 @@
+{
+  "campaign": "main80-20261114T041503",
+  "state": "SUBMITTED",
+  "stage": "doc2dial",
+  "started_at": "2026-11-14T04:15:05.141720+00:00",
+  "started_epoch": 1794629705.134575,
+  "deadline_epoch": 1794917705.134575,
+  "export_reserve_seconds": 900,
+  "limits": {
+    "explore": 50,
+    "validation": 40,
+    "test": 510,
+    "litm": 500,
+    "doc2dial": 500
+  },
+  "completed_stages": [
+    "baseline",
+    "explore",
+    "validation",
+    "length_check",
+    "attention",
+    "longbench_final",
+    "litm",
+    "doc2dial"
+  ],
+  "controller_pid": 4187806,
+  "monitor_url": "http://127.0.0.1:42501/campaign/main80-20261114T041503/"
+}

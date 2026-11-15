@@ -1,0 +1,40 @@
+{
+  "protocol": "ape-plan-exec/v1",
+  "task_id": "PREP-SCORING",
+  "authorization_ref": "U_MAIN80_SCORING",
+  "owner": "EXECUTOR",
+  "status": "SUBMITTED",
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "scripts/with_env.sh",
+        "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+        "-B",
+        "-u",
+        "scripts/main80-assets/prepare_scoring_overlay.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "scripts/with_env.sh",
+        "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+        "-B",
+        "scripts/main80-assets/validate_scoring_overlay.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "evidence": [
+    "scoring-overlay-manifest.json",
+    "scoring-overlay-validation.json",
+    "scoring-validation.stdout",
+    "scoring-validation.stderr",
+    "scoring-validation-attempt1.stderr",
+    "scoring-validation-attempt1.note.md"
+  ],
+  "rollback": "remove .overlays/main80-scoring from task PYTHONPATH; retain files",
+  "scope": "only workspace scoring overlay, assets scripts and evidence; no pip/no external mutation/no digest"
+}

@@ -1,0 +1,15 @@
+{
+  "role": "EXECUTOR",
+  "status": "SUBMITTED",
+  "ended_at": "2026-11-14T03:29:04.492420+00:00",
+  "outcome": "PASS",
+  "methods": [
+    "sequential",
+    "pcw",
+    "ape_default",
+    "ape_fixed"
+  ],
+  "common_content_ids_equal": true,
+  "full_model_generations": 16,
+  "requires_PLANNER_review": true
+}

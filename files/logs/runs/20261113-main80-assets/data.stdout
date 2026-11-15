@@ -1,0 +1,8 @@
+acquisition failed: datasets/raw-main80/origins/qasper-dev-v0.3.tgz (HTTPError, HTTP 403)
+acquisition failed: datasets/raw-main80/origins/qasper-test-v0.3.tgz (HTTPError, HTTP 403)
+{"completed": "datasets/raw-main80/doc2dial/doc2dial_dial_validation.json", "bytes": 5746065}
+{"completed": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz", "bytes": 15151873}
+{"completed": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz", "bytes": 15155756}
+{"completed": "datasets/raw-main80/doc2dial/doc2dial_doc.json", "bytes": 46216432}
+{"completed": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz", "bytes": 15114700}
+{"completed": "datasets/raw-main80/longbench/data.zip", "bytes": 113932529}

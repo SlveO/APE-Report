@@ -1,0 +1,59 @@
+{
+  "role": "EXECUTOR",
+  "task_id": "MAIN80",
+  "status": "RUNNING",
+  "campaign": "main80-20261114T041503",
+  "controller_pid": 4187806,
+  "monitor_url": "http://127.0.0.1:42501/campaign/main80-20261114T041503/",
+  "start_utc": "2026-11-14T04:15:05.134575+00:00",
+  "start_beijing": "2026-11-14T12:15:05.134575+08:00",
+  "hard_deadline_utc": "2026-11-17T12:15:05.134575+00:00",
+  "hard_deadline_beijing": "2026-11-17T20:15:05.134575+08:00",
+  "observation_elapsed_seconds": 179.00397308985703,
+  "observation_exit_code": 0,
+  "last_observed": {
+    "updated_at": "2026-11-14T04:18:35.399824+00:00",
+    "state": "RUNNING",
+    "stage": "baseline",
+    "completed": 159,
+    "planned": 18195,
+    "failed": 0,
+    "eta_range": null,
+    "monitor_url": "http://127.0.0.1:42501/campaign/main80-20261114T041503/"
+  },
+  "speed_snapshot_at": "2026-11-14T04:17:22.825610+00:00",
+  "speed_observations": [
+    {
+      "method": "sequential",
+      "length_bucket": 4096,
+      "cache_mode": "cold",
+      "count": 80,
+      "mean": 1.04276078431285,
+      "low": 0.3070229107979685,
+      "high": 3.7739570969715714
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 8192,
+      "cache_mode": "cold",
+      "count": 16,
+      "mean": 1.5355638988985447,
+      "low": 0.9737363331951201,
+      "high": 2.1179910572245717
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 16384,
+      "cache_mode": "cold",
+      "count": 4,
+      "mean": 3.3566929820226505,
+      "low": 2.1953312519472092,
+      "high": 4.0985866989940405
+    }
+  ],
+  "ETA": "暂不可可靠估计：PCW/APE及未来缓存条件没有足够正式观测",
+  "real_browser_render_verified": true,
+  "background_stopped": false,
+  "experiment_submitted": false,
+  "accepted": false
+}

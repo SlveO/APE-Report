@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "scripts/finalize_preparation.py"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at": "2026-11-14T04:06:41.302101+00:00",
+  "status": "SUBMITTED",
+  "ended_at": "2026-11-14T04:06:41.825929+00:00",
+  "exit_code": 0
+}

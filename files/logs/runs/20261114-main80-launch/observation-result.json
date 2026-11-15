@@ -1,0 +1,21 @@
+{
+  "command": [
+    "bash",
+    "scripts/with_env.sh",
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "scripts/observe_campaign.py",
+    "--campaign",
+    "main80-20261114T041503"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at_utc": "2026-11-14T04:15:45.271732+00:00",
+  "started_at_beijing": "2026-11-14T12:15:45.271732+08:00",
+  "hard_observation_limit_seconds": 180,
+  "script_limit_seconds": 179,
+  "background_must_continue": true,
+  "ended_at_utc": "2026-11-14T04:18:44.389687+00:00",
+  "ended_at_beijing": "2026-11-14T12:18:44.389687+08:00",
+  "exit_code": 0
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "-m",
+    "main80.freeze",
+    "--sources",
+    "data_sources.json",
+    "--output",
+    "datasets/frozen-main80"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at": "2026-11-14T03:36:12.105709+00:00",
+  "status": "SUBMITTED",
+  "ended_at": "2026-11-14T03:37:10.628308+00:00",
+  "exit_code": 0
+}

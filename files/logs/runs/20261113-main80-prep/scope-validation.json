@@ -1,0 +1,12 @@
+{
+  "role": "PLANNER",
+  "status": "PASS",
+  "at": "2026-11-14T04:06:41.480553+00:00",
+  "deleted_exact_manifest_files": 139,
+  "original_application_preserved": true,
+  "no_old_ChatQA_imports": true,
+  "no_project_digest_or_GPU_preflight_calls": true,
+  "configuration_paths_confined": true,
+  "python_bytecode_disabled": true,
+  "basis": "actual code AST/path inspection, scoped command records, offline full-model and browser evidence; timing/memory observations are not release gates"
+}

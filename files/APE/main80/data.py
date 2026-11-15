@@ -1,0 +1,345 @@
+"""Data provenance, group-safe splits and evidence-preserving token construction.
+
+No network operations. Unresolved origins are errors, never synthetic group IDs.
+"""
+import gzip
+import json
+import random
+import re
+from collections import Counter, defaultdict
+from pathlib import Path
+
+from .common import inside, write_json
+from .rules import COUNTS, DATASETS, LENGTHS
+
+
+def json_rows(path):
+    path = inside(path)
+    opener = gzip.open if path.suffix == '.gz' else open
+    with opener(path, 'rt', encoding='utf-8') as f:
+        if path.name.endswith(('.jsonl', '.jsonl.gz')):
+            return [json.loads(line) for line in f if line.strip()]
+        return json.load(f)
+
+
+def question_key(text):
+    return ' '.join(text.casefold().split())
+
+
+def public_passages(text):
+    headers = list(re.finditer(r'(?m)^Passage \d+:\n([^\n]+)\n', text))
+    return [(question_key(h.group(1)), h.start(), headers[i+1].start() if i+1 < len(headers) else len(text)) for i, h in enumerate(headers)]
+
+
+def mapped_evidence(row, candidate, dataset):
+    """Resolve original document identity independently of versioned evidence text.
+
+    LongBench expands original Wikipedia paragraphs to full articles. If an
+    original evidence sentence changed, retain the whole matching public support
+    article. This is conservative and may render short constructions inapplicable.
+    """
+    context = row['context']
+    if dataset == 'qasper':
+        title = ''.join(candidate['paper_title'].casefold().split())
+        if title not in ''.join(context.casefold().split()):
+            words = re.findall(r'\w+', context.casefold())
+            public_ngrams = {tuple(words[i:i+8]) for i in range(len(words)-7)}
+            shared = [a for a in candidate['paper_identity_anchors'] if tuple(a) in public_ngrams]
+            if len(shared) < 3:
+                raise ValueError('original paper identity lacks title or three exact body anchors')
+        fallback = [(0, len(context))]
+        materials = candidate['documents']
+    else:
+        passages = public_passages(context)
+        lookup = defaultdict(list)
+        for title, a, b in passages:
+            lookup[f'wikipedia:{title}'].append((a, b))
+        if any(d not in lookup for d in candidate['documents']):
+            raise ValueError('original support title absent from public passages')
+        fallback = [span for d in candidate['documents'] for span in lookup[d]]
+        materials = sorted(lookup)
+    if not candidate['evidence']:
+        return [], 'no_annotated_evidence', materials
+    try:
+        return find_spans(context, candidate['evidence']), 'exact_evidence_with_whitespace_alignment', materials
+    except ValueError:
+        return sorted(set(fallback)), 'whole_public_support_document_version_changed', materials
+
+
+def find_spans(text, evidence):
+    """Whitespace-flexible exact evidence matching; every occurrence is retained."""
+    spans = []
+    for item in evidence:
+        if not item.strip():
+            raise ValueError('blank evidence annotation')
+        pattern = r'\s+'.join(re.escape(word) for word in item.split())
+        found = [(m.start(), m.end()) for m in re.finditer(pattern, text)]
+        if not found:
+            raise ValueError(f'evidence not present in public context: {item[:100]!r}')
+        spans.extend(found)
+    if not spans:
+        raise ValueError('no recoverable supporting evidence')
+    return sorted(set(spans))
+
+
+def source_index(qasper, hotpotqa, musique):
+    """Original authors' schemas, indexed by normalized question."""
+    index = {d: defaultdict(list) for d in DATASETS}
+    for paper_id, paper in qasper.items():
+        words = re.findall(r'\w+', ' '.join(p for section in paper['full_text'] for p in section['paragraphs']).casefold())
+        anchors = [words[i:i+8] for i in range(0, len(words)-7, 40)]
+        for qa in paper['qas']:
+            evidence = []
+            for annotation in qa['answers']:
+                answer = annotation.get('answer', annotation)
+                evidence.extend(answer.get('evidence', []))
+            index['qasper'][question_key(qa['question'])].append({
+                'source_id': qa['question_id'], 'documents': [f'qasper-paper:{paper_id}'],
+                'evidence': evidence, 'paper_title': paper['title'], 'paper_identity_anchors': anchors, 'unanswerable': not evidence})
+    for qa in hotpotqa:
+        context, supports = qa['context'], qa['supporting_facts']
+        paragraphs = dict(zip(context['title'], context['sentences'])) if isinstance(context, dict) else dict(context)
+        facts = list(zip(supports['title'], supports['sent_id'])) if isinstance(supports, dict) else supports
+        titles = sorted(set(title for title, _ in facts))
+        invalid = [(title, sentence) for title, sentence in facts if title not in paragraphs or not 0 <= sentence < len(paragraphs[title])]
+        evidence = [paragraphs[title][sentence] for title, sentence in facts if (title, sentence) not in invalid]
+        index['hotpotqa'][question_key(qa['question'])].append({
+            'source_id': qa.get('_id', qa.get('id')), 'documents': [f'wikipedia:{question_key(t)}' for t in titles],
+            'evidence': evidence, 'origin_issue': invalid})
+    for qa in musique:
+        supports = [p for p in qa['paragraphs'] if p['is_supporting']]
+        index['musique'][question_key(qa['question'])].append({
+            'source_id': qa['id'], 'documents': sorted(set(f'wikipedia:{question_key(p["title"])}' for p in supports)),
+            'evidence': [p['paragraph_text'] for p in supports]})
+    return index
+
+
+def map_longbench(raw, index):
+    mapped, errors = [], []
+    for dataset in DATASETS:
+        rows = raw[dataset]
+        if len(rows) != 200 or len({r['_id'] for r in rows}) != 200:
+            raise ValueError(f'{dataset} must contain 200 unique public IDs')
+        for row in rows:
+            candidates = index[dataset].get(question_key(row['input']), [])
+            valid = []
+            for candidate in candidates:
+                if candidate.get('origin_issue'):
+                    continue
+                try:
+                    spans, policy, materials = mapped_evidence(row, candidate, dataset)
+                    # A no-evidence Qasper answer is still a valid baseline ID.
+                    # It is explicitly inapplicable to evidence-preserving development.
+                    if not spans and dataset != 'qasper':
+                        continue
+                    valid.append((candidate, spans, policy, materials))
+                except ValueError:
+                    continue
+            identities = {tuple(c['documents']) for c, *_ in valid}
+            if not valid or len(identities) != 1:
+                errors.append({'dataset': dataset, 'public_id': row['_id'], 'question': row['input'],
+                    'candidate_count': len(candidates), 'matched_count': len(valid), 'reason': 'missing_or_ambiguous_source_mapping'})
+                continue
+            candidate, spans, policy, materials = valid[0]
+            # Multiple source questions sharing the same evidence group are harmless;
+            # union their evidence rather than choosing by answer/model score.
+            spans = sorted(set(x for _, ss, *_ in valid for x in ss))
+            mapped.append({'sample_id': f'{dataset}:{row["_id"]}', 'public_id': row['_id'], 'dataset': dataset,
+                'question': row['input'], 'document': row['context'], 'answers': row['answers'],
+                'source_ids': sorted(set(c['source_id'] for c, *_ in valid)), 'support_documents': candidate['documents'],
+                'input_documents': materials, 'evidence_mapping_policy': sorted(set(p for _, _, p, _ in valid)),
+                'evidence_char_spans': spans, 'original_length_field': row.get('length'),
+                'original_document_count': len(materials), 'support_document_count': len(candidate['documents'])})
+    return mapped, errors
+
+
+def split_groups(rows):
+    """Union equal evidence sets and equal normalized questions across datasets."""
+    parent = list(range(len(rows)))
+    def root(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+    def union(i, j):
+        a, b = root(i), root(j)
+        parent[max(a, b)] = min(a, b)
+    seen_docs, seen_questions = {}, {}
+    for i, r in enumerate(rows):
+        evidence_key = tuple(sorted(r['support_documents']))
+        q = question_key(r['question'])
+        for seen, key in ((seen_docs, evidence_key), (seen_questions, q)):
+            if key in seen:
+                union(i, seen[key])
+            else:
+                seen[key] = i
+    grouped = defaultdict(list)
+    for i, r in enumerate(rows):
+        grouped[root(i)].append(r)
+    groups = sorted(grouped.values(), key=lambda g: min(r['sample_id'] for r in g))
+    # Per-dataset strata with a deterministic home for cross-dataset components.
+    rng = random.Random(42)
+    ordered = []
+    for d in DATASETS:
+        stratum = [g for g in groups if min((DATASETS.index(r['dataset']) for r in g)) == DATASETS.index(d)]
+        rng.shuffle(stratum)
+        ordered.extend(stratum)
+    targets = {'explore': dict(zip(DATASETS, (17, 17, 16))), 'validation': dict(zip(DATASETS, (13, 13, 14)))}
+    remaining = ordered[:]
+    for split, target in targets.items():
+        actual = Counter()
+        picked = []
+        for group in remaining:
+            counts = Counter(r['dataset'] for r in group)
+            before = sum(abs(target[d] - actual[d]) for d in DATASETS)
+            after = sum(abs(target[d] - actual[d] - counts[d]) for d in DATASETS)
+            if after < before:
+                for r in group:
+                    r['split'] = split
+                actual.update(counts)
+                picked.append(group)
+        remaining = [g for g in remaining if g not in picked]
+    for group in remaining:
+        for r in group:
+            r['split'] = 'test'
+    for group in groups:
+        # Group identity describes evidence documents, never an arbitrary sample ID.
+        gid = sorted({(r['dataset'], tuple(r['support_documents'])) for r in group})
+        for r in group:
+            r['group'] = [[d, list(docs)] for d, docs in gid]
+    # Nested orders interleave datasets. They are frozen before any generation.
+    order = {}
+    for split in ('explore', 'validation', 'test'):
+        queues = {d: [r['sample_id'] for g in ordered for r in g if r['dataset'] == d and r['split'] == split] for d in DATASETS}
+        order[split] = []
+        while any(queues.values()):
+            for d in DATASETS:
+                if queues[d]:
+                    order[split].append(queues[d].pop(0))
+    report = overlap_report(rows)
+    report['targets'] = targets
+    report['actual'] = {split: dict(Counter(r['dataset'] for r in rows if r['split'] == split)) for split in order}
+    return order, report
+
+
+def overlap_report(rows):
+    from .common import identity
+    report = {}
+    for a, b in (('explore', 'validation'), ('explore', 'test'), ('validation', 'test')):
+        left, right = [r for r in rows if r['split'] == a], [r for r in rows if r['split'] == b]
+        groups = set(identity(r['group']) for r in left) & set(identity(r['group']) for r in right)
+        questions = set(question_key(r['question']) for r in left) & set(question_key(r['question']) for r in right)
+        documents = set(d for r in left for d in r.get('input_documents', r['support_documents'])) & set(d for r in right for d in r.get('input_documents', r['support_documents']))
+        support_documents = set(d for r in left for d in r['support_documents']) & set(d for r in right for d in r['support_documents'])
+        if groups or questions:
+            raise ValueError('development/test evidence group or question leakage')
+        report[f'{a}/{b}'] = {'evidence_group_overlap': sorted(groups), 'question_overlap': sorted(questions), 'single_document_overlap': sorted(documents), 'support_document_overlap': sorted(support_documents)}
+    return report
+
+
+def intervals(indices):
+    result = []
+    for i in sorted(indices):
+        if result and result[-1][1] == i:
+            result[-1][1] += 1
+        else:
+            result.append([i, i + 1])
+    return result
+
+
+def construct(row, length, tokenizer, donors, supplement_reviews, donor_cache=None):
+    from .metrics import normalize
+    tokenized = tokenizer(row['document'], add_special_tokens=False, return_offsets_mapping=True)
+    tokens, offsets = tokenized['input_ids'], tokenized['offset_mapping']
+    evidence = {i for i, (s, e) in enumerate(offsets) if e > s and any(s < b and e > a for a, b in row['evidence_char_spans'])}
+    if not evidence or len(evidence) > length:
+        return {'applicable': False, 'reason': 'no_evidence_or_evidence_exceeds_target', 'L': length}
+    # Distance to evidence on both sides, with original order as deterministic tie.
+    distance = [len(tokens) + 1] * len(tokens)
+    previous = -len(tokens) - 1
+    for i in range(len(tokens)):
+        if i in evidence:
+            previous = i
+        distance[i] = i - previous
+    previous = 2 * len(tokens) + 1
+    for i in range(len(tokens) - 1, -1, -1):
+        if i in evidence:
+            previous = i
+        distance[i] = min(distance[i], previous - i)
+    keep = sorted(sorted(range(len(tokens)), key=lambda i: (distance[i], i))[:length])
+    selected = [tokens[i] for i in keep]
+    position = {old: new for new, old in enumerate(keep)}
+    evidence_positions = sorted(position[i] for i in evidence)
+    supplement = []
+    for donor in donors:
+        if len(selected) == length:
+            break
+        if donor['split'] == 'test' or donor['group'] == row['group']:
+            continue
+        if set(row['support_documents']) & set(donor['support_documents']):
+            continue
+        # Human/source-backed negative evidence certification, never inferred from score.
+        review = supplement_reviews.get(row['sample_id'], {}).get(donor['sample_id'])
+        if not review or review.get('contains_additional_answer_evidence') is not False or not review.get('basis'):
+            continue
+        if donor_cache is not None:
+            if donor['sample_id'] not in donor_cache:
+                donor_cache[donor['sample_id']] = tokenizer.encode(donor['document'], add_special_tokens=False)
+            more = donor_cache[donor['sample_id']]
+        else:
+            more = tokenizer.encode(donor['document'], add_special_tokens=False)
+        approved = review.get('approved_token_intervals', [])
+        used_intervals = []
+        for a, b in approved:
+            if not 0 <= a < b <= len(more):
+                raise ValueError('reviewed donor interval is outside its actual source')
+            fragment = more[a:b]
+            text = ' ' + normalize(tokenizer.decode(fragment)) + ' '
+            if any(normalize(answer) and ' ' + normalize(answer) + ' ' in text for answer in row['answers']):
+                raise ValueError('reviewed supplement still contains a standard answer')
+            take = min(length - len(selected), len(fragment))
+            selected.extend(fragment[:take])
+            used_intervals.append([a, a + take])
+            if len(selected) == length:
+                break
+        if used_intervals:
+            supplement.append({'sample_id': donor['sample_id'], 'source_token_intervals': used_intervals,
+                'source_documents': donor['input_documents'],
+                'review': {k: review[k] for k in ('basis', 'contains_additional_answer_evidence', 'review_ref', 'reviewed_by') if k in review}})
+    if len(selected) != length:
+        return {'applicable': False, 'reason': 'insufficient_verified_development_supplement', 'L': length,
+                'available_tokens': len(selected), 'retained_source_intervals': intervals(keep)}
+    return {'applicable': True, 'L': length, 'document_tokens': selected,
+            'retained_source_intervals': intervals(keep), 'deleted_source_intervals': intervals(set(range(len(tokens))) - set(keep)),
+            'supplement_sources': supplement, 'evidence_token_intervals': intervals(evidence_positions),
+            'cross_block_evidence': {str(n): [span for span in intervals(evidence_positions) if (span[0] * n // length) != ((span[1] - 1) * n // length)] for n in COUNTS}}
+
+
+def check_litm(variants):
+    indexed = {}
+    for pos, rows in variants.items():
+        by_q = {}
+        for row in rows:
+            key = question_key(row['question'])
+            if key in by_q:
+                raise ValueError('duplicate LITM question')
+            if len(row['ctxs']) != 20 or not row['ctxs'][int(pos)].get('isgold'):
+                raise ValueError('LITM document count/gold position mismatch')
+            if sum(bool(d.get('isgold')) for d in row['ctxs']) != 1:
+                raise ValueError('LITM must have one gold')
+            by_q[key] = row
+        indexed[int(pos)] = by_q
+    common = sorted(set.intersection(*(set(v) for v in indexed.values())))
+    valid = []
+    for key in common:
+        items = [indexed[p][key] for p in (0, 9, 19)]
+        documents = [sorted((d['title'], d['text']) for d in r['ctxs']) for r in items]
+        if not all(r['question'] == items[0]['question'] and sorted(r['answers']) == sorted(items[0]['answers']) for r in items):
+            raise ValueError('LITM question/answer versions differ')
+        if not all(d == documents[0] for d in documents):
+            raise ValueError('LITM document sets differ')
+        valid.append(key)
+    random.Random(42).shuffle(valid)
+    if len(valid) < 500:
+        raise ValueError('fewer than 500 fully paired LITM questions')
+    return valid[:500], indexed

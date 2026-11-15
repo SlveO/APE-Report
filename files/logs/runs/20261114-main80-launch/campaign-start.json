@@ -1,0 +1,21 @@
+{
+  "role": "EXECUTOR",
+  "task_id": "MAIN80",
+  "status": "RUNNING",
+  "campaign": "main80-20261114T041503",
+  "controller_pid": 4187806,
+  "monitor": {
+    "pid": 4187808,
+    "url": "http://127.0.0.1:42501/campaign/main80-20261114T041503/",
+    "started_at": "2026-11-14T04:15:08.218731+00:00"
+  },
+  "campaign_start_utc": "2026-11-14T04:15:05.134575+00:00",
+  "campaign_start_beijing": "2026-11-14T12:15:05.134575+08:00",
+  "hard_deadline_utc": "2026-11-17T12:15:05.134575+00:00",
+  "hard_deadline_beijing": "2026-11-17T20:15:05.134575+08:00",
+  "real_browser_receipt": "output/runs/main80-20261114T041503/browser-seen.jsonl",
+  "start_exit_code": 0,
+  "formal_clock_restarted": false,
+  "submission": false,
+  "final_acceptance": false
+}

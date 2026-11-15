@@ -1,0 +1,22 @@
+{
+  "protocol": "ape-plan-exec/v1",
+  "role": "EXECUTOR",
+  "task_id": "PREP-METHODS-FULL",
+  "claimed_by": "/root/method_cpu",
+  "status": "SUBMITTED",
+  "authorization_ref": "U_MAIN80",
+  "claimed_at": "2026-11-14T03:28:14.682511+00:00",
+  "command": [
+    "bash",
+    "scripts/with_env.sh",
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "scripts/run_preparation_gpu.py"
+  ],
+  "scope": "4 serial GPU0 methods, 4 synthetic generations each; <=256 input, <=8 output; no preflight; stop at first failure",
+  "ended_at": "2026-11-14T03:29:04.492420+00:00",
+  "launcher_exit_code": 0,
+  "delivery": "delivery.md",
+  "requires_PLANNER_review": true
+}

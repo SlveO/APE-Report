@@ -1,0 +1,27 @@
+{
+  "campaign": "background-20261114T032842",
+  "state": "PREP_TEST",
+  "stage": "detached_fixture",
+  "updated_at": "2026-11-14T03:28:42.353306+00:00",
+  "completed": 0,
+  "planned": 12,
+  "failed": 0,
+  "elapsed_seconds": 0,
+  "remaining_seconds": 288000,
+  "eta_range": null,
+  "rates": [
+    {
+      "method": "fixture",
+      "cache_mode": "cold",
+      "length_bucket": 4096,
+      "count": 3,
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0
+    }
+  ],
+  "current_job": {
+    "scope": "synthetic UI fixture; no model"
+  },
+  "notices": []
+}

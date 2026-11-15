@@ -1,0 +1,16 @@
+{"completed": "datasets/raw-main80/references/pcw_wrapper.py.txt", "bytes": 6138}
+{"completed": "datasets/raw-main80/references/pcw_modeling_llama.py.txt", "bytes": 7872}
+{"completed": "datasets/raw-main80/references/pcw_LICENSE.txt", "bytes": 11357}
+{"completed": "datasets/raw-main80/references/pcw_README.md", "bytes": 3933}
+{"completed": "datasets/raw-main80/references/longbench_metrics.py.txt", "bytes": 5190}
+{"completed": "datasets/raw-main80/references/longbench_dataset2prompt.json", "bytes": 5437}
+{"completed": "datasets/raw-main80/references/longbench_dataset2maxlen.json", "bytes": 459}
+{"completed": "datasets/raw-main80/references/longbench_LICENSE.txt", "bytes": 1075}
+{"completed": "datasets/raw-main80/references/longbench_task.md", "bytes": 11747}
+{"completed": "datasets/raw-main80/references/litm_metrics.py.txt", "bytes": 1040}
+acquisition failed: datasets/raw-main80/references/litm_get_qa_responses.py.txt (HTTPError, HTTP 404)
+{"completed": "datasets/raw-main80/references/litm_LICENSE.txt", "bytes": 1067}
+{"completed": "datasets/raw-main80/references/doc2dial_sharedtask_utils.py.txt", "bytes": 3611}
+{"completed": "datasets/raw-main80/references/doc2dial_README.md", "bytes": 5176}
+{"completed": "datasets/raw-main80/references/doc2dial_DATA_README.md", "bytes": 2829}
+{"completed": "datasets/raw-main80/references/musique_README.md", "bytes": 48623}

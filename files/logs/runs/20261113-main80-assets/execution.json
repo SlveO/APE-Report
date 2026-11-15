@@ -1,0 +1,48 @@
+{
+  "protocol": "ape-plan-exec/v1",
+  "task_id": "PREP-ASSETS",
+  "owner": "EXECUTOR",
+  "status": "SUBMITTED",
+  "authorization_ref": "U_MAIN80",
+  "claimed_by": "/root/prep_assets",
+  "started_at": "2026-11-13T15:32:30.672211+00:00",
+  "constraints": [
+    "no_GPU",
+    "no_dependency_install",
+    "no_digest",
+    "workspace_only"
+  ],
+  "delivery": "logs/runs/20261113-main80-assets/DELIVERY.md",
+  "continuations": [
+    {
+      "attempt_id": "resume_20261114T0308",
+      "started_at": "2026-11-14T03:08:44.105971+00:00",
+      "authorization_ref": "U_MAIN80_user_resume_20261114",
+      "commands": [
+        [
+          "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+          "-B",
+          "-u",
+          "scripts/main80-assets/fetch_model_ranges.py",
+          "--attempt-id",
+          "resume_20261114T0308"
+        ],
+        [
+          "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+          "-B",
+          "-u",
+          "scripts/main80-assets/finalize_assets.py",
+          "--transfer-attempt-id",
+          "resume_20261114T0308"
+        ]
+      ],
+      "previous_failures_preserved": true
+    }
+  ],
+  "submitted_at": "2026-11-14T03:26:07.990140+00:00",
+  "model_files": 13,
+  "model_structure": "model-structure.json",
+  "offline_config_tokenizer": "offline-config-tokenizer.json",
+  "data_manifest": "datasets/raw-main80/ASSET_MANIFEST.json",
+  "formal_campaign_started": false
+}

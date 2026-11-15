@@ -1,0 +1,1334 @@
+{
+  "model": "models/Llama-3.1-8B-Instruct",
+  "data": "datasets/frozen-main80",
+  "method": "ape_dynamic",
+  "jobs": [
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 18,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 18,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 18,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 19,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 19,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 19,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 33,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 33,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 33,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 34,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 34,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 34,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 43,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 43,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 43,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 44,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 44,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 44,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 110,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 110,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 110,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 111,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 111,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 111,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 128
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 210,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 210,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 210,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 211,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 211,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 211,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 230,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 230,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 230,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 231,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 231,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 231,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 280,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 280,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 280,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 281,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 281,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 281,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 365,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 365,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 365,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 366,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 366,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 366,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 385,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 385,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 385,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 386,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 386,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 386,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 390,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 390,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+        "method": "ape_dynamic",
+        "L": 6144,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 390,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 4,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 391,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 4,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 8,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 391,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 8,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    },
+    {
+      "key": {
+        "stage": "length_check",
+        "sample_id": "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+        "method": "ape_dynamic",
+        "L": 12288,
+        "N": 16,
+        "position": null,
+        "parameters": null,
+        "cache": "cold"
+      },
+      "table": "development",
+      "index": 391,
+      "method": "ape_dynamic",
+      "param": null,
+      "N": 16,
+      "cache": "cold",
+      "logical_labels": [
+        "ape_dynamic"
+      ],
+      "max_new_tokens": 32
+    }
+  ],
+  "ledger": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/attempts.jsonl",
+  "events": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/events.jsonl",
+  "heartbeat": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/worker-state.json",
+  "selection": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/sampling.json",
+  "attention": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/attention.jsonl",
+  "rule": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/rule.json",
+  "deadline_epoch": 1794917705.134575
+}

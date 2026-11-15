@@ -1,0 +1,241 @@
+{
+  "role": "EXECUTOR",
+  "status": "SUBMITTED",
+  "method": "pcw",
+  "at": "2026-11-14T03:28:45.936487+00:00",
+  "model": "models/Llama-3.1-8B-Instruct",
+  "physical_gpu": 0,
+  "dtype": "torch.bfloat16",
+  "load_seconds": 4.453261045971885,
+  "input_tokens": 54,
+  "max_new_tokens": 8,
+  "request_generations": 4,
+  "common_content_token_ids": [
+    128000,
+    128006,
+    882,
+    128007,
+    271,
+    10464,
+    279,
+    2768,
+    1403,
+    8336,
+    627,
+    3692,
+    362,
+    25,
+    578,
+    6437,
+    22553,
+    374,
+    7086,
+    35219,
+    11940,
+    627,
+    3692,
+    426,
+    25,
+    578,
+    6307,
+    15140,
+    374,
+    7086,
+    64196,
+    11188,
+    627,
+    198,
+    14924,
+    25,
+    3639,
+    374,
+    279,
+    6437,
+    22553,
+    2663,
+    30,
+    22559,
+    449,
+    1202,
+    836,
+    1193,
+    627,
+    128009,
+    128006,
+    78191,
+    128007,
+    271
+  ],
+  "cold": {
+    "answer": "Azure Lake",
+    "output_token_ids": [
+      79207,
+      11940,
+      128009
+    ],
+    "output_tokens": 3,
+    "L": 22,
+    "N": 2,
+    "block_lengths": [
+      11,
+      11
+    ],
+    "original_document_count": 2,
+    "window_order": [
+      0,
+      1
+    ],
+    "query_start_position": 12,
+    "prefix_tokens": 11,
+    "request_tokens": 31,
+    "T": null,
+    "S": null,
+    "cache_mode": "cold",
+    "cache_hit": false,
+    "timing_condition": "cold",
+    "cache_build_seconds": 1.284916060976684,
+    "cache_get_seconds": 3.520399332046509e-07,
+    "dynamic_selection_seconds": 7.618218660354614e-07,
+    "ttft_seconds": 1.3460325319319963,
+    "total_seconds": 1.4417695729061961,
+    "peak_allocated_bytes": 16087144960,
+    "peak_reserved_bytes": 16236150784,
+    "stage_calls": {
+      "prefix": 0,
+      "context": 0,
+      "query": 0
+    }
+  },
+  "hot": {
+    "answer": "Azure Lake",
+    "output_token_ids": [
+      79207,
+      11940,
+      128009
+    ],
+    "output_tokens": 3,
+    "L": 22,
+    "N": 2,
+    "block_lengths": [
+      11,
+      11
+    ],
+    "original_document_count": 2,
+    "window_order": [
+      0,
+      1
+    ],
+    "query_start_position": 12,
+    "prefix_tokens": 11,
+    "request_tokens": 31,
+    "T": null,
+    "S": null,
+    "cache_mode": "hot",
+    "cache_hit": true,
+    "timing_condition": "application_GPU_KV",
+    "cache_build_seconds": 0.0,
+    "cache_get_seconds": 1.8461141735315323e-06,
+    "dynamic_selection_seconds": 1.0158400982618332e-06,
+    "ttft_seconds": 0.04088132898323238,
+    "total_seconds": 0.11908377008512616,
+    "peak_allocated_bytes": 16090159616,
+    "peak_reserved_bytes": 16238247936,
+    "stage_calls": {
+      "prefix": 0,
+      "context": 0,
+      "query": 0
+    }
+  },
+  "recovered_hot": {
+    "answer": "Azure Lake",
+    "output_token_ids": [
+      79207,
+      11940,
+      128009
+    ],
+    "output_tokens": 3,
+    "L": 22,
+    "N": 2,
+    "block_lengths": [
+      11,
+      11
+    ],
+    "original_document_count": 2,
+    "window_order": [
+      0,
+      1
+    ],
+    "query_start_position": 12,
+    "prefix_tokens": 11,
+    "request_tokens": 31,
+    "T": null,
+    "S": null,
+    "cache_mode": "hot",
+    "cache_hit": true,
+    "timing_condition": "application_GPU_KV",
+    "cache_build_seconds": 0.0,
+    "cache_get_seconds": 2.16485932469368e-06,
+    "dynamic_selection_seconds": 8.079223334789276e-07,
+    "ttft_seconds": 0.04079333902336657,
+    "total_seconds": 0.1237333461176604,
+    "peak_allocated_bytes": 16090253824,
+    "peak_reserved_bytes": 16238247936,
+    "stage_calls": {
+      "prefix": 0,
+      "context": 0,
+      "query": 0
+    }
+  },
+  "changed_question": {
+    "answer": "Emerald River",
+    "output_token_ids": [
+      59387,
+      4852,
+      11188,
+      128009
+    ],
+    "output_tokens": 4,
+    "L": 22,
+    "N": 2,
+    "block_lengths": [
+      11,
+      11
+    ],
+    "original_document_count": 2,
+    "window_order": [
+      0,
+      1
+    ],
+    "query_start_position": 12,
+    "prefix_tokens": 11,
+    "request_tokens": 30,
+    "T": null,
+    "S": null,
+    "cache_mode": "hot",
+    "cache_hit": true,
+    "timing_condition": "application_GPU_KV",
+    "cache_build_seconds": 0.0,
+    "cache_get_seconds": 1.9830185920000076e-06,
+    "dynamic_selection_seconds": 8.901115506887436e-07,
+    "ttft_seconds": 0.05079121817834675,
+    "total_seconds": 0.19005827116779983,
+    "peak_allocated_bytes": 16090253824,
+    "peak_reserved_bytes": 16238247936,
+    "stage_calls": {
+      "prefix": 0,
+      "context": 0,
+      "query": 0
+    }
+  },
+  "recovery_build_seconds": 0.07870549103245139,
+  "checks": {
+    "cold_hot_same_tokens": true,
+    "immutable_document_KV": true,
+    "resume_KV_only_rebuild": true,
+    "changed_question_fresh_generation": true,
+    "single_window_equivalence": true,
+    "single_window_max_BF16_logit_delta": 0.34375,
+    "unique_BOS_and_longest_start": true
+  },
+  "scope": "finite synthetic correctness; no benchmark answers or formal speed conclusions"
+}

@@ -1,0 +1,234 @@
+{
+  "figures": [
+    {
+      "figure": "attention-000.svg",
+      "key": {
+        "L": 4096,
+        "N": 4,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "position": null,
+        "sample_id": "qasper:5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816",
+        "stage": "attention"
+      },
+      "raw_records": 48,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.004905641078948975
+    },
+    {
+      "figure": "attention-001.svg",
+      "key": {
+        "L": 4096,
+        "N": 4,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          1.0,
+          1.0
+        ],
+        "position": null,
+        "sample_id": "qasper:5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816",
+        "stage": "attention"
+      },
+      "raw_records": 45,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.006121635437011719
+    },
+    {
+      "figure": "attention-002.svg",
+      "key": {
+        "L": 16384,
+        "N": 16,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "position": null,
+        "sample_id": "qasper:5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816",
+        "stage": "attention"
+      },
+      "raw_records": 12,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.0032466650009155273
+    },
+    {
+      "figure": "attention-003.svg",
+      "key": {
+        "L": 16384,
+        "N": 16,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.5,
+          0.7
+        ],
+        "position": null,
+        "sample_id": "qasper:5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816",
+        "stage": "attention"
+      },
+      "raw_records": 54,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.006171464920043945
+    },
+    {
+      "figure": "attention-004.svg",
+      "key": {
+        "L": 4096,
+        "N": 4,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "position": null,
+        "sample_id": "hotpotqa:6320310adc4a826b1bb240c63ac1735b7b29e93a59782364",
+        "stage": "attention"
+      },
+      "raw_records": 6,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.004079341888427734
+    },
+    {
+      "figure": "attention-005.svg",
+      "key": {
+        "L": 4096,
+        "N": 4,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          1.0,
+          1.0
+        ],
+        "position": null,
+        "sample_id": "hotpotqa:6320310adc4a826b1bb240c63ac1735b7b29e93a59782364",
+        "stage": "attention"
+      },
+      "raw_records": 6,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.004587411880493164
+    },
+    {
+      "figure": "attention-006.svg",
+      "key": {
+        "L": 16384,
+        "N": 16,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "position": null,
+        "sample_id": "hotpotqa:6320310adc4a826b1bb240c63ac1735b7b29e93a59782364",
+        "stage": "attention"
+      },
+      "raw_records": 6,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.003141939640045166
+    },
+    {
+      "figure": "attention-007.svg",
+      "key": {
+        "L": 16384,
+        "N": 16,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.5,
+          0.7
+        ],
+        "position": null,
+        "sample_id": "hotpotqa:6320310adc4a826b1bb240c63ac1735b7b29e93a59782364",
+        "stage": "attention"
+      },
+      "raw_records": 6,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.003461480140686035
+    },
+    {
+      "figure": "attention-008.svg",
+      "key": {
+        "L": 4096,
+        "N": 4,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "position": null,
+        "sample_id": "musique:a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17",
+        "stage": "attention"
+      },
+      "raw_records": 12,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.003706991672515869
+    },
+    {
+      "figure": "attention-009.svg",
+      "key": {
+        "L": 4096,
+        "N": 4,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          1.0,
+          1.0
+        ],
+        "position": null,
+        "sample_id": "musique:a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17",
+        "stage": "attention"
+      },
+      "raw_records": 12,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.0035151243209838867
+    },
+    {
+      "figure": "attention-010.svg",
+      "key": {
+        "L": 16384,
+        "N": 16,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "position": null,
+        "sample_id": "musique:a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17",
+        "stage": "attention"
+      },
+      "raw_records": 12,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.003037691116333008
+    },
+    {
+      "figure": "attention-011.svg",
+      "key": {
+        "L": 16384,
+        "N": 16,
+        "cache": "cold",
+        "method": "ape_fixed",
+        "parameters": [
+          0.5,
+          0.7
+        ],
+        "position": null,
+        "sample_id": "musique:a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17",
+        "stage": "attention"
+      },
+      "raw_records": 12,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.0034105777740478516
+    }
+  ],
+  "incomplete_raw_lines": [],
+  "raw_numbers": "../attention.jsonl"
+}

@@ -1,0 +1,369 @@
+{
+  "authorization": "U_MAIN80",
+  "failure_policy": "retain_partial_and_raw_error_records_no_substitution",
+  "no_digest_calculation": true,
+  "license_clarification": {
+    "PCW": "Apache-2.0; earlier acquisition note MIT corrected against actual LICENSE",
+    "Doc2Dial": "CC BY3.0 per IBM author HF dataset card"
+  },
+  "acquired": [
+    {
+      "path": "datasets/raw-main80/references/pcw_wrapper.py.txt",
+      "bytes": 6138,
+      "retrieved_at": "2026-11-13T15:32:48.624875+00:00",
+      "source": "https://raw.githubusercontent.com/AI21Labs/Parallel-Context-Windows/main/pcw_wrapper.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "MIT; inspect fetched LICENSE"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_modeling_llama.py.txt",
+      "bytes": 7872,
+      "retrieved_at": "2026-11-13T15:32:49.487901+00:00",
+      "source": "https://raw.githubusercontent.com/AI21Labs/Parallel-Context-Windows/main/modeling_llama_with_pcw.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "MIT; inspect fetched LICENSE"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_LICENSE.txt",
+      "bytes": 11357,
+      "retrieved_at": "2026-11-13T15:32:50.217872+00:00",
+      "source": "https://raw.githubusercontent.com/AI21Labs/Parallel-Context-Windows/main/LICENSE",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "repository license"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_README.md",
+      "bytes": 3933,
+      "retrieved_at": "2026-11-13T15:32:52.803667+00:00",
+      "source": "https://raw.githubusercontent.com/AI21Labs/Parallel-Context-Windows/main/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "repository README"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_metrics.py.txt",
+      "bytes": 5190,
+      "retrieved_at": "2026-11-13T15:32:56.906943+00:00",
+      "source": "https://raw.githubusercontent.com/THUDM/LongBench/main/LongBench/metrics.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "MIT code; dataset origin licenses apply"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_dataset2prompt.json",
+      "bytes": 5437,
+      "retrieved_at": "2026-11-13T15:32:59.397682+00:00",
+      "source": "https://raw.githubusercontent.com/THUDM/LongBench/main/LongBench/config/dataset2prompt.json",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".json",
+      "declared_license": "MIT code"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_dataset2maxlen.json",
+      "bytes": 459,
+      "retrieved_at": "2026-11-13T15:33:05.028014+00:00",
+      "source": "https://raw.githubusercontent.com/THUDM/LongBench/main/LongBench/config/dataset2maxlen.json",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".json",
+      "declared_license": "MIT code"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_LICENSE.txt",
+      "bytes": 1075,
+      "retrieved_at": "2026-11-13T15:33:06.873932+00:00",
+      "source": "https://raw.githubusercontent.com/THUDM/LongBench/main/LICENSE",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "repository license"
+    },
+    {
+      "path": "datasets/raw-main80/doc2dial/doc2dial_dial_validation.json",
+      "bytes": 5746065,
+      "retrieved_at": "2026-11-13T15:33:10.042568+00:00",
+      "source": "https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/data/doc2dial/v1.0.1/doc2dial_dial_validation.json",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".json",
+      "declared_license": "Doc2Dial author release v1.0.1; license statement to be saved from author metadata"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_task.md",
+      "bytes": 11747,
+      "retrieved_at": "2026-11-13T15:33:12.299843+00:00",
+      "source": "https://raw.githubusercontent.com/THUDM/LongBench/main/LongBench/task.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "dataset construction and original sources"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_metrics.py.txt",
+      "bytes": 1040,
+      "retrieved_at": "2026-11-13T15:33:17.001894+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/src/lost_in_the_middle/metrics.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "MIT code; NQ/Wikipedia original licenses apply"
+    },
+    {
+      "path": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz",
+      "bytes": 15151873,
+      "retrieved_at": "2026-11-13T15:33:39.085459+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/qa_data/20_total_documents/nq-open-20_total_documents_gold_at_0.jsonl.gz",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".gz",
+      "declared_license": "MIT repository; NQ CC BY-SA 3.0, Wikipedia CC BY-SA source; main mutable"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_LICENSE.txt",
+      "bytes": 1067,
+      "retrieved_at": "2026-11-13T15:34:02.771176+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/LICENSE",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "repository license"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_sharedtask_utils.py.txt",
+      "bytes": 3611,
+      "retrieved_at": "2026-11-13T15:34:04.488179+00:00",
+      "source": "https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/scripts/sharedtask_utils.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "author official evaluation source; license per dataset source"
+    },
+    {
+      "path": "datasets/raw-main80/references/qasper_hf_loader.py.txt",
+      "bytes": 5950,
+      "retrieved_at": "2026-11-13T15:34:05.384124+00:00",
+      "source": "https://huggingface.co/datasets/allenai/qasper/raw/main/qasper.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "CC BY4.0 original author dataset loader"
+    },
+    {
+      "path": "datasets/raw-main80/references/qasper_hf_README.md",
+      "bytes": 9639,
+      "retrieved_at": "2026-11-13T15:34:05.434112+00:00",
+      "source": "https://huggingface.co/datasets/allenai/qasper/raw/main/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "CC BY4.0"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_README.md",
+      "bytes": 5176,
+      "retrieved_at": "2026-11-13T15:34:07.833747+00:00",
+      "source": "https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "author public task README"
+    },
+    {
+      "path": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz",
+      "bytes": 15155756,
+      "retrieved_at": "2026-11-13T15:34:14.604065+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/qa_data/20_total_documents/nq-open-20_total_documents_gold_at_9.jsonl.gz",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".gz",
+      "declared_license": "MIT repository; NQ CC BY-SA 3.0, Wikipedia CC BY-SA source; main mutable"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_hf_README.md",
+      "bytes": 22650,
+      "retrieved_at": "2026-11-13T15:34:14.831196+00:00",
+      "source": "https://huggingface.co/datasets/IBM/doc2dial/raw/main/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "dataset author card with license"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_DATA_README.md",
+      "bytes": 2829,
+      "retrieved_at": "2026-11-13T15:34:15.177892+00:00",
+      "source": "https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/data/doc2dial/DATA_README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "author public data README"
+    },
+    {
+      "path": "datasets/raw-main80/references/hotpot_README.md",
+      "bytes": 6839,
+      "retrieved_at": "2026-11-13T15:34:15.578038+00:00",
+      "source": "https://raw.githubusercontent.com/hotpotqa/hotpot/master/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "HotpotQA author source links"
+    },
+    {
+      "path": "datasets/raw-main80/references/musique_download_data.sh.txt",
+      "bytes": 445,
+      "retrieved_at": "2026-11-13T15:34:16.196431+00:00",
+      "source": "https://raw.githubusercontent.com/StonyBrookNLP/musique/main/download_data.sh",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "CC BY4.0 author download source"
+    },
+    {
+      "path": "datasets/raw-main80/references/musique_README.md",
+      "bytes": 48623,
+      "retrieved_at": "2026-11-13T15:34:17.407137+00:00",
+      "source": "https://raw.githubusercontent.com/StonyBrookNLP/musique/main/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "CC BY 4.0 dataset"
+    },
+    {
+      "path": "datasets/raw-main80/doc2dial/doc2dial_doc.json",
+      "bytes": 46216432,
+      "retrieved_at": "2026-11-13T15:34:31.296980+00:00",
+      "source": "https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/data/doc2dial/v1.0.1/doc2dial_doc.json",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".json",
+      "declared_license": "Doc2Dial author release v1.0.1; license statement to be saved from author metadata"
+    },
+    {
+      "path": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz",
+      "bytes": 15114700,
+      "retrieved_at": "2026-11-13T15:34:33.472904+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/qa_data/20_total_documents/nq-open-20_total_documents_gold_at_19.jsonl.gz",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".gz",
+      "declared_license": "MIT repository; NQ CC BY-SA 3.0, Wikipedia CC BY-SA source; main mutable"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_seq2seq_utils.py.txt",
+      "bytes": 6179,
+      "retrieved_at": "2026-11-13T15:35:02.668648+00:00",
+      "source": "https://raw.githubusercontent.com/doc2dial/sharedtask-dialdoc2021/master/scripts/subtask2/seq2seq_utils.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "Doc2Dial official baseline template source; dataset cc-by-3.0"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_get_qa_responses_mpt.py.txt",
+      "bytes": 9986,
+      "retrieved_at": "2026-11-13T15:35:02.686466+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/scripts/get_qa_responses_from_mpt.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "MIT author prompt source"
+    },
+    {
+      "path": "datasets/raw-main80/origins/musique-author-data-download",
+      "bytes": 2469,
+      "retrieved_at": "2026-11-13T15:35:04.431544+00:00",
+      "source": "https://drive.google.com/uc?export=download&id=1tGdADlNjWFaHLeZZGShh2IRcpO6Lv24h",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": "",
+      "declared_license": "CC BY4.0 author README Google Drive v1.0 data"
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-test-and-evaluator-v0.3.tgz",
+      "bytes": 3865061,
+      "retrieved_at": "2026-11-13T15:35:12.245060+00:00",
+      "source": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-and-evaluator-v0.3.tgz",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".tgz",
+      "declared_license": "CC BY4.0, author loader confirms v0.3"
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-train-dev-v0.3.tgz",
+      "bytes": 10835856,
+      "retrieved_at": "2026-11-13T15:35:15.896800+00:00",
+      "source": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-train-dev-v0.3.tgz",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".tgz",
+      "declared_license": "CC BY4.0, author loader confirms v0.3"
+    },
+    {
+      "path": "datasets/raw-main80/longbench/data.zip",
+      "bytes": 113932529,
+      "retrieved_at": "2026-11-13T15:35:22.751440+00:00",
+      "source": "https://huggingface.co/datasets/THUDM/LongBench/resolve/main/data.zip",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".zip",
+      "declared_license": "LongBench v1 dataset card and original source licenses; main mutable"
+    },
+    {
+      "path": "datasets/raw-main80/references/hotpot_hf_tree.json",
+      "bytes": 2657,
+      "retrieved_at": "2026-11-13T15:35:24.230000+00:00",
+      "source": "https://huggingface.co/api/datasets/hotpotqa/hotpot_qa/tree/main?recursive=true",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".json",
+      "declared_license": "author namespace data source metadata"
+    },
+    {
+      "path": "datasets/raw-main80/references/qasper_hf_tree.json",
+      "bytes": 1011,
+      "retrieved_at": "2026-11-13T15:35:24.280160+00:00",
+      "source": "https://huggingface.co/api/datasets/allenai/qasper/tree/main?recursive=true",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".json",
+      "declared_license": "author namespace source metadata"
+    },
+    {
+      "path": "datasets/raw-main80/references/hotpot_hf_README.md",
+      "bytes": 9522,
+      "retrieved_at": "2026-11-13T15:35:24.329258+00:00",
+      "source": "https://huggingface.co/datasets/hotpotqa/hotpot_qa/raw/main/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "CC BY-SA4.0"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_prompting.py.txt",
+      "bytes": 3873,
+      "retrieved_at": "2026-11-13T15:36:16.365113+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/src/lost_in_the_middle/prompting.py",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".txt",
+      "declared_license": "MIT official author prompting"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_hf_README.md",
+      "bytes": 16038,
+      "retrieved_at": "2026-11-13T15:36:16.701852+00:00",
+      "source": "https://huggingface.co/datasets/THUDM/LongBench/raw/main/README.md",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".md",
+      "declared_license": "LongBench dataset card; originals retain licenses"
+    },
+    {
+      "path": "datasets/raw-main80/origins/hotpot_distractor_validation.parquet",
+      "bytes": 27452575,
+      "retrieved_at": "2026-11-13T15:36:53.354600+00:00",
+      "source": "https://huggingface.co/datasets/hotpotqa/hotpot_qa/resolve/main/distractor/validation-00000-of-00001.parquet",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".parquet",
+      "declared_license": "CC BY-SA4.0 author namespace HF reformatted official dev distractor"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_qa.prompt",
+      "bytes": 174,
+      "retrieved_at": "2026-11-13T15:38:46.236718+00:00",
+      "source": "https://raw.githubusercontent.com/nelson-liu/lost-in-the-middle/main/src/lost_in_the_middle/prompts/qa.prompt",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".prompt",
+      "declared_license": "MIT author default QA prompt"
+    },
+    {
+      "path": "datasets/raw-main80/origins/musique_v1.0.zip",
+      "bytes": 272049578,
+      "retrieved_at": "2026-11-13T15:39:53.625498+00:00",
+      "source": "https://drive.usercontent.google.com/download?id=1tGdADlNjWFaHLeZZGShh2IRcpO6Lv24h&export=download&authuser=0&confirm=t",
+      "source_branch_note": "main/master paths are mutable retrieval branches; versioned data names as specified",
+      "format": ".zip",
+      "declared_license": "CC BY4.0 author Google Drive data zip; confirmed public download"
+    }
+  ],
+  "extraction_manifest": "logs/runs/20261113-main80-assets/data-structure.json",
+  "hotpot_json_derivative": {
+    "source": "datasets/raw-main80/origins/hotpot_distractor_validation.parquet",
+    "target": "datasets/raw-main80/origins/hotpot_distractor_validation.json",
+    "transform": "pyarrow.parquet.read_table().to_pylist(), JSON serialization preserves all row fields",
+    "rows": 7405
+  }
+}

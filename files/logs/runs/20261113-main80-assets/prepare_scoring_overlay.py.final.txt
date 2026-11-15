@@ -1,0 +1,87 @@
+"""U_MAIN80_SCORING: fixed PyPI wheels into workspace overlay, without pip/digests."""
+import importlib.util
+import json
+import os
+import struct
+import sys
+import zipfile
+import zlib
+from pathlib import Path
+
+from packaging.tags import sys_tags
+from packaging.utils import parse_wheel_filename
+
+SPEC = importlib.util.spec_from_file_location('asset_helpers', Path(__file__).with_name('fetch_assets.py'))
+H = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(H)
+OVERLAY = H.ROOT / '.overlays/main80-scoring'
+WHEELS = H.LOG / 'scoring-wheels'
+PACKAGES = {'sacrebleu': '2.4.3', 'portalocker': '2.10.1', 'colorama': '0.4.6', 'tabulate': '0.9.0', 'lxml': '5.3.0'}
+
+
+def unpack_wheel(wheel):
+    records = []
+    with zipfile.ZipFile(wheel) as archive, wheel.open('rb') as stream:
+        for info in archive.infolist():
+            name = Path(info.filename)
+            assert not name.is_absolute() and '..' not in name.parts
+            target = OVERLAY / name
+            assert target.resolve().is_relative_to(OVERLAY.resolve())
+            if info.is_dir():
+                target.mkdir(parents=True, exist_ok=True)
+                continue
+            assert '.data' not in name.parts, 'wheel layout needs explicit purelib adaptation'
+            stream.seek(info.header_offset)
+            header = stream.read(30)
+            assert header[:4] == b'PK\x03\x04'
+            nlen, xlen = struct.unpack('<HH', header[26:30])
+            stream.seek(nlen + xlen, 1)
+            encoded = stream.read(info.compress_size)
+            if info.compress_type == 8:
+                content = zlib.decompress(encoded, -15)
+            elif info.compress_type == 0:
+                content = encoded
+            else:
+                raise ValueError('unsupported wheel compression method')
+            assert len(content) == info.file_size
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if target.exists():
+                assert target.read_bytes() == content, 'existing overlay file differs'
+            else:
+                with target.open('xb') as f:
+                    f.write(content)
+            records.append({'path': str(target.relative_to(H.ROOT)), 'bytes': len(content)})
+    return records
+
+
+def main():
+    OVERLAY.mkdir(parents=True, exist_ok=True)
+    WHEELS.mkdir(parents=True, exist_ok=True)
+    tags = list(sys_tags())
+    priorities = {tag: i for i, tag in enumerate(tags)}
+    manifests = []
+    for name, version in PACKAGES.items():
+        metadata = H.get_json(f'https://pypi.org/pypi/{name}/{version}/json', WHEELS / f'{name}-{version}.pypi.json')
+        assert metadata['info']['version'] == version
+        candidates = []
+        for row in metadata['urls']:
+            if row['packagetype'] != 'bdist_wheel' or row.get('yanked'):
+                continue
+            _, got_version, _, wheel_tags = parse_wheel_filename(row['filename'])
+            assert str(got_version) == version
+            compatible = wheel_tags.intersection(priorities)
+            if compatible:
+                candidates.append((min(priorities[tag] for tag in compatible), row['filename'], row, sorted(str(tag) for tag in compatible)))
+        assert candidates, 'no authorized precompiled compatible wheel: ' + name
+        _, filename, selected, compatible = min(candidates, key=lambda row: row[:2])
+        record = {'authorization': 'U_MAIN80_SCORING', 'package': name, 'version': version, 'filename': filename, 'source': selected['url'], 'format': 'precompiled_wheel', 'compatible_tags': compatible, 'expected_bytes': selected['size'], 'license': metadata['info'].get('license'), 'target': str(OVERLAY.relative_to(H.ROOT)), 'failure_policy': 'preserve_wheel_and_partial_no_external_install', 'rollback': 'remove overlay from task PYTHONPATH, retain directory'}
+        H.event({'action': 'scoring_wheel_selected_before_fetch', **record})
+        wheel = H.fetch(selected['url'], WHEELS / filename, record['license'], selected['size'])
+        record['files'] = unpack_wheel(wheel)
+        manifests.append(record)
+    (H.LOG / 'scoring-overlay-manifest.json').write_text(json.dumps({'python': sys.version, 'interpreter': sys.executable, 'packages': manifests, 'no_digest_calculation': True, 'upstream_RECORD_preserved_without_recalculation': True}, indent=2))
+    print(json.dumps({'overlay': str(OVERLAY.relative_to(H.ROOT)), 'packages': PACKAGES}), flush=True)
+
+
+if __name__ == '__main__':
+    main()

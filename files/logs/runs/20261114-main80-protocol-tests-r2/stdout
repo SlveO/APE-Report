@@ -1,0 +1,17 @@
+test_144_balanced_selection_and_validation_fallback (__main__.ProtocolTests) ... ok
+test_empty_outputs_remain_failed_and_do_not_remove_search_pairs (__main__.ProtocolTests) ... ok
+test_exact_construction_and_unreviewed_supplement (__main__.ProtocolTests) ... ok
+test_generated_rule_identity_and_config_snapshot (__main__.ProtocolTests) ... ok
+test_groups_and_duplicate_questions (__main__.ProtocolTests) ... ok
+test_interrupted_attempt_keeps_unique_number (__main__.ProtocolTests) ... ok
+test_scoring_id_alignment (__main__.ProtocolTests) ... ok
+test_torn_resume_and_failed_attempts (__main__.ProtocolTests) ... ok
+test_unknown_hot_speed_does_not_hide_known_budget_cost (__main__.ProtocolTests) ... ok
+test_worker_resume_after_empty_cold_preserves_zero_and_recovery_time (__main__.ProtocolTests) ... ok
+test_workspace_escape (__main__.ProtocolTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.256s
+
+OK
+

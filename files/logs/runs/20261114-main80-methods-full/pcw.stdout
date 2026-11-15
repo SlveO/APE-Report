@@ -1,0 +1,1 @@
+{"method": "pcw", "checks": {"cold_hot_same_tokens": true, "immutable_document_KV": true, "resume_KV_only_rebuild": true, "changed_question_fresh_generation": true, "single_window_equivalence": true, "single_window_max_BF16_logit_delta": 0.34375, "unique_BOS_and_longest_start": true}, "input_tokens": 54, "generations": 4}

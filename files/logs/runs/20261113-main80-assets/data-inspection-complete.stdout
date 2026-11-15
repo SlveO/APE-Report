@@ -1,0 +1,178 @@
+{
+  "extracted": [
+    {
+      "source": "datasets/raw-main80/origins/qasper-train-dev-v0.3.tgz",
+      "member": "qasper-train-v0.3.json",
+      "target": "datasets/raw-main80/origins/qasper-train-v0.3.json",
+      "paper_count": 888,
+      "first_paper_keys": [
+        "title",
+        "abstract",
+        "full_text",
+        "qas",
+        "figures_and_tables"
+      ]
+    },
+    {
+      "source": "datasets/raw-main80/origins/qasper-train-dev-v0.3.tgz",
+      "member": "qasper-dev-v0.3.json",
+      "target": "datasets/raw-main80/origins/qasper-dev-v0.3.json",
+      "paper_count": 281,
+      "first_paper_keys": [
+        "title",
+        "abstract",
+        "full_text",
+        "qas",
+        "figures_and_tables"
+      ]
+    },
+    {
+      "source": "datasets/raw-main80/origins/qasper-test-and-evaluator-v0.3.tgz",
+      "member": "qasper-test-v0.3.json",
+      "target": "datasets/raw-main80/origins/qasper-test-v0.3.json",
+      "paper_count": 416,
+      "first_paper_keys": [
+        "title",
+        "abstract",
+        "full_text",
+        "qas",
+        "figures_and_tables"
+      ]
+    },
+    {
+      "source": "datasets/raw-main80/longbench/data.zip",
+      "member": "data/qasper.jsonl",
+      "target": "datasets/raw-main80/longbench/qasper.jsonl",
+      "bytes": 4829368
+    },
+    {
+      "source": "datasets/raw-main80/longbench/data.zip",
+      "member": "data/hotpotqa.jsonl",
+      "target": "datasets/raw-main80/longbench/hotpotqa.jsonl",
+      "bytes": 11483614
+    },
+    {
+      "source": "datasets/raw-main80/longbench/data.zip",
+      "member": "data/musique.jsonl",
+      "target": "datasets/raw-main80/longbench/musique.jsonl",
+      "bytes": 14085077
+    },
+    {
+      "source": "datasets/raw-main80/origins/musique_v1.0.zip",
+      "member": "data/musique_ans_v1.0_dev.jsonl",
+      "target": "datasets/raw-main80/origins/musique_ans_v1.0_dev.jsonl",
+      "bytes": 30439728
+    }
+  ],
+  "schemas": {
+    "datasets/raw-main80/longbench/qasper.jsonl": {
+      "count": 200,
+      "first_keys": [
+        "input",
+        "context",
+        "answers",
+        "length",
+        "dataset",
+        "language",
+        "all_classes",
+        "_id"
+      ],
+      "first_id": "3ac3eef636db11635a21a61804cb28e92c546a5686dd1e12",
+      "first_input": "How is the ground truth for fake news established?"
+    },
+    "datasets/raw-main80/longbench/musique.jsonl": {
+      "count": 200,
+      "first_keys": [
+        "input",
+        "context",
+        "answers",
+        "length",
+        "dataset",
+        "language",
+        "all_classes",
+        "_id"
+      ],
+      "first_id": "4c114f84ca41284c0845705943adc10b70a4fd3e8d0ca295",
+      "first_input": "Who plays the wife of the producer of Here Comes the Boom in Grown Ups?"
+    },
+    "datasets/raw-main80/longbench/hotpotqa.jsonl": {
+      "count": 200,
+      "first_keys": [
+        "input",
+        "context",
+        "answers",
+        "length",
+        "dataset",
+        "language",
+        "all_classes",
+        "_id"
+      ],
+      "first_id": "fc6267db9ba02bbb251960231bc87251c581110e4e2b5f3f",
+      "first_input": "Which case was brought to court first Miller v. California or Gates v. Collier ?"
+    },
+    "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz": {
+      "count": 2655,
+      "first_keys": [
+        "question",
+        "answers",
+        "ctxs",
+        "nq_annotated_gold"
+      ],
+      "context_keys": [
+        "id",
+        "title",
+        "text",
+        "score",
+        "hasanswer",
+        "original_retrieval_index",
+        "isgold"
+      ],
+      "question": "who got the first nobel prize in physics"
+    },
+    "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz": {
+      "count": 2655,
+      "first_keys": [
+        "question",
+        "answers",
+        "ctxs",
+        "nq_annotated_gold"
+      ],
+      "context_keys": [
+        "title",
+        "text",
+        "hasanswer",
+        "isgold"
+      ],
+      "question": "who got the first nobel prize in physics"
+    },
+    "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz": {
+      "count": 2655,
+      "first_keys": [
+        "question",
+        "answers",
+        "ctxs",
+        "nq_annotated_gold"
+      ],
+      "context_keys": [
+        "id",
+        "title",
+        "text",
+        "score",
+        "hasanswer",
+        "original_retrieval_index",
+        "isgold"
+      ],
+      "question": "who got the first nobel prize in physics"
+    },
+    "datasets/raw-main80/doc2dial/doc2dial_doc.json": {
+      "keys": [
+        "doc_data"
+      ]
+    },
+    "datasets/raw-main80/doc2dial/doc2dial_dial_validation.json": {
+      "keys": [
+        "dial_data"
+      ]
+    }
+  }
+}

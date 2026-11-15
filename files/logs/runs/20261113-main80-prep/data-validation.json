@@ -1,0 +1,405 @@
+{
+  "role": "PLANNER",
+  "status": "PASS",
+  "at": "2026-11-14T03:40:02.001836+00:00",
+  "longbench_ids": {
+    "qasper": 200,
+    "hotpotqa": 200,
+    "musique": 200
+  },
+  "splits": {
+    "explore": 50,
+    "validation": 40,
+    "test": 510
+  },
+  "verified_constructed_inputs": 432,
+  "development_grid_counts": {
+    "validation/qasper/4096": 13,
+    "validation/qasper/8192": 13,
+    "validation/qasper/16384": 12,
+    "explore/qasper/4096": 15,
+    "explore/qasper/8192": 14,
+    "explore/qasper/16384": 11,
+    "validation/hotpotqa/4096": 13,
+    "validation/hotpotqa/8192": 13,
+    "validation/hotpotqa/16384": 13,
+    "explore/hotpotqa/4096": 17,
+    "explore/hotpotqa/8192": 17,
+    "explore/hotpotqa/16384": 17,
+    "validation/musique/4096": 14,
+    "validation/musique/8192": 14,
+    "validation/musique/16384": 14,
+    "explore/musique/4096": 16,
+    "explore/musique/8192": 16,
+    "explore/musique/16384": 16
+  },
+  "inapplicable": [
+    {
+      "sample_id": "qasper:65f7bdb541fd6f01fe866dcf694891f92533186085fcba20",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 4096
+    },
+    {
+      "sample_id": "qasper:65f7bdb541fd6f01fe866dcf694891f92533186085fcba20",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 8192
+    },
+    {
+      "sample_id": "qasper:65f7bdb541fd6f01fe866dcf694891f92533186085fcba20",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 16384
+    },
+    {
+      "sample_id": "qasper:65f7bdb541fd6f01fe866dcf694891f92533186085fcba20",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 6144
+    },
+    {
+      "sample_id": "qasper:65f7bdb541fd6f01fe866dcf694891f92533186085fcba20",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 12288
+    },
+    {
+      "sample_id": "qasper:901f735b1582acacb606002ab77c6c7a3fe6017d38349aa2",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 16384,
+      "available_tokens": 16259,
+      "retained_source_intervals": [
+        [
+          0,
+          3844
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:b805e336d2e8cce895100cfde3a536e632ddd5296ddece21",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 16384,
+      "available_tokens": 15644,
+      "retained_source_intervals": [
+        [
+          0,
+          4203
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:df3b5e07ec132472a8fc5b7f30b6ce3d942c8488a3d8ff7c",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 8192,
+      "available_tokens": 4495,
+      "retained_source_intervals": [
+        [
+          0,
+          4495
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:df3b5e07ec132472a8fc5b7f30b6ce3d942c8488a3d8ff7c",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 16384,
+      "available_tokens": 4495,
+      "retained_source_intervals": [
+        [
+          0,
+          4495
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:df3b5e07ec132472a8fc5b7f30b6ce3d942c8488a3d8ff7c",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 6144,
+      "available_tokens": 4495,
+      "retained_source_intervals": [
+        [
+          0,
+          4495
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:df3b5e07ec132472a8fc5b7f30b6ce3d942c8488a3d8ff7c",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 12288,
+      "available_tokens": 4495,
+      "retained_source_intervals": [
+        [
+          0,
+          4495
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:c6464e3b2dbf1c8412496fdef56cafcccd0ccb9dd1937886",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 16384,
+      "available_tokens": 15378,
+      "retained_source_intervals": [
+        [
+          0,
+          2789
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:a49d38fea6e6ffd631d227f17753ce20624d17bd8a04ee03",
+      "dataset": "qasper",
+      "split": "validation",
+      "applicable": false,
+      "reason": "insufficient_verified_development_supplement",
+      "L": 16384,
+      "available_tokens": 16150,
+      "retained_source_intervals": [
+        [
+          0,
+          2665
+        ]
+      ]
+    },
+    {
+      "sample_id": "qasper:ca91b274c44baec976e7acbd926d7d823fd5a81e34dfcce1",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 4096
+    },
+    {
+      "sample_id": "qasper:ca91b274c44baec976e7acbd926d7d823fd5a81e34dfcce1",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 8192
+    },
+    {
+      "sample_id": "qasper:ca91b274c44baec976e7acbd926d7d823fd5a81e34dfcce1",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 16384
+    },
+    {
+      "sample_id": "qasper:ca91b274c44baec976e7acbd926d7d823fd5a81e34dfcce1",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 6144
+    },
+    {
+      "sample_id": "qasper:ca91b274c44baec976e7acbd926d7d823fd5a81e34dfcce1",
+      "dataset": "qasper",
+      "split": "explore",
+      "applicable": false,
+      "reason": "no_evidence_or_evidence_exceeds_target",
+      "L": 12288
+    }
+  ],
+  "nested_144_configuration_coverage": true,
+  "paired_litm_questions": 500,
+  "complete_history_doc2dial": 500,
+  "group_and_single_document_overlap": {
+    "explore/validation": {
+      "evidence_group_overlap": [],
+      "question_overlap": [],
+      "single_document_overlap": [
+        "wikipedia:2010 elazığ earthquake",
+        "wikipedia:adam smith prize",
+        "wikipedia:black death",
+        "wikipedia:cyprus popular bank"
+      ],
+      "support_document_overlap": [
+        "wikipedia:adam smith prize",
+        "wikipedia:black death"
+      ]
+    },
+    "explore/test": {
+      "evidence_group_overlap": [],
+      "question_overlap": [],
+      "single_document_overlap": [
+        "wikipedia:2010 elazığ earthquake",
+        "wikipedia:2017 conservative party of canada leadership election",
+        "wikipedia:a perfect sky",
+        "wikipedia:batman: under the red hood",
+        "wikipedia:bhilangna river",
+        "wikipedia:black death",
+        "wikipedia:bolshaya lyampa",
+        "wikipedia:cyprus popular bank",
+        "wikipedia:federalism",
+        "wikipedia:fleur-de-lis",
+        "wikipedia:franck biancheri",
+        "wikipedia:gallaratese",
+        "wikipedia:gmina tarnów",
+        "wikipedia:graeme goodall",
+        "wikipedia:inky mark",
+        "wikipedia:kis-küküllő county",
+        "wikipedia:liliana mumy",
+        "wikipedia:loekman hakim",
+        "wikipedia:loimijoki",
+        "wikipedia:loud planes fly low",
+        "wikipedia:mangalam river",
+        "wikipedia:minsk region",
+        "wikipedia:necessary records",
+        "wikipedia:orange river",
+        "wikipedia:party leaders of the united states senate",
+        "wikipedia:patrick brown (politician)",
+        "wikipedia:pesanggrahan, south jakarta",
+        "wikipedia:royal dutch shell",
+        "wikipedia:rufiji river",
+        "wikipedia:sazerac",
+        "wikipedia:the martyrdom of saint lawrence (titian)",
+        "wikipedia:utva river (perm krai)"
+      ],
+      "support_document_overlap": [
+        "wikipedia:2017 conservative party of canada leadership election",
+        "wikipedia:batman: under the red hood",
+        "wikipedia:black death",
+        "wikipedia:fleur-de-lis",
+        "wikipedia:orange river",
+        "wikipedia:royal dutch shell",
+        "wikipedia:sazerac",
+        "wikipedia:the martyrdom of saint lawrence (titian)"
+      ]
+    },
+    "validation/test": {
+      "evidence_group_overlap": [],
+      "question_overlap": [],
+      "single_document_overlap": [
+        "wikipedia:1894–95 fa cup",
+        "wikipedia:1914 fa cup final",
+        "wikipedia:2010 elazığ earthquake",
+        "wikipedia:bang bon district",
+        "wikipedia:baranya county",
+        "wikipedia:bardwell creek",
+        "wikipedia:black death",
+        "wikipedia:bondary",
+        "wikipedia:british nationality law",
+        "wikipedia:cabramatta creek",
+        "wikipedia:cleveland, north carolina",
+        "wikipedia:coxs creek (belfield, new south wales)",
+        "wikipedia:cup and saucer creek",
+        "wikipedia:cyprus popular bank",
+        "wikipedia:darling mills creek",
+        "wikipedia:david parlett",
+        "wikipedia:denmark place fire",
+        "wikipedia:dillon beach, california",
+        "wikipedia:east timor",
+        "wikipedia:egypt (tv series)",
+        "wikipedia:francis tresham (game designer)",
+        "wikipedia:giovanni cifolelli",
+        "wikipedia:glossary of board games",
+        "wikipedia:gmina ujsoły",
+        "wikipedia:gold hill, north carolina",
+        "wikipedia:history of chelsea f.c.",
+        "wikipedia:indonesia–timor leste commission of truth and friendship",
+        "wikipedia:james chadwick",
+        "wikipedia:jerome quinn",
+        "wikipedia:john c. petersen",
+        "wikipedia:krasnovishersky district",
+        "wikipedia:la rosiere de pessac",
+        "wikipedia:lansdowne river",
+        "wikipedia:list of la liga top scorers",
+        "wikipedia:list of ramon magsaysay award winners",
+        "wikipedia:list of word board games",
+        "wikipedia:little river (wingecarribee)",
+        "wikipedia:mother-in-law (song)",
+        "wikipedia:mother-in-law lounge",
+        "wikipedia:naas river",
+        "wikipedia:natural dam, arkansas",
+        "wikipedia:oak lawn, illinois",
+        "wikipedia:orlando furioso (vivaldi, 1714)",
+        "wikipedia:poptropica",
+        "wikipedia:pulaski high school",
+        "wikipedia:rodnowo",
+        "wikipedia:sant martí d'empúries",
+        "wikipedia:second city derby",
+        "wikipedia:south beach, florida",
+        "wikipedia:states of nigeria",
+        "wikipedia:stinson beach, california",
+        "wikipedia:swan miara",
+        "wikipedia:sylvan beach union chapel",
+        "wikipedia:the beach (film)",
+        "wikipedia:the definitive collection (eric carmen album)",
+        "wikipedia:the trouble with the truth (song)",
+        "wikipedia:the truth about men",
+        "wikipedia:thirukkanur",
+        "wikipedia:tony dale",
+        "wikipedia:toongabbie creek",
+        "wikipedia:tymce",
+        "wikipedia:union territory",
+        "wikipedia:united nations security council resolution 1264",
+        "wikipedia:virginia, lempira",
+        "wikipedia:whihala beach county park",
+        "wikipedia:wolli creek",
+        "wikipedia:zeferino martins"
+      ],
+      "support_document_overlap": [
+        "wikipedia:1894–95 fa cup",
+        "wikipedia:bang bon district",
+        "wikipedia:black death",
+        "wikipedia:cleveland, north carolina",
+        "wikipedia:east timor",
+        "wikipedia:gold hill, north carolina",
+        "wikipedia:indonesia–timor leste commission of truth and friendship",
+        "wikipedia:james chadwick",
+        "wikipedia:jerome quinn",
+        "wikipedia:john c. petersen",
+        "wikipedia:mother-in-law (song)",
+        "wikipedia:mother-in-law lounge",
+        "wikipedia:orlando furioso (vivaldi, 1714)",
+        "wikipedia:pulaski high school",
+        "wikipedia:second city derby",
+        "wikipedia:the beach (film)",
+        "wikipedia:the definitive collection (eric carmen album)"
+      ]
+    }
+  },
+  "evidence_mapping_policy_counts": {
+    "exact_evidence_with_whitespace_alignment": 165,
+    "whole_public_support_document_version_changed": 424,
+    "no_annotated_evidence": 11
+  },
+  "raw_public_content_unchanged": true,
+  "supplement_sources_development_only": true,
+  "no_model_generation_or_formal_timing": true
+}

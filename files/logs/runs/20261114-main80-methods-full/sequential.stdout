@@ -1,0 +1,1 @@
+{"method": "sequential", "checks": {"cold_hot_same_tokens": true, "immutable_document_KV": true, "resume_KV_only_rebuild": true, "changed_question_fresh_generation": true}, "input_tokens": 54, "generations": 4}

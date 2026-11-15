@@ -1,0 +1,68 @@
+"""Finish EXECUTOR asset evidence after its own range transfer; no GPU or formal run."""
+import importlib.util
+import json
+import os
+import time
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+SPEC = importlib.util.spec_from_file_location('asset_helpers', HERE / 'fetch_assets.py')
+H = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(H)
+
+
+def main():
+    start = time.monotonic()
+    manifest = json.loads((H.LOG / 'model-manifest.json').read_text())
+    paths = [H.MODEL / row['Path'] for row in manifest['required_files']]
+    H.event({'action': 'asset_finalizer_started', 'pid': os.getpid(), 'wait_limit_seconds': 21600})
+    while not all(p.is_file() for p in paths):
+        events = [json.loads(line) for line in (H.LOG / 'events.jsonl').read_text().splitlines() if line]
+        failures = [e for e in events if e.get('action') == 'range_downloader_end' and e.get('errors', 0)]
+        if failures:
+            raise RuntimeError('owned range download ended with unresolved errors; partials retained')
+        if time.monotonic() - start >= 21600:
+            raise TimeoutError('asset preparation wait limit reached, no formal run started')
+        time.sleep(30)
+    spec = importlib.util.spec_from_file_location('inspect_assets', HERE / 'inspect_assets.py')
+    inspector = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(inspector)
+    inspector.inspect_model()
+    url = 'https://modelscope.cn/api/v1/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/repo/files?Revision=master&Recursive=true'
+    after = H.get_json(url, H.LOG / 'model-files-source-after-transfer.json')
+    actual = {r['Path']: r for r in after['Data']['Files'] if r['Type'] == 'blob'}
+    differences = []
+    for row in manifest['required_files']:
+        current = actual[row['Path']]
+        if any(current.get(key) != row[key] for key in ('Path', 'Size', 'Revision')):
+            differences.append(row['Path'])
+    comparison = {'compared_fields': ['Path', 'Size', 'Revision'], 'source_observed_before_after_agree': not differences, 'differences': differences, 'no_local_digest_calculation': True}
+    (H.LOG / 'model-source-stability.json').write_text(json.dumps(comparison, indent=2))
+    assert not differences, 'mutable source metadata changed during transfer; retain files, require review'
+    execution = json.loads((H.LOG / 'execution.json').read_text())
+    execution.update({'status': 'SUBMITTED', 'submitted_at': H.now(), 'delivery': 'logs/runs/20261113-main80-assets/DELIVERY.md', 'model_files': 13, 'model_structure': 'model-structure.json', 'offline_config_tokenizer': 'offline-config-tokenizer.json', 'data_manifest': 'datasets/raw-main80/ASSET_MANIFEST.json', 'formal_campaign_started': False})
+    (H.LOG / 'execution.json').write_text(json.dumps(execution, indent=2))
+    (H.LOG / 'DELIVERY.md').write_text('''# EXECUTOR / PREP-ASSETS / SUBMITTED
+
+授权：U_MAIN80；评分overlay另见U_MAIN80_SCORING。最终技术验收由PLANNER完成。
+
+- 指定ModelScope用户镜像master分支的13项必要Llama-3.1文件已取得；master可变，不声称Meta官方或不可变revision。
+- model-manifest.json记录获取前来源/大小/观察revision；model-source-stability.json记录获取后逐项元数据比较；model-structure.json验证13项大小、291个索引tensor及四权重头部形状/offset连续结构。
+- offline-config-tokenizer.json为CPU离线AutoConfig/AutoTokenizer实际证据；没有整模型或GPU运行。
+- LongBench三子集各200唯一ID、Qasper原始train/dev/test、HotpotQA原始dev distractor及无损JSON、MuSiQue answerable dev、LITM20三位置和Doc2Dial文档/validation全部取得；datasets/raw-main80/ASSET_MANIFEST.json及data-structure.json列出来源/许可/变换/结构。
+- 作者评分、prompt和PCW参考源码保存在references，以文本只读，不直接作为运行入口。
+- 所有获取错误、初始流下载退出143、原始partial、Range分段状态保留。无外部修改、资源审查或摘要计算。未启动正式80小时计时。
+- 评分依赖交付见scoring-execution.json、scoring-overlay-manifest.json及scoring-overlay-validation.json。首轮辅助断言失败保留；实际库不拒绝hyp/ref数量不齐，调用方必须先核对ID/数量/顺序。
+''')
+    for script in HERE.glob('*.py'):
+        (H.LOG / (script.name + '.final.txt')).write_bytes(script.read_bytes())
+    H.event({'action': 'asset_finalizer_completed', 'status': 'SUBMITTED', 'exit_code': 0})
+    print('PREP-ASSETS SUBMITTED', flush=True)
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as error:
+        H.event({'action': 'asset_finalizer_error', 'exception': type(error).__name__})
+        raise

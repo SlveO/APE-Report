@@ -1,0 +1,19 @@
+{
+  "pid": 4187810,
+  "command": [
+    "/usr/bin/google-chrome",
+    "--user-data-dir=/home/shenxiaoyang/project/ape/.runtime/browser/main80-20261114T041503/0",
+    "--new-window",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-gpu",
+    "--disable-dev-shm-usage",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--metrics-recording-only",
+    "http://127.0.0.1:42501/campaign/main80-20261114T041503/"
+  ],
+  "url": "http://127.0.0.1:42501/campaign/main80-20261114T041503/",
+  "at": "2026-11-14T04:15:08.335057+00:00"
+}

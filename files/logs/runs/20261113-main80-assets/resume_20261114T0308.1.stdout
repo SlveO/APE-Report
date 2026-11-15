@@ -1,0 +1,85 @@
+{
+  "index_entries": 291,
+  "shards": [
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "tensor_count": 82,
+      "header_bytes": 9512,
+      "shape_offset_contiguity": true
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "tensor_count": 104,
+      "header_bytes": 12120,
+      "shape_offset_contiguity": true
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "tensor_count": 100,
+      "header_bytes": 11656,
+      "shape_offset_contiguity": true
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "tensor_count": 5,
+      "header_bytes": 560,
+      "shape_offset_contiguity": true
+    }
+  ],
+  "required_files": [
+    {
+      "path": "LICENSE",
+      "bytes": 7627
+    },
+    {
+      "path": "README.md",
+      "bytes": 44044
+    },
+    {
+      "path": "USE_POLICY.md",
+      "bytes": 4691
+    },
+    {
+      "path": "config.json",
+      "bytes": 855
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 184
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 23950
+    },
+    {
+      "path": "special_tokens_map.json",
+      "bytes": 296
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 9085657
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 55351
+    },
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "bytes": 4976698672
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "bytes": 4999802720
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "bytes": 4915916176
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "bytes": 1168138808
+    }
+  ]
+}
+{"completed": "logs/runs/20261113-main80-assets/model-files-source-after-resume_20261114T0308.json", "bytes": 7066}
+PREP-ASSETS SUBMITTED

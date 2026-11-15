@@ -1,0 +1,743 @@
+{
+  "model-00001-of-00004.safetensors": {
+    "size": 4976698672,
+    "source_observed_revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+    "mutable_fetch_branch": "master",
+    "preserved_original_partial_bytes": 587202560,
+    "segments": [
+      {
+        "start": 587202560,
+        "end": 721420287,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:46:06.642733+00:00"
+      },
+      {
+        "start": 721420288,
+        "end": 855638015,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:49:49.628166+00:00"
+      },
+      {
+        "start": 855638016,
+        "end": 989855743,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:50:57.800285+00:00"
+      },
+      {
+        "start": 989855744,
+        "end": 1124073471,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:53:55.408006+00:00"
+      },
+      {
+        "start": 1124073472,
+        "end": 1258291199,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:58:00.255284+00:00"
+      },
+      {
+        "start": 1258291200,
+        "end": 1392508927,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:58:08.318201+00:00"
+      },
+      {
+        "start": 1392508928,
+        "end": 1526726655,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:57:46.363518+00:00"
+      },
+      {
+        "start": 1526726656,
+        "end": 1660944383,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:02:00.107456+00:00"
+      },
+      {
+        "start": 1660944384,
+        "end": 1795162111,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:03:16.766298+00:00"
+      },
+      {
+        "start": 1795162112,
+        "end": 1929379839,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:04:38.893882+00:00"
+      },
+      {
+        "start": 1929379840,
+        "end": 2063597567,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:05:50.865488+00:00"
+      },
+      {
+        "start": 2063597568,
+        "end": 2197815295,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:06:53.953335+00:00"
+      },
+      {
+        "start": 2197815296,
+        "end": 2332033023,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:10:12.429244+00:00"
+      },
+      {
+        "start": 2332033024,
+        "end": 2466250751,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:11:10.126948+00:00"
+      },
+      {
+        "start": 2466250752,
+        "end": 2600468479,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:11:11.810955+00:00"
+      },
+      {
+        "start": 2600468480,
+        "end": 2734686207,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:13:51.203257+00:00"
+      },
+      {
+        "start": 2734686208,
+        "end": 2868903935,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:16:33.361538+00:00"
+      },
+      {
+        "start": 2868903936,
+        "end": 3003121663,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:16:47.328534+00:00"
+      },
+      {
+        "start": 3003121664,
+        "end": 3137339391,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:18:20.347538+00:00"
+      },
+      {
+        "start": 3137339392,
+        "end": 3271557119,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:20:42.157174+00:00"
+      },
+      {
+        "start": 3271557120,
+        "end": 3405774847,
+        "status": "complete",
+        "resume_cursor": 3401169615,
+        "completed_at": "2026-11-14T03:08:52.620175+00:00"
+      },
+      {
+        "start": 3405774848,
+        "end": 3539992575,
+        "status": "complete",
+        "resume_cursor": 3522362064,
+        "completed_at": "2026-11-14T03:09:23.515974+00:00"
+      },
+      {
+        "start": 3539992576,
+        "end": 3674210303,
+        "status": "complete",
+        "resume_cursor": 3578575567,
+        "completed_at": "2026-11-14T03:12:12.249875+00:00"
+      },
+      {
+        "start": 3674210304,
+        "end": 3808428031,
+        "status": "complete",
+        "resume_cursor": 3674210304,
+        "completed_at": "2026-11-14T03:12:45.574206+00:00"
+      },
+      {
+        "start": 3808428032,
+        "end": 3942645759,
+        "status": "complete",
+        "resume_cursor": 3808428032,
+        "completed_at": "2026-11-14T03:14:54.319221+00:00"
+      },
+      {
+        "start": 3942645760,
+        "end": 4076863487,
+        "status": "complete",
+        "resume_cursor": 3942645760,
+        "completed_at": "2026-11-14T03:17:06.003725+00:00"
+      },
+      {
+        "start": 4076863488,
+        "end": 4211081215,
+        "status": "complete",
+        "resume_cursor": 4076863488,
+        "completed_at": "2026-11-14T03:17:55.570002+00:00"
+      },
+      {
+        "start": 4211081216,
+        "end": 4345298943,
+        "status": "complete",
+        "resume_cursor": 4211081216,
+        "completed_at": "2026-11-14T03:18:43.093310+00:00"
+      },
+      {
+        "start": 4345298944,
+        "end": 4479516671,
+        "status": "complete",
+        "resume_cursor": 4345298944,
+        "completed_at": "2026-11-14T03:20:52.518461+00:00"
+      },
+      {
+        "start": 4479516672,
+        "end": 4613734399,
+        "status": "complete",
+        "resume_cursor": 4479516672,
+        "completed_at": "2026-11-14T03:23:00.556891+00:00"
+      },
+      {
+        "start": 4613734400,
+        "end": 4747952127,
+        "status": "complete",
+        "resume_cursor": 4613734400,
+        "completed_at": "2026-11-14T03:24:04.524079+00:00"
+      },
+      {
+        "start": 4747952128,
+        "end": 4882169855,
+        "status": "complete",
+        "resume_cursor": 4747952128,
+        "completed_at": "2026-11-14T03:25:52.314027+00:00"
+      },
+      {
+        "start": 4882169856,
+        "end": 4976698671,
+        "status": "complete",
+        "resume_cursor": 4882169856,
+        "completed_at": "2026-11-14T03:25:56.768958+00:00"
+      }
+    ]
+  },
+  "model-00002-of-00004.safetensors": {
+    "size": 4999802720,
+    "source_observed_revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+    "mutable_fetch_branch": "master",
+    "preserved_original_partial_bytes": 637534208,
+    "segments": [
+      {
+        "start": 637534208,
+        "end": 771751935,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:49:04.736124+00:00"
+      },
+      {
+        "start": 771751936,
+        "end": 905969663,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:50:06.576024+00:00"
+      },
+      {
+        "start": 905969664,
+        "end": 1040187391,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:55:34.411749+00:00"
+      },
+      {
+        "start": 1040187392,
+        "end": 1174405119,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:53:50.522920+00:00"
+      },
+      {
+        "start": 1174405120,
+        "end": 1308622847,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:54:52.933771+00:00"
+      },
+      {
+        "start": 1308622848,
+        "end": 1442840575,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:00:27.557785+00:00"
+      },
+      {
+        "start": 1442840576,
+        "end": 1577058303,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:57:48.411424+00:00"
+      },
+      {
+        "start": 1577058304,
+        "end": 1711276031,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:01:03.781659+00:00"
+      },
+      {
+        "start": 1711276032,
+        "end": 1845493759,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:01:39.421481+00:00"
+      },
+      {
+        "start": 1845493760,
+        "end": 1979711487,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:05:04.500742+00:00"
+      },
+      {
+        "start": 1979711488,
+        "end": 2113929215,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:06:10.499660+00:00"
+      },
+      {
+        "start": 2113929216,
+        "end": 2248146943,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:07:18.978092+00:00"
+      },
+      {
+        "start": 2248146944,
+        "end": 2382364671,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:09:17.593469+00:00"
+      },
+      {
+        "start": 2382364672,
+        "end": 2516582399,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:10:37.176117+00:00"
+      },
+      {
+        "start": 2516582400,
+        "end": 2650800127,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:14:40.454035+00:00"
+      },
+      {
+        "start": 2650800128,
+        "end": 2785017855,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:14:31.315966+00:00"
+      },
+      {
+        "start": 2785017856,
+        "end": 2919235583,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:16:30.726509+00:00"
+      },
+      {
+        "start": 2919235584,
+        "end": 3053453311,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:19:02.375343+00:00"
+      },
+      {
+        "start": 3053453312,
+        "end": 3187671039,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:18:27.380069+00:00"
+      },
+      {
+        "start": 3187671040,
+        "end": 3321888767,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:20:25.298285+00:00"
+      },
+      {
+        "start": 3321888768,
+        "end": 3456106495,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:22:02.223972+00:00"
+      },
+      {
+        "start": 3456106496,
+        "end": 3590324223,
+        "status": "complete",
+        "resume_cursor": 3519625933,
+        "completed_at": "2026-11-14T03:11:02.659805+00:00"
+      },
+      {
+        "start": 3590324224,
+        "end": 3724541951,
+        "status": "complete",
+        "resume_cursor": 3644357325,
+        "completed_at": "2026-11-14T03:11:31.002173+00:00"
+      },
+      {
+        "start": 3724541952,
+        "end": 3858759679,
+        "status": "complete",
+        "resume_cursor": 3724541952,
+        "completed_at": "2026-11-14T03:13:11.343550+00:00"
+      },
+      {
+        "start": 3858759680,
+        "end": 3992977407,
+        "status": "complete",
+        "resume_cursor": 3858759680,
+        "completed_at": "2026-11-14T03:15:47.599167+00:00"
+      },
+      {
+        "start": 3992977408,
+        "end": 4127195135,
+        "status": "complete",
+        "resume_cursor": 3992977408,
+        "completed_at": "2026-11-14T03:16:15.575534+00:00"
+      },
+      {
+        "start": 4127195136,
+        "end": 4261412863,
+        "status": "complete",
+        "resume_cursor": 4127195136,
+        "completed_at": "2026-11-14T03:18:36.408305+00:00"
+      },
+      {
+        "start": 4261412864,
+        "end": 4395630591,
+        "status": "complete",
+        "resume_cursor": 4261412864,
+        "completed_at": "2026-11-14T03:20:32.597660+00:00"
+      },
+      {
+        "start": 4395630592,
+        "end": 4529848319,
+        "status": "complete",
+        "resume_cursor": 4395630592,
+        "completed_at": "2026-11-14T03:22:13.217438+00:00"
+      },
+      {
+        "start": 4529848320,
+        "end": 4664066047,
+        "status": "complete",
+        "resume_cursor": 4529848320,
+        "completed_at": "2026-11-14T03:23:11.993694+00:00"
+      },
+      {
+        "start": 4664066048,
+        "end": 4798283775,
+        "status": "complete",
+        "resume_cursor": 4664066048,
+        "completed_at": "2026-11-14T03:24:58.662566+00:00"
+      },
+      {
+        "start": 4798283776,
+        "end": 4932501503,
+        "status": "complete",
+        "resume_cursor": 4798283776,
+        "completed_at": "2026-11-14T03:25:55.888934+00:00"
+      },
+      {
+        "start": 4932501504,
+        "end": 4999802719,
+        "status": "complete",
+        "resume_cursor": 4932501504,
+        "completed_at": "2026-11-14T03:25:21.665237+00:00"
+      }
+    ]
+  },
+  "model-00003-of-00004.safetensors": {
+    "size": 4915916176,
+    "source_observed_revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+    "mutable_fetch_branch": "master",
+    "preserved_original_partial_bytes": 0,
+    "segments": [
+      {
+        "start": 0,
+        "end": 134217727,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:45:08.992475+00:00"
+      },
+      {
+        "start": 134217728,
+        "end": 268435455,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:44:22.020948+00:00"
+      },
+      {
+        "start": 268435456,
+        "end": 402653183,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:45:14.724146+00:00"
+      },
+      {
+        "start": 402653184,
+        "end": 536870911,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:44:02.719950+00:00"
+      },
+      {
+        "start": 536870912,
+        "end": 671088639,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:49:20.155040+00:00"
+      },
+      {
+        "start": 671088640,
+        "end": 805306367,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:50:18.644019+00:00"
+      },
+      {
+        "start": 805306368,
+        "end": 939524095,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:51:07.058246+00:00"
+      },
+      {
+        "start": 939524096,
+        "end": 1073741823,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:53:56.599820+00:00"
+      },
+      {
+        "start": 1073741824,
+        "end": 1207959551,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:57:01.906421+00:00"
+      },
+      {
+        "start": 1207959552,
+        "end": 1342177279,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:58:23.876302+00:00"
+      },
+      {
+        "start": 1342177280,
+        "end": 1476395007,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:02:45.549294+00:00"
+      },
+      {
+        "start": 1476395008,
+        "end": 1610612735,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:02:53.787357+00:00"
+      },
+      {
+        "start": 1610612736,
+        "end": 1744830463,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:02:06.425425+00:00"
+      },
+      {
+        "start": 1744830464,
+        "end": 1879048191,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:05:33.267651+00:00"
+      },
+      {
+        "start": 1879048192,
+        "end": 2013265919,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:06:50.771316+00:00"
+      },
+      {
+        "start": 2013265920,
+        "end": 2147483647,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:10:44.138174+00:00"
+      },
+      {
+        "start": 2147483648,
+        "end": 2281701375,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:09:46.436386+00:00"
+      },
+      {
+        "start": 2281701376,
+        "end": 2415919103,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:10:36.849233+00:00"
+      },
+      {
+        "start": 2415919104,
+        "end": 2550136831,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:13:15.248400+00:00"
+      },
+      {
+        "start": 2550136832,
+        "end": 2684354559,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:14:21.094047+00:00"
+      },
+      {
+        "start": 2684354560,
+        "end": 2818572287,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:14:54.613890+00:00"
+      },
+      {
+        "start": 2818572288,
+        "end": 2952790015,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:18:15.580409+00:00"
+      },
+      {
+        "start": 2952790016,
+        "end": 3087007743,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:20:35.206234+00:00"
+      },
+      {
+        "start": 3087007744,
+        "end": 3221225471,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:20:52.746179+00:00"
+      },
+      {
+        "start": 3221225472,
+        "end": 3355443199,
+        "status": "complete",
+        "completed_at": "2026-11-13T16:22:26.859886+00:00"
+      },
+      {
+        "start": 3355443200,
+        "end": 3489660927,
+        "status": "complete",
+        "resume_cursor": 3413572303,
+        "completed_at": "2026-11-14T03:10:35.210624+00:00"
+      },
+      {
+        "start": 3489660928,
+        "end": 3623878655,
+        "status": "complete",
+        "resume_cursor": 3505011407,
+        "completed_at": "2026-11-14T03:12:50.589022+00:00"
+      },
+      {
+        "start": 3623878656,
+        "end": 3758096383,
+        "status": "complete",
+        "resume_cursor": 3623878656,
+        "completed_at": "2026-11-14T03:13:57.194521+00:00"
+      },
+      {
+        "start": 3758096384,
+        "end": 3892314111,
+        "status": "complete",
+        "resume_cursor": 3758096384,
+        "completed_at": "2026-11-14T03:15:02.034087+00:00"
+      },
+      {
+        "start": 3892314112,
+        "end": 4026531839,
+        "status": "complete",
+        "resume_cursor": 3892314112,
+        "completed_at": "2026-11-14T03:17:35.336237+00:00"
+      },
+      {
+        "start": 4026531840,
+        "end": 4160749567,
+        "status": "complete",
+        "resume_cursor": 4026531840,
+        "completed_at": "2026-11-14T03:18:42.569326+00:00"
+      },
+      {
+        "start": 4160749568,
+        "end": 4294967295,
+        "status": "complete",
+        "resume_cursor": 4160749568,
+        "completed_at": "2026-11-14T03:19:48.411471+00:00"
+      },
+      {
+        "start": 4294967296,
+        "end": 4429185023,
+        "status": "complete",
+        "resume_cursor": 4294967296,
+        "completed_at": "2026-11-14T03:22:13.283280+00:00"
+      },
+      {
+        "start": 4429185024,
+        "end": 4563402751,
+        "status": "complete",
+        "resume_cursor": 4429185024,
+        "completed_at": "2026-11-14T03:23:28.354484+00:00"
+      },
+      {
+        "start": 4563402752,
+        "end": 4697620479,
+        "status": "complete",
+        "resume_cursor": 4563402752,
+        "completed_at": "2026-11-14T03:25:00.456415+00:00"
+      },
+      {
+        "start": 4697620480,
+        "end": 4831838207,
+        "status": "complete",
+        "resume_cursor": 4697620480,
+        "completed_at": "2026-11-14T03:26:07.378868+00:00"
+      },
+      {
+        "start": 4831838208,
+        "end": 4915916175,
+        "status": "complete",
+        "resume_cursor": 4831838208,
+        "completed_at": "2026-11-14T03:26:06.768858+00:00"
+      }
+    ]
+  },
+  "model-00004-of-00004.safetensors": {
+    "size": 1168138808,
+    "source_observed_revision": "043efdca396f2b6f4b5714d76d70df7840856ed7",
+    "mutable_fetch_branch": "master",
+    "preserved_original_partial_bytes": 0,
+    "segments": [
+      {
+        "start": 0,
+        "end": 134217727,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:45:18.943365+00:00"
+      },
+      {
+        "start": 134217728,
+        "end": 268435455,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:45:46.033520+00:00"
+      },
+      {
+        "start": 268435456,
+        "end": 402653183,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:43:50.777914+00:00"
+      },
+      {
+        "start": 402653184,
+        "end": 536870911,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:45:08.409312+00:00"
+      },
+      {
+        "start": 536870912,
+        "end": 671088639,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:49:49.937038+00:00"
+      },
+      {
+        "start": 671088640,
+        "end": 805306367,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:50:17.193150+00:00"
+      },
+      {
+        "start": 805306368,
+        "end": 939524095,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:53:30.311999+00:00"
+      },
+      {
+        "start": 939524096,
+        "end": 1073741823,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:54:31.625818+00:00"
+      },
+      {
+        "start": 1073741824,
+        "end": 1168138807,
+        "status": "complete",
+        "completed_at": "2026-11-13T15:58:38.131284+00:00"
+      }
+    ]
+  }
+}

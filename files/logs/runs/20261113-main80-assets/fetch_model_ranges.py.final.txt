@@ -1,0 +1,151 @@
+"""Range-based public model transfer. Metadata/length/structure, no file digests."""
+import argparse
+import concurrent.futures
+import fcntl
+import importlib.util
+import json
+import os
+import re
+import sys
+import threading
+import time
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+SPEC = importlib.util.spec_from_file_location('asset_helpers', Path(__file__).with_name('fetch_assets.py'))
+H = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(H)
+STATE_LOCK = threading.Lock()
+STATE_FILE = H.LOG / 'model-range-state.json'
+CHUNK = 128 * 1024 * 1024
+ATTEMPT_ID = None
+
+
+def emit(record):
+    H.event({'transfer_attempt_id': ATTEMPT_ID, **record})
+
+
+def save_state(state):
+    temp = STATE_FILE.with_suffix('.new.json')
+    with temp.open('w') as f:
+        json.dump(state, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    temp.replace(STATE_FILE)
+
+
+def transfer_segment(state, shard, segment, fd):
+    cursor = segment.get('resume_cursor', segment['start'])
+    end = segment['end']
+    endpoint = 'https://modelscope.cn/api/v1/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/repo?' + urllib.parse.urlencode({'Revision': 'master', 'FilePath': shard})
+    for attempt in range(1, 4):
+        try:
+            headers = {'Range': f'bytes={cursor}-{end}', 'User-Agent': 'APE-MAIN80-research-acquisition/1.0'}
+            with urllib.request.urlopen(urllib.request.Request(endpoint, headers=headers), timeout=45) as r:
+                assert r.status == 206
+                assert r.headers.get('Content-Range') == f'bytes {cursor}-{end}/{state[shard]["size"]}'
+                assert int(r.headers['Content-Length']) == end - cursor + 1
+                while cursor <= end:
+                    data = r.read(min(1024 * 1024, end - cursor + 1))
+                    if not data:
+                        raise RuntimeError('truncated range')
+                    wrote = os.pwrite(fd, data, cursor)
+                    assert wrote == len(data)
+                    cursor += wrote
+            os.fsync(fd)
+            with STATE_LOCK:
+                segment['status'] = 'complete'
+                segment['completed_at'] = H.now()
+                save_state(state)
+            emit({'action': 'range_complete', 'target': shard, 'start': segment['start'], 'end': end, 'attempt': attempt, 'resumed_from': segment.get('resume_cursor', segment['start'])})
+            return
+        except Exception as e:
+            os.fsync(fd)
+            with STATE_LOCK:
+                segment['resume_cursor'] = cursor
+                save_state(state)
+            emit({'action': 'range_failure', 'target': shard, 'start': segment['start'], 'cursor': cursor, 'end': end, 'attempt': attempt, 'exception': type(e).__name__, 'http_code': getattr(e, 'code', None)})
+            if attempt == 3:
+                raise RuntimeError('range transfer failed, partial retained: ' + shard) from None
+            time.sleep(min(2 ** attempt, 8))
+
+
+def main():
+    global ATTEMPT_ID
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--attempt-id', required=True)
+    args = parser.parse_args()
+    assert re.fullmatch(r'[A-Za-z0-9_-]+', args.attempt_id)
+    ATTEMPT_ID = args.attempt_id
+    lock = (H.LOG / 'model-range.lock').open('a')
+    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    emit({'action': 'range_downloader_start', 'pid': os.getpid(), 'argv': [sys.executable, '-B', *sys.argv], 'cwd': str(H.ROOT), 'concurrent_requests': 8})
+    manifest = json.loads((H.LOG / 'model-manifest.json').read_text())
+    shards = [r for r in manifest['required_files'] if r['Path'].endswith('.safetensors')]
+    state = json.loads(STATE_FILE.read_text()) if STATE_FILE.exists() else {}
+    previous_events = [json.loads(line) for line in (H.LOG / 'events.jsonl').read_text().splitlines() if line]
+    cursors = {}
+    for event in previous_events:
+        if event.get('action') == 'range_failure':
+            key = (event['target'], event['start'])
+            cursors[key] = max(cursors.get(key, event['start']), event['cursor'])
+    descriptors = {}
+    for row in shards:
+        shard, size = row['Path'], row['Size']
+        target = H.MODEL / shard
+        if target.exists():
+            assert target.stat().st_size == size
+            continue
+        spool = H.MODEL / (shard + '.segmented.partial')
+        if shard not in state:
+            prefix = H.MODEL / (shard + '.partial')
+            offset = prefix.stat().st_size if prefix.exists() else 0
+            assert 0 <= offset < size
+            with spool.open('xb') as output:
+                if offset:
+                    with prefix.open('rb') as source:
+                        while chunk := source.read(8 * 1024 * 1024):
+                            output.write(chunk)
+                output.flush()
+                os.fsync(output.fileno())
+            state[shard] = {'size': size, 'source_observed_revision': row['Revision'], 'mutable_fetch_branch': 'master', 'preserved_original_partial_bytes': offset, 'segments': [{'start': start, 'end': min(start + CHUNK, size) - 1, 'status': 'pending'} for start in range(offset, size, CHUNK)]}
+            save_state(state)
+        for segment in state[shard]['segments']:
+            if segment['status'] == 'complete':
+                continue
+            cursor = max(segment.get('resume_cursor', segment['start']), cursors.get((shard, segment['start']), segment['start']))
+            assert segment['start'] <= cursor <= segment['end'] + 1
+            assert cursor == segment['start'] or spool.stat().st_size >= cursor
+            segment['resume_cursor'] = cursor
+        descriptors[shard] = os.open(spool, os.O_RDWR)
+    save_state(state)
+    errors = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+        futures = []
+        # Interleave shards so all four obtain data without one full-shard dependency.
+        pending = [(shard, segment) for shard in descriptors for segment in state[shard]['segments'] if segment['status'] != 'complete']
+        pending.sort(key=lambda pair: (pair[1]['start'] // CHUNK, pair[0]))
+        for shard, segment in pending:
+            futures.append(pool.submit(transfer_segment, state, shard, segment, descriptors[shard]))
+        for f in concurrent.futures.as_completed(futures):
+            try:
+                f.result()
+            except Exception as e:
+                errors.append(type(e).__name__)
+    for shard, fd in descriptors.items():
+        os.fsync(fd)
+        os.close(fd)
+        if all(r['status'] == 'complete' for r in state[shard]['segments']):
+            spool = H.MODEL / (shard + '.segmented.partial')
+            assert spool.stat().st_size == state[shard]['size']
+            spool.rename(H.MODEL / shard)
+            emit({'action': 'completed', 'target': str((H.MODEL / shard).relative_to(H.ROOT)), 'bytes': state[shard]['size'], 'transfer': 'ranges'})
+            print(json.dumps({'completed': shard, 'bytes': state[shard]['size']}), flush=True)
+    emit({'action': 'range_downloader_end', 'errors': len(errors), 'exit_code': 1 if errors else 0})
+    if errors:
+        raise SystemExit(1)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,11 @@
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/sacrebleu-2.4.3.pypi.json", "bytes": 51825}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/sacrebleu-2.4.3-py3-none-any.whl", "bytes": 103964}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/portalocker-2.10.1.pypi.json", "bytes": 10433}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/portalocker-2.10.1-py3-none-any.whl", "bytes": 18423}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/colorama-0.4.6.pypi.json", "bytes": 19759}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/colorama-0.4.6-py2.py3-none-any.whl", "bytes": 25335}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/tabulate-0.9.0.pypi.json", "bytes": 37684}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/tabulate-0.9.0-py3-none-any.whl", "bytes": 35252}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/lxml-5.3.0.pypi.json", "bytes": 124440}
+{"completed": "logs/runs/20261113-main80-assets/scoring-wheels/lxml-5.3.0-cp310-cp310-manylinux_2_28_x86_64.whl", "bytes": 5029973}
+{"overlay": ".overlays/main80-scoring", "packages": {"sacrebleu": "2.4.3", "portalocker": "2.10.1", "colorama": "0.4.6", "tabulate": "0.9.0", "lxml": "5.3.0"}}

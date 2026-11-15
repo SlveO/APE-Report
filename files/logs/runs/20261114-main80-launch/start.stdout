@@ -1,0 +1,1 @@
+{"campaign": "main80-20261114T041503", "controller_pid": 4187806, "directory": "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503", "status_command": "bash scripts/run_campaign.sh status --campaign main80-20261114T041503"}

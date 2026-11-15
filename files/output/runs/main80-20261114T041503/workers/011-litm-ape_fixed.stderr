@@ -1,0 +1,4 @@
+/home/shenxiaoyang/project/ape/.overlays/core-tf44/transformers/utils/hub.py:127: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  7.50it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  7.58it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  7.48it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  7.61it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  7.57it/s]

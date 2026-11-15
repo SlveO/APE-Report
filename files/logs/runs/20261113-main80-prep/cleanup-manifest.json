@@ -1,0 +1,701 @@
+{
+  "authorization": "U_MAIN80",
+  "created_at": "2026-11-13T15:29:09.520866+00:00",
+  "paths": [
+    {
+      "path": "docs/AI_INFRA_LAB.md",
+      "bytes": 3567,
+      "reason": "authorized_learning_plan"
+    },
+    {
+      "path": "logs/runs/20260924-r1ms-a1/MODELSCOPE.sha256.txt",
+      "bytes": 1147,
+      "reason": "superseded_acquisition_proposal_or_old_digest_record"
+    },
+    {
+      "path": "logs/runs/20260924-r1ms-a1/MODELSCOPE_RECOVERY_PROPOSAL.md.txt",
+      "bytes": 10478,
+      "reason": "superseded_acquisition_proposal_or_old_digest_record"
+    },
+    {
+      "path": "logs/runs/20260924-r1ms-a1/local-preflight.txt",
+      "bytes": 3962,
+      "reason": "superseded_acquisition_proposal_or_old_digest_record"
+    },
+    {
+      "path": "logs/runs/20260925-r1d-a2/sha256-check.txt",
+      "bytes": 393,
+      "reason": "redundant_old_digest_record_keep_structure_and_offline_results"
+    },
+    {
+      "path": "logs/runs/20260925-r1ms-a2/MODELSCOPE_RECOVERY_PROPOSAL_REVISED.md.txt",
+      "bytes": 12407,
+      "reason": "superseded_acquisition_proposal_or_old_digest_record"
+    },
+    {
+      "path": "logs/runs/20260925-r1ms-a2/PHASE_A.sha256.txt",
+      "bytes": 751,
+      "reason": "superseded_acquisition_proposal_or_old_digest_record"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/STATIC_CHECKS.md.txt",
+      "bytes": 1379,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/base-freeze-all.exit",
+      "bytes": 2,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/base-freeze-all.stderr",
+      "bytes": 271,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/base-freeze-all.txt",
+      "bytes": 4679,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/demo-help.exit",
+      "bytes": 2,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/demo-help.log",
+      "bytes": 617,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/gpu-preflight-compute-apps.csv",
+      "bytes": 46,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/gpu-preflight-devices.csv",
+      "bytes": 159,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/gpu-preflight-du.txt",
+      "bytes": 31,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/gpu-preflight-free.txt",
+      "bytes": 211,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/gpu-preflight-gate.txt",
+      "bytes": 20,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/gpu-preflight-time.txt",
+      "bytes": 26,
+      "reason": "obsolete_preflight_or_duplicate_static_check"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-freeze-all.exit",
+      "bytes": 2,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-freeze-all.stderr",
+      "bytes": 271,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-freeze-all.txt",
+      "bytes": 4679,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-freeze.exit",
+      "bytes": 2,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-freeze.stderr",
+      "bytes": 271,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-freeze.txt",
+      "bytes": 4576,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r1env-a1/overlay-lock-normal-freeze.diff",
+      "bytes": 684,
+      "reason": "duplicate_freeze_preserving_cpuonly_effective_snapshot"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/GATE.end",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/GATE.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/GATE.sh.txt",
+      "bytes": 2859,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/GATE.start",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/GATE.stdout",
+      "bytes": 35,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/GATE_INVOCATION.md.txt",
+      "bytes": 678,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/apps_query.cmd.txt",
+      "bytes": 91,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/apps_query.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/apps_query.out",
+      "bytes": 46,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/apps_select.cmd.txt",
+      "bytes": 304,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/apps_select.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/apps_select.out",
+      "bytes": 36,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/counted_runs_du.cmd.txt",
+      "bytes": 101,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/counted_runs_du.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/counted_runs_du.out",
+      "bytes": 99,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/gpu_query.cmd.txt",
+      "bytes": 118,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/gpu_query.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/gpu_query.out",
+      "bytes": 159,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/home_du.cmd.txt",
+      "bytes": 42,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/home_du.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/home_du.out",
+      "bytes": 31,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/memavailable.cmd.txt",
+      "bytes": 377,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/memavailable.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/memavailable.out",
+      "bytes": 54,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/meminfo_capture.cmd.txt",
+      "bytes": 24,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/meminfo_capture.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a2/meminfo_capture.out",
+      "bytes": 1542,
+      "reason": "obsolete_resource_gate_keep_failure_and_code_evidence"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/GATE_LIVE_V1.sh.txt",
+      "bytes": 632,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/SELFTEST_V1.sh.txt",
+      "bytes": 580,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/apps.command.json",
+      "bytes": 180,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/apps.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/apps.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/apps.stdout",
+      "bytes": 46,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gate-end-utc.txt",
+      "bytes": 33,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gate-result.json",
+      "bytes": 614,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gate-start-utc.txt",
+      "bytes": 33,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gpu.command.json",
+      "bytes": 203,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gpu.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gpu.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/gpu.stdout",
+      "bytes": 159,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/home_du.command.json",
+      "bytes": 141,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/home_du.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/home_du.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/home_du.stdout",
+      "bytes": 31,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/meminfo.command.json",
+      "bytes": 109,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/meminfo.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/meminfo.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/meminfo.stdout",
+      "bytes": 1542,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/runs_du.command.json",
+      "bytes": 443,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/runs_du.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/runs_du.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-attempt-1/runs_du.stdout",
+      "bytes": 326,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-live-v1.end",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-live-v1.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-live-v1.start",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-live-v1.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-live-v1.stdout",
+      "bytes": 568,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-result-read.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate-result-read.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/gate_v1.py.txt",
+      "bytes": 10862,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/hf-home/hub/version.txt",
+      "bytes": 1,
+      "reason": "historical_empty_cache_marker"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/selftest-v1.end",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/selftest-v1.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/selftest-v1.start",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/selftest-v1.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/selftest-v1.stdout",
+      "bytes": 521,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a3/validated-uuid.txt",
+      "bytes": 41,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/GATE_LIVE.sh.txt",
+      "bytes": 617,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/apps.command.json",
+      "bytes": 180,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/apps.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/apps.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/apps.stdout",
+      "bytes": 46,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gate-end-utc.txt",
+      "bytes": 33,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gate-result.json",
+      "bytes": 614,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gate-start-utc.txt",
+      "bytes": 33,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gpu.command.json",
+      "bytes": 203,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gpu.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gpu.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/gpu.stdout",
+      "bytes": 159,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/home_du.command.json",
+      "bytes": 141,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/home_du.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/home_du.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/home_du.stdout",
+      "bytes": 31,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/meminfo.command.json",
+      "bytes": 109,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/meminfo.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/meminfo.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/meminfo.stdout",
+      "bytes": 1542,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/runs_du.command.json",
+      "bytes": 506,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/runs_du.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/runs_du.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-attempt-1/runs_du.stdout",
+      "bytes": 389,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-live.end",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-live.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-live.start",
+      "bytes": 26,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-live.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-live.stdout",
+      "bytes": 568,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-result-read.exit",
+      "bytes": 2,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/gate-result-read.stderr",
+      "bytes": 0,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/hf-home/hub/version.txt",
+      "bytes": 1,
+      "reason": "historical_empty_cache_marker"
+    },
+    {
+      "path": "logs/runs/20260926-r2-a4/validated-uuid.txt",
+      "bytes": 41,
+      "reason": "obsolete_resource_gate_and_duplicate_parser_tests"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a1/PROPOSED_DEMO.patch.txt",
+      "bytes": 13507,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a1/R2_COMBINED_PROPOSAL.md.txt",
+      "bytes": 14931,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a1/READONLY_CHECKS.md.txt",
+      "bytes": 2394,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a1/proposed_demo_ape.py.txt",
+      "bytes": 10384,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a1/proposed_env_cpu.py.txt",
+      "bytes": 1984,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a1/proposed_env_gpu.py.txt",
+      "bytes": 3252,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/ATTEMPT_COMPARISON.md.txt",
+      "bytes": 1319,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/PROPOSED_DEMO_R2.patch.txt",
+      "bytes": 15536,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/R2_COMBINED_PROPOSAL_R2.md.txt",
+      "bytes": 8427,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/STATIC_CHECKS.md.txt",
+      "bytes": 1548,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/proposed_demo_ape_r2.py.txt",
+      "bytes": 12368,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/proposed_env_cpu_r2.py.txt",
+      "bytes": 1984,
+      "reason": "superseded_R2_proposal_and_draft"
+    },
+    {
+      "path": "logs/runs/20260926-r2p-a2/proposed_env_gpu_r2.py.txt",
+      "bytes": 4557,
+      "reason": "superseded_R2_proposal_and_draft"
+    }
+  ]
+}

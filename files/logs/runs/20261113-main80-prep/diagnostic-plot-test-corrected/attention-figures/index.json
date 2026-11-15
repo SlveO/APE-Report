@@ -1,0 +1,21 @@
+{
+  "figures": [
+    {
+      "figure": "attention-000.svg",
+      "key": {
+        "L": 22,
+        "N": 2,
+        "parameters": [
+          0.9,
+          0.9
+        ],
+        "sample_id": "PREP-synthetic-correctness"
+      },
+      "raw_records": 9,
+      "aggregation": "mean of four specified heads; sum over contiguous64 token bins",
+      "maximum_output_reconstruction_error": 0.00318300724029541
+    }
+  ],
+  "incomplete_raw_lines": [],
+  "raw_numbers": "../attention.jsonl"
+}

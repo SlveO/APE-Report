@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "-m",
+    "main80.campaign",
+    "check",
+    "--config",
+    "campaign.json"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at": "2026-11-14T04:12:02.146887+00:00",
+  "status": "SUBMITTED",
+  "ended_at": "2026-11-14T04:12:02.570160+00:00",
+  "exit_code": 0
+}

@@ -1,0 +1,22 @@
+{
+  "status": "validation_passed_for_executor_submission_only",
+  "source_unchanged_by_direct_json_content_comparison": true,
+  "targets": 88,
+  "catalog_paragraphs": 395,
+  "catalog_paragraphs_selected_by_at_least_one_proposal": 395,
+  "source_splits_in_metadata": [
+    "explore"
+  ],
+  "proposed_target_paragraph_pairs": 7533,
+  "approved_target_paragraph_pairs": 7281,
+  "rejected_target_paragraph_pairs": 252,
+  "source_target_document_overlap_count_from_supplied_metadata": 0,
+  "order_and_complete_partition_preserved": true,
+  "no_repeated_normalized_paragraph_text_within_any_proposal": true,
+  "limitations": [
+    "Document/split checks use supplied proposal metadata; this review did not reconstruct or recertify the upstream raw-data mapping.",
+    "Token counts are sums of supplied token interval lengths, not a new tokenization or a proof of final exact-length feasibility.",
+    "Semantic decisions are review judgments against supplied questions/references; no model output or performance was consulted.",
+    "No final data freeze, acceptance, model execution or campaign launch is performed by this EXECUTOR."
+  ]
+}

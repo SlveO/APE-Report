@@ -1,0 +1,8 @@
+{"command":["/home/shenxiaoyang/miniconda3/envs/ape/bin/python","-B","-u","-m","main80.prep_gpu","--method","sequential","--output","/home/shenxiaoyang/project/ape/logs/runs/20261114-main80-methods-full/sequential"],"cwd":"/home/shenxiaoyang/project/ape","started_at":"2026-11-14T03:28:27.895432+00:00"}
+{"ended_at":"2026-11-14T03:28:37.535182+00:00","exit_code":0,"method":"sequential"}
+{"command":["/home/shenxiaoyang/miniconda3/envs/ape/bin/python","-B","-u","-m","main80.prep_gpu","--method","pcw","--output","/home/shenxiaoyang/project/ape/logs/runs/20261114-main80-methods-full/pcw"],"cwd":"/home/shenxiaoyang/project/ape","started_at":"2026-11-14T03:28:37.542350+00:00"}
+{"ended_at":"2026-11-14T03:28:46.782714+00:00","exit_code":0,"method":"pcw"}
+{"command":["/home/shenxiaoyang/miniconda3/envs/ape/bin/python","-B","-u","-m","main80.prep_gpu","--method","ape_default","--output","/home/shenxiaoyang/project/ape/logs/runs/20261114-main80-methods-full/ape_default"],"cwd":"/home/shenxiaoyang/project/ape","started_at":"2026-11-14T03:28:46.789420+00:00"}
+{"ended_at":"2026-11-14T03:28:55.882152+00:00","exit_code":0,"method":"ape_default"}
+{"command":["/home/shenxiaoyang/miniconda3/envs/ape/bin/python","-B","-u","-m","main80.prep_gpu","--method","ape_fixed","--output","/home/shenxiaoyang/project/ape/logs/runs/20261114-main80-methods-full/ape_fixed"],"cwd":"/home/shenxiaoyang/project/ape","started_at":"2026-11-14T03:28:55.889323+00:00"}
+{"ended_at":"2026-11-14T03:29:04.482098+00:00","exit_code":0,"method":"ape_fixed"}

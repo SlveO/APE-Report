@@ -1,0 +1,9 @@
+{
+  "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+  "interpreter": "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.44.2",
+  "tokenizers": "0.19.1",
+  "flash_attn": "2.7.4.post1",
+  "transformers_file": "/home/shenxiaoyang/project/ape/.overlays/core-tf44/transformers/__init__.py"
+}

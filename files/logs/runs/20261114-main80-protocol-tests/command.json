@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-m",
+    "main80.selftest",
+    "--suite",
+    "protocol",
+    "--output",
+    "logs/runs/20261113-main80-prep/protocol-tests-final.txt"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at": "2026-11-14T03:42:26.899630+00:00",
+  "status": "SUBMITTED",
+  "ended_at": "2026-11-14T03:42:27.221674+00:00",
+  "exit_code": 0
+}

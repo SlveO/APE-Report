@@ -1,0 +1,10 @@
+{
+  "compared_fields": [
+    "Path",
+    "Size",
+    "Revision"
+  ],
+  "source_observed_before_after_agree": true,
+  "differences": [],
+  "no_local_digest_calculation": true
+}

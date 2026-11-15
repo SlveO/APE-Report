@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "source_file_count": 507,
+  "records": 18116,
+  "source_bytes_directly_compared": true,
+  "representative_restore_test": [
+    "output/runs/main80-20261114T041503/attempts.jsonl",
+    "output/runs/main80-20261114T041503/attention.jsonl",
+    "datasets/frozen-main80/development.json",
+    "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/development.json"
+  ],
+  "test_originals_match": true,
+  "windows_filename_check": true,
+  "maximum_stored_file_bytes": 47185920,
+  "no_digest_calculation": true,
+  "scanned_text_files": 497,
+  "scanned_text_bytes": 974836735,
+  "credential_pattern_matches": 0,
+  "binary_scan_scope": "complete selected text including all large JSON/JSONL; original public archives and binary data copied as provenance assets, not claimed text-scanned; no digests or credentials printed",
+  "git_staging_commit_push_performed": false
+}

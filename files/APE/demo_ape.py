@@ -1,0 +1,269 @@
+import argparse
+from functools import partial
+import os
+from pathlib import Path
+import random
+import time
+
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "1")
+
+import numpy as np
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+from ape import enable_attention_prefill_prefix, enable_attention_prefill_context, enable_attention_prefill_query
+from ape.ape_llama import (
+    llama_attention_prefill_prefix,
+    llama_attention_prefill_context,
+    llama_attention_prefill_query,
+)
+
+APPROVED_MODEL_PATH = Path("/home/shenxiaoyang/project/models/Llama-3-8B-Instruct")
+MAX_SHORT_INPUT_TOKENS = 256
+
+
+def parse_args(args=None):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", required=True, choices=["llama3-8b-instruct"])
+    parser.add_argument("--model-path", required=True, type=Path)
+    parser.add_argument("--num-contexts", type=int, choices=[1, 2], default=2)
+    parser.add_argument("--max-new-tokens", type=int, choices=[8, 16], default=8)
+    parser.add_argument("--temperature", type=float, default=0.9)
+    parser.add_argument("--scale", type=float, default=0.9)
+    parsed = parser.parse_args(args)
+    if parsed.model_path.is_symlink() or not parsed.model_path.is_dir():
+        parser.error("--model-path must be a real local directory, not a symlink")
+    if parsed.model_path.resolve(strict=True) != APPROVED_MODEL_PATH.resolve(strict=True):
+        parser.error("--model-path must be the reviewed shared Llama-3-8B-Instruct directory")
+    if (parsed.temperature, parsed.scale) != (0.9, 0.9):
+        parser.error("R2 smoke fixes APE temperature/scale at 0.9/0.9")
+    return parsed
+
+
+def seed_everything(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
+    torch.cuda.manual_seed_all(seed)
+
+
+def load_model_and_tokenizer(model_path, device):
+    local_path = str(model_path)
+    tokenizer = AutoTokenizer.from_pretrained(
+        local_path, local_files_only=True, trust_remote_code=False, use_fast=True
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        local_path,
+        local_files_only=True,
+        trust_remote_code=False,
+        use_safetensors=True,
+        torch_dtype=torch.bfloat16,
+        low_cpu_mem_usage=True,
+        attn_implementation="eager",
+    ).to(device)
+    return tokenizer, model
+
+def report_gpu_peak(stage, device):
+    torch.cuda.synchronize(device)
+    peak_allocated = torch.cuda.max_memory_allocated(device)
+    peak_reserved = torch.cuda.max_memory_reserved(device)
+    print(
+        f"GPU_METRIC_STAGE={stage} "
+        f"peak_allocated_bytes={peak_allocated} peak_reserved_bytes={peak_reserved}",
+        flush=True,
+    )
+
+
+def build_prefix(model_name, prompt):
+    if "llama" in model_name:
+        prompt = f"<|begin_of_text|>\n<|start_header_id|>user<|end_header_id|>\n{prompt}"
+    elif "mistral" in model_name:
+        prompt = f"<s>[INST]{prompt}"
+    elif "gemma" in model_name:
+        prompt = f"<bos><start_of_turn>user\n{prompt}"
+    return prompt
+
+
+def build_suffix(model_name, prompt):
+    if "llama" in model_name:
+        prompt = f"{prompt}\n<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>"
+    elif "mistral" in model_name:
+        prompt = f"{prompt}[/INST]"
+    elif "gemma" in model_name:
+        prompt = f"{prompt}<end_of_turn>\n<start_of_turn>model\n"
+    return prompt
+
+
+def generate(args):
+    prefix = ""
+    contexts = [
+        "My friends and I love going on road trips and exploring new places. However, we also enjoy hiking and camping together in nature.",
+        "We often spend time playing board games and card games as a group. But we also like solving escape rooms and participating in trivia nights.",
+        "Many of my friends enjoy listening to live music and attending concerts. We also love discovering new artists and sharing playlists with each other.",
+        "We like trying out different coffee shops and bakeries. However, we also enjoy experimenting with baking and making homemade desserts.",
+        "My friends and I love learning new skills, like photography and painting. We also enjoy visiting art workshops and DIY craft events.",
+    ][: args.num_contexts]
+    query = "Question: what are ten ideas for a social with a large groups of friends in New York City.\nAnswer:"
+
+    device = torch.device("cuda:0")  # physical GPU selected by CUDA_VISIBLE_DEVICES
+    torch.cuda.synchronize(device)
+    torch.cuda.reset_peak_memory_stats(device)
+    load_start = time.perf_counter()
+    try:
+        tokenizer, model = load_model_and_tokenizer(args.model_path, device)
+    except BaseException:
+        report_gpu_peak("load_failed", device)
+        print(f"LOAD_FAILED_SECONDS={time.perf_counter() - load_start:.6f}", flush=True)
+        raise
+    model = model.eval()
+    load_seconds = time.perf_counter() - load_start
+    report_gpu_peak("load_complete", device)
+    print(f"LOAD_SECONDS={load_seconds:.6f}", flush=True)
+    torch.cuda.reset_peak_memory_stats(device)
+    resident_allocated = torch.cuda.memory_allocated(device)
+    resident_reserved = torch.cuda.memory_reserved(device)
+    tokenizer.pad_token_id = tokenizer.eos_token_id
+    prefix = build_prefix(args.model, prefix)
+    query = build_suffix(args.model, query)
+
+    attention = model.model.layers[0].self_attn
+    expected_forward = {
+        "prefix": llama_attention_prefill_prefix,
+        "context": llama_attention_prefill_context,
+        "query": llama_attention_prefill_query,
+    }
+
+    def observed_call(stage, action):
+        bound = attention.forward.__func__
+        underlying = bound.func if isinstance(bound, partial) else bound
+        assert underlying is expected_forward[stage], (stage, underlying)
+        seen = []
+
+        def hook(_module, positional, keyword, _output):
+            hidden = keyword.get("hidden_states")
+            if hidden is None:
+                hidden = positional[0]
+            seen.append(tuple(hidden.shape))
+
+        handle = attention.register_forward_hook(hook, with_kwargs=True)
+        try:
+            result = action()
+        except BaseException:
+            report_gpu_peak(f"{stage}_failed", device)
+            raise
+        finally:
+            handle.remove()
+        assert seen, f"{stage} attention forward did not finish"
+        report_gpu_peak(stage, device)
+        print(f"STAGE={stage} first_layer_calls={len(seen)} hidden_shapes={seen}", flush=True)
+        return result
+
+    torch.cuda.synchronize(device)
+    request_start = time.perf_counter()
+    with torch.no_grad():
+        prefix_input_ids = tokenizer(prefix, truncation=False, return_tensors="pt", add_special_tokens=False).input_ids
+        query_input_ids = tokenizer(query, truncation=False, return_tensors="pt").input_ids
+        len_prefix = prefix_input_ids.shape[1]
+        len_query = query_input_ids.shape[1]
+        context_input_ids = tokenizer(
+            contexts,
+            return_tensors="pt",
+            truncation=True,
+            max_length=8192 - len_prefix - len_query - args.max_new_tokens,
+            padding=True,
+            add_special_tokens=False,
+        ).input_ids
+        context_mask = (context_input_ids != tokenizer.pad_token_id).reshape(-1)
+
+        input_token_count = len_prefix + int(context_mask.sum().item()) + len_query
+        if input_token_count > MAX_SHORT_INPUT_TOKENS:
+            print(
+                f"INPUT_GUARD_FAILED tokens={input_token_count} limit={MAX_SHORT_INPUT_TOKENS}; "
+                "no model forward was started",
+                flush=True,
+            )
+            raise RuntimeError(
+                f"R2 short-input guard failed before model forward: {input_token_count} > "
+                f"{MAX_SHORT_INPUT_TOKENS}"
+            )
+        print(f"INPUT_GUARD_TOKENS={input_token_count} limit={MAX_SHORT_INPUT_TOKENS}", flush=True)
+
+        enable_attention_prefill_prefix(args.model, model)
+        outputs = observed_call(
+            "prefix",
+            lambda: model(prefix_input_ids.to(model.device), past_key_values=None, use_cache=True),
+        )
+
+        past_key_values = []
+        for past_key_value in outputs.past_key_values:
+            bsz, _ = context_input_ids.shape
+            past_key = past_key_value[0].repeat(bsz, 1, 1, 1)
+            past_value = past_key_value[1].repeat(bsz, 1, 1, 1)
+            past_position = past_key_value[2]
+            past_key_values.append((past_key, past_value, past_position))
+
+        enable_attention_prefill_context(args.model, model)
+        outputs = observed_call(
+            "context",
+            lambda: model(context_input_ids.to(model.device), past_key_values=past_key_values, use_cache=True),
+        )
+        past_key_values = []
+
+        for past_key_value in outputs.past_key_values:
+            bsz, num_heads, seq_len, _ = past_key_value[0].size()
+            past_key = torch.cat([
+                past_key_value[0][:1, :, :len_prefix, :],
+                past_key_value[0][:, :, len_prefix:, :].transpose(1, 2).flatten(0, 1)[context_mask].unsqueeze(0).transpose(1, 2),
+            ], dim=2)
+            past_value = torch.cat([
+                past_key_value[1][:1, :, :len_prefix, :],
+                past_key_value[1][:, :, len_prefix:, :].transpose(1, 2).flatten(0, 1)[context_mask].unsqueeze(0).transpose(1, 2),
+            ], dim=2)
+            past_position = torch.cat([
+                past_key_value[2][:, :len_prefix],
+                past_key_value[2][:, len_prefix:].repeat(bsz, 1).flatten()[context_mask].unsqueeze(0),
+            ], dim=1)
+            past_key_values.append((past_key, past_value, past_position, len(contexts)))
+
+        context_input_ids = context_input_ids.flatten()[context_mask].unsqueeze(0)
+        input_ids = torch.cat([prefix_input_ids, context_input_ids, query_input_ids], dim=-1)
+        context_length = input_ids.shape[-1]
+        assert context_length <= 256, f"R2 short smoke grew to {context_length} tokens"
+
+        enable_attention_prefill_query(args.model, model, args.temperature, args.scale)
+        generation_kwargs = {"cache_implementation": None}
+        output = observed_call(
+            "query",
+            lambda: model.generate(
+                input_ids=input_ids.to(model.device),
+                min_new_tokens=args.max_new_tokens,
+                max_new_tokens=args.max_new_tokens,
+                num_beams=1,
+                do_sample=False,
+                past_key_values=past_key_values,
+                **generation_kwargs,
+            ),
+        )[0]
+        generated_tokens = output.shape[0] - context_length
+        assert generated_tokens == args.max_new_tokens, generated_tokens
+        pred = tokenizer.decode(output[context_length:], skip_special_tokens=True)
+        assert pred.strip(), "decoded output is empty"
+
+    torch.cuda.synchronize(device)
+    request_seconds = time.perf_counter() - request_start
+    report_gpu_peak("request_complete", device)
+    print(f"MODEL_PATH={args.model_path.resolve(strict=True)}")
+    print(f"CONTEXTS={len(contexts)} INPUT_TOKENS={context_length} OUTPUT_TOKENS={generated_tokens}")
+    print(f"LOAD_SECONDS={load_seconds:.6f} REQUEST_SECONDS={request_seconds:.6f}", flush=True)
+    print(f"RESIDENT_ALLOCATED_BYTES={resident_allocated} RESIDENT_RESERVED_BYTES={resident_reserved}")
+    print(f"PEAK_ALLOCATED_BYTES={torch.cuda.max_memory_allocated(device)} PEAK_RESERVED_BYTES={torch.cuda.max_memory_reserved(device)}")
+    print(f"OUTPUT_TEXT={pred!r}")
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    seed_everything(42)
+    generate(args)

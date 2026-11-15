@@ -1,0 +1,10 @@
+{
+  "role": "PLANNER",
+  "status": "ACCEPTED_for_retained_paragraphs_only",
+  "at": "2026-11-14T03:35:49.080147+00:00",
+  "review_source": "logs/runs/20261114-main80-supplements-review/review.json",
+  "target_count": 87,
+  "approved_pairs": 7281,
+  "rejected_pairs": 252,
+  "reason": "Complete catalog/target semantic review plus direct input equality, original-order partition, dev-only source and disjoint-target document checks. Broad bias/clinical/image-domain cases excluded conservatively. Exact-length feasibility must still pass freeze."
+}

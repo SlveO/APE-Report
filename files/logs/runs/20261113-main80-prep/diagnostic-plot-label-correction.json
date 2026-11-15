@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-14T04:15:18.909614+00:00",
+  "earlier_plot_directory": "diagnostic-plot-test",
+  "earlier_label_L": 13,
+  "actual_document_tokens": 22,
+  "corrected_directory": "diagnostic-plot-test-corrected",
+  "raw_weights_unchanged": true,
+  "model_generations_repeated": false,
+  "reason": "Derived smoke-test figure label corrected from actual saved cold result; earlier derived figure retained as evidence."
+}

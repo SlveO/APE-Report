@@ -1,0 +1,5 @@
+{
+  "scripts/main80-assets/inspect_assets.py": "syntax_ok",
+  "scripts/main80-assets/fetch_model_ranges.py": "syntax_ok",
+  "scripts/main80-assets/fetch_assets.py": "syntax_ok"
+}

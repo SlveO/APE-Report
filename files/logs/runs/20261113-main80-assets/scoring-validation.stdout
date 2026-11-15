@@ -1,0 +1,52 @@
+{
+  "time": "2026-11-13T15:47:34.630517+00:00",
+  "authorization": "U_MAIN80_SCORING",
+  "versions": {
+    "sacrebleu": {
+      "version": "2.4.3",
+      "path": "/home/shenxiaoyang/project/ape/.overlays/main80-scoring/sacrebleu/__init__.py"
+    },
+    "portalocker": {
+      "version": "2.10.1",
+      "path": "/home/shenxiaoyang/project/ape/.overlays/main80-scoring/portalocker/__init__.py"
+    },
+    "colorama": {
+      "version": "0.4.6",
+      "path": "/home/shenxiaoyang/project/ape/.overlays/main80-scoring/colorama/__init__.py"
+    },
+    "tabulate": {
+      "version": "0.9.0",
+      "path": "/home/shenxiaoyang/project/ape/.overlays/main80-scoring/tabulate/__init__.py"
+    },
+    "lxml": {
+      "version": "5.3.0",
+      "path": "/home/shenxiaoyang/project/ape/.overlays/main80-scoring/lxml/etree.cpython-310-x86_64-linux-gnu.so"
+    }
+  },
+  "existing_dependencies": {
+    "numpy": {
+      "version": "1.26.4",
+      "path": "/home/shenxiaoyang/miniconda3/envs/ape/lib/python3.10/site-packages/numpy/__init__.py"
+    },
+    "regex": {
+      "version": "2026.3.32",
+      "path": "/home/shenxiaoyang/miniconda3/envs/ape/lib/python3.10/site-packages/regex/__init__.py"
+    }
+  },
+  "official_readme_example": {
+    "source": "https://github.com/mjpost/sacrebleu/blob/v2.4.3/README.md#using-sacrebleu-from-python",
+    "score": 48.530827009929865,
+    "expected_rounded": 48.53,
+    "signature": "nrefs:2|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3"
+  },
+  "exact_match_corpus_bleu": 100.00000000000004,
+  "empty_output_bleu": 0.0,
+  "reversed_reference_bleu": 2.650078344878148,
+  "unequal_counts_behavior": {
+    "rejected": false,
+    "score": 100.00000000000004,
+    "required_caller_check": "validate exact ID alignment and count before library call"
+  },
+  "lxml_native_parse": "ok",
+  "status": "SUBMITTED_to_PLANNER"
+}

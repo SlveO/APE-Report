@@ -1,0 +1,3172 @@
+{
+  "format": "ape-pc-export/v1",
+  "campaign": "main80-20261114T041503",
+  "created_at": "2026-11-15T16:35:29.629034+00:00",
+  "status": "EXPORT_READY",
+  "max_piece_bytes": 47185920,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 4343,
+      "storage": "file",
+      "stored_path": "files/AGENTS.md"
+    },
+    {
+      "path": "APE/README.md",
+      "bytes": 1323,
+      "storage": "file",
+      "stored_path": "files/APE/README.md"
+    },
+    {
+      "path": "APE/ape/__init__.py",
+      "bytes": 1653,
+      "storage": "file",
+      "stored_path": "files/APE/ape/__init__.py"
+    },
+    {
+      "path": "APE/ape/ape_gemma.py",
+      "bytes": 16951,
+      "storage": "file",
+      "stored_path": "files/APE/ape/ape_gemma.py"
+    },
+    {
+      "path": "APE/ape/ape_llama.py",
+      "bytes": 14383,
+      "storage": "file",
+      "stored_path": "files/APE/ape/ape_llama.py"
+    },
+    {
+      "path": "APE/ape/ape_mistral.py",
+      "bytes": 14161,
+      "storage": "file",
+      "stored_path": "files/APE/ape/ape_mistral.py"
+    },
+    {
+      "path": "APE/demo_ape.py",
+      "bytes": 11677,
+      "storage": "file",
+      "stored_path": "files/APE/demo_ape.py"
+    },
+    {
+      "path": "APE/experiments/Longbench/pred_parallel9.py",
+      "bytes": 457,
+      "storage": "file",
+      "stored_path": "files/APE/experiments/Longbench/pred_parallel9.py"
+    },
+    {
+      "path": "APE/main80/SOURCES.md",
+      "bytes": 2344,
+      "storage": "file",
+      "stored_path": "files/APE/main80/SOURCES.md"
+    },
+    {
+      "path": "APE/main80/__init__.py",
+      "bytes": 73,
+      "storage": "file",
+      "stored_path": "files/APE/main80/__init__.py"
+    },
+    {
+      "path": "APE/main80/campaign.py",
+      "bytes": 29094,
+      "storage": "file",
+      "stored_path": "files/APE/main80/campaign.py"
+    },
+    {
+      "path": "APE/main80/common.py",
+      "bytes": 4690,
+      "storage": "file",
+      "stored_path": "files/APE/main80/common.py"
+    },
+    {
+      "path": "APE/main80/data.py",
+      "bytes": 17723,
+      "storage": "file",
+      "stored_path": "files/APE/main80/data.py"
+    },
+    {
+      "path": "APE/main80/diagnostics.py",
+      "bytes": 2663,
+      "storage": "file",
+      "stored_path": "files/APE/main80/diagnostics.py"
+    },
+    {
+      "path": "APE/main80/freeze.py",
+      "bytes": 9847,
+      "storage": "file",
+      "stored_path": "files/APE/main80/freeze.py"
+    },
+    {
+      "path": "APE/main80/jobs.py",
+      "bytes": 6055,
+      "storage": "file",
+      "stored_path": "files/APE/main80/jobs.py"
+    },
+    {
+      "path": "APE/main80/methods.py",
+      "bytes": 12277,
+      "storage": "file",
+      "stored_path": "files/APE/main80/methods.py"
+    },
+    {
+      "path": "APE/main80/metrics.py",
+      "bytes": 1946,
+      "storage": "file",
+      "stored_path": "files/APE/main80/metrics.py"
+    },
+    {
+      "path": "APE/main80/monitor.py",
+      "bytes": 8427,
+      "storage": "file",
+      "stored_path": "files/APE/main80/monitor.py"
+    },
+    {
+      "path": "APE/main80/plots.py",
+      "bytes": 2606,
+      "storage": "file",
+      "stored_path": "files/APE/main80/plots.py"
+    },
+    {
+      "path": "APE/main80/prep_gpu.py",
+      "bytes": 5601,
+      "storage": "file",
+      "stored_path": "files/APE/main80/prep_gpu.py"
+    },
+    {
+      "path": "APE/main80/report.py",
+      "bytes": 7167,
+      "storage": "file",
+      "stored_path": "files/APE/main80/report.py"
+    },
+    {
+      "path": "APE/main80/rules.py",
+      "bytes": 3678,
+      "storage": "file",
+      "stored_path": "files/APE/main80/rules.py"
+    },
+    {
+      "path": "APE/main80/selftest.py",
+      "bytes": 17209,
+      "storage": "file",
+      "stored_path": "files/APE/main80/selftest.py"
+    },
+    {
+      "path": "APE/main80/validate_data.py",
+      "bytes": 7009,
+      "storage": "file",
+      "stored_path": "files/APE/main80/validate_data.py"
+    },
+    {
+      "path": "APE/main80/worker.py",
+      "bytes": 6962,
+      "storage": "file",
+      "stored_path": "files/APE/main80/worker.py"
+    },
+    {
+      "path": "APE/setup.py",
+      "bytes": 279,
+      "storage": "file",
+      "stored_path": "files/APE/setup.py"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1682,
+      "storage": "file",
+      "stored_path": "files/README.md"
+    },
+    {
+      "path": "campaign.json",
+      "bytes": 408,
+      "storage": "file",
+      "stored_path": "files/campaign.json"
+    },
+    {
+      "path": "data_sources.json",
+      "bytes": 1370,
+      "storage": "file",
+      "stored_path": "files/data_sources.json"
+    },
+    {
+      "path": "datasets/frozen-main80/applicability.json",
+      "bytes": 8437660,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/applicability.json"
+    },
+    {
+      "path": "datasets/frozen-main80/development.json",
+      "bytes": 77284290,
+      "storage": "parts",
+      "parts": [
+        {
+          "path": "parts/00031/0000.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00031/0001.part",
+          "bytes": 30098370
+        }
+      ]
+    },
+    {
+      "path": "datasets/frozen-main80/doc2dial.json",
+      "bytes": 3875197,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/doc2dial.json"
+    },
+    {
+      "path": "datasets/frozen-main80/frozen.json",
+      "bytes": 113135,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/frozen.json"
+    },
+    {
+      "path": "datasets/frozen-main80/litm.json",
+      "bytes": 21308123,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/litm.json"
+    },
+    {
+      "path": "datasets/frozen-main80/longbench.json",
+      "bytes": 31466497,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/longbench.json"
+    },
+    {
+      "path": "datasets/frozen-main80/mapping-errors.json",
+      "bytes": 3,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/mapping-errors.json"
+    },
+    {
+      "path": "datasets/frozen-main80/nested-coverage.json",
+      "bytes": 16068,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/nested-coverage.json"
+    },
+    {
+      "path": "datasets/frozen-main80/split-report.json",
+      "bytes": 6157,
+      "storage": "file",
+      "stored_path": "files/datasets/frozen-main80/split-report.json"
+    },
+    {
+      "path": "datasets/prepared-main80/supplement-reviews.json",
+      "bytes": 490256,
+      "storage": "file",
+      "stored_path": "files/datasets/prepared-main80/supplement-reviews.json"
+    },
+    {
+      "path": "datasets/raw-main80/ASSET_MANIFEST.json",
+      "bytes": 19516,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/ASSET_MANIFEST.json"
+    },
+    {
+      "path": "datasets/raw-main80/doc2dial/doc2dial_dial_validation.json",
+      "bytes": 5746065,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/doc2dial/doc2dial_dial_validation.json"
+    },
+    {
+      "path": "datasets/raw-main80/doc2dial/doc2dial_doc.json",
+      "bytes": 46216432,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/doc2dial/doc2dial_doc.json"
+    },
+    {
+      "path": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz",
+      "bytes": 15151873,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz"
+    },
+    {
+      "path": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz",
+      "bytes": 15114700,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz"
+    },
+    {
+      "path": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz",
+      "bytes": 15155756,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz"
+    },
+    {
+      "path": "datasets/raw-main80/longbench/data.zip",
+      "bytes": 113932529,
+      "storage": "parts",
+      "parts": [
+        {
+          "path": "parts/00046/0000.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00046/0001.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00046/0002.part",
+          "bytes": 19560689
+        }
+      ]
+    },
+    {
+      "path": "datasets/raw-main80/longbench/hotpotqa.jsonl",
+      "bytes": 11483614,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/longbench/hotpotqa.jsonl"
+    },
+    {
+      "path": "datasets/raw-main80/longbench/musique.jsonl",
+      "bytes": 14085077,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/longbench/musique.jsonl"
+    },
+    {
+      "path": "datasets/raw-main80/longbench/qasper.jsonl",
+      "bytes": 4829368,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/longbench/qasper.jsonl"
+    },
+    {
+      "path": "datasets/raw-main80/origins/hotpot_distractor_validation.json",
+      "bytes": 46615833,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/hotpot_distractor_validation.json"
+    },
+    {
+      "path": "datasets/raw-main80/origins/hotpot_distractor_validation.parquet",
+      "bytes": 27452575,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/hotpot_distractor_validation.parquet"
+    },
+    {
+      "path": "datasets/raw-main80/origins/musique-author-data-download",
+      "bytes": 2469,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/musique-author-data-download"
+    },
+    {
+      "path": "datasets/raw-main80/origins/musique_ans_v1.0_dev.jsonl",
+      "bytes": 30439728,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/musique_ans_v1.0_dev.jsonl"
+    },
+    {
+      "path": "datasets/raw-main80/origins/musique_v1.0.zip",
+      "bytes": 272049578,
+      "storage": "parts",
+      "parts": [
+        {
+          "path": "parts/00054/0000.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00054/0001.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00054/0002.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00054/0003.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00054/0004.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00054/0005.part",
+          "bytes": 36119978
+        }
+      ]
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-dev-v0.3.json",
+      "bytes": 11398686,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/qasper-dev-v0.3.json"
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-test-and-evaluator-v0.3.tgz",
+      "bytes": 3865061,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/qasper-test-and-evaluator-v0.3.tgz"
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-test-v0.3.json",
+      "bytes": 18078957,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/qasper-test-v0.3.json"
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-train-dev-v0.3.tgz",
+      "bytes": 10835856,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/qasper-train-dev-v0.3.tgz"
+    },
+    {
+      "path": "datasets/raw-main80/origins/qasper-train-v0.3.json",
+      "bytes": 31969387,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/origins/qasper-train-v0.3.json"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_DATA_README.md",
+      "bytes": 2829,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/doc2dial_DATA_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_README.md",
+      "bytes": 5176,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/doc2dial_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_hf_README.md",
+      "bytes": 22650,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/doc2dial_hf_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_seq2seq_utils.py.txt",
+      "bytes": 6179,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/doc2dial_seq2seq_utils.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/doc2dial_sharedtask_utils.py.txt",
+      "bytes": 3611,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/doc2dial_sharedtask_utils.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/hotpot_README.md",
+      "bytes": 6839,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/hotpot_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/hotpot_hf_README.md",
+      "bytes": 9522,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/hotpot_hf_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/hotpot_hf_tree.json",
+      "bytes": 2657,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/hotpot_hf_tree.json"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_LICENSE.txt",
+      "bytes": 1067,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/litm_LICENSE.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_get_qa_responses_mpt.py.txt",
+      "bytes": 9986,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/litm_get_qa_responses_mpt.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_metrics.py.txt",
+      "bytes": 1040,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/litm_metrics.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_prompting.py.txt",
+      "bytes": 3873,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/litm_prompting.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/litm_qa.prompt",
+      "bytes": 174,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/litm_qa.prompt"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_LICENSE.txt",
+      "bytes": 1075,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/longbench_LICENSE.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_dataset2maxlen.json",
+      "bytes": 459,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/longbench_dataset2maxlen.json"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_dataset2prompt.json",
+      "bytes": 5437,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/longbench_dataset2prompt.json"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_hf_README.md",
+      "bytes": 16038,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/longbench_hf_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_metrics.py.txt",
+      "bytes": 5190,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/longbench_metrics.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/longbench_task.md",
+      "bytes": 11747,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/longbench_task.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/musique_README.md",
+      "bytes": 48623,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/musique_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/musique_download_data.sh.txt",
+      "bytes": 445,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/musique_download_data.sh.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_LICENSE.txt",
+      "bytes": 11357,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/pcw_LICENSE.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_README.md",
+      "bytes": 3933,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/pcw_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_modeling_llama.py.txt",
+      "bytes": 7872,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/pcw_modeling_llama.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/pcw_wrapper.py.txt",
+      "bytes": 6138,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/pcw_wrapper.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/qasper_hf_README.md",
+      "bytes": 9639,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/qasper_hf_README.md"
+    },
+    {
+      "path": "datasets/raw-main80/references/qasper_hf_loader.py.txt",
+      "bytes": 5950,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/qasper_hf_loader.py.txt"
+    },
+    {
+      "path": "datasets/raw-main80/references/qasper_hf_tree.json",
+      "bytes": 1011,
+      "storage": "file",
+      "stored_path": "files/datasets/raw-main80/references/qasper_hf_tree.json"
+    },
+    {
+      "path": "docs/EXPERIMENT_PLAN.md",
+      "bytes": 10057,
+      "storage": "file",
+      "stored_path": "files/docs/EXPERIMENT_PLAN.md"
+    },
+    {
+      "path": "docs/MONITOR_DESIGN.md",
+      "bytes": 1627,
+      "storage": "file",
+      "stored_path": "files/docs/MONITOR_DESIGN.md"
+    },
+    {
+      "path": "docs/REPRODUCTION_STAGE.md",
+      "bytes": 11838,
+      "storage": "file",
+      "stored_path": "files/docs/REPRODUCTION_STAGE.md"
+    },
+    {
+      "path": "docs/RESULTS.md",
+      "bytes": 4723,
+      "storage": "file",
+      "stored_path": "files/docs/RESULTS.md"
+    },
+    {
+      "path": "environment/locks/requirements-core-overlay-lock.txt",
+      "bytes": 5070,
+      "storage": "file",
+      "stored_path": "files/environment/locks/requirements-core-overlay-lock.txt"
+    },
+    {
+      "path": "environment/snapshots/conda-explicit-existing-ape-20260822.txt",
+      "bytes": 3045,
+      "storage": "file",
+      "stored_path": "files/environment/snapshots/conda-explicit-existing-ape-20260822.txt"
+    },
+    {
+      "path": "environment/snapshots/requirements-existing-ape-20260822.txt",
+      "bytes": 4856,
+      "storage": "file",
+      "stored_path": "files/environment/snapshots/requirements-existing-ape-20260822.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/DELIVERY.md",
+      "bytes": 1434,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/DELIVERY.md"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/asset-script-static.json",
+      "bytes": 178,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/asset-script-static.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/command-exits.json",
+      "bytes": 301,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/command-exits.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr",
+      "bytes": 0,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data-inspection-complete.stdout",
+      "bytes": 4729,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/data-inspection-complete.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data-inspection.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data-inspection.stdout",
+      "bytes": 4503,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/data-inspection.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data-structure.json",
+      "bytes": 4728,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/data-structure.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/data.stdout",
+      "bytes": 756,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/data.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/events.jsonl",
+      "bytes": 146875,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/events.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/execution.json",
+      "bytes": 1422,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/execution.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_assets.initial.py.txt",
+      "bytes": 10999,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/fetch_assets.initial.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_assets.py.final.txt",
+      "bytes": 12129,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/fetch_assets.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_assets.py.txt",
+      "bytes": 10999,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/fetch_assets.initial.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.before-resume-20261114.txt",
+      "bytes": 5673,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/fetch_model_ranges.py.before-resume-20261114.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.final.txt",
+      "bytes": 7186,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/fetch_model_ranges.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.resume_20261114T0308.txt",
+      "bytes": 7186,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.txt",
+      "bytes": 5673,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.before-resume-20261114.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/finalize.stderr",
+      "bytes": 426,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/finalize.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/finalize.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/finalize_assets.py.before-resume-20261114.txt",
+      "bytes": 4742,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/finalize_assets.py.before-resume-20261114.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/finalize_assets.py.final.txt",
+      "bytes": 5156,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/finalize_assets.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/finalize_assets.py.resume_20261114T0308.txt",
+      "bytes": 5156,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/finalize_assets.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/inspect_assets.py.final.txt",
+      "bytes": 6787,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/inspect_assets.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/inspect_assets.py.txt",
+      "bytes": 6787,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/inspect_assets.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-files-source-after-resume_20261114T0308.json",
+      "bytes": 7066,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-files-source-after-resume_20261114T0308.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-files-source-before-resume-20261114.json",
+      "bytes": 7066,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-files-source-before-resume-20261114.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-files-source.json",
+      "bytes": 7066,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-files-source.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-manifest.json",
+      "bytes": 2206,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-manifest.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-range-state.json",
+      "bytes": 20469,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-range-state.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-ranges.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-ranges.stdout",
+      "bytes": 71,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-ranges.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-source-stability.json",
+      "bytes": 175,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-source-stability.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model-structure.json",
+      "bytes": 1658,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model-structure.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/model.stdout",
+      "bytes": 798,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/model.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/offline-config-tokenizer.json",
+      "bytes": 477,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/offline-config-tokenizer.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/prepare_scoring_overlay.py.final.txt",
+      "bytes": 4451,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/prepare_scoring_overlay.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/prepare_scoring_overlay.py.txt",
+      "bytes": 4404,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/prepare_scoring_overlay.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/refs.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/refs.stdout",
+      "bytes": 1380,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/refs.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.0.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.0.stdout",
+      "bytes": 213,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/resume_20261114T0308.0.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.1.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.1.stdout",
+      "bytes": 1797,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/resume_20261114T0308.1.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.commands.jsonl",
+      "bytes": 1014,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/resume_20261114T0308.commands.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.launcher.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/resume_20261114T0308.launcher.stdout",
+      "bytes": 31,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/resume_20261114T0308.launcher.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/run_asset_attempt.py.final.txt",
+      "bytes": 2361,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/run_asset_attempt.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/run_asset_attempt.py.resume_20261114T0308.txt",
+      "bytes": 2361,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/run_asset_attempt.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-execution.json",
+      "bytes": 1115,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-execution.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-overlay-manifest.json",
+      "bytes": 44593,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-overlay-manifest.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-overlay-validation.json",
+      "bytes": 1844,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-overlay-validation.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-overlay.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-overlay.stdout",
+      "bytes": 1286,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-overlay.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-sacrebleu-v2.4.3-README.md",
+      "bytes": 37114,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-sacrebleu-v2.4.3-README.md"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-validation-attempt1.exit",
+      "bytes": 2,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-validation-attempt1.exit"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-validation-attempt1.note.md",
+      "bytes": 408,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-validation-attempt1.note.md"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-validation-attempt1.stderr",
+      "bytes": 135,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-validation-attempt1.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-validation.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-validation.stdout",
+      "bytes": 1845,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-validation.stdout"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/colorama-0.4.6.pypi.json",
+      "bytes": 19759,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-wheels/colorama-0.4.6.pypi.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/lxml-5.3.0.pypi.json",
+      "bytes": 124440,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-wheels/lxml-5.3.0.pypi.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/portalocker-2.10.1.pypi.json",
+      "bytes": 10433,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-wheels/portalocker-2.10.1.pypi.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/sacrebleu-2.4.3.pypi.json",
+      "bytes": 51825,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-wheels/sacrebleu-2.4.3.pypi.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/tabulate-0.9.0.pypi.json",
+      "bytes": 37684,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/scoring-wheels/tabulate-0.9.0.pypi.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/validate_scoring_overlay.py.final.txt",
+      "bytes": 3135,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-assets/validate_scoring_overlay.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/validate_scoring_overlay.py.txt",
+      "bytes": 3135,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/validate_scoring_overlay.py.final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/command.json",
+      "bytes": 227,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/command.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/command.txt",
+      "bytes": 174,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/command.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/controller-final-review.md",
+      "bytes": 4673,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/controller-final-review.md"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/end.txt",
+      "bytes": 33,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/end.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/execution.json",
+      "bytes": 906,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/execution.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/exit.txt",
+      "bytes": 2,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/exit.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/methods.py.txt",
+      "bytes": 11315,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/methods.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/review.md",
+      "bytes": 8751,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/review.md"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/selftest.py.txt",
+      "bytes": 10030,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/selftest.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/start.txt",
+      "bytes": 33,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/start.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/stderr.txt",
+      "bytes": 254,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/stderr.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/stdout.txt",
+      "bytes": 345,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/stdout.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-methods-cpu/tests.txt",
+      "bytes": 344,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-methods-cpu/tests.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/CHANGES.md",
+      "bytes": 3058,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/CHANGES.md"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/R2-actual-demo.snapshot.py.txt",
+      "bytes": 12368,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/R2-actual-demo.snapshot.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/ape/__init__.py",
+      "bytes": 1653,
+      "storage": "alias",
+      "alias_of": "APE/ape/__init__.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/ape/ape_llama.py",
+      "bytes": 14383,
+      "storage": "alias",
+      "alias_of": "APE/ape/ape_llama.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/experiments/Longbench/pred_parallel9.py",
+      "bytes": 457,
+      "storage": "alias",
+      "alias_of": "APE/experiments/Longbench/pred_parallel9.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/__init__.py",
+      "bytes": 73,
+      "storage": "alias",
+      "alias_of": "APE/main80/__init__.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/campaign.py",
+      "bytes": 29094,
+      "storage": "alias",
+      "alias_of": "APE/main80/campaign.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/common.py",
+      "bytes": 4690,
+      "storage": "alias",
+      "alias_of": "APE/main80/common.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/data.py",
+      "bytes": 17723,
+      "storage": "alias",
+      "alias_of": "APE/main80/data.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/diagnostics.py",
+      "bytes": 2663,
+      "storage": "alias",
+      "alias_of": "APE/main80/diagnostics.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/freeze.py",
+      "bytes": 9847,
+      "storage": "alias",
+      "alias_of": "APE/main80/freeze.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/jobs.py",
+      "bytes": 6055,
+      "storage": "alias",
+      "alias_of": "APE/main80/jobs.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/methods.py",
+      "bytes": 12277,
+      "storage": "alias",
+      "alias_of": "APE/main80/methods.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/metrics.py",
+      "bytes": 1946,
+      "storage": "alias",
+      "alias_of": "APE/main80/metrics.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/monitor.py",
+      "bytes": 8427,
+      "storage": "alias",
+      "alias_of": "APE/main80/monitor.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/plots.py",
+      "bytes": 2606,
+      "storage": "alias",
+      "alias_of": "APE/main80/plots.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/prep_gpu.py",
+      "bytes": 5601,
+      "storage": "alias",
+      "alias_of": "APE/main80/prep_gpu.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/report.py",
+      "bytes": 7167,
+      "storage": "alias",
+      "alias_of": "APE/main80/report.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/rules.py",
+      "bytes": 3678,
+      "storage": "alias",
+      "alias_of": "APE/main80/rules.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/selftest.py",
+      "bytes": 17209,
+      "storage": "alias",
+      "alias_of": "APE/main80/selftest.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/validate_data.py",
+      "bytes": 7009,
+      "storage": "alias",
+      "alias_of": "APE/main80/validate_data.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/worker.py",
+      "bytes": 6962,
+      "storage": "alias",
+      "alias_of": "APE/main80/worker.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/campaign.json",
+      "bytes": 408,
+      "storage": "alias",
+      "alias_of": "campaign.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/data_sources.json",
+      "bytes": 1370,
+      "storage": "alias",
+      "alias_of": "data_sources.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/applicability.json",
+      "bytes": 8437660,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/applicability.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/development.json",
+      "bytes": 77284290,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/development.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/doc2dial.json",
+      "bytes": 3875197,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/doc2dial.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/frozen.json",
+      "bytes": 113135,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/frozen.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/litm.json",
+      "bytes": 21308123,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/litm.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/longbench.json",
+      "bytes": 31466497,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/longbench.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/nested-coverage.json",
+      "bytes": 16068,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/nested-coverage.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/split-report.json",
+      "bytes": 6157,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/split-report.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/prepared-main80/supplement-reviews.json",
+      "bytes": 490256,
+      "storage": "alias",
+      "alias_of": "datasets/prepared-main80/supplement-reviews.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/config.json",
+      "bytes": 855,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/config.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/generation_config.json",
+      "bytes": 184,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/generation_config.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/model.safetensors.index.json",
+      "bytes": 23950,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/model.safetensors.index.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/special_tokens_map.json",
+      "bytes": 296,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/special_tokens_map.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer.json",
+      "bytes": 9085657,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer_config.json",
+      "bytes": 55351,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer_config.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/observe_campaign.py",
+      "bytes": 1563,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/scripts/observe_campaign.py"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/run_campaign.sh",
+      "bytes": 227,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/scripts/run_campaign.sh"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/with_env.sh",
+      "bytes": 1470,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/accepted-inputs/scripts/with_env.sh"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/applicability-first-attempt.json",
+      "bytes": 5550515,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/applicability-first-attempt.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032842/monitor.log",
+      "bytes": 1039,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032842/monitor.log"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032842/status.json",
+      "bytes": 554,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032842/status.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/browser-command.json",
+      "bytes": 611,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/browser-command.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/browser-seen.jsonl",
+      "bytes": 251,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/browser-seen.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/browser.stderr",
+      "bytes": 98,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/browser.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/browser.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/cleanup-events.jsonl",
+      "bytes": 189,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/cleanup-events.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/launch-proof.json",
+      "bytes": 175,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/launch-proof.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/monitor.json",
+      "bytes": 145,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/monitor.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/monitor.log",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T032920/status.json",
+      "bytes": 555,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T032920/status.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/browser-command.json",
+      "bytes": 611,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/browser-command.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/browser-seen.jsonl",
+      "bytes": 251,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/browser-seen.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/browser.stderr",
+      "bytes": 98,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/browser.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/browser.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/launch-proof.json",
+      "bytes": 175,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/launch-proof.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/monitor-1100.png",
+      "bytes": 77065,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/monitor-1100.png"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/monitor-420.png",
+      "bytes": 64100,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/monitor-420.png"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/monitor.json",
+      "bytes": 145,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/monitor.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/monitor.log",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/result.json",
+      "bytes": 636,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/result.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-20261114T033213/status.json",
+      "bytes": 555,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/background-20261114T033213/status.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/background-test-latest.json",
+      "bytes": 636,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/background-20261114T033213/result.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/cleanup-manifest.json",
+      "bytes": 23092,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/cleanup-manifest.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/cleanup-result.json",
+      "bytes": 7997,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/cleanup-result.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/data-validation.json",
+      "bytes": 12906,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/data-validation.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-label-correction.json",
+      "bytes": 420,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-label-correction.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-test/attention-figures/attention-000.svg",
+      "bytes": 94330,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-test/attention-figures/attention-000.svg"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-test/attention-figures/index.json",
+      "bytes": 488,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-test/attention-figures/index.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-test/attention.jsonl",
+      "bytes": 46466,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-test/attention.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-test-corrected/attention-figures/attention-000.svg",
+      "bytes": 94330,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-test-corrected/attention-figures/attention-000.svg"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-test-corrected/attention-figures/index.json",
+      "bytes": 488,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-test-corrected/attention-figures/index.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/diagnostic-plot-test-corrected/attention.jsonl",
+      "bytes": 46466,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/diagnostic-plot-test-corrected/attention.jsonl"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/environment.json",
+      "bytes": 351,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/environment.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/implementation.diff.txt",
+      "bytes": 163713,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/implementation.diff.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/mapping-fourth-check.json",
+      "bytes": 36,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/mapping-fourth-check.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/mapping-second-check.json",
+      "bytes": 139684,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/mapping-second-check.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/mapping-third-check.json",
+      "bytes": 186100,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/mapping-third-check.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/model_files.remote.txt",
+      "bytes": 7066,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/model_files.remote.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/pcw.remote.txt",
+      "bytes": 6138,
+      "storage": "alias",
+      "alias_of": "datasets/raw-main80/references/pcw_wrapper.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/pred_parallel9.before.py.txt",
+      "bytes": 15256,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/pred_parallel9.before.py.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/protocol-tests-final.txt",
+      "bytes": 1037,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/protocol-tests-final.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/protocol-tests.txt",
+      "bytes": 513,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/protocol-tests.txt"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/review.json",
+      "bytes": 10259,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/review.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/scope-validation.json",
+      "bytes": 491,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/scope-validation.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/supplement-proposals.json",
+      "bytes": 1236153,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/supplement-proposals.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/supplement-review-acceptance.json",
+      "bytes": 548,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/supplement-review-acceptance.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/temporary-mapped.json",
+      "bytes": 30999605,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/temporary-mapped.json"
+    },
+    {
+      "path": "logs/runs/20261113-main80-prep/temporary-split.json",
+      "bytes": 46228,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261113-main80-prep/temporary-split.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-data-validation/command.json",
+      "bytes": 325,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-data-validation/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-data-validation/stderr",
+      "bytes": 221,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-data-validation/stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-data-validation/stdout",
+      "bytes": 139,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-data-validation/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-freeze-a2/command.json",
+      "bytes": 406,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-freeze-a2/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-freeze-a2/stderr",
+      "bytes": 221,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261114-main80-data-validation/stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-freeze-a2/stdout",
+      "bytes": 97,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-freeze-a2/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/LAUNCH_REPORT.md",
+      "bytes": 2437,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/LAUNCH_REPORT.md"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/campaign-start.json",
+      "bytes": 743,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/campaign-start.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/claim.json",
+      "bytes": 818,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/claim.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/launch-summary.json",
+      "bytes": 1775,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/launch-summary.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/observation-command.json",
+      "bytes": 488,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/observation-command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/observation-result.json",
+      "bytes": 618,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/observation-result.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/observation-status-snapshot.json",
+      "bytes": 1908,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/observation-status-snapshot.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/observation.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/observation.stdout",
+      "bytes": 7003,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/observation.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/start-command.json",
+      "bytes": 274,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/start-command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/start-result.json",
+      "bytes": 404,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/start-result.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/start.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch/start.stdout",
+      "bytes": 239,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch/start.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch-check/command.json",
+      "bytes": 370,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch-check/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch-check/stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-launch-check/stdout",
+      "bytes": 73,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-launch-check/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_default/result.json",
+      "bytes": 4866,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_default/result.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_default.stderr",
+      "bytes": 728,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_default.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_default.stdout",
+      "bytes": 307,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_default.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_fixed/result.json",
+      "bytes": 4871,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_fixed/result.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_fixed/token-attention.jsonl",
+      "bytes": 45701,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_fixed/token-attention.jsonl"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_fixed.stderr",
+      "bytes": 728,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_fixed.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/ape_fixed.stdout",
+      "bytes": 305,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/ape_fixed.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/claim.json",
+      "bytes": 683,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/claim.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__ape__ape_llama.py.txt",
+      "bytes": 14383,
+      "storage": "alias",
+      "alias_of": "APE/ape/ape_llama.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80____init__.py.txt",
+      "bytes": 73,
+      "storage": "alias",
+      "alias_of": "APE/main80/__init__.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__campaign.py.txt",
+      "bytes": 26243,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__campaign.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__common.py.txt",
+      "bytes": 3746,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__common.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__data.py.txt",
+      "bytes": 16578,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__data.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__diagnostics.py.txt",
+      "bytes": 2663,
+      "storage": "alias",
+      "alias_of": "APE/main80/diagnostics.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__freeze.py.txt",
+      "bytes": 8015,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__freeze.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__jobs.py.txt",
+      "bytes": 5863,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__jobs.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__methods.py.txt",
+      "bytes": 12277,
+      "storage": "alias",
+      "alias_of": "APE/main80/methods.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__metrics.py.txt",
+      "bytes": 1946,
+      "storage": "alias",
+      "alias_of": "APE/main80/metrics.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__monitor.py.txt",
+      "bytes": 8427,
+      "storage": "alias",
+      "alias_of": "APE/main80/monitor.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__prep_gpu.py.txt",
+      "bytes": 5601,
+      "storage": "alias",
+      "alias_of": "APE/main80/prep_gpu.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__report.py.txt",
+      "bytes": 6754,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__report.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__rules.py.txt",
+      "bytes": 3678,
+      "storage": "alias",
+      "alias_of": "APE/main80/rules.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__selftest.py.txt",
+      "bytes": 10030,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-methods-cpu/selftest.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/APE__main80__worker.py.txt",
+      "bytes": 4992,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/code/APE__main80__worker.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/code/scripts__with_env.sh.txt",
+      "bytes": 1470,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/with_env.sh"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/commands.jsonl",
+      "bytes": 1531,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/commands.jsonl"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/delivery.md",
+      "bytes": 3463,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/delivery.md"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/execution.json",
+      "bytes": 308,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/execution.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/launcher-command.json",
+      "bytes": 145,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/launcher-command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/launcher-end.txt",
+      "bytes": 21,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/launcher-end.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/launcher-exit.txt",
+      "bytes": 2,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-methods-cpu/exit.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/launcher-start.txt",
+      "bytes": 21,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/launcher-start.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/launcher.stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/launcher.stdout",
+      "bytes": 82,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/launcher.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/pcw/result.json",
+      "bytes": 4908,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/pcw/result.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/pcw.stderr",
+      "bytes": 982,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/pcw.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/pcw.stdout",
+      "bytes": 324,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/pcw.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/run_preparation_gpu.py.txt",
+      "bytes": 3011,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/run_preparation_gpu.py.txt"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/sequential/result.json",
+      "bytes": 4786,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/sequential/result.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/sequential.stderr",
+      "bytes": 982,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/sequential.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-methods-full/sequential.stdout",
+      "bytes": 211,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-methods-full/sequential.stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-prep-signoff/command.json",
+      "bytes": 326,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-prep-signoff/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-prep-signoff/stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-prep-signoff/stdout",
+      "bytes": 87,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-prep-signoff/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests/command.json",
+      "bytes": 420,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-protocol-tests/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests/stderr",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests/stdout",
+      "bytes": 759,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-protocol-tests/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests-r2/command.json",
+      "bytes": 420,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-protocol-tests-r2/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests-r2/stderr",
+      "bytes": 221,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261114-main80-data-validation/stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests-r2/stdout",
+      "bytes": 957,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-protocol-tests-r2/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests-r3/command.json",
+      "bytes": 420,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-protocol-tests-r3/command.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests-r3/stderr",
+      "bytes": 221,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261114-main80-data-validation/stderr"
+    },
+    {
+      "path": "logs/runs/20261114-main80-protocol-tests-r3/stdout",
+      "bytes": 1038,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-protocol-tests-r3/stdout"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/build_review.py",
+      "bytes": 34445,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/build_review.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/execution.json",
+      "bytes": 11902,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/execution.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/input.snapshot.json",
+      "bytes": 1236153,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/supplement-proposals.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/read_review_input.py",
+      "bytes": 2134,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/read_review_input.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/review.json",
+      "bytes": 800920,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/review.json"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/review.md",
+      "bytes": 3598,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/review.md"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/submit_review.py",
+      "bytes": 3337,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/submit_review.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/validate_review.py",
+      "bytes": 5119,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/validate_review.py"
+    },
+    {
+      "path": "logs/runs/20261114-main80-supplements-review/validation.json",
+      "bytes": 1136,
+      "storage": "file",
+      "stored_path": "files/logs/runs/20261114-main80-supplements-review/validation.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/LICENSE",
+      "bytes": 7627,
+      "storage": "file",
+      "stored_path": "files/models/Llama-3.1-8B-Instruct/LICENSE"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/README.md",
+      "bytes": 44044,
+      "storage": "file",
+      "stored_path": "files/models/Llama-3.1-8B-Instruct/README.md"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/USE_POLICY.md",
+      "bytes": 4691,
+      "storage": "file",
+      "stored_path": "files/models/Llama-3.1-8B-Instruct/USE_POLICY.md"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/config.json",
+      "bytes": 855,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/config.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/generation_config.json",
+      "bytes": 184,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/generation_config.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/model.safetensors.index.json",
+      "bytes": 23950,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/model.safetensors.index.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/special_tokens_map.json",
+      "bytes": 296,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/special_tokens_map.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/tokenizer.json",
+      "bytes": 9085657,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/tokenizer_config.json",
+      "bytes": 55351,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer_config.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attempts.jsonl",
+      "bytes": 31483794,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attempts.jsonl"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-000.svg",
+      "bytes": 99440,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-000.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-001.svg",
+      "bytes": 99579,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-001.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-002.svg",
+      "bytes": 97109,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-002.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-003.svg",
+      "bytes": 97418,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-003.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-004.svg",
+      "bytes": 100457,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-004.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-005.svg",
+      "bytes": 99145,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-005.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-006.svg",
+      "bytes": 99521,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-006.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-007.svg",
+      "bytes": 98568,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-007.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-008.svg",
+      "bytes": 96154,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-008.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-009.svg",
+      "bytes": 97623,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-009.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-010.svg",
+      "bytes": 96586,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-010.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/attention-011.svg",
+      "bytes": 94943,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/attention-011.svg"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention-figures/index.json",
+      "bytes": 6618,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/attention-figures/index.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/attention.jsonl",
+      "bytes": 200129285,
+      "storage": "parts",
+      "parts": [
+        {
+          "path": "parts/00376/0000.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00376/0001.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00376/0002.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00376/0003.part",
+          "bytes": 47185920
+        },
+        {
+          "path": "parts/00376/0004.part",
+          "bytes": 11385605
+        }
+      ]
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/browser-launches.jsonl",
+      "bytes": 516,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/browser-launches.jsonl"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/browser-seen.jsonl",
+      "bytes": 741,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/browser-seen.jsonl"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/browser.json",
+      "bytes": 596,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/browser.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/browser.log",
+      "bytes": 955,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/browser.log"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/candidates.json",
+      "bytes": 509,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/candidates.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/code-version.json",
+      "bytes": 228,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/code-version.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/config.json",
+      "bytes": 408,
+      "storage": "alias",
+      "alias_of": "campaign.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/controller.log",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/delivery.json",
+      "bytes": 251,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/delivery.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/events.jsonl",
+      "bytes": 9430465,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/events.jsonl"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/incomplete.json",
+      "bytes": 120,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/incomplete.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/launch-observation.json",
+      "bytes": 9115,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/launch-observation.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/launcher.json",
+      "bytes": 338,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/launcher.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/monitor.json",
+      "bytes": 141,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/monitor.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/monitor.log",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/results.csv",
+      "bytes": 3109661,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/results.csv"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/rule.json",
+      "bytes": 1587,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/rule.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/sampling.json",
+      "bytes": 68130,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/sampling.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/ape/__init__.py",
+      "bytes": 1653,
+      "storage": "alias",
+      "alias_of": "APE/ape/__init__.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/ape/ape_llama.py",
+      "bytes": 14383,
+      "storage": "alias",
+      "alias_of": "APE/ape/ape_llama.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/__init__.py",
+      "bytes": 73,
+      "storage": "alias",
+      "alias_of": "APE/main80/__init__.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/campaign.py",
+      "bytes": 29094,
+      "storage": "alias",
+      "alias_of": "APE/main80/campaign.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/common.py",
+      "bytes": 4690,
+      "storage": "alias",
+      "alias_of": "APE/main80/common.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/data.py",
+      "bytes": 17723,
+      "storage": "alias",
+      "alias_of": "APE/main80/data.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/diagnostics.py",
+      "bytes": 2663,
+      "storage": "alias",
+      "alias_of": "APE/main80/diagnostics.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/freeze.py",
+      "bytes": 9847,
+      "storage": "alias",
+      "alias_of": "APE/main80/freeze.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/jobs.py",
+      "bytes": 6055,
+      "storage": "alias",
+      "alias_of": "APE/main80/jobs.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py",
+      "bytes": 12277,
+      "storage": "alias",
+      "alias_of": "APE/main80/methods.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/metrics.py",
+      "bytes": 1946,
+      "storage": "alias",
+      "alias_of": "APE/main80/metrics.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/monitor.py",
+      "bytes": 8427,
+      "storage": "alias",
+      "alias_of": "APE/main80/monitor.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/plots.py",
+      "bytes": 2606,
+      "storage": "alias",
+      "alias_of": "APE/main80/plots.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/prep_gpu.py",
+      "bytes": 5601,
+      "storage": "alias",
+      "alias_of": "APE/main80/prep_gpu.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/report.py",
+      "bytes": 7167,
+      "storage": "alias",
+      "alias_of": "APE/main80/report.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/rules.py",
+      "bytes": 3678,
+      "storage": "alias",
+      "alias_of": "APE/main80/rules.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/selftest.py",
+      "bytes": 17209,
+      "storage": "alias",
+      "alias_of": "APE/main80/selftest.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/validate_data.py",
+      "bytes": 7009,
+      "storage": "alias",
+      "alias_of": "APE/main80/validate_data.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/APE/main80/worker.py",
+      "bytes": 6962,
+      "storage": "alias",
+      "alias_of": "APE/main80/worker.py"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/applicability.json",
+      "bytes": 8437660,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/applicability.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/development.json",
+      "bytes": 77284290,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/development.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/doc2dial.json",
+      "bytes": 3875197,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/doc2dial.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/frozen.json",
+      "bytes": 113135,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/frozen.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/litm.json",
+      "bytes": 21308123,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/litm.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json",
+      "bytes": 31466497,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/longbench.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/nested-coverage.json",
+      "bytes": 16068,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/nested-coverage.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/split-report.json",
+      "bytes": 6157,
+      "storage": "alias",
+      "alias_of": "datasets/frozen-main80/split-report.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/generated/candidates.json",
+      "bytes": 509,
+      "storage": "alias",
+      "alias_of": "output/runs/main80-20261114T041503/candidates.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/generated/rule.json",
+      "bytes": 1587,
+      "storage": "alias",
+      "alias_of": "output/runs/main80-20261114T041503/rule.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/logs/runs/20261113-main80-prep/review.json",
+      "bytes": 10259,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/review.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/models/Llama-3.1-8B-Instruct/config.json",
+      "bytes": 855,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/config.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/models/Llama-3.1-8B-Instruct/generation_config.json",
+      "bytes": 184,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/generation_config.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/models/Llama-3.1-8B-Instruct/model.safetensors.index.json",
+      "bytes": 23950,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/model.safetensors.index.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/models/Llama-3.1-8B-Instruct/special_tokens_map.json",
+      "bytes": 296,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/special_tokens_map.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/models/Llama-3.1-8B-Instruct/tokenizer.json",
+      "bytes": 9085657,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/models/Llama-3.1-8B-Instruct/tokenizer_config.json",
+      "bytes": 55351,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer_config.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/scripts/run_campaign.sh",
+      "bytes": 227,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/run_campaign.sh"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/snapshot/scripts/with_env.sh",
+      "bytes": 1470,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/with_env.sh"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/source-files.json",
+      "bytes": 1294,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/source-files.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/state.json",
+      "bytes": 636,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/state.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/status.json",
+      "bytes": 4261,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/status.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/summary.json",
+      "bytes": 268435,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/summary.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/worker-state.json",
+      "bytes": 105,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/worker-state.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/worker.json",
+      "bytes": 375,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/worker.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/000-baseline-sequential.bundle.json",
+      "bytes": 311316,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/000-baseline-sequential.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/000-baseline-sequential.stderr",
+      "bytes": 982,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/000-baseline-sequential.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/000-baseline-sequential.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/001-baseline-pcw.bundle.json",
+      "bytes": 298709,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/001-baseline-pcw.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/001-baseline-pcw.stderr",
+      "bytes": 982,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/001-baseline-pcw.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/001-baseline-pcw.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/002-baseline-ape_default.bundle.json",
+      "bytes": 313117,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/002-baseline-ape_default.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/002-baseline-ape_default.stderr",
+      "bytes": 728,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/002-baseline-ape_default.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/002-baseline-ape_default.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/003-explore-ape_fixed.bundle.json",
+      "bytes": 3884524,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/003-explore-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/003-explore-ape_fixed.stderr",
+      "bytes": 720,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/003-explore-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/003-explore-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/004-validation-ape_fixed.bundle.json",
+      "bytes": 577177,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/004-validation-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/004-validation-ape_fixed.stderr",
+      "bytes": 803,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/004-validation-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/004-validation-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/005-length_check-ape_fixed.bundle.json",
+      "bytes": 31651,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/005-length_check-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/005-length_check-ape_fixed.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/005-length_check-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/005-length_check-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/006-length_check-ape_dynamic.bundle.json",
+      "bytes": 32013,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/006-length_check-ape_dynamic.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/006-length_check-ape_dynamic.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/006-length_check-ape_dynamic.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/006-length_check-ape_dynamic.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/007-attention-ape_fixed.bundle.json",
+      "bytes": 7990,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/007-attention-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/007-attention-ape_fixed.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/007-attention-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/007-attention-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/008-longbench_final-ape_fixed.bundle.json",
+      "bytes": 266835,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/008-longbench_final-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/008-longbench_final-ape_fixed.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/008-longbench_final-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/008-longbench_final-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/009-longbench_final-ape_dynamic.bundle.json",
+      "bytes": 269897,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/009-longbench_final-ape_dynamic.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/009-longbench_final-ape_dynamic.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/009-longbench_final-ape_dynamic.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/009-longbench_final-ape_dynamic.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/010-litm-sequential.bundle.json",
+      "bytes": 690132,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/010-litm-sequential.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/010-litm-sequential.stderr",
+      "bytes": 1150,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/010-litm-sequential.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/010-litm-sequential.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/011-litm-ape_fixed.bundle.json",
+      "bytes": 685631,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/011-litm-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/011-litm-ape_fixed.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/011-litm-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/011-litm-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/012-litm-ape_dynamic.bundle.json",
+      "bytes": 694633,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/012-litm-ape_dynamic.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/012-litm-ape_dynamic.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/012-litm-ape_dynamic.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/012-litm-ape_dynamic.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/013-doc2dial-sequential.bundle.json",
+      "bytes": 494110,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/013-doc2dial-sequential.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/013-doc2dial-sequential.stderr",
+      "bytes": 1150,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/013-doc2dial-sequential.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/013-doc2dial-sequential.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/014-doc2dial-ape_fixed.bundle.json",
+      "bytes": 491109,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/014-doc2dial-ape_fixed.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/014-doc2dial-ape_fixed.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/014-doc2dial-ape_fixed.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/014-doc2dial-ape_fixed.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/015-doc2dial-ape_dynamic.bundle.json",
+      "bytes": 497111,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/015-doc2dial-ape_dynamic.bundle.json"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/015-doc2dial-ape_dynamic.stderr",
+      "bytes": 896,
+      "storage": "file",
+      "stored_path": "files/output/runs/main80-20261114T041503/workers/015-doc2dial-ape_dynamic.stderr"
+    },
+    {
+      "path": "output/runs/main80-20261114T041503/workers/015-doc2dial-ape_dynamic.stdout",
+      "bytes": 0,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/data-inspection-complete.stderr"
+    },
+    {
+      "path": "scripts/README.md",
+      "bytes": 1548,
+      "storage": "file",
+      "stored_path": "files/scripts/README.md"
+    },
+    {
+      "path": "scripts/build_supplement_candidates.py",
+      "bytes": 5881,
+      "storage": "file",
+      "stored_path": "files/scripts/build_supplement_candidates.py"
+    },
+    {
+      "path": "scripts/check_background.py",
+      "bytes": 7421,
+      "storage": "file",
+      "stored_path": "files/scripts/check_background.py"
+    },
+    {
+      "path": "scripts/finalize_preparation.py",
+      "bytes": 7821,
+      "storage": "file",
+      "stored_path": "files/scripts/finalize_preparation.py"
+    },
+    {
+      "path": "scripts/main80-assets/README.md",
+      "bytes": 4218,
+      "storage": "file",
+      "stored_path": "files/scripts/main80-assets/README.md"
+    },
+    {
+      "path": "scripts/main80-assets/fetch_assets.py",
+      "bytes": 12129,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/fetch_assets.py.final.txt"
+    },
+    {
+      "path": "scripts/main80-assets/fetch_model_ranges.py",
+      "bytes": 7186,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/fetch_model_ranges.py.final.txt"
+    },
+    {
+      "path": "scripts/main80-assets/finalize_assets.py",
+      "bytes": 5156,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/finalize_assets.py.final.txt"
+    },
+    {
+      "path": "scripts/main80-assets/inspect_assets.py",
+      "bytes": 6787,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/inspect_assets.py.final.txt"
+    },
+    {
+      "path": "scripts/main80-assets/prepare_scoring_overlay.py",
+      "bytes": 4451,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/prepare_scoring_overlay.py.final.txt"
+    },
+    {
+      "path": "scripts/main80-assets/run_asset_attempt.py",
+      "bytes": 2361,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/run_asset_attempt.py.final.txt"
+    },
+    {
+      "path": "scripts/main80-assets/validate_scoring_overlay.py",
+      "bytes": 3135,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-assets/validate_scoring_overlay.py.final.txt"
+    },
+    {
+      "path": "scripts/observe_campaign.py",
+      "bytes": 1563,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/observe_campaign.py"
+    },
+    {
+      "path": "scripts/pc_analysis_client.py",
+      "bytes": 5627,
+      "storage": "file",
+      "stored_path": "files/scripts/pc_analysis_client.py"
+    },
+    {
+      "path": "scripts/prepare_main80_cleanup.py",
+      "bytes": 3816,
+      "storage": "file",
+      "stored_path": "files/scripts/prepare_main80_cleanup.py"
+    },
+    {
+      "path": "scripts/prepare_pc_export.py",
+      "bytes": 8605,
+      "storage": "file",
+      "stored_path": "files/scripts/prepare_pc_export.py"
+    },
+    {
+      "path": "scripts/record_command.py",
+      "bytes": 1516,
+      "storage": "file",
+      "stored_path": "files/scripts/record_command.py"
+    },
+    {
+      "path": "scripts/run_campaign.sh",
+      "bytes": 227,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/run_campaign.sh"
+    },
+    {
+      "path": "scripts/run_preparation_gpu.py",
+      "bytes": 3011,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261114-main80-methods-full/run_preparation_gpu.py.txt"
+    },
+    {
+      "path": "scripts/with_env.sh",
+      "bytes": 1470,
+      "storage": "alias",
+      "alias_of": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/with_env.sh"
+    }
+  ],
+  "omitted_selected_files": [
+    {
+      "path": "logs/runs/20261113-main80-assets/model-range.lock",
+      "reason": "runtime_control_cache_or_platform_package"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/colorama-0.4.6-py2.py3-none-any.whl",
+      "reason": "runtime_control_cache_or_platform_package"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/lxml-5.3.0-cp310-cp310-manylinux_2_28_x86_64.whl",
+      "reason": "runtime_control_cache_or_platform_package"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/portalocker-2.10.1-py3-none-any.whl",
+      "reason": "runtime_control_cache_or_platform_package"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/sacrebleu-2.4.3-py3-none-any.whl",
+      "reason": "runtime_control_cache_or_platform_package"
+    },
+    {
+      "path": "logs/runs/20261113-main80-assets/scoring-wheels/tabulate-0.9.0-py3-none-any.whl",
+      "reason": "runtime_control_cache_or_platform_package"
+    }
+  ],
+  "excluded_roots": [
+    ".git",
+    ".codex",
+    ".agents",
+    ".aws",
+    ".runtime",
+    ".overlays",
+    "model weights and download partials",
+    "environment installers",
+    "docs/share original application",
+    "unrelated historical experiment runs"
+  ],
+  "integrity_policy": "file inventory, exact byte comparison, JSON structure and sample IDs; no file digest computation",
+  "counts": {
+    "logical_files": 507,
+    "verified_by_direct_comparison": 507,
+    "aliases": 150,
+    "multipart_files": 4,
+    "logical_bytes": 1448535828,
+    "stored_data_bytes": 1142970998
+  },
+  "transport": {
+    "repository": "https://github.com/SlveO/APE-Report.git",
+    "branch": "main",
+    "authorization_ref": "U_MAIN80_EXPORT",
+    "integrity_scope": "Git mandatory internal object/transport checks only; no additional experiment-file digests"
+  }
+}

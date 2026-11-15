@@ -1,0 +1,14 @@
+{
+  "pid": 29976,
+  "command": [
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-u",
+    "-m",
+    "main80.worker",
+    "--bundle",
+    "/home/shenxiaoyang/project/ape/output/runs/main80-20261114T041503/workers/015-doc2dial-ape_dynamic.bundle.json"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at": "2026-11-14T14:04:47.170245+00:00"
+}

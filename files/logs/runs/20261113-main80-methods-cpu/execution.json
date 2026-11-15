@@ -1,0 +1,28 @@
+{
+  "protocol": "ape-plan-exec/v1",
+  "task_id": "PREP-METHODS-CPU",
+  "plan_version": "v3.0",
+  "owner": "EXECUTOR",
+  "claimed_by": "/root/method_cpu",
+  "status": "SUBMITTED",
+  "authorization_ref": "U_MAIN80",
+  "claimed_at": "2026-11-13T15:50:45.227772+00:00",
+  "command": [
+    "bash",
+    "scripts/with_env.sh",
+    "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "-B",
+    "-m",
+    "main80.selftest",
+    "--suite",
+    "methods_cpu",
+    "--output",
+    "logs/runs/20261113-main80-methods-cpu/tests.txt"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "scope": "one finite CPU methods test; no GPU, network, install or source mutation",
+  "started_at": "2026-11-13T15:50:45.228487+00:00",
+  "ended_at": "2026-11-13T15:50:48.893307+00:00",
+  "exit_code": 0,
+  "delivery": "tests.txt, stdout.txt, stderr.txt, start.txt, end.txt, exit.txt and source snapshots; pending PLANNER review"
+}

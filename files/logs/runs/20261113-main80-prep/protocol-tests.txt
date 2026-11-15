@@ -1,0 +1,11 @@
+test_144_balanced_selection_and_validation_fallback (__main__.ProtocolTests) ... ok
+test_exact_construction_and_unreviewed_supplement (__main__.ProtocolTests) ... ok
+test_groups_and_duplicate_questions (__main__.ProtocolTests) ... ok
+test_scoring_id_alignment (__main__.ProtocolTests) ... ok
+test_torn_resume_and_failed_attempts (__main__.ProtocolTests) ... ok
+test_workspace_escape (__main__.ProtocolTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.143s
+
+OK

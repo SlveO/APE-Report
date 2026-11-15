@@ -1,0 +1,51 @@
+"""Finite CPU scoring validation, not an experiment or dependency mutation."""
+import importlib.metadata as md
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+import colorama
+import lxml.etree
+import numpy
+import portalocker
+import regex
+import sacrebleu
+import tabulate
+from sacrebleu.metrics import BLEU
+
+ROOT = Path(__file__).resolve().parents[2]
+OVERLAY = ROOT / '.overlays/main80-scoring'
+LOG = ROOT / 'logs/runs/20261113-main80-assets'
+MODULES = {'sacrebleu': sacrebleu, 'portalocker': portalocker, 'colorama': colorama, 'tabulate': tabulate, 'lxml': lxml.etree}
+EXPECTED = {'sacrebleu': '2.4.3', 'portalocker': '2.10.1', 'colorama': '0.4.6', 'tabulate': '0.9.0', 'lxml': '5.3.0'}
+
+
+def main():
+    versions = {}
+    for name, module in MODULES.items():
+        assert Path(module.__file__).is_relative_to(OVERLAY), (name, module.__file__)
+        assert md.version(name) == EXPECTED[name]
+        versions[name] = {'version': md.version(name), 'path': module.__file__}
+    exact = ['The cat is sitting on the mat near the window.', 'Today we will compare all methods using the same input.']
+    perfect = sacrebleu.corpus_bleu(exact, [exact])
+    assert abs(perfect.score - 100) < 1e-9
+    empty = sacrebleu.corpus_bleu(['', ''], [exact])
+    assert empty.score == 0
+    reversed_score = sacrebleu.corpus_bleu(exact, [list(reversed(exact))])
+    assert reversed_score.score < perfect.score
+    # Actual library behavior: accepts unequal lengths. Caller MUST validate IDs/counts.
+    unequal_score = sacrebleu.corpus_bleu(exact, [exact[:1]])
+    refs = [['The dog bit the man.', 'It was not unexpected.', 'The man bit him first.'], ['The dog had bit the man.', 'No one was surprised.', 'The man had bitten the dog.']]
+    hypotheses = ['The dog bit the man.', "It wasn't surprising.", 'The man had just bitten him.']
+    bleu = BLEU()
+    official = bleu.corpus_score(hypotheses, refs)
+    assert round(official.score, 2) == 48.53
+    assert abs(official.score - sacrebleu.corpus_bleu(hypotheses, refs).score) < 1e-12
+    assert lxml.etree.fromstring(b'<root>ok</root>').text == 'ok'
+    result = {'time': datetime.now(timezone.utc).isoformat(), 'authorization': 'U_MAIN80_SCORING', 'versions': versions, 'existing_dependencies': {'numpy': {'version': numpy.__version__, 'path': numpy.__file__}, 'regex': {'version': regex.__version__, 'path': regex.__file__}}, 'official_readme_example': {'source': 'https://github.com/mjpost/sacrebleu/blob/v2.4.3/README.md#using-sacrebleu-from-python', 'score': official.score, 'expected_rounded': 48.53, 'signature': str(bleu.get_signature())}, 'exact_match_corpus_bleu': perfect.score, 'empty_output_bleu': empty.score, 'reversed_reference_bleu': reversed_score.score, 'unequal_counts_behavior': {'rejected': False, 'score': unequal_score.score, 'required_caller_check': 'validate exact ID alignment and count before library call'}, 'lxml_native_parse': 'ok', 'status': 'SUBMITTED_to_PLANNER'}
+    (LOG / 'scoring-overlay-validation.json').write_text(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,171 @@
+{
+  "campaign": "main80-20261114T041503",
+  "state": "SUBMITTED",
+  "stage": "doc2dial",
+  "updated_at": "2026-11-14T15:43:21.550226+00:00",
+  "completed": 18116,
+  "planned": 18116,
+  "processed_including_failed": 18116,
+  "failed": 0,
+  "elapsed_seconds": 41295.74075460434,
+  "remaining_seconds": 246703.58435559273,
+  "eta_range": [
+    "2026-11-14T15:43:21.550219+00:00",
+    "2026-11-14T15:43:21.550219+00:00"
+  ],
+  "rates": [
+    {
+      "method": "ape",
+      "length_bucket": 4096,
+      "cache_mode": "cold",
+      "count": 4452,
+      "mean": 4.294533242091676,
+      "low": 0.37470807298086584,
+      "high": 8.740026965038851
+    },
+    {
+      "method": "ape",
+      "length_bucket": 4096,
+      "cache_mode": "hot",
+      "count": 986,
+      "mean": 5.836917738836829,
+      "low": 0.8460956399794668,
+      "high": 7.331569172907621
+    },
+    {
+      "method": "ape",
+      "length_bucket": 4096,
+      "cache_mode": "search",
+      "count": 2664,
+      "mean": 0.40446115447772535,
+      "low": 0.1046831808052957,
+      "high": 2.343852699967101
+    },
+    {
+      "method": "ape",
+      "length_bucket": 8192,
+      "cache_mode": "cold",
+      "count": 319,
+      "mean": 1.776485448565223,
+      "low": 0.7907681639771909,
+      "high": 7.753211685921997
+    },
+    {
+      "method": "ape",
+      "length_bucket": 8192,
+      "cache_mode": "hot",
+      "count": 14,
+      "mean": 6.568581427813375,
+      "low": 6.481361015001312,
+      "high": 6.695639621000737
+    },
+    {
+      "method": "ape",
+      "length_bucket": 8192,
+      "cache_mode": "search",
+      "count": 2576,
+      "mean": 0.48995682656335116,
+      "low": 0.10347834904678166,
+      "high": 3.7332218179944903
+    },
+    {
+      "method": "ape",
+      "length_bucket": 16384,
+      "cache_mode": "cold",
+      "count": 969,
+      "mean": 2.338717801282298,
+      "low": 1.4476707421708852,
+      "high": 4.729660392040387
+    },
+    {
+      "method": "ape",
+      "length_bucket": 16384,
+      "cache_mode": "search",
+      "count": 2424,
+      "mean": 0.6381680057785573,
+      "low": 0.12033843505196273,
+      "high": 4.988191129872575
+    },
+    {
+      "method": "pcw",
+      "length_bucket": 4096,
+      "cache_mode": "cold",
+      "count": 174,
+      "mean": 0.829199223916967,
+      "low": 0.27704230695962906,
+      "high": 2.569822932127863
+    },
+    {
+      "method": "pcw",
+      "length_bucket": 8192,
+      "cache_mode": "cold",
+      "count": 93,
+      "mean": 1.313423911417504,
+      "low": 0.7993754809722304,
+      "high": 2.4674776440951973
+    },
+    {
+      "method": "pcw",
+      "length_bucket": 16384,
+      "cache_mode": "cold",
+      "count": 333,
+      "mean": 2.1465316579122007,
+      "low": 1.485028879949823,
+      "high": 3.685803772881627
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 4096,
+      "cache_mode": "cold",
+      "count": 2167,
+      "mean": 2.532715898457881,
+      "low": 0.2809014110825956,
+      "high": 5.096702062059194
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 4096,
+      "cache_mode": "hot",
+      "count": 493,
+      "mean": 3.2411556437944062,
+      "low": 0.28855529287829995,
+      "high": 3.8366631611716002
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 8192,
+      "cache_mode": "cold",
+      "count": 100,
+      "mean": 1.6817127046408131,
+      "low": 0.8038277081213892,
+      "high": 5.07428348204121
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 8192,
+      "cache_mode": "hot",
+      "count": 7,
+      "mean": 3.9892993442980305,
+      "low": 3.960017414065078,
+      "high": 4.014441485051066
+    },
+    {
+      "method": "sequential",
+      "length_bucket": 16384,
+      "cache_mode": "cold",
+      "count": 333,
+      "mean": 2.336402594090884,
+      "low": 1.5790446158498526,
+      "high": 4.0985866989940405
+    }
+  ],
+  "current_job": null,
+  "notices": [],
+  "monitor_url": "http://127.0.0.1:42501/campaign/main80-20261114T041503/",
+  "budget_forecast_seconds": [
+    0.0,
+    0.0
+  ],
+  "forecast_complete": true,
+  "forecast_policy": "observed strata; cold upper bound for unseen search/hot only; incomplete forecast covers known strata only, unknown future costs remain unestimated; not a reliable ETA"
+}

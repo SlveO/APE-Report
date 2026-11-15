@@ -1,0 +1,12 @@
+{
+  "command": [
+    "bash",
+    "scripts/run_campaign.sh",
+    "start",
+    "--config",
+    "campaign.json"
+  ],
+  "cwd": "/home/shenxiaoyang/project/ape",
+  "started_at_utc": "2026-11-14T04:15:02.851570+00:00",
+  "started_at_beijing": "2026-11-14T12:15:02.851586+08:00"
+}

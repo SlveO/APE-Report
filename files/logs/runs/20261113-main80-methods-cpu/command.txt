@@ -1,0 +1,1 @@
+bash scripts/with_env.sh /home/shenxiaoyang/miniconda3/envs/ape/bin/python -B -m main80.selftest --suite methods_cpu --output logs/runs/20261113-main80-methods-cpu/tests.txt

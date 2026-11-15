@@ -1,0 +1,2 @@
+/home/shenxiaoyang/project/ape/.overlays/core-tf44/transformers/utils/hub.py:127: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(

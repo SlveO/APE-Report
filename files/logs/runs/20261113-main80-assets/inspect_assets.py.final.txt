@@ -1,0 +1,147 @@
+"""Payload structure inspection and selected extraction without file digests."""
+import argparse
+import io
+import json
+import struct
+import zlib
+from pathlib import Path
+from zipfile import ZipFile
+
+ROOT = Path(__file__).resolve().parents[2]
+RAW = ROOT / 'datasets/raw-main80'
+LOG = ROOT / 'logs/runs/20261113-main80-assets'
+
+
+def ungzip(source):
+    data = Path(source).read_bytes()
+    assert data[:3] == b'\x1f\x8b\x08'
+    flags, offset = data[3], 10
+    if flags & 4:
+        offset += 2 + int.from_bytes(data[offset:offset + 2], 'little')
+    for flag in (8, 16):
+        if flags & flag:
+            offset = data.index(b'\0', offset) + 1
+    if flags & 2:
+        offset += 2
+    # Decode DEFLATE stream directly: no optional file CRC validation.
+    return zlib.decompress(data[offset:-8], -15)
+
+
+def extract_tar_json(source):
+    data = ungzip(source)
+    offset = 0
+    result = []
+    while data[offset:offset + 512].strip(b'\0'):
+        header = data[offset:offset + 512]
+        name = header[:100].split(b'\0')[0].decode()
+        size_text = header[124:136].split(b'\0')[0].strip()
+        size = int(size_text or b'0', 8)
+        body = data[offset + 512:offset + 512 + size]
+        if name.endswith('.json') and ('qasper' in name):
+            target = RAW / 'origins' / Path(name).name
+            parsed = json.loads(body)
+            if not target.exists():
+                target.write_bytes(body)
+            result.append({'source': str(source.relative_to(ROOT)), 'member': name, 'target': str(target.relative_to(ROOT)), 'paper_count': len(parsed), 'first_paper_keys': list(next(iter(parsed.values())).keys())})
+        offset += 512 + ((size + 511) // 512) * 512
+    return result
+
+
+def extract_zip(source, names):
+    selected = []
+    with ZipFile(source) as archive, source.open('rb') as stream:
+        for info in archive.infolist():
+            if not any(info.filename.endswith(name) for name in names):
+                continue
+            # Locate compressed payload from local header, then decode raw DEFLATE.
+            stream.seek(info.header_offset)
+            header = stream.read(30)
+            assert header[:4] == b'PK\x03\x04'
+            nlen, xlen = struct.unpack('<HH', header[26:30])
+            stream.seek(nlen + xlen, 1)
+            compressed = stream.read(info.compress_size)
+            if info.compress_type == 8:
+                body = zlib.decompress(compressed, -15)
+            elif info.compress_type == 0:
+                body = compressed
+            else:
+                raise ValueError('unsupported compression')
+            assert len(body) == info.file_size
+            folder = 'longbench' if 'longbench' in source.parts else 'origins'
+            target = RAW / folder / Path(info.filename).name
+            if not target.exists():
+                target.write_bytes(body)
+            selected.append({'source': str(source.relative_to(ROOT)), 'member': info.filename, 'target': str(target.relative_to(ROOT)), 'bytes': len(body)})
+    return selected
+
+
+def inspect_data():
+    result = {'extracted': [], 'schemas': {}}
+    for source in (RAW / 'origins').glob('qasper-*.tgz'):
+        result['extracted'].extend(extract_tar_json(source))
+    source = RAW / 'longbench/data.zip'
+    if source.exists():
+        result['extracted'].extend(extract_zip(source, ['qasper.jsonl', 'hotpotqa.jsonl', 'musique.jsonl']))
+    source = RAW / 'origins/musique_v1.0.zip'
+    if source.exists():
+        result['extracted'].extend(extract_zip(source, ['musique_ans_v1.0_dev.jsonl']))
+    for path in (RAW / 'longbench').glob('*.jsonl'):
+        rows = [json.loads(line) for line in path.read_text().splitlines() if line]
+        ids = [row['_id'] for row in rows]
+        assert len(ids) == len(set(ids)) == 200
+        result['schemas'][str(path.relative_to(ROOT))] = {'count': len(rows), 'first_keys': list(rows[0]), 'first_id': ids[0], 'first_input': rows[0]['input']}
+    for path in (RAW / 'litm').glob('*.gz'):
+        rows = [json.loads(line) for line in ungzip(path).splitlines() if line]
+        result['schemas'][str(path.relative_to(ROOT))] = {'count': len(rows), 'first_keys': list(rows[0]), 'context_keys': list(rows[0]['ctxs'][0]), 'question': rows[0]['question']}
+    for path in (RAW / 'doc2dial').glob('*.json'):
+        d = json.loads(path.read_text())
+        result['schemas'][str(path.relative_to(ROOT))] = {'keys': list(d)}
+    target = LOG / 'data-structure.json'
+    target.write_text(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2))
+
+
+def inspect_model():
+    folder = ROOT / 'models/Llama-3.1-8B-Instruct'
+    index = json.loads((folder / 'model.safetensors.index.json').read_text())
+    weight_map = index['weight_map']
+    shards = sorted(set(weight_map.values()))
+    manifest = json.loads((LOG / 'model-manifest.json').read_text())
+    sizes = {r['Path']: r['Size'] for r in manifest['required_files']}
+    result = {'index_entries': len(weight_map), 'shards': [], 'required_files': []}
+    for row in manifest['required_files']:
+        path = folder / row['Path']
+        assert path.is_file() and path.stat().st_size == row['Size'], row['Path']
+        result['required_files'].append({'path': row['Path'], 'bytes': path.stat().st_size})
+    for shard in shards:
+        p = folder / shard
+        with p.open('rb') as stream:
+            header_length = int.from_bytes(stream.read(8), 'little')
+            assert 0 < header_length < sizes[shard] - 8
+            header = json.loads(stream.read(header_length))
+        tensor_keys = sorted(k for k in header if k != '__metadata__')
+        assert tensor_keys == sorted(k for k, v in weight_map.items() if v == shard)
+        offsets = []
+        for key in tensor_keys:
+            tensor = header[key]
+            start, end = tensor['data_offsets']
+            assert 0 <= start <= end <= p.stat().st_size - header_length - 8
+            count = 1
+            for dimension in tensor['shape']:
+                count *= dimension
+            widths = {'BF16': 2, 'F32': 4, 'F16': 2}
+            assert end - start == count * widths[tensor['dtype']]
+            offsets.append((start, end))
+        offsets.sort()
+        assert offsets[0][0] == 0 and offsets[-1][1] == p.stat().st_size - header_length - 8
+        assert all(a[1] == b[0] for a, b in zip(offsets, offsets[1:]))
+        result['shards'].append({'path': shard, 'tensor_count': len(tensor_keys), 'header_bytes': header_length, 'shape_offset_contiguity': True})
+    (LOG / 'model-structure.json').write_text(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == '__main__':
+    p = argparse.ArgumentParser()
+    p.add_argument('mode', choices=['data', 'model'])
+    args = p.parse_args()
+    globals()['inspect_' + args.mode]()

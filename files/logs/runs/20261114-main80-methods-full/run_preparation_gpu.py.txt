@@ -1,0 +1,45 @@
+"""EXECUTOR-only finite PREP task: four independent, strictly serial workers."""
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+from main80.common import ROOT, append_json, inside, now, read_json, write_json
+
+
+def main():
+    directory = inside('logs/runs/20261114-main80-methods-full')
+    directory.mkdir(parents=True, exist_ok=True)
+    if (directory / 'execution.json').exists():
+        raise ValueError('finite PREP task already attempted; inspect evidence before another task')
+    assets = read_json('logs/runs/20261113-main80-assets/execution.json')
+    if assets.get('status') != 'SUBMITTED':
+        raise ValueError('13-file asset structure verification has not been submitted')
+    write_json(directory / 'execution.json', {'role': 'EXECUTOR', 'task_id': 'PREP-METHODS-FULL', 'status': 'RUNNING',
+        'authorization_ref': 'U_MAIN80', 'started_at': now(), 'scope': '4 methods × 4 synthetic generations, ≤256 input / ≤8 output tokens each; no resource preflight'})
+    for source in [*Path('APE/main80').glob('*.py'), Path('APE/ape/ape_llama.py'), Path('scripts/with_env.sh')]:
+        destination = directory / 'code' / (str(source).replace('/', '__') + '.txt')
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(source.read_bytes())
+    for method in ('sequential', 'pcw', 'ape_default', 'ape_fixed'):
+        command = [sys.executable, '-B', '-u', '-m', 'main80.prep_gpu', '--method', method, '--output', str(directory / method)]
+        append_json(directory / 'commands.jsonl', {'command': command, 'cwd': str(ROOT), 'started_at': now()})
+        with (directory / f'{method}.stdout').open('xb') as out, (directory / f'{method}.stderr').open('xb') as err:
+            try:
+                completed = subprocess.run(command, cwd=ROOT, stdout=out, stderr=err, timeout=240)
+                code = completed.returncode
+            except subprocess.TimeoutExpired:
+                code = 124
+        append_json(directory / 'commands.jsonl', {'method': method, 'ended_at': now(), 'exit_code': code})
+        if code != 0:
+            write_json(directory / 'execution.json', {'role': 'EXECUTOR', 'status': 'SUBMITTED', 'ended_at': now(), 'outcome': 'FAILED', 'failed_method': method, 'exit_code': code, 'dependent_tasks_stopped': True})
+            raise SystemExit(code)
+    results = [read_json(directory / method / 'result.json') for method in ('sequential', 'pcw', 'ape_default', 'ape_fixed')]
+    assert all(r['common_content_token_ids'] == results[0]['common_content_token_ids'] for r in results)
+    write_json(directory / 'execution.json', {'role': 'EXECUTOR', 'status': 'SUBMITTED', 'ended_at': now(), 'outcome': 'PASS',
+        'methods': [r['method'] for r in results], 'common_content_ids_equal': True, 'full_model_generations': 16, 'requires_PLANNER_review': True})
+    print('PREP-METHODS-FULL SUBMITTED, four methods and sixteen short synthetic generations', flush=True)
+
+
+if __name__ == '__main__':
+    main()

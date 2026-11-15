@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/shenxiaoyang/miniconda3/envs/ape/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/shenxiaoyang/miniconda3/envs/ape/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/shenxiaoyang/project/ape/APE/main80/monitor.py", line 119, in <module>
+    main()
+  File "/home/shenxiaoyang/project/ape/APE/main80/monitor.py", line 115, in main
+    serve(args.directory, args.campaign)
+  File "/home/shenxiaoyang/project/ape/APE/main80/monitor.py", line 105, in serve
+    server = ThreadingHTTPServer(('127.0.0.1', port), Handler)
+  File "/home/shenxiaoyang/miniconda3/envs/ape/lib/python3.10/socketserver.py", line 448, in __init__
+    self.socket = socket.socket(self.address_family,
+  File "/home/shenxiaoyang/miniconda3/envs/ape/lib/python3.10/socket.py", line 232, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+PermissionError: [Errno 1] Operation not permitted

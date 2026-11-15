@@ -1,0 +1,1106 @@
+{
+  "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+  "interpreter": "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+  "packages": [
+    {
+      "authorization": "U_MAIN80_SCORING",
+      "package": "sacrebleu",
+      "version": "2.4.3",
+      "filename": "sacrebleu-2.4.3-py3-none-any.whl",
+      "source": "https://files.pythonhosted.org/packages/15/d8/e51d35bc863caa19ddeae48dfb890581a19326973ad1c9fa5dcfc63310f7/sacrebleu-2.4.3-py3-none-any.whl",
+      "format": "precompiled_wheel",
+      "compatible_tags": [
+        "py3-none-any"
+      ],
+      "expected_bytes": 103964,
+      "license": "Apache License Version 2.0, January 2004 http://www.apache.org/licenses/  TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION  1. Definitions.  \"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.  \"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.  \"Legal Entity\" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.  \"You\" (or \"Your\") shall mean an individual or Legal Entity exercising permissions granted by this License.  \"Source\" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.  \"Object\" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.  \"Work\" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).  \"Derivative Works\" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.  \"Contribution\" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, \"submitted\" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as \"Not a Contribution.\"  \"Contributor\" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.  2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.  3. Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.  4. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:  (a) You must give any other recipients of the Work or Derivative Works a copy of this License; and  (b) You must cause any modified files to carry prominent notices stating that You changed the files; and  (c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and  (d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.  You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.  5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.  6. Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.  7. Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.  8. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.  9. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.  END OF TERMS AND CONDITIONS  APPENDIX: How to apply the Apache License to your work.  To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!)  The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.  Copyright [yyyy] [name of copyright owner]  Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at  http://www.apache.org/licenses/LICENSE-2.0  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. ",
+      "target": ".overlays/main80-scoring",
+      "failure_policy": "preserve_wheel_and_partial_no_external_install",
+      "rollback": "remove overlay from task PYTHONPATH, retain directory",
+      "files": [
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/__init__.py",
+          "bytes": 1772
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/__main__.py",
+          "bytes": 1062
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/compat.py",
+          "bytes": 9100
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/py.typed",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/sacrebleu.py",
+          "bytes": 28462
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/significance.py",
+          "bytes": 18329
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/utils.py",
+          "bytes": 24646
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/version.py",
+          "bytes": 411
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/__init__.py",
+          "bytes": 106142
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/__main__.py",
+          "bytes": 1250
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/base.py",
+          "bytes": 6724
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/fake_sgml.py",
+          "bytes": 4098
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/iwslt_xml.py",
+          "bytes": 210
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/plain_text.py",
+          "bytes": 1237
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/tsv.py",
+          "bytes": 2179
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/dataset/wmt_xml.py",
+          "bytes": 7914
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/__init__.py",
+          "bytes": 260
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/base.py",
+          "bytes": 16646
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/bleu.py",
+          "bytes": 17485
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/chrf.py",
+          "bytes": 10674
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/helpers.py",
+          "bytes": 2339
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/lib_ter.py",
+          "bytes": 16477
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/metrics/ter.py",
+          "bytes": 7769
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/__init__.py",
+          "bytes": 89
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_13a.py",
+          "bytes": 985
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_base.py",
+          "bytes": 461
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_char.py",
+          "bytes": 458
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_intl.py",
+          "bytes": 1869
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_ja_mecab.py",
+          "bytes": 1420
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_ko_mecab.py",
+          "bytes": 1455
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_none.py",
+          "bytes": 236
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_re.py",
+          "bytes": 1271
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_spm.py",
+          "bytes": 2096
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_ter.py",
+          "bytes": 6219
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu/tokenizers/tokenizer_zh.py",
+          "bytes": 4724
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu-2.4.3.dist-info/LICENSE.txt",
+          "bytes": 11357
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu-2.4.3.dist-info/METADATA",
+          "bytes": 51816
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu-2.4.3.dist-info/WHEEL",
+          "bytes": 91
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu-2.4.3.dist-info/entry_points.txt",
+          "bytes": 55
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu-2.4.3.dist-info/top_level.txt",
+          "bytes": 10
+        },
+        {
+          "path": ".overlays/main80-scoring/sacrebleu-2.4.3.dist-info/RECORD",
+          "bytes": 3516
+        }
+      ]
+    },
+    {
+      "authorization": "U_MAIN80_SCORING",
+      "package": "portalocker",
+      "version": "2.10.1",
+      "filename": "portalocker-2.10.1-py3-none-any.whl",
+      "source": "https://files.pythonhosted.org/packages/9b/fb/a70a4214956182e0d7a9099ab17d50bfcba1056188e9b14f35b9e2b62a0d/portalocker-2.10.1-py3-none-any.whl",
+      "format": "precompiled_wheel",
+      "compatible_tags": [
+        "py3-none-any"
+      ],
+      "expected_bytes": 18423,
+      "license": "BSD-3-Clause",
+      "target": ".overlays/main80-scoring",
+      "failure_policy": "preserve_wheel_and_partial_no_external_install",
+      "rollback": "remove overlay from task PYTHONPATH, retain directory",
+      "files": [
+        {
+          "path": ".overlays/main80-scoring/portalocker/__about__.py",
+          "bytes": 231
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/__init__.py",
+          "bytes": 2056
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/__main__.py",
+          "bytes": 3331
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/constants.py",
+          "bytes": 1131
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/exceptions.py",
+          "bytes": 469
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/portalocker.py",
+          "bytes": 5529
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/py.typed",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/redis.py",
+          "bytes": 8379
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker/utils.py",
+          "bytes": 17837
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker-2.10.1.dist-info/LICENSE",
+          "bytes": 1460
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker-2.10.1.dist-info/METADATA",
+          "bytes": 8526
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker-2.10.1.dist-info/WHEEL",
+          "bytes": 91
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker-2.10.1.dist-info/top_level.txt",
+          "bytes": 12
+        },
+        {
+          "path": ".overlays/main80-scoring/portalocker-2.10.1.dist-info/RECORD",
+          "bytes": 1125
+        }
+      ]
+    },
+    {
+      "authorization": "U_MAIN80_SCORING",
+      "package": "colorama",
+      "version": "0.4.6",
+      "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+      "source": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+      "format": "precompiled_wheel",
+      "compatible_tags": [
+        "py3-none-any"
+      ],
+      "expected_bytes": 25335,
+      "license": "",
+      "target": ".overlays/main80-scoring",
+      "failure_policy": "preserve_wheel_and_partial_no_external_install",
+      "rollback": "remove overlay from task PYTHONPATH, retain directory",
+      "files": [
+        {
+          "path": ".overlays/main80-scoring/colorama/__init__.py",
+          "bytes": 266
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/ansi.py",
+          "bytes": 2522
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/ansitowin32.py",
+          "bytes": 11128
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/initialise.py",
+          "bytes": 3325
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/win32.py",
+          "bytes": 6181
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/winterm.py",
+          "bytes": 7134
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/__init__.py",
+          "bytes": 75
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/ansi_test.py",
+          "bytes": 2839
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/ansitowin32_test.py",
+          "bytes": 10678
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/initialise_test.py",
+          "bytes": 6741
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/isatty_test.py",
+          "bytes": 1866
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/utils.py",
+          "bytes": 1079
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama/tests/winterm_test.py",
+          "bytes": 3709
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama-0.4.6.dist-info/METADATA",
+          "bytes": 17158
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama-0.4.6.dist-info/WHEEL",
+          "bytes": 105
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama-0.4.6.dist-info/licenses/LICENSE.txt",
+          "bytes": 1491
+        },
+        {
+          "path": ".overlays/main80-scoring/colorama-0.4.6.dist-info/RECORD",
+          "bytes": 1372
+        }
+      ]
+    },
+    {
+      "authorization": "U_MAIN80_SCORING",
+      "package": "tabulate",
+      "version": "0.9.0",
+      "filename": "tabulate-0.9.0-py3-none-any.whl",
+      "source": "https://files.pythonhosted.org/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl",
+      "format": "precompiled_wheel",
+      "compatible_tags": [
+        "py3-none-any"
+      ],
+      "expected_bytes": 35252,
+      "license": "MIT",
+      "target": ".overlays/main80-scoring",
+      "failure_policy": "preserve_wheel_and_partial_no_external_install",
+      "rollback": "remove overlay from task PYTHONPATH, retain directory",
+      "files": [
+        {
+          "path": ".overlays/main80-scoring/tabulate/__init__.py",
+          "bytes": 95290
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate/version.py",
+          "bytes": 181
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate-0.9.0.dist-info/LICENSE",
+          "bytes": 1080
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate-0.9.0.dist-info/METADATA",
+          "bytes": 34132
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate-0.9.0.dist-info/WHEEL",
+          "bytes": 92
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate-0.9.0.dist-info/entry_points.txt",
+          "bytes": 44
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate-0.9.0.dist-info/top_level.txt",
+          "bytes": 9
+        },
+        {
+          "path": ".overlays/main80-scoring/tabulate-0.9.0.dist-info/RECORD",
+          "bytes": 640
+        }
+      ]
+    },
+    {
+      "authorization": "U_MAIN80_SCORING",
+      "package": "lxml",
+      "version": "5.3.0",
+      "filename": "lxml-5.3.0-cp310-cp310-manylinux_2_28_x86_64.whl",
+      "source": "https://files.pythonhosted.org/packages/05/9e/87492d03ff604fbf656ed2bf3e2e8d28f5d58ea1f00ff27ac27b06509079/lxml-5.3.0-cp310-cp310-manylinux_2_28_x86_64.whl",
+      "format": "precompiled_wheel",
+      "compatible_tags": [
+        "cp310-cp310-manylinux_2_28_x86_64"
+      ],
+      "expected_bytes": 5029973,
+      "license": "BSD-3-Clause",
+      "target": ".overlays/main80-scoring",
+      "failure_policy": "preserve_wheel_and_partial_no_external_install",
+      "rollback": "remove overlay from task PYTHONPATH, retain directory",
+      "files": [
+        {
+          "path": ".overlays/main80-scoring/lxml/proxy.pxi",
+          "bytes": 23697
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/apihelpers.pxi",
+          "bytes": 63610
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/parser.pxi",
+          "bytes": 82040
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/cssselect.py",
+          "bytes": 3306
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/ElementInclude.py",
+          "bytes": 8560
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/etree.pyx",
+          "bytes": 134462
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/serializer.pxi",
+          "bytes": 65753
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xpath.pxi",
+          "bytes": 19132
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/public-api.pxi",
+          "bytes": 6666
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xmlerror.pxi",
+          "bytes": 49854
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/lxml.etree_api.h",
+          "bytes": 17068
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/builder.py",
+          "bytes": 8100
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/builder.cpython-310-x86_64-linux-gnu.so",
+          "bytes": 112416
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/parsertarget.pxi",
+          "bytes": 6326
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/readonlytree.pxi",
+          "bytes": 18976
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/sax.cpython-310-x86_64-linux-gnu.so",
+          "bytes": 186008
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/extensions.pxi",
+          "bytes": 32088
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/classlookup.pxi",
+          "bytes": 22435
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/sax.py",
+          "bytes": 9303
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/__init__.py",
+          "bytes": 574
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xslt.pxi",
+          "bytes": 36023
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/objectify.pyx",
+          "bytes": 75735
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/lxml.etree.h",
+          "bytes": 9912
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/etree.cpython-310-x86_64-linux-gnu.so",
+          "bytes": 5349832
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/etree.h",
+          "bytes": 9912
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/pyclasslookup.py",
+          "bytes": 92
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xinclude.pxi",
+          "bytes": 2456
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/relaxng.pxi",
+          "bytes": 6339
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/doctestcompare.py",
+          "bytes": 17731
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/schematron.pxi",
+          "bytes": 5908
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/debug.pxi",
+          "bytes": 3282
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/objectpath.pxi",
+          "bytes": 11450
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xsltext.pxi",
+          "bytes": 11088
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/_elementpath.cpython-310-x86_64-linux-gnu.so",
+          "bytes": 209088
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/usedoctest.py",
+          "bytes": 230
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/_elementpath.py",
+          "bytes": 10888
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/cleanup.pxi",
+          "bytes": 8454
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xmlid.pxi",
+          "bytes": 6073
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/dtd.pxi",
+          "bytes": 15228
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/iterparse.pxi",
+          "bytes": 16527
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/xmlschema.pxi",
+          "bytes": 8490
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/saxparser.pxi",
+          "bytes": 33322
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/nsclasses.pxi",
+          "bytes": 9129
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/docloader.pxi",
+          "bytes": 5772
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/objectify.cpython-310-x86_64-linux-gnu.so",
+          "bytes": 3061224
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/etree_api.h",
+          "bytes": 17063
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/config.pxd",
+          "bytes": 96
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/etree_defs.h",
+          "bytes": 14245
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/relaxng.pxd",
+          "bytes": 2615
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/xpath.pxd",
+          "bytes": 5603
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/lxml-version.h",
+          "bytes": 71
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/dtdvalid.pxd",
+          "bytes": 689
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/xmlerror.pxd",
+          "bytes": 58016
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/__init__.pxd",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/uri.pxd",
+          "bytes": 145
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/__init__.py",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/htmlparser.pxd",
+          "bytes": 2802
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/schematron.pxd",
+          "bytes": 1604
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/xslt.pxd",
+          "bytes": 8241
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/tree.pxd",
+          "bytes": 20391
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/etreepublic.pxd",
+          "bytes": 10184
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/c14n.pxd",
+          "bytes": 1110
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/xinclude.pxd",
+          "bytes": 804
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/xmlschema.pxd",
+          "bytes": 1702
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/xmlparser.pxd",
+          "bytes": 11434
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/parserInternals.h",
+          "bytes": 16604
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/catalog.h",
+          "bytes": 4618
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/globals.h",
+          "bytes": 890
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlreader.h",
+          "bytes": 12114
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/chvalid.h",
+          "bytes": 5087
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/SAX.h",
+          "bytes": 4418
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xlink.h",
+          "bytes": 5002
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlmemory.h",
+          "bytes": 6116
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlexports.h",
+          "bytes": 992
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/nanohttp.h",
+          "bytes": 1869
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/threads.h",
+          "bytes": 1730
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlversion.h",
+          "bytes": 9205
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/uri.h",
+          "bytes": 2568
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/SAX2.h",
+          "bytes": 4430
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlregexp.h",
+          "bytes": 5149
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xpath.h",
+          "bytes": 16442
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/encoding.h",
+          "bytes": 8109
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlsave.h",
+          "bytes": 2469
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/schematron.h",
+          "bytes": 4255
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlmodule.h",
+          "bytes": 1138
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/list.h",
+          "bytes": 3140
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/entities.h",
+          "bytes": 4659
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlstring.h",
+          "bytes": 5271
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlunicode.h",
+          "bytes": 8665
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/schemasInternals.h",
+          "bytes": 26233
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/tree.h",
+          "bytes": 38353
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/__init__.py",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/c14n.h",
+          "bytes": 3021
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/dict.h",
+          "bytes": 1770
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xpathInternals.h",
+          "bytes": 18419
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlwriter.h",
+          "bytes": 20625
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlschemastypes.h",
+          "bytes": 4583
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/parser.h",
+          "bytes": 44395
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/debugXML.h",
+          "bytes": 4928
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/HTMLparser.h",
+          "bytes": 10008
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/valid.h",
+          "bytes": 12834
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlIO.h",
+          "bytes": 12253
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/relaxng.h",
+          "bytes": 5830
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlautomata.h",
+          "bytes": 3787
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/HTMLtree.h",
+          "bytes": 3502
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/hash.h",
+          "bytes": 6310
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlschemas.h",
+          "bytes": 6902
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xpointer.h",
+          "bytes": 3647
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xinclude.h",
+          "bytes": 2887
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/xmlerror.h",
+          "bytes": 37295
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxml/nanoftp.h",
+          "bytes": 4013
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/extlibs/zconf.h",
+          "bytes": 16464
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/extlibs/libcharset.h",
+          "bytes": 1510
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/extlibs/__init__.py",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/extlibs/localcharset.h",
+          "bytes": 6338
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/extlibs/zlib.h",
+          "bytes": 96829
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libexslt/exslt.h",
+          "bytes": 3114
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libexslt/__init__.py",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libexslt/exsltexports.h",
+          "bytes": 1077
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libexslt/exsltconfig.h",
+          "bytes": 1172
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/extra.h",
+          "bytes": 1640
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/extensions.h",
+          "bytes": 6899
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/xsltconfig.h",
+          "bytes": 2956
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/functions.h",
+          "bytes": 1972
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/pattern.h",
+          "bytes": 2110
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/templates.h",
+          "bytes": 2268
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/xsltInternals.h",
+          "bytes": 57949
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/numbersInternals.h",
+          "bytes": 2019
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/keys.h",
+          "bytes": 1155
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/xslt.h",
+          "bytes": 1964
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/__init__.py",
+          "bytes": 0
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/attributes.h",
+          "bytes": 957
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/xsltexports.h",
+          "bytes": 1124
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/transform.h",
+          "bytes": 6311
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/variables.h",
+          "bytes": 3143
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/namespaces.h",
+          "bytes": 1666
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/imports.h",
+          "bytes": 1840
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/preproc.h",
+          "bytes": 896
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/documents.h",
+          "bytes": 2704
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/xsltutils.h",
+          "bytes": 9085
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/security.h",
+          "bytes": 2652
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/includes/libxslt/xsltlocale.h",
+          "bytes": 942
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/__init__.py",
+          "bytes": 13274
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl",
+          "bytes": 3172
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl",
+          "bytes": 4563
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl",
+          "bytes": 71764
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl",
+          "bytes": 2015
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl",
+          "bytes": 11703
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl",
+          "bytes": 20382
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl",
+          "bytes": 39957
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt",
+          "bytes": 3310
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/isoschematron/resources/rng/iso-schematron.rng",
+          "bytes": 18337
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/ElementSoup.py",
+          "bytes": 320
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/diff.cpython-310-x86_64-linux-gnu.so",
+          "bytes": 376960
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/builder.py",
+          "bytes": 4492
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/soupparser.py",
+          "bytes": 10197
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/_html5builder.py",
+          "bytes": 3230
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/formfill.py",
+          "bytes": 9681
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/__init__.py",
+          "bytes": 64302
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/clean.py",
+          "bytes": 503
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/defs.py",
+          "bytes": 4236
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/html5parser.py",
+          "bytes": 8634
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/_diffcommand.py",
+          "bytes": 2081
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/usedoctest.py",
+          "bytes": 249
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/_setmixin.py",
+          "bytes": 1188
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml/html/diff.py",
+          "bytes": 30393
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml-5.3.0.dist-info/RECORD",
+          "bytes": 14938
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml-5.3.0.dist-info/WHEEL",
+          "bytes": 113
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml-5.3.0.dist-info/LICENSES.txt",
+          "bytes": 1514
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml-5.3.0.dist-info/top_level.txt",
+          "bytes": 5
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml-5.3.0.dist-info/LICENSE.txt",
+          "bytes": 1488
+        },
+        {
+          "path": ".overlays/main80-scoring/lxml-5.3.0.dist-info/METADATA",
+          "bytes": 3785
+        }
+      ]
+    }
+  ],
+  "no_digest_calculation": true,
+  "upstream_RECORD_preserved_without_recalculation": true
+}

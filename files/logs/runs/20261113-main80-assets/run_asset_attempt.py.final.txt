@@ -1,0 +1,55 @@
+"""Record an authorized resume attempt, then finalize only after its transfer succeeds."""
+import argparse
+import json
+import os
+import re
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+LOG = ROOT / 'logs/runs/20261113-main80-assets'
+
+
+def now():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def record(value, path):
+    with path.open('a') as f:
+        f.write(json.dumps(value) + '\n')
+        f.flush()
+        os.fsync(f.fileno())
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument('--attempt-id', required=True)
+    args = p.parse_args()
+    assert re.fullmatch(r'[A-Za-z0-9_-]+', args.attempt_id)
+    attempt_record = LOG / (args.attempt_id + '.commands.jsonl')
+    if attempt_record.exists():
+        raise SystemExit('attempt id already has records; retain it and choose a new id')
+    commands = [
+        [sys.executable, '-B', '-u', 'scripts/main80-assets/fetch_model_ranges.py', '--attempt-id', args.attempt_id],
+        [sys.executable, '-B', '-u', 'scripts/main80-assets/finalize_assets.py', '--transfer-attempt-id', args.attempt_id],
+    ]
+    execution_path = LOG / 'execution.json'
+    execution = json.loads(execution_path.read_text())
+    execution['status'] = 'RUNNING'
+    execution.setdefault('continuations', []).append({'attempt_id': args.attempt_id, 'started_at': now(), 'authorization_ref': 'U_MAIN80_user_resume_20261114', 'commands': commands, 'previous_failures_preserved': True})
+    execution_path.write_text(json.dumps(execution, indent=2))
+    for ordinal, command in enumerate(commands):
+        record({'event': 'start', 'argv': command, 'cwd': str(ROOT), 'at': now()}, attempt_record)
+        with (LOG / f'{args.attempt_id}.{ordinal}.stdout').open('xb') as stdout, (LOG / f'{args.attempt_id}.{ordinal}.stderr').open('xb') as stderr:
+            completed = subprocess.run(command, cwd=ROOT, stdout=stdout, stderr=stderr)
+        record({'event': 'end', 'argv': command, 'exit_code': completed.returncode, 'at': now()}, attempt_record)
+        if completed.returncode:
+            print(f'{args.attempt_id} failed in step {ordinal}, evidence retained', flush=True)
+            raise SystemExit(completed.returncode)
+    print(f'{args.attempt_id} SUBMITTED', flush=True)
+
+
+if __name__ == '__main__':
+    main()

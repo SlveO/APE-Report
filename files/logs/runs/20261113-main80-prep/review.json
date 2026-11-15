@@ -1,0 +1,303 @@
+{
+  "protocol": "ape-plan-exec/v1",
+  "task_id": "PREP",
+  "plan_version": "v3.0",
+  "role": "PLANNER",
+  "status": "ACCEPTED",
+  "at": "2026-11-14T04:06:41.779729+00:00",
+  "checks": {
+    "data": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261113-main80-prep/data-validation.json",
+        "datasets/frozen-main80/nested-coverage.json"
+      ]
+    },
+    "methods_cpu": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261113-main80-methods-cpu/tests.txt",
+        "logs/runs/20261113-main80-methods-cpu/execution.json"
+      ]
+    },
+    "methods_full_model": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261114-main80-methods-full/delivery.md",
+        "logs/runs/20261114-main80-methods-full/execution.json"
+      ]
+    },
+    "cache_generation": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261114-main80-methods-full/ape_fixed/result.json",
+        "logs/runs/20261114-main80-protocol-tests-r3/stdout"
+      ]
+    },
+    "recovery": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261114-main80-protocol-tests-r3/stdout"
+      ]
+    },
+    "background": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261113-main80-prep/background-test-latest.json",
+        "logs/runs/20261113-main80-prep/background-20261114T033213/browser-seen.jsonl"
+      ]
+    },
+    "scope": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261113-main80-prep/scope-validation.json",
+        "logs/runs/20261113-main80-prep/cleanup-manifest.json"
+      ]
+    },
+    "scoring": {
+      "status": "PASS",
+      "evidence": [
+        "logs/runs/20261113-main80-assets/scoring-overlay-validation.json",
+        "logs/runs/20261114-main80-protocol-tests-r3/stdout"
+      ]
+    }
+  },
+  "frozen_inputs": [
+    {
+      "path": "APE/main80/__init__.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/__init__.py"
+    },
+    {
+      "path": "APE/main80/campaign.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/campaign.py"
+    },
+    {
+      "path": "APE/main80/common.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/common.py"
+    },
+    {
+      "path": "APE/main80/data.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/data.py"
+    },
+    {
+      "path": "APE/main80/diagnostics.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/diagnostics.py"
+    },
+    {
+      "path": "APE/main80/freeze.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/freeze.py"
+    },
+    {
+      "path": "APE/main80/jobs.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/jobs.py"
+    },
+    {
+      "path": "APE/main80/methods.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/methods.py"
+    },
+    {
+      "path": "APE/main80/metrics.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/metrics.py"
+    },
+    {
+      "path": "APE/main80/monitor.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/monitor.py"
+    },
+    {
+      "path": "APE/main80/plots.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/plots.py"
+    },
+    {
+      "path": "APE/main80/prep_gpu.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/prep_gpu.py"
+    },
+    {
+      "path": "APE/main80/report.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/report.py"
+    },
+    {
+      "path": "APE/main80/rules.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/rules.py"
+    },
+    {
+      "path": "APE/main80/selftest.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/selftest.py"
+    },
+    {
+      "path": "APE/main80/validate_data.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/validate_data.py"
+    },
+    {
+      "path": "APE/main80/worker.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/main80/worker.py"
+    },
+    {
+      "path": "APE/ape/ape_llama.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/ape/ape_llama.py"
+    },
+    {
+      "path": "APE/ape/__init__.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/ape/__init__.py"
+    },
+    {
+      "path": "scripts/with_env.sh",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/with_env.sh"
+    },
+    {
+      "path": "scripts/run_campaign.sh",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/run_campaign.sh"
+    },
+    {
+      "path": "datasets/frozen-main80/frozen.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/frozen.json"
+    },
+    {
+      "path": "datasets/frozen-main80/longbench.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/longbench.json"
+    },
+    {
+      "path": "datasets/frozen-main80/development.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/development.json"
+    },
+    {
+      "path": "datasets/frozen-main80/litm.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/litm.json"
+    },
+    {
+      "path": "datasets/frozen-main80/doc2dial.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/doc2dial.json"
+    },
+    {
+      "path": "datasets/frozen-main80/applicability.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/applicability.json"
+    },
+    {
+      "path": "datasets/frozen-main80/split-report.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/split-report.json"
+    },
+    {
+      "path": "datasets/frozen-main80/nested-coverage.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/frozen-main80/nested-coverage.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/config.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/config.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/generation_config.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/generation_config.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/tokenizer.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/tokenizer_config.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/tokenizer_config.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/special_tokens_map.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/special_tokens_map.json"
+    },
+    {
+      "path": "models/Llama-3.1-8B-Instruct/model.safetensors.index.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/models/Llama-3.1-8B-Instruct/model.safetensors.index.json"
+    },
+    {
+      "path": "campaign.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/campaign.json"
+    },
+    {
+      "path": "data_sources.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/data_sources.json"
+    },
+    {
+      "path": "scripts/observe_campaign.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/scripts/observe_campaign.py"
+    },
+    {
+      "path": "APE/experiments/Longbench/pred_parallel9.py",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/APE/experiments/Longbench/pred_parallel9.py"
+    },
+    {
+      "path": "datasets/prepared-main80/supplement-reviews.json",
+      "accepted_copy": "logs/runs/20261113-main80-prep/accepted-inputs/datasets/prepared-main80/supplement-reviews.json"
+    }
+  ],
+  "runtime_versions": {
+    "torch": "2.6.0",
+    "transformers": "4.44.2",
+    "tokenizers": "0.19.1",
+    "flash-attn": "2.7.4.post1",
+    "numpy": "1.26.4",
+    "regex": "2026.3.32",
+    "sacrebleu": "2.4.3",
+    "portalocker": "2.10.1",
+    "colorama": "0.4.6",
+    "tabulate": "0.9.0",
+    "lxml": "5.3.0",
+    "safetensors": "0.7.0"
+  },
+  "model_required_files": [
+    {
+      "path": "LICENSE",
+      "bytes": 7627
+    },
+    {
+      "path": "README.md",
+      "bytes": 44044
+    },
+    {
+      "path": "USE_POLICY.md",
+      "bytes": 4691
+    },
+    {
+      "path": "config.json",
+      "bytes": 855
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 184
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 23950
+    },
+    {
+      "path": "special_tokens_map.json",
+      "bytes": 296
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 9085657
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 55351
+    },
+    {
+      "path": "model-00001-of-00004.safetensors",
+      "bytes": 4976698672
+    },
+    {
+      "path": "model-00002-of-00004.safetensors",
+      "bytes": 4999802720
+    },
+    {
+      "path": "model-00003-of-00004.safetensors",
+      "bytes": 4915916176
+    },
+    {
+      "path": "model-00004-of-00004.safetensors",
+      "bytes": 1168138808
+    }
+  ],
+  "limits": [
+    "Functional short checks do not prove benchmark gains. APE answered the changed synthetic green-river query incorrectly; original output retained.",
+    "18 of 450 development length constructions are inapplicable; all allowed nested levels still preserve three datasets and144 configurations.",
+    "PCW GPU single-window comparison uses the predeclared BF16 numerical tolerance and matching argmax, not bit identity."
+  ],
+  "formal_campaign_started": false,
+  "authorization_ref": "U_MAIN80",
+  "dependency_authorization_ref": "U_MAIN80_SCORING"
+}
