@@ -1,0 +1,7 @@
+﻿group,n_pairs,denominator,delta_f1_pp_pooled,mean_fixed_output_tokens,mean_dynamic_output_tokens,mean_total_delta_s,mean_ttft_delta_s,unit
+all510,510,510,-0.28319001353772816,10.815686274509805,11.229411764705882,0.010902063103904035,-0.0023322518476668525,paired IDs; pooled descriptive means; F1pp/seconds/tokens
+same_tokens,393,510,0.0,7.717557251908397,7.717557251908397,-0.006102852561835759,-0.002252534916387449,paired IDs; pooled descriptive means; F1pp/seconds/tokens
+different_tokens,117,510,-1.2344180077285583,21.22222222222222,23.025641025641026,0.0680211388016454,-0.00260001897581049,paired IDs; pooled descriptive means; F1pp/seconds/tokens
+dynamic_longer,67,510,-0.600939732550256,19.01492537313433,28.55223880597015,0.4647894519860787,-0.0025774931861782696,paired IDs; pooled descriptive means; F1pp/seconds/tokens
+dynamic_shorter,40,510,-2.102890891115753,25.7,15.0,-0.5747902514238377,-0.002873744169482961,paired IDs; pooled descriptive means; F1pp/seconds/tokens
+equal_length_different_tokens,10,510,-2.0048309178743966,18.1,18.1,-0.019080998632125555,-0.0016560409916564823,paired IDs; pooled descriptive means; F1pp/seconds/tokens

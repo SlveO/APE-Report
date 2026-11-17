@@ -1,0 +1,7 @@
+﻿pair_id,dataset,sample_id,L,N,common_step_pairs,same_history_step_pairs,diverged_history_step_pairs,first_diverged_step,default_unpaired_late_steps,best_unpaired_late_steps,unit
+0,qasper,qasper:5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816,4096,4,15,5,10,5,1,0,paired forward steps including step0; compare output_token_ids[:step]
+1,qasper,qasper:5f00d4f6e62f4b99484eb78491f803f8143cc1b13ad33816,16384,16,4,1,3,1,0,14,paired forward steps including step0; compare output_token_ids[:step]
+2,hotpotqa,hotpotqa:6320310adc4a826b1bb240c63ac1735b7b29e93a59782364,4096,4,2,2,0,,0,0,paired forward steps including step0; compare output_token_ids[:step]
+3,hotpotqa,hotpotqa:6320310adc4a826b1bb240c63ac1735b7b29e93a59782364,16384,16,2,2,0,,0,0,paired forward steps including step0; compare output_token_ids[:step]
+4,musique,musique:a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17,4096,4,4,4,0,,0,0,paired forward steps including step0; compare output_token_ids[:step]
+5,musique,musique:a3ba409a8a3c8bad40a1fa415b981a8227c7d21936a06f17,16384,16,4,4,0,,0,0,paired forward steps including step0; compare output_token_ids[:step]

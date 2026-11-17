@@ -1,0 +1,8 @@
+﻿priority,experiment,existing_question,controlled_comparison,affected_conclusion,prerequisite,evidence_stages,execution_status
+P0-1,修正开发证据构造及候选验证,54实际构造/1605生成受审核证据范围删除影响;完整筛选改变探索4格与验证1格,同题同L/N/T/S原/修正输入;修正探索后再提名验证;长度最小12生成,参数排名、固定/动态规则、长度迁移,CPU offset及构造修复先行;新候选确定后列任务,01_audit;02_parameter_exploration;03_validation_rule;04_length_check,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION
+P0-2,自然实际N开发及新增独立测试,"正式LongBench510均N1–3,LITM全N1,Doc2Dial493/500 N1",7500上限自然N分层搜索验证;强制N同token机制实验另列;新规则冻结后新资料隔离测试,动态规则在实际分布的质量收益,修正开发构造;现有测试结果仅作旧规则结果,04_length_check;06_longbench_final;07_litm;08_doc2dial,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION
+P1-1,停止及输出长度控制,"LITM1465 cap中1391已换行;Doc2Dial cap70%–76.2%,生成约参考5.6倍","LITM首换行停止测时,已换行首行EM现有答案已确定;未换行完整配对增上限;Doc2Dial共用简洁模板对照","冗长/截断的质量及时间贡献,方法排序",冻结开发样本;记录首换行/逐token时标,07_litm;08_doc2dial,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION
+P1-2,交错重复计时及路径拆分,同输出APE仍慢;每方法仅连续worker;动态固定差达微秒/毫秒,同输入同输出子集随机交错多轮;拆prepare/prefill/query/decode/选参;冷热独立,APE开销来源及动态效率微小差异,固定ID和缓存条件;下一轮同时记录实际GPU信息,01_longbench_baseline;06_longbench_final;07_litm;08_doc2dial,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION
+P2-1,不同轮次连续热复用,"现有仅同目标立即重提交,热命中与重新生成已验证",相同资料按原对话更新目标轮次;每轮cold重建vs仅资料KV常驻,连续应用缓存效率及生命周期,保持每轮历史/问题更新并重新生成,08_doc2dial,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION
+P2-2,位置×实际N及最小注意力补存,LITM三点末位最低且全N1;Qasper decode历史分歧;缺QKV/target向量,同题同文档位置0/9/19强制N1/4/8/16;固定输出轨迹;选层头步补向量,"位置曲线机制及参数/生成历史效应,weighted-V独立复核","先实际N控制,后密集位置点;复用已完成区域掩码",05_attention;07_litm,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION
+P3,官方条件复现,已有公开成绩/设置对照;缺表格逐题ID、检索文本及最终T/S,材料齐后逐项完整文本vs检索块/默认vs验证调参;官方速度配置独立,官方与本机方法优势差异来源,先补材料再决定生成清单,01_longbench_baseline,PLAN_ONLY_REQUIRES_SEPARATE_AUTHORIZATION

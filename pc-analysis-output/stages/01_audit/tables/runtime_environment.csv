@@ -1,0 +1,29 @@
+﻿item,value,source,evidence_kind
+python,"3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+interpreter,/home/shenxiaoyang/miniconda3/envs/ape/bin/python,logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+torch,2.6.0+cu124,logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+transformers,4.44.2,logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+tokenizers,0.19.1,logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+flash_attn,2.7.4.post1,logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+transformers_file,/home/shenxiaoyang/project/ape/.overlays/core-tf44/transformers/__init__.py,logs/runs/20261113-main80-prep/environment.json,preparation runtime observation
+torch,2.6.0,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+transformers,4.44.2,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+tokenizers,0.19.1,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+flash-attn,2.7.4.post1,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+numpy,1.26.4,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+regex,2026.3.32,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+sacrebleu,2.4.3,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+portalocker,2.10.1,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+colorama,0.4.6,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+tabulate,0.9.0,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+lxml,5.3.0,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+safetensors,0.7.0,snapshot/logs/runs/20261113-main80-prep/review.json.runtime_versions,accepted runtime versions
+model_source,LLM-Research/Meta-Llama-3.1-8B-Instruct @ master,logs/runs/20261113-main80-assets/model-manifest.json,source metadata
+source_metadata_stable,True,logs/runs/20261113-main80-assets/model-source-stability.json,source metadata
+physical_gpu,0,config.json + snapshot/scripts/with_env.sh,executed configuration
+GPU model / total memory,方案登记 RTX 4090 48GB；本campaign硬件遥测待补充,restored/docs/EXPERIMENT_PLAN.md:9,plan declaration
+GPU UUID / driver / power limit,待补充,no campaign hardware telemetry in manifest,missing observation
+dtype/batch/seed,bfloat16/1/42,config.json + snapshot/APE/main80/methods.py,executed configuration
+CUDA build,cu124,environment.json.torch,PyTorch build tag
+PC audit python,"3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",C:\Users\Osheepne\anaconda3\python.exe,current CPU execution
+PC audit platform,Windows-11-10.0.26200-SP0,platform.platform(),current CPU execution

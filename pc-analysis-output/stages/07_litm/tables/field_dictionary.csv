@@ -1,0 +1,14 @@
+﻿field,definition,unit_or_scope
+source,生成记录该字段为null;原始来源从冻结sample_id/position与question连接三份原作者位置文件,"nullable metadata, not a missing reference"
+public_document_ids,"已核对的gold公开记录ID为None;其余19篇ID非空且唯一, 三位置的相对顺序相同",document IDs
+position,"gold资料零基索引0/9/19, 对应第1/10/20篇",original-document index
+actual_N,"实际编码块数1;20篇资料共同自然分块,长度未达7500-token分块阈值",encoded block count
+saved_full_answer_em,原campaign将整段回答送入best_subspan_em所得保存标签,EM0-1; retained unchanged
+official_first_line_em,取answer.split(newline)[0].strip再按官方规范化子串匹配任一参考,EM0-1; cached pre-audit correction
+ALL,"先求每题三位置均值,再求500题均值;总体W/T/L按每题均值比较","500 question units,1500 requests/method"
+efficiency median/P90,总体在实际1500次请求上取分位数;CI将三位置保留在问题内,s/tokens/GiB
+after_ttft_seconds,"总响应−首token时间,含剩余生成与最终文本解码",seconds
+cap_after_first_newline,达到128 token时已出现换行;官方EM只读取换行前文本,request count
+cap_unterminated_first_line,到128 token、无EOS且未出现换行,request count
+stage_calls,"APE阶段计数器;顺序路径的stage=None故该计数为0,执行耗时照常记录",instrumented stage calls
+confidence interval,固定模型、规则、模板下问题样本构成变化;各方法一个连续worker时段,paired question percentile interval

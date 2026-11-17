@@ -1,0 +1,16 @@
+﻿dataset,method,n_requests,max_new_tokens,cap_hits,cap_hit_rate,eos_last_count,eos_at_cap_count,output_tokens_mean,denominator,unit
+qasper,sequential,170,128,0,0.0,170,0,21.17058823529412,170,requests; rates0-1; output tokens include EOS
+qasper,pcw,170,128,0,0.0,170,0,13.764705882352942,170,requests; rates0-1; output tokens include EOS
+qasper,ape_default,170,128,0,0.0,170,0,19.458823529411763,170,requests; rates0-1; output tokens include EOS
+qasper,ape_fixed,170,128,0,0.0,170,0,18.770588235294117,170,requests; rates0-1; output tokens include EOS
+qasper,ape_dynamic,170,128,0,0.0,170,0,19.888235294117646,170,requests; rates0-1; output tokens include EOS
+hotpotqa,sequential,170,32,3,0.01764705882352941,167,0,5.617647058823529,170,requests; rates0-1; output tokens include EOS
+hotpotqa,pcw,170,32,1,0.0058823529411764705,169,0,5.641176470588236,170,requests; rates0-1; output tokens include EOS
+hotpotqa,ape_default,170,32,2,0.011764705882352941,168,0,6.182352941176471,170,requests; rates0-1; output tokens include EOS
+hotpotqa,ape_fixed,170,32,1,0.0058823529411764705,169,0,5.752941176470588,170,requests; rates0-1; output tokens include EOS
+hotpotqa,ape_dynamic,170,32,1,0.0058823529411764705,169,0,5.711764705882353,170,requests; rates0-1; output tokens include EOS
+musique,sequential,170,32,8,0.047058823529411764,162,0,7.341176470588235,170,requests; rates0-1; output tokens include EOS
+musique,pcw,170,32,8,0.047058823529411764,162,0,8.141176470588235,170,requests; rates0-1; output tokens include EOS
+musique,ape_default,170,32,6,0.03529411764705882,164,0,8.229411764705882,170,requests; rates0-1; output tokens include EOS
+musique,ape_fixed,170,32,5,0.029411764705882353,165,0,7.923529411764706,170,requests; rates0-1; output tokens include EOS
+musique,ape_dynamic,170,32,6,0.03529411764705882,164,0,8.088235294117647,170,requests; rates0-1; output tokens include EOS

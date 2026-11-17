@@ -1,0 +1,12 @@
+{
+  "stage": 7,
+  "cohort": "500 questions,1500 positions,4500 generations;all3 methods paired",
+  "cached_correction_join": "501 records/147 questions passed;9 fixtures verified",
+  "distractor_order": "same19 distractors after verified gold removal in all500 questions",
+  "bootstrap_review": "independent script review passed;question unit retains3 positions/3 methods",
+  "summary_crosscheck": "12 original full-answer EM means agree",
+  "report_links": "passed",
+  "figures": "8 PNG/8 SVG;position curve,paired CI and cap/scoring panels visually inspected",
+  "research_status": "SUBMITTED",
+  "next_stage_executed": false
+}

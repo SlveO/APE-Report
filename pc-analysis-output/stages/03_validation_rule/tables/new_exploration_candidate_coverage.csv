@@ -1,0 +1,10 @@
+﻿L,N,complete_exploration_T,complete_exploration_S,original_exploration_T,original_exploration_S,n_validation_ids,n_available_scores,n_missing_generation_configs,n_complete_ids,n_complete_missing_configs,unit,scope
+4096,4,0.5,0.9,1.0,1.0,40,0,40,23,23,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+4096,8,0.7,0.9,0.7,0.9,40,40,0,23,0,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+4096,16,0.9,1.0,0.5,1.0,40,0,40,23,23,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+8192,4,0.7,0.7,0.7,0.7,40,40,0,34,0,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+8192,8,1.0,0.9,0.9,0.9,40,0,40,34,34,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+8192,16,0.7,1.0,0.5,0.9,40,40,0,34,0,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+16384,4,0.7,1.0,0.7,1.0,39,39,0,39,0,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+16384,8,0.9,1.0,0.9,1.0,39,39,0,39,0,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation
+16384,16,0.5,0.7,0.5,0.7,39,39,0,39,0,validation ID/configuration pairs,coverage of stage2 complete-subset candidates only; no score imputation

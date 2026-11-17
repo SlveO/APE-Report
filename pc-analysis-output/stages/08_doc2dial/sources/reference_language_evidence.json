@@ -1,0 +1,54 @@
+[
+  {
+    "sample_id": "1085067334266d41636126e5b9ee9519_5",
+    "raw_file": "restored/datasets/raw-main80/doc2dial/doc2dial_dial_validation.json",
+    "source": {
+      "domain": "va",
+      "doc_id": "Survivors’ And Dependents’ Educational Assistance | Veterans Affairs#1_0",
+      "dial_id": "1085067334266d41636126e5b9ee9519",
+      "target_turn": 6
+    },
+    "raw_target": {
+      "turn_id": 6,
+      "role": "agent",
+      "da": "respond_solution",
+      "references": [
+        {
+          "sp_id": "2",
+          "label": "solution"
+        }
+      ],
+      "utterance": "puede obtener ayuda para pagar la escuela o la capacitación laboral "
+    },
+    "frozen_reference": "puede obtener ayuda para pagar la escuela o la capacitación laboral",
+    "complete_previous_history": [
+      {
+        "turn_id": 1,
+        "role": "user",
+        "utterance": "I want to know about the survivor and dependent program Educational assistance"
+      },
+      {
+        "turn_id": 2,
+        "role": "agent",
+        "utterance": "DEA Educational Assistance for Survivors and Dependents is a program where if you are the child or spouse of a deceased veteran or service member, captured, disappeared, or disabled, you can get help paying for school or job training"
+      },
+      {
+        "turn_id": 3,
+        "role": "user",
+        "utterance": "What benefit can I get if I am the child or spouse of a veteran or service member who died, is captured or disappeared?"
+      },
+      {
+        "turn_id": 4,
+        "role": "agent",
+        "utterance": "ok i inform you that you can get help to pay for school or job training through the DEA program"
+      },
+      {
+        "turn_id": 5,
+        "role": "user",
+        "utterance": "I want to know about the DEA Educational Assistance Program for Survivors and Dependents.?"
+      }
+    ],
+    "latest_user_utterance": "I want to know about the DEA Educational Assistance Program for Survivors and Dependents.?",
+    "review": "English request and generated answers; Spanish reference confirmed from raw target; original scores retained"
+  }
+]

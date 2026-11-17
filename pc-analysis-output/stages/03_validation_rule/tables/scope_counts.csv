@@ -1,0 +1,4 @@
+﻿scope,label,physical_generations,input_conditions,query_length_inputs,unique_ids,n_qasper_ids,n_hotpotqa_ids,n_musique_ids,logical_evaluations,reuse_savings,unit
+all_27,全部验证输入,992,357,119,40,13,13,14,1071,79,physical generation / input condition / ID / logical evaluation count
+complete_27,证据完整子集,791,288,96,40,13,13,14,864,73,physical generation / input condition / ID / logical evaluation count
+common_complete_27,三长度共同完整22题,550,198,66,22,11,8,3,594,44,physical generation / input condition / ID / logical evaluation count

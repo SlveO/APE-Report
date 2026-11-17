@@ -1,0 +1,16 @@
+﻿reference_method,comparison_method,group,n_targets,mean_reference_tokens,mean_comparison_tokens,mean_cold_total_delta_s,mean_hot_total_delta_s,unit
+sequential,ape_fixed,all,500,112.922,115.524,2.666571379762143,2.637082281501498,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_fixed,same_tokens,10,66.7,66.7,1.5128928730729967,1.4813224342884497,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_fixed,different_tokens,490,113.86530612244898,116.5204081632653,2.6901158390823294,2.6606692171589073,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_fixed,comparison_longer,94,76.98936170212765,111.02127659574468,3.4804978904591755,3.455472553131527,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_fixed,comparison_shorter,69,99.73913043478261,72.23188405797102,0.8393531295275181,0.8017045914607149,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_dynamic,all,500,112.922,113.204,2.5777502940478736,2.55398046826059,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_dynamic,same_tokens,296,108.9358108108108,108.9358108108108,2.4789954409462625,2.452263558216588,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_dynamic,different_tokens,204,118.70588235294117,119.3970588235294,2.721041649528642,2.70156971028522,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_dynamic,comparison_longer,31,85.96774193548387,104.80645161290323,2.955978807595168,2.937223551021288,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+sequential,ape_dynamic,comparison_shorter,22,106.86363636363636,86.72727272727273,1.4030418431026523,1.3736309896286747,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+ape_fixed,ape_dynamic,all,500,115.524,113.204,-0.08882108571426943,-0.08310181324090808,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+ape_fixed,ape_dynamic,same_tokens,11,62.81818181818182,62.81818181818182,0.018196787261827427,0.018471798161044717,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+ape_fixed,ape_dynamic,different_tokens,489,116.70961145194273,114.33742331288343,-0.09122844073009165,-0.0853867002049602,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+ape_fixed,ape_dynamic,comparison_longer,70,72.55714285714286,100.82857142857142,1.4749536086539072,1.4825128755266113,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here
+ape_fixed,ape_dynamic,comparison_shorter,93,112.46236559139786,78.70967741935483,-1.6997499979296398,-1.7007075855558518,descriptive target groups; timescomparison-reference; corpus BLEU not averaged here

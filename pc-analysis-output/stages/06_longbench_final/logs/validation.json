@@ -1,0 +1,13 @@
+{
+  "stage": 6,
+  "cohort": "170 each dataset; 510 five-method pairs; 2550 saved generations",
+  "counts_and_pair_denominators": "passed",
+  "summary_mean_and_ID_crosscheck": "passed",
+  "rule_mapping_and_freeze_checks": "passed in analysis script",
+  "bootstrap": "450 frozen groups and 413 support components; independent script review passed",
+  "contribution_sum": "matches full510 macro difference",
+  "report_links": "passed",
+  "figures": "8 PNG and 8 SVG; quality, primary paired CI and mapping visually inspected",
+  "research_status": "SUBMITTED",
+  "next_stage_executed": false
+}

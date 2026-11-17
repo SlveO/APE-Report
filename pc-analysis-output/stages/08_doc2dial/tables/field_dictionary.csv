@@ -1,0 +1,13 @@
+﻿field,definition,unit_scope
+group,"原冻结group为[doc2dial,domain,doc_id],对应资料;主对话簇另用domain/doc_id/dial_id",source cluster
+last_turn,紧邻目标之前的原始发言;28条为agent;latest_user_utterance另保存更早user发言,original utterance
+reference_answer_id,"dial_id_(target_agent_turn_id-1),并按source target agent轮次取参考",strict ID join
+cache_mode hot,"同目标在cold后重复提交;只复用GPU资料/方法前缀KV,本次重新处理完整历史并生成",same-process GPU KV condition
+quality corpus BLEU,"完整生成;13a mixed case,1–4gram,exp smoothing,effective_order=False",0–100 BLEU points
+server_setting_signature,"原服务器SacreBLEU2.4.3设置签名,本地为复核该设置的独立实现",signature is server configuration
+saved_single_target_default_corpus_bleu,"服务器将单目标作为单条corpus调用所得分数,用于案例",auxiliary0–100; not averaged for main BLEU
+one document subgroup,"N2七目标共一篇资料,其资料间变化缺观察;CI字段留空",within-document dialogue CI separately available
+ratio_of_means,参照平均时间÷比较平均时间;cache比较参照cold、比较hot,"dimensionless, >1 comparison faster"
+paired_speedup_mean,"先逐目标计算参照/比较,再对500目标平均","dimensionless, CI samples paired clusters"
+peak allocated/reserved,"请求开始重置峰值,覆盖模型、存活资料缓存及本次请求;reserved含分配器历史",GiB in descriptive table; raw bytes in request table
+confidence scope,固定模型、模板、冻结参数下来源簇/目标构成变化;当前每法一个连续worker,"paired dialogue main, document sensitivity"

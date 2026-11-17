@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "metric_rows": 408,
+  "construction_totals": {
+    "n_frozen": 432,
+    "n_used": 278,
+    "n_unused": 154,
+    "n_missing_frozen": 80,
+    "n_missing_used": 54,
+    "n_missing_unused": 26,
+    "n_generations_using_missing": 1605
+  },
+  "follow_up_items": 7,
+  "report_local_links": "all exist",
+  "all_eight_stages_present": true,
+  "new_generations": 0,
+  "new_score_computations": 0,
+  "research_status": "SUBMITTED",
+  "follow_up_execution": "not authorized or started"
+}

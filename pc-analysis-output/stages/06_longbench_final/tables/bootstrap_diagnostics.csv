@@ -1,0 +1,39 @@
+﻿scope,dataset,n_questions,n_clusters,cluster_type,largest_cluster_questions,seed_key,replicates,unit
+test510,qasper,170,116,frozen paper/evidence group,4,"[20261116, 0, 0, 0]",5000,all five methods retained per sampled source group
+test510,hotpotqa,170,170,frozen paper/evidence group,1,"[20261116, 0, 1, 0]",5000,all five methods retained per sampled source group
+test510,musique,170,164,frozen paper/evidence group,3,"[20261116, 0, 2, 0]",5000,all five methods retained per sampled source group
+mapped_4096_4,qasper,132,89,frozen paper/evidence group,4,"[20261116, 1, 0, 0]",5000,all five methods retained per sampled source group
+mapped_4096_4,hotpotqa,14,14,frozen paper/evidence group,1,"[20261116, 1, 1, 0]",5000,all five methods retained per sampled source group
+mapped_8192_4,qasper,34,27,frozen paper/evidence group,2,"[20261116, 2, 0, 0]",5000,all five methods retained per sampled source group
+mapped_8192_4,hotpotqa,35,35,frozen paper/evidence group,1,"[20261116, 2, 1, 0]",5000,all five methods retained per sampled source group
+mapped_8192_4,musique,7,7,frozen paper/evidence group,1,"[20261116, 2, 2, 0]",5000,all five methods retained per sampled source group
+mapped_16384_4,qasper,4,4,frozen paper/evidence group,1,"[20261116, 3, 0, 0]",5000,all five methods retained per sampled source group
+mapped_16384_4,hotpotqa,121,121,frozen paper/evidence group,1,"[20261116, 3, 1, 0]",5000,all five methods retained per sampled source group
+mapped_16384_4,musique,163,157,frozen paper/evidence group,3,"[20261116, 3, 2, 0]",5000,all five methods retained per sampled source group
+actual_N_1,qasper,155,106,frozen paper/evidence group,4,"[20261116, 4, 0, 0]",5000,all five methods retained per sampled source group
+actual_N_1,hotpotqa,20,20,frozen paper/evidence group,1,"[20261116, 4, 1, 0]",5000,all five methods retained per sampled source group
+actual_N_1,musique,2,2,frozen paper/evidence group,1,"[20261116, 4, 2, 0]",5000,all five methods retained per sampled source group
+actual_N_2,qasper,11,8,frozen paper/evidence group,2,"[20261116, 5, 0, 0]",5000,all five methods retained per sampled source group
+actual_N_2,hotpotqa,73,73,frozen paper/evidence group,1,"[20261116, 5, 1, 0]",5000,all five methods retained per sampled source group
+actual_N_2,musique,20,20,frozen paper/evidence group,1,"[20261116, 5, 2, 0]",5000,all five methods retained per sampled source group
+actual_N_3,qasper,4,4,frozen paper/evidence group,1,"[20261116, 6, 0, 0]",5000,all five methods retained per sampled source group
+actual_N_3,hotpotqa,77,77,frozen paper/evidence group,1,"[20261116, 6, 1, 0]",5000,all five methods retained per sampled source group
+actual_N_3,musique,148,142,frozen paper/evidence group,3,"[20261116, 6, 2, 0]",5000,all five methods retained per sampled source group
+support_overlap,musique,29,29,frozen paper/evidence group,1,"[20261116, 7, 2, 0]",5000,all five methods retained per sampled source group
+support_nonoverlap,qasper,170,116,frozen paper/evidence group,4,"[20261116, 8, 0, 0]",5000,all five methods retained per sampled source group
+support_nonoverlap,hotpotqa,170,170,frozen paper/evidence group,1,"[20261116, 8, 1, 0]",5000,all five methods retained per sampled source group
+support_nonoverlap,musique,141,135,frozen paper/evidence group,3,"[20261116, 8, 2, 0]",5000,all five methods retained per sampled source group
+fixed_dynamic_same_parameters,qasper,4,4,frozen paper/evidence group,1,"[20261116, 9, 0, 0]",5000,all five methods retained per sampled source group
+fixed_dynamic_same_parameters,hotpotqa,121,121,frozen paper/evidence group,1,"[20261116, 9, 1, 0]",5000,all five methods retained per sampled source group
+fixed_dynamic_same_parameters,musique,163,157,frozen paper/evidence group,3,"[20261116, 9, 2, 0]",5000,all five methods retained per sampled source group
+fixed_dynamic_changed_parameters,qasper,166,113,frozen paper/evidence group,4,"[20261116, 10, 0, 0]",5000,all five methods retained per sampled source group
+fixed_dynamic_changed_parameters,hotpotqa,49,49,frozen paper/evidence group,1,"[20261116, 10, 1, 0]",5000,all five methods retained per sampled source group
+fixed_dynamic_changed_parameters,musique,7,7,frozen paper/evidence group,1,"[20261116, 10, 2, 0]",5000,all five methods retained per sampled source group
+L_inside_grid,qasper,98,67,frozen paper/evidence group,4,"[20261116, 11, 0, 0]",5000,all five methods retained per sampled source group
+L_inside_grid,hotpotqa,165,165,frozen paper/evidence group,1,"[20261116, 11, 1, 0]",5000,all five methods retained per sampled source group
+L_inside_grid,musique,170,164,frozen paper/evidence group,3,"[20261116, 11, 2, 0]",5000,all five methods retained per sampled source group
+L_outside_grid,qasper,72,50,frozen paper/evidence group,3,"[20261116, 12, 0, 0]",5000,all five methods retained per sampled source group
+L_outside_grid,hotpotqa,5,5,frozen paper/evidence group,1,"[20261116, 12, 1, 0]",5000,all five methods retained per sampled source group
+test510_support_component_sensitivity,qasper,170,116,same frozen group or any shared support document connected component,4,"[20261116, 99, 0, 1]",5000,all five methods retained per sampled source component
+test510_support_component_sensitivity,hotpotqa,170,169,same frozen group or any shared support document connected component,2,"[20261116, 99, 1, 1]",5000,all five methods retained per sampled source component
+test510_support_component_sensitivity,musique,170,128,same frozen group or any shared support document connected component,6,"[20261116, 99, 2, 1]",5000,all five methods retained per sampled source component

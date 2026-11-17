@@ -1,0 +1,10 @@
+{
+  "experiment_stage": 1,
+  "name": "LongBench full600 three-method baseline",
+  "delivery": "COMPLETED",
+  "research_status": "SUBMITTED",
+  "records": 1800,
+  "unique_ids": 600,
+  "official_comparison": "paper v1 Table2 Llama3.1; Table6 supplementary",
+  "next_stage_executed": false
+}

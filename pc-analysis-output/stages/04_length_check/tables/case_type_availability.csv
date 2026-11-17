@@ -1,0 +1,4 @@
+﻿case_type,n_pairs,selection_rule
+改善,0,"largest positive/negative saved F1 delta; zero or ties smallest ID then L,N"
+退化,5,"largest positive/negative saved F1 delta; zero or ties smallest ID then L,N"
+持平,55,"largest positive/negative saved F1 delta; zero or ties smallest ID then L,N"

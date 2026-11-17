@@ -1,0 +1,12 @@
+﻿result,source_fields,filter_definition,denominator_units,outputs
+目标/参考连接,frozen doc2dial.json:source/history/answers + attempts:key/source/reference_answers,500唯一ID; id=dial_id_(target_agent_turn-1);每目标六条件,500目标;366对话;172资料;3000生成,membership.csv;target_inputs.csv;per_request_records.csv
+完整历史与模板,history/history_turn_ids/prefix/suffix/template_adaptation; 前置500输入检查,资料前置;last_turn为紧邻上一发言;逆序完整历史;引用原agent目标,历史1–15轮;当前请求24–443 tokenizer tokens;28连续agent;7参考历史重复,preaudit_input_checks.csv;history_condition_counts.csv
+资料KV热复用,attempts cache_hit/build/stage_calls/token_ids + 前置events证据,1500同题冷热对;hot GPU KV hit;query/decode重新执行;无资料重建,1500次热请求;输出及参考完全相同;同方法worker进程,cold_hot_pairs.csv;hot_generation_evidence.csv
+语料级BLEU,完整answer与一条对应reference;13a;C1..4/T1..4及系统/参考长度,"先按目标提取充分统计,全语料累加后计分;评分签名对照服务器2.4.3",BLEU0–100;每条件500目标;BP与各阶精度另列,bleu_sufficient_statistics.csv;main_quality.csv;original_summary_crosscheck.csv
+本地评分引擎,audit_stage1_scoring.py纯函数+NumPy向量化计分,runpy关闭main;六服务器统计/BLEU和5个边界fixture核对,独立实现;本机未安装sacrebleu;signature为服务器配置,scorer_validation.csv;environment.json
+主要CI,source:domain/doc_id/dial_id;六条件充分统计向量,366对话簇有放回抽同数簇;所有目标/六条件共同保留;每次重算corpus BLEU,seed20261116;5000次;2.5%/97.5%分位数,bootstrap_diagnostics.csv;quality_paired.csv
+资料敏感性CI,source:domain/doc_id,172资料簇共同抽样;保留资料下全部对话/目标/六条件,N2子组仅1资料时CI留空;点分数保留,main_quality_document_sensitivity.csv;scope_counts.csv
+效率与加速比,TTFT/total/cache_build/get/selection/output/peak字段,cold/hot和方法按同目标配对;均值CI按来源簇;中位数/P90在实际500请求上计算,时间s;显存GiB=bytes/2^30;逐对比均值与均值比另列,main_efficiency.csv;cache_effects.csv;efficiency_paired.csv
+生成上限/EOS,output_tokens/output_token_ids;max_new_tokens;generation_config EOS IDs,cap=128;EOS=末token属于停止集合;冷热分别计数,各方法/条件分母500;输出含EOS,generation_limits.csv;generation_cap_records.csv
+语言问题定向审核,1条西语参考原始target+冻结参考+英文请求/输出,按公开原始对话核对;词/重音候选筛查;主表保留500并另列499敏感性,"确认1条,原参考和原评分保留",reference_language_candidates.csv;sources/reference_language_evidence.json
+案例,保存单目标默认corpus BLEU分数/原答案,"最大正差/负差/零差,并列按ID;冷热相同仍保留四条源行",辅助选例分数0–100;总体结论取corpus BLEU,selected_cases.csv;dynamic_fixed_per_target.csv

@@ -1,0 +1,5 @@
+﻿finding,affected,evidence,impact,handling,required_followup
+保存证据区间稀疏,6/6构造; 12项诊断,完整证据token q43/h1468/m1833; 保存区间q10/h235/m494,直接按保存区间会将部分证据计入背景,按原字符证据和现有tokenizer重建掩码、投影retained区间; 原始输入及字段保留,本阶段区域统计已修正; 关联上游映射问题见前置审核
+decode历史分歧,Qasper4K从step5; Qasper16K从step1,decode_history_alignment.csv逐步列出两历史token ID,后续注意力同时随参数和已生成内容变化,同输入step0为主; decode逐步保留same_history标签及未配对尾部数,需要隔离参数效应时补固定同一token序列的teacher-forced诊断
+未保存weighted-V独立重建输入,231条捕获,原始字段保存weights/branch/error/tolerance; 缺Q/K/V和实际target向量,PC可核对保存误差、容差和质量一致性; weighted-V误差数值来自服务器采集,明确误差的来源和检验步骤,"若需PC独立重建,为选定layer/head/step补存Q/K/V/target及实际分支输出"
+探索候选与冻结动态规则的角色不同,16K/16的三个参数比较,候选0.5/0.7; rule.json冻结0.7/1.0,本阶段解释探索候选的注意力与答案,表中同时列探索参数与冻结参数; 本阶段保持冻结规则,冻结规则收益在后续正式配对实验评价

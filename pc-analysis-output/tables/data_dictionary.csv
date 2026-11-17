@@ -1,0 +1,41 @@
+﻿field,unit,definition,source,example_type
+L,token,"actual document/context tokens after construction, excludes prefix/request",attempts.jsonl,int
+N,block,actual encoded context block count; key.N can be null for natural construction,attempts.jsonl,int
+S,dimensionless,context attention scaling of saved actual method,attempts.jsonl,float
+T,dimensionless,attention temperature of saved actual method,attempts.jsonl,float
+answer,see raw JSON,literal raw evidence field,attempts.jsonl,str
+attempt,see raw JSON,literal raw evidence field,attempts.jsonl,int
+block_lengths,see raw JSON,literal raw evidence field,attempts.jsonl,list
+cache_build_seconds,s,synchronized document/prefix KV encoding on miss; zero on hit,attempts.jsonl,float
+cache_get_seconds,s,host cache lookup duration,attempts.jsonl,float
+cache_hit,boolean,actual same-process GPU KV hit,attempts.jsonl,bool
+cache_mode,condition,search/cold/hot labels from campaign,attempts.jsonl,str
+dataset,see raw JSON,literal raw evidence field,attempts.jsonl,str
+dynamic_selection_seconds,s,host parameter-selection duration; already included in total,attempts.jsonl,float
+ended_at,see raw JSON,literal raw evidence field,attempts.jsonl,str
+group,source cluster,"source evidence/paper component, used for LongBench cluster bootstrap",attempts.jsonl,list
+key,JSON,logical generation key: stage/sample/method/L/N/parameters/position/cache; excludes attempt,attempts.jsonl,dict
+logical_labels,labels,candidate roles sharing exactly one generation; never duplicated in raw-record denominators,attempts.jsonl,list
+method,see raw JSON,literal raw evidence field,attempts.jsonl,str
+original_document_count,document,original source documents before token block construction,attempts.jsonl,int
+output_token_ids,token IDs,generated tokens including terminal EOS when produced,attempts.jsonl,list
+output_tokens,token including EOS,len(output_token_ids),attempts.jsonl,int
+peak_allocated_bytes,byte,peak total process tensor allocation since reset; model and alive caches included,attempts.jsonl,int
+peak_reserved_bytes,byte,peak total process allocator reserve since reset; retained allocator memory included,attempts.jsonl,int
+position,see raw JSON,literal raw evidence field,attempts.jsonl,int
+prefix_tokens,see raw JSON,literal raw evidence field,attempts.jsonl,int
+query_start_position,token index,prefix + encoded documents location,attempts.jsonl,int
+reference_answers,string list,saved references joined to sample_id; task-specific independent checks,attempts.jsonl,list
+request_tokens,see raw JSON,literal raw evidence field,attempts.jsonl,int
+resume_cache_rebuild_seconds,s,separate recovery cache rebuild duration,attempts.jsonl,float
+sample_id,see raw JSON,literal raw evidence field,attempts.jsonl,str
+score,0-1 F1/EM or 0-100 sentence BLEU,"saved score; recompute quality with task metric, corpus BLEU aggregated separately",attempts.jsonl,float
+source,see raw JSON,literal raw evidence field,attempts.jsonl,list
+split,see raw JSON,literal raw evidence field,attempts.jsonl,str
+stage_calls,see raw JSON,literal raw evidence field,attempts.jsonl,dict
+started_at,see raw JSON,literal raw evidence field,attempts.jsonl,str
+status,see raw JSON,literal raw evidence field,attempts.jsonl,str
+timing_condition,see raw JSON,literal raw evidence field,attempts.jsonl,str
+total_seconds,s,request start through generation and answer text decoding,attempts.jsonl,float
+ttft_seconds,s,"request start through first argmax token, synchronized; includes prepare and cache work",attempts.jsonl,float
+window_order,see raw JSON,literal raw evidence field,attempts.jsonl,list

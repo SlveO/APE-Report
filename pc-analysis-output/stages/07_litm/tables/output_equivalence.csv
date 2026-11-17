@@ -1,0 +1,13 @@
+﻿position,reference_method,comparison_method,n_condition_pairs,n_questions,same_parameters,same_token_sequences,same_official_scores,unit
+0,sequential,ape_fixed,500,500,0,65,422,same question/position request pairs; output tokens include EOS
+0,sequential,ape_dynamic,500,500,0,340,491,same question/position request pairs; output tokens include EOS
+0,ape_fixed,ape_dynamic,500,500,0,66,427,same question/position request pairs; output tokens include EOS
+9,sequential,ape_fixed,500,500,0,65,438,same question/position request pairs; output tokens include EOS
+9,sequential,ape_dynamic,500,500,0,359,489,same question/position request pairs; output tokens include EOS
+9,ape_fixed,ape_dynamic,500,500,0,66,435,same question/position request pairs; output tokens include EOS
+19,sequential,ape_fixed,500,500,0,58,400,same question/position request pairs; output tokens include EOS
+19,sequential,ape_dynamic,500,500,0,345,490,same question/position request pairs; output tokens include EOS
+19,ape_fixed,ape_dynamic,500,500,0,57,402,same question/position request pairs; output tokens include EOS
+ALL,sequential,ape_fixed,1500,500,0,188,1260,same question/position request pairs; output tokens include EOS
+ALL,sequential,ape_dynamic,1500,500,0,1044,1470,same question/position request pairs; output tokens include EOS
+ALL,ape_fixed,ape_dynamic,1500,500,0,189,1264,same question/position request pairs; output tokens include EOS

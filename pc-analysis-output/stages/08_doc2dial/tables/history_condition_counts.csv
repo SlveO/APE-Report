@@ -1,0 +1,5 @@
+﻿previous_agent,reference_repeated_in_history,n_targets,n_generations,n_dialogues,n_documents,denominator_targets,unit
+False,False,467,2802,347,167,500,mutually exclusive original dialogue conditions; six requests per target
+False,True,5,30,5,5,500,mutually exclusive original dialogue conditions; six requests per target
+True,False,26,156,26,22,500,mutually exclusive original dialogue conditions; six requests per target
+True,True,2,12,2,2,500,mutually exclusive original dialogue conditions; six requests per target

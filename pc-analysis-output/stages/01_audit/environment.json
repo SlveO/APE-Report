@@ -1,0 +1,18 @@
+{
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\Osheepne\\anaconda3\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "analysis_commit": "227116e4a004153272640cfe31087a033861b8e9",
+  "reference_commit": "227116e4a004153272640cfe31087a033861b8e9",
+  "same_as_reference": true,
+  "reference_changes": [],
+  "analysis_stage": "01_audit",
+  "generation_seed": 42,
+  "later_stage_bootstrap_seed": 20261116,
+  "bootstrap_executed_this_stage": false,
+  "new_dependency_installations": [],
+  "input_root": "D:\\_Greatest_programmer\\_Projects\\APEReport\\restored",
+  "output_root": "D:\\_Greatest_programmer\\_Projects\\APEReport\\pc-analysis-output\\stages\\01_audit",
+  "PYTHONUTF8": "1",
+  "PYTHONNOUSERSITE": "1"
+}

@@ -1,0 +1,25 @@
+﻿score_metric,method,contrast,coefficients_positions_0_9_19,n_questions,contrast_pp,ci_low_pp,ci_high_pp,unit,seed,replicates
+official_first_line_em,sequential,middle_minus_ends_mean,"[-0.5, 1.0, -0.5]",500,-3.4000000000000004,-6.0,-0.8000000000000063,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_fixed,middle_minus_ends_mean,"[-0.5, 1.0, -0.5]",500,-1.6,-4.799999999999994,1.4024999999999674,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_dynamic,middle_minus_ends_mean,"[-0.5, 1.0, -0.5]",500,-3.5000000000000004,-6.2,-0.7999999999999952,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,sequential,last_minus_first,"[-1, 0, 1]",500,-9.2,-12.6,-5.800000000000005,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_fixed,last_minus_first,"[-1, 0, 1]",500,-16.0,-20.199999999999996,-11.799999999999999,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_dynamic,last_minus_first,"[-1, 0, 1]",500,-8.200000000000001,-11.799999999999999,-4.799999999999994,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,sequential,middle_minus_first,"[-1, 1, 0]",500,-8.0,-11.20000000000001,-4.799999999999994,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_fixed,middle_minus_first,"[-1, 1, 0]",500,-9.6,-13.39999999999999,-5.800000000000005,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_dynamic,middle_minus_first,"[-1, 1, 0]",500,-7.6,-10.999999999999998,-4.0000000000000036,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,sequential,last_minus_middle,"[0, -1, 1]",500,-1.2,-4.200000000000004,1.7999999999999905,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_fixed,last_minus_middle,"[0, -1, 1]",500,-6.4,-10.199999999999998,-2.6000000000000023,EM percentage points; within-question position contrast,20261116,5000
+official_first_line_em,ape_dynamic,last_minus_middle,"[0, -1, 1]",500,-0.6,-3.599999999999992,2.200000000000002,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,sequential,middle_minus_ends_mean,"[-0.5, 1.0, -0.5]",500,-4.5,-6.999999999999995,-2.0000000000000018,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_fixed,middle_minus_ends_mean,"[-0.5, 1.0, -0.5]",500,-5.6000000000000005,-8.700000000000003,-2.599999999999997,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_dynamic,middle_minus_ends_mean,"[-0.5, 1.0, -0.5]",500,-3.8,-6.4,-1.0999999999999954,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,sequential,last_minus_first,"[-1, 0, 1]",500,-8.6,-11.799999999999999,-5.399999999999993,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_fixed,last_minus_first,"[-1, 0, 1]",500,-10.4,-14.400000000000002,-6.400000000000006,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_dynamic,last_minus_first,"[-1, 0, 1]",500,-8.4,-11.604999999999997,-5.000000000000004,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,sequential,middle_minus_first,"[-1, 1, 0]",500,-8.799999999999999,-11.799999999999999,-5.600000000000005,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_fixed,middle_minus_first,"[-1, 1, 0]",500,-10.8,-14.600000000000001,-7.200000000000006,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_dynamic,middle_minus_first,"[-1, 1, 0]",500,-8.0,-11.2,-4.795000000000066,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,sequential,last_minus_middle,"[0, -1, 1]",500,0.2,-2.7999999999999914,3.1999999999999917,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_fixed,last_minus_middle,"[0, -1, 1]",500,0.4,-3.1999999999999917,3.9999999999999925,EM percentage points; within-question position contrast,20261116,5000
+saved_full_answer_em,ape_dynamic,last_minus_middle,"[0, -1, 1]",500,-0.4,-3.399999999999992,2.599999999999991,EM percentage points; within-question position contrast,20261116,5000

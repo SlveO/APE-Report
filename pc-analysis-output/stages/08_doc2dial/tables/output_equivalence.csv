@@ -1,0 +1,4 @@
+﻿reference_method,comparison_method,n_targets,same_tokens,same_auxiliary_scores,unit
+sequential,ape_fixed,500,10,28,target counts; cold/hot tokens already identical
+sequential,ape_dynamic,500,296,329,target counts; cold/hot tokens already identical
+ape_fixed,ape_dynamic,500,11,29,target counts; cold/hot tokens already identical

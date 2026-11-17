@@ -1,0 +1,56 @@
+{
+  "input_generation_count": 6672,
+  "configuration_count": 144,
+  "saved_candidates_match": true,
+  "score_recomputed_count": 0,
+  "complete_cell_candidate_changes": 4,
+  "common_complete_ids_per_dataset": {
+    "qasper": 10,
+    "hotpotqa": 10,
+    "musique": 7
+  }
+}
+{
+  "all_27": {
+    "T": 0.7,
+    "S": 1.0,
+    "f1_percent": 41.162863126898394,
+    "delta_vs_default_pp": 1.0040959662756643,
+    "n_dataset_cells": 27
+  },
+  "complete_27": {
+    "T": 0.7,
+    "S": 1.0,
+    "f1_percent": 41.892875341523975,
+    "delta_vs_default_pp": 1.9998467633615402,
+    "n_dataset_cells": 27
+  },
+  "all_shared18": {
+    "T": 0.5,
+    "S": 0.9,
+    "f1_percent": 43.20486509583873,
+    "delta_vs_default_pp": 1.3466764384995222,
+    "n_dataset_cells": 18
+  },
+  "complete_shared18": {
+    "T": 0.5,
+    "S": 0.9,
+    "f1_percent": 44.276938684984664,
+    "delta_vs_default_pp": 2.817357901335904,
+    "n_dataset_cells": 18
+  },
+  "missing_shared18": {
+    "T": 0.5,
+    "S": 0.9,
+    "f1_percent": 32.691073623613306,
+    "delta_vs_default_pp": 1.2477493803357442,
+    "n_dataset_cells": 18
+  },
+  "complete_common_ids27": {
+    "T": 0.7,
+    "S": 1.0,
+    "f1_percent": 41.90145662752015,
+    "delta_vs_default_pp": 1.7603394200747413,
+    "n_dataset_cells": 27
+  }
+}

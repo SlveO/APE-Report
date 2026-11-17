@@ -1,0 +1,30 @@
+{
+  "experiment_stage": 5,
+  "status": "COMPLETED",
+  "research_status": "SUBMITTED",
+  "physical_generations": 12,
+  "unique_question_ids": 3,
+  "paired_input_conditions": 6,
+  "attention_rows": 231,
+  "head_step_rows": 924,
+  "layer_coverage_rows": 36,
+  "anomaly_count": 0,
+  "quality_pair_counts": {
+    "改善": 1,
+    "退化": 0,
+    "持平": 5
+  },
+  "max_saved_output_reconstruction_error": 0.006171464920043945,
+  "max_error_to_saved_tolerance": 0.11225921718302291,
+  "max_normalization_abs_error": 0.0019533171850916187,
+  "max_context_branch_abs_error": 8.761583103478188e-08,
+  "max_other_branch_abs_error": 2.546705673012184e-07,
+  "evidence_missing_input_constructions": 0,
+  "sparse_saved_evidence_input_constructions": 6,
+  "score_recomputed_count": 0,
+  "new_generations": 0,
+  "rule_modified": false,
+  "next_stage_executed": false,
+  "bootstrap_executed": false,
+  "analysis_seed_reserved": 20261116
+}

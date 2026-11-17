@@ -1,0 +1,13 @@
+﻿dataset,method_a,method_b,n,delta_b_minus_a_pp,ci_low_pp,ci_high_pp,win_b,tie,loss_b,unit,bootstrap,seed,replicates
+qasper,sequential,pcw,200,-0.9414321697911858,-4.242469041063618,2.2320702658886313,43,100,57,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+qasper,sequential,ape_default,200,-0.2168877043155646,-2.416935738280077,2.035009324980029,32,125,43,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+qasper,pcw,ape_default,200,0.7245444654756206,-2.3222251176932036,3.7370420706485477,54,105,41,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+hotpotqa,sequential,pcw,200,-3.9452163161915488,-8.205419013498531,0.09074859888133889,18,159,23,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+hotpotqa,sequential,ape_default,200,-5.020657680526102,-8.617971283711418,-1.6610183913308874,7,173,20,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+hotpotqa,pcw,ape_default,200,-1.075441364334553,-4.801238498844922,2.5893811731998673,16,160,24,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+musique,sequential,pcw,200,-1.39450186869632,-6.629848596808638,3.947077614969578,26,145,29,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+musique,sequential,ape_default,200,-1.0809347601765835,-5.787601367670747,3.6937072150417776,23,154,23,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+musique,pcw,ape_default,200,0.31356710851973735,-3.4369765132641756,3.979761166436556,21,161,18,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+macro_equal_dataset,sequential,pcw,600,-2.0937167848930183,-4.62356219907553,0.35278007975430004,87,404,109,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+macro_equal_dataset,sequential,ape_default,600,-2.1061600483394165,-4.236516464225315,-0.0007711242313806752,62,452,86,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000
+macro_equal_dataset,pcw,ape_default,600,-0.012443263446398494,-2.034520468193468,2.041005018578382,91,426,83,F1 percentage points,paired paper/evidence-group within dataset; macro equal datasets,20261116,5000

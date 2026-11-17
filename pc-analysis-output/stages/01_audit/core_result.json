@@ -1,0 +1,135 @@
+{
+  "records": 18116,
+  "expected_physical_tasks": 18116,
+  "unique_keys": 18116,
+  "statuses": {
+    "success": 18116
+  },
+  "attempts": {
+    "1": 18116
+  },
+  "parse_errors": 0,
+  "duplicates": 0,
+  "missing_tasks": 0,
+  "unexpected_tasks": 0,
+  "field_or_join_issues": 0,
+  "manifest_logical_files": 507,
+  "manifest_counts": {
+    "logical_files": 507,
+    "verified_by_direct_comparison": 507,
+    "aliases": 150,
+    "multipart_files": 4,
+    "logical_bytes": 1448535828,
+    "stored_data_bytes": 1142970998
+  },
+  "snapshot_lineage_items": 36,
+  "snapshot_lineage_matches": 36,
+  "delivery_status": "SUBMITTED",
+  "state_status": "SUBMITTED",
+  "summary_successes": 18116,
+  "summary_pending": 0,
+  "incomplete_sizes": {
+    "pending_jobs": 0,
+    "failed_attempts": 0,
+    "incomplete_lines": 0
+  },
+  "stage_counts": [
+    {
+      "stage": "baseline",
+      "theoretical_generation_slots": 1800,
+      "applicable_logical_evaluations": 1800,
+      "frozen_physical_jobs": 1800,
+      "observed_records": 1800,
+      "successes": 1800,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 0,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "explore",
+      "theoretical_generation_slots": 7200,
+      "applicable_logical_evaluations": 6672,
+      "frozen_physical_jobs": 6672,
+      "observed_records": 6672,
+      "successes": 6672,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 528,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "validation",
+      "theoretical_generation_slots": 1080,
+      "applicable_logical_evaluations": 1071,
+      "frozen_physical_jobs": 992,
+      "observed_records": 992,
+      "successes": 992,
+      "logical_reuse_savings": 79,
+      "inapplicable_slots": 9,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "length_check",
+      "theoretical_generation_slots": 120,
+      "applicable_logical_evaluations": 120,
+      "frozen_physical_jobs": 120,
+      "observed_records": 120,
+      "successes": 120,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 0,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "attention",
+      "theoretical_generation_slots": 12,
+      "applicable_logical_evaluations": 12,
+      "frozen_physical_jobs": 12,
+      "observed_records": 12,
+      "successes": 12,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 0,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "longbench_final",
+      "theoretical_generation_slots": 1020,
+      "applicable_logical_evaluations": 1020,
+      "frozen_physical_jobs": 1020,
+      "observed_records": 1020,
+      "successes": 1020,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 0,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "litm",
+      "theoretical_generation_slots": 4500,
+      "applicable_logical_evaluations": 4500,
+      "frozen_physical_jobs": 4500,
+      "observed_records": 4500,
+      "successes": 4500,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 0,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    },
+    {
+      "stage": "doc2dial",
+      "theoretical_generation_slots": 3000,
+      "applicable_logical_evaluations": 3000,
+      "frozen_physical_jobs": 3000,
+      "observed_records": 3000,
+      "successes": 3000,
+      "logical_reuse_savings": 0,
+      "inapplicable_slots": 0,
+      "unit": "generation/evaluation count",
+      "source": "snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels"
+    }
+  ],
+  "total_field_checks": 678088
+}

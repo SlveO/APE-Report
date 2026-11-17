@@ -1,0 +1,7 @@
+﻿method,cache_mode,n_requests,max_new_tokens,cap_hits,cap_fraction,eos_last_count,eos_at_cap_count,multiline_count,output_tokens_mean,unit
+sequential,cold,500,128,350,0.7,151,1,411,112.922,actual requests; token counts include EOS
+sequential,hot,500,128,350,0.7,151,1,411,112.922,actual requests; token counts include EOS
+ape_fixed,cold,500,128,381,0.762,119,0,431,115.524,actual requests; token counts include EOS
+ape_fixed,hot,500,128,381,0.762,119,0,431,115.524,actual requests; token counts include EOS
+ape_dynamic,cold,500,128,350,0.7,150,0,412,113.204,actual requests; token counts include EOS
+ape_dynamic,hot,500,128,350,0.7,150,0,412,113.204,actual requests; token counts include EOS

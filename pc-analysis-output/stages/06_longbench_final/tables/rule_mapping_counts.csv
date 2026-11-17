@@ -1,0 +1,13 @@
+﻿dataset,mapped_L,mapped_N,T,S,n_questions,denominator,fraction,unit
+qasper,4096,4,1.0,1.0,132,170,0.7764705882352941,paired test IDs; mapping uses actual L/N
+qasper,8192,4,0.7,0.7,34,170,0.2,paired test IDs; mapping uses actual L/N
+qasper,16384,4,0.7,1.0,4,170,0.023529411764705882,paired test IDs; mapping uses actual L/N
+hotpotqa,4096,4,1.0,1.0,14,170,0.08235294117647059,paired test IDs; mapping uses actual L/N
+hotpotqa,8192,4,0.7,0.7,35,170,0.20588235294117646,paired test IDs; mapping uses actual L/N
+hotpotqa,16384,4,0.7,1.0,121,170,0.711764705882353,paired test IDs; mapping uses actual L/N
+musique,4096,4,1.0,1.0,0,170,0.0,paired test IDs; mapping uses actual L/N
+musique,8192,4,0.7,0.7,7,170,0.041176470588235294,paired test IDs; mapping uses actual L/N
+musique,16384,4,0.7,1.0,163,170,0.9588235294117647,paired test IDs; mapping uses actual L/N
+ALL,4096,4,1.0,1.0,146,510,0.28627450980392155,paired test IDs; mapping uses actual L/N
+ALL,8192,4,0.7,0.7,76,510,0.14901960784313725,paired test IDs; mapping uses actual L/N
+ALL,16384,4,0.7,1.0,288,510,0.5647058823529412,paired test IDs; mapping uses actual L/N

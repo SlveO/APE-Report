@@ -1,0 +1,10 @@
+﻿method,position,n_generations,multiline_generations,changed_generations,changed_questions,changed_fraction,unit,scope
+ape_dynamic,0,500,175,55,55,0.11,count/fraction,scoring-entrypoint difference; no method-quality comparison
+ape_dynamic,9,500,171,53,53,0.106,count/fraction,scoring-entrypoint difference; no method-quality comparison
+ape_dynamic,19,500,157,54,54,0.108,count/fraction,scoring-entrypoint difference; no method-quality comparison
+ape_fixed,0,500,199,53,53,0.106,count/fraction,scoring-entrypoint difference; no method-quality comparison
+ape_fixed,9,500,186,47,47,0.094,count/fraction,scoring-entrypoint difference; no method-quality comparison
+ape_fixed,19,500,203,81,81,0.162,count/fraction,scoring-entrypoint difference; no method-quality comparison
+sequential,0,500,171,53,53,0.106,count/fraction,scoring-entrypoint difference; no method-quality comparison
+sequential,9,500,168,49,49,0.098,count/fraction,scoring-entrypoint difference; no method-quality comparison
+sequential,19,500,155,56,56,0.112,count/fraction,scoring-entrypoint difference; no method-quality comparison

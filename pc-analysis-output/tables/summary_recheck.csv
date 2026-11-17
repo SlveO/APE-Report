@@ -1,0 +1,16 @@
+﻿section,dataset,method,saved,recomputed,difference
+longbench_five_method_paired,qasper,sequential,0.4681908434776014,0.46819084347760137,-5.551115123125783e-17
+longbench_five_method_paired,qasper,pcw,0.45334835010753544,0.4533483501075355,5.551115123125783e-17
+longbench_five_method_paired,qasper,ape_default,0.46181463673797485,0.46181463673797485,0.0
+longbench_five_method_paired,qasper,ape_fixed,0.43720198602671795,0.4372019860267179,-5.551115123125783e-17
+longbench_five_method_paired,qasper,ape_dynamic,0.4434401791780091,0.44344017917800904,-5.551115123125783e-17
+longbench_five_method_paired,hotpotqa,sequential,0.5953040473155207,0.5953040473155206,-1.1102230246251565e-16
+longbench_five_method_paired,hotpotqa,pcw,0.561214667685256,0.5612146676852559,-1.1102230246251565e-16
+longbench_five_method_paired,hotpotqa,ape_default,0.5546198393093312,0.5546198393093312,0.0
+longbench_five_method_paired,hotpotqa,ape_fixed,0.5487756635835113,0.5487756635835113,0.0
+longbench_five_method_paired,hotpotqa,ape_dynamic,0.5334535347319705,0.5334535347319705,0.0
+longbench_five_method_paired,musique,sequential,0.32272787477804776,0.32272787477804776,0.0
+longbench_five_method_paired,musique,pcw,0.29568450333238866,0.29568450333238866,0.0
+longbench_five_method_paired,musique,ape_default,0.2994813288345392,0.2994813288345392,0.0
+longbench_five_method_paired,musique,ape_fixed,0.30671928111010244,0.3067192811101025,5.551115123125783e-17
+longbench_five_method_paired,musique,ape_dynamic,0.3073075164042201,0.3073075164042201,0.0

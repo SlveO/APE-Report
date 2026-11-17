@@ -1,0 +1,11 @@
+{
+  "experiment_stage": 2,
+  "status": "COMPLETED",
+  "research_status": "SUBMITTED",
+  "score_recomputed_count": 0,
+  "saved_candidates_match": true,
+  "original_candidates_modified": false,
+  "validation_scores_used": false,
+  "test_scores_used": false,
+  "next_stage_executed": false
+}

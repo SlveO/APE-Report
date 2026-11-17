@@ -1,0 +1,9 @@
+﻿stage,theoretical_generation_slots,applicable_logical_evaluations,frozen_physical_jobs,observed_records,successes,logical_reuse_savings,inapplicable_slots,unit,source
+baseline,1800,1800,1800,1800,1800,0,0,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+explore,7200,6672,6672,6672,6672,0,528,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+validation,1080,1071,992,992,992,79,9,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+length_check,120,120,120,120,120,0,0,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+attention,12,12,12,12,12,0,0,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+longbench_final,1020,1020,1020,1020,1020,0,0,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+litm,4500,4500,4500,4500,4500,0,0,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels
+doc2dial,3000,3000,3000,3000,3000,0,0,generation/evaluation count,snapshot/APE/main80/jobs.py; frozen inputs; attempts.jsonl:key.stage/logical_labels

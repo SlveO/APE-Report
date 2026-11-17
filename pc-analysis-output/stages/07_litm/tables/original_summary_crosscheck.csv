@@ -1,0 +1,13 @@
+﻿method,position,score_scope,original_summary_em,current_full_em,difference,unit
+sequential,0,saved full answer only,0.748,0.748,0.0,EM0-1; official-first-line results kept separate
+sequential,9,saved full answer only,0.66,0.66,0.0,EM0-1; official-first-line results kept separate
+sequential,19,saved full answer only,0.662,0.662,0.0,EM0-1; official-first-line results kept separate
+sequential,ALL,saved full answer only,0.69,0.69,0.0,EM0-1; official-first-line results kept separate
+ape_fixed,0,saved full answer only,0.776,0.776,0.0,EM0-1; official-first-line results kept separate
+ape_fixed,9,saved full answer only,0.668,0.668,0.0,EM0-1; official-first-line results kept separate
+ape_fixed,19,saved full answer only,0.672,0.672,0.0,EM0-1; official-first-line results kept separate
+ape_fixed,ALL,saved full answer only,0.7053333333333334,0.7053333333333333,-1.1102230246251565e-16,EM0-1; official-first-line results kept separate
+ape_dynamic,0,saved full answer only,0.746,0.746,0.0,EM0-1; official-first-line results kept separate
+ape_dynamic,9,saved full answer only,0.666,0.666,0.0,EM0-1; official-first-line results kept separate
+ape_dynamic,19,saved full answer only,0.662,0.662,0.0,EM0-1; official-first-line results kept separate
+ape_dynamic,ALL,saved full answer only,0.6913333333333334,0.6913333333333332,-1.1102230246251565e-16,EM0-1; official-first-line results kept separate

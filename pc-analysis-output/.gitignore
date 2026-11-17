@@ -1,0 +1,8 @@
+# Local acquisition copies, caches and temporary work stay on this PC.
+/acquisition/
+/runtime-cache/
+/tmp/
+**/cache/
+**/tmp/
+**/__pycache__/
+*.pyc

@@ -1,0 +1,10 @@
+﻿scope,dataset,unique_ids,clusters,input_conditions,min_ids_per_cell,accepted_replicates,proposed_replicates,rejected_empty_cell_draws,seed,rng_stream,unit
+all_27,qasper,13,10,114,12,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+all_27,hotpotqa,13,13,117,13,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+all_27,musique,14,14,126,14,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+complete_27,qasper,13,10,111,12,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+complete_27,hotpotqa,13,13,99,8,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+complete_27,musique,14,14,78,3,5000,5180,180,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+common_complete_27,qasper,11,8,99,11,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+common_complete_27,hotpotqa,8,8,72,8,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count
+common_complete_27,musique,3,3,27,3,5000,5000,0,20261116,"SeedSequence([seed, scope_index]); datasets drawn in qasper/hotpotqa/musique order",ID / evidence cluster / draw count

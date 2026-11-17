@@ -1,0 +1,9 @@
+﻿stage,expected,observed,difference,unit,source
+baseline,1800,1800,0,generation_record,attempts.jsonl:key.stage
+explore,6672,6672,0,generation_record,attempts.jsonl:key.stage
+validation,992,992,0,generation_record,attempts.jsonl:key.stage
+length_check,120,120,0,generation_record,attempts.jsonl:key.stage
+attention,12,12,0,generation_record,attempts.jsonl:key.stage
+longbench_final,1020,1020,0,generation_record,attempts.jsonl:key.stage
+litm,4500,4500,0,generation_record,attempts.jsonl:key.stage
+doc2dial,3000,3000,0,generation_record,attempts.jsonl:key.stage

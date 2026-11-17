@@ -1,0 +1,3 @@
+﻿target_split,donor_split,n_source_contributions,n_target_constructions,n_target_ids,n_donor_ids,n_contributed_tokens,unit,source
+explore,explore,153,103,47,6,451324,source contributions / constructions / sample IDs / tokens,construction_supplement_sources.csv
+validation,explore,145,96,40,7,442852,source contributions / constructions / sample IDs / tokens,construction_supplement_sources.csv

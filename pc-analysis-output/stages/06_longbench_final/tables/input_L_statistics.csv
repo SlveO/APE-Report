@@ -1,0 +1,5 @@
+﻿dataset,n_questions,L_min,L_mean,L_median,L_p90,L_max,N_outside_grid,L_below_grid,L_above_grid,original_documents_min,original_documents_max,unit
+qasper,170,1846,4970.7,4767.0,7053.299999999998,21110,170,69,3,1,1,document tokens; paired questions; original document count
+hotpotqa,170,1726,12968.117647058823,14421.5,16242.1,16322,170,5,0,2,10,document tokens; paired questions; original document count
+musique,170,6482,15563.929411764706,16096.0,16282.1,16335,170,0,0,3,20,document tokens; paired questions; original document count
+ALL,510,1726,11167.582352941177,14137.0,16254.3,21110,510,74,3,1,20,document tokens; paired questions; original document count

@@ -1,0 +1,14 @@
+﻿check,scope,denominator,failure_count,unit,status,evidence,note
+attempts JSON decoding,all physical records,18116,0,count,PASS,attempts.jsonl,[]
+unique successful task key,all physical task keys,18116,0,count,PASS,"attempts.jsonl:key,status",
+saved generation score reproduction,all scored physical records,18116,0,count,PASS,"attempts.jsonl:score,answer,reference_answers; snapshot/metrics.py",
+frozen sample/reference ID join,all physical generation records,18116,0,count,PASS,"frozen-main80/{longbench,litm,doc2dial}.json",
+score and reference validity,all physical generation records,18116,0,count,PASS,attempts.jsonl,
+LITM 500 questions x 3 positions x 3 methods,sequential/fixed/dynamic cold requests,4500,0,count,PASS,attempts.jsonl; frozen-main80/litm.json,
+"LITM raw/frozen documents, gold position, references, and template",500 questions and three raw positions,1500,0,count,PASS,data_sources.json:litm; frozen-main80/litm.json,
+LITM official first-line entrypoint agreement,full answer versus official first-line best_subspan_em,4500,501,count,FINDING,snapshot/metrics.py:score(litm); official evaluate_qa_responses.py:get_metrics_for_example,Preserve saved scores; publish a separate official first-line score during the later quality stage.
+"Doc2Dial original target ID, complete history, template and reference",500 frozen target turns,500,0,count,PASS,"data_sources.json:doc2dial_dialogues,doc2dial_documents; frozen-main80/doc2dial.json",
+Doc2Dial 500 targets x 3 methods x 2 cache conditions,paired cold/hot requests,3000,0,count,PASS,attempts.jsonl,
+Doc2Dial hot cache and repeated-generation evidence,same target/method cold-hot pairs,1500,0,count,PASS,"events.jsonl; snapshot/methods.py:run; snapshot/worker.py:execute; attempts.jsonl:stage_calls,output_token_ids",
+Doc2Dial corpus sufficient-statistics agreement with server,six saved method/cache aggregates,6,0,count,PASS,summary.json:doc2dial_paired.conditions; independently joined requests,
+upstream BLEU examples and independent component arithmetic,ported 13a/exp scorer,2,0,count,PASS,scoring_official_fixtures.csv,

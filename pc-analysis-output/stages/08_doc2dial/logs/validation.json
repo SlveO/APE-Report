@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "checked_table_denominators": {
+    "membership.csv": 500,
+    "target_inputs.csv": 500,
+    "per_request_records.csv": 3000,
+    "bleu_sufficient_statistics.csv": 1500,
+    "preaudit_input_checks.csv": 500,
+    "hot_generation_evidence.csv": 1500,
+    "cold_hot_pairs.csv": 1500,
+    "main_quality.csv": 6,
+    "main_quality_paired.csv": 9,
+    "main_efficiency.csv": 60,
+    "generation_cap_records.csv": 2162,
+    "selected_cases.csv": 3,
+    "scorer_validation.csv": 5,
+    "original_summary_crosscheck.csv": 6,
+    "record_issues.csv": 0,
+    "reference_language_candidates.csv": 1
+  },
+  "server_aggregate_and_statistics_agreement": true,
+  "cold_hot_generation_pairs_pass": 1500,
+  "one_document_subgroup_CI_empty": true,
+  "report_links_missing": [],
+  "figure_pairs": [
+    "actual_LN_mapping",
+    "cache_speedups",
+    "cold_hot_latency",
+    "corpus_bleu",
+    "history_subgroups",
+    "output_length_and_caps",
+    "paired_length_latency",
+    "quality_differences"
+  ],
+  "visual_review": "Figures reviewed by plotting agent; corpus BLEU and cache speedups also inspected by primary agent.",
+  "independent_review": "Protocol audit agent reviewed target pairing, source grouping and cluster-bootstrap aggregation.",
+  "research_status": "SUBMITTED",
+  "rule_modified": false,
+  "next_stage_executed": false
+}

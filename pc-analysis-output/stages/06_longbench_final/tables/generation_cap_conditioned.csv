@@ -1,0 +1,26 @@
+﻿dataset,method,cap_hit,n_requests,denominator_dataset_method,mean_f1_percent,mean_total_seconds,mean_ttft_seconds,mean_output_tokens,unit
+qasper,sequential,False,170,170,46.81908434776014,1.2296405388768215,0.6400270597612047,21.17058823529412,F1 x100; seconds; tokens; descriptive output-length grouping
+qasper,pcw,False,170,170,45.33483501075354,1.0099893524749752,0.6286469826187171,13.764705882352942,F1 x100; seconds; tokens; descriptive output-length grouping
+qasper,ape_default,False,170,170,46.18146367379749,1.6260096027871922,0.6852524898905198,19.458823529411763,F1 x100; seconds; tokens; descriptive output-length grouping
+qasper,ape_fixed,False,170,170,43.720198602671786,1.6184379276066252,0.6870596976991853,18.770588235294117,F1 x100; seconds; tokens; descriptive output-length grouping
+qasper,ape_dynamic,False,170,170,44.344017917800905,1.6536400763715124,0.6845833163297571,19.888235294117646,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,sequential,False,167,170,60.19956327945613,1.8981595988187403,1.767805182206316,5.1437125748503,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,sequential,True,3,170,22.280578898225958,2.7805789313279092,1.8080826180521399,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,pcw,False,169,170,56.238377007607774,1.767268976131895,1.6232571464580259,5.485207100591716,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,pcw,True,1,170,36.36363636363637,2.7889308820012957,1.7917712579946965,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,ape_default,False,168,170,55.83775684887839,1.9499270342404045,1.6892180337939255,5.875,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,ape_default,True,2,170,23.897058823529413,3.298642869340256,1.7011108964215964,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,ape_fixed,False,169,170,55.20228568591533,1.942634198663084,1.6914796408268584,5.597633136094674,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,ape_fixed,True,1,170,0.0,3.7541518760845065,2.0128284390084445,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,ape_dynamic,False,169,170,53.66100645232841,1.9343034253543872,1.688571481200861,5.556213017751479,F1 x100; seconds; tokens; descriptive output-length grouping
+hotpotqa,ape_dynamic,True,1,170,0.0,3.7367603089660406,2.0116783399134874,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,sequential,False,162,170,33.66588809399267,2.3199244714025866,2.1553623122709262,6.1234567901234565,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,sequential,True,8,170,4.0625,3.215264483791543,2.214203338662628,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,pcw,False,162,170,30.505246736325635,2.14115368661235,1.9464250811746482,6.962962962962963,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,pcw,True,8,170,10.598323170731707,3.030937733798055,2.014729380432982,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,ape_default,False,164,170,30.767325973066335,2.3685609150689277,2.01510631705339,7.359756097560975,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,ape_default,True,6,170,7.55685510071475,3.817080882183897,2.07812037152083,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,ape_fixed,False,165,170,31.280188762879447,2.366320403203876,2.018909100434658,7.193939393939394,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,ape_fixed,True,5,170,10.5993265993266,3.8552433342207224,2.091162041760981,32.0,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,ape_dynamic,False,164,170,31.531897230945788,2.3691368556507615,2.0212969089909345,7.213414634146342,F1 x100; seconds; tokens; descriptive output-length grouping
+musique,ape_dynamic,True,6,170,8.8327721661055,3.6969363370444626,1.9678806953985866,32.0,F1 x100; seconds; tokens; descriptive output-length grouping

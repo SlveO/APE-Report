@@ -1,0 +1,2 @@
+﻿sample_id,reference_answer,latest_user_utterance,confirmed_spanish,candidate_pattern,unit
+1085067334266d41636126e5b9ee9519_5,puede obtener ayuda para pagar la escuela o la capacitación laboral,I want to know about the DEA Educational Assistance Program for Survivors and Dependents.?,True,\b(?:puede|obtener|ayuda|pagar|escuela|capacitación|usted|necesita|beneficios|también|dependientes)\b|[áéíóúñ¿¡],"targeted reference-language review, original reference retained"

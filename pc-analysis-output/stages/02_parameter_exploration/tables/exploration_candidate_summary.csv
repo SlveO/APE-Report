@@ -1,0 +1,7 @@
+﻿scope,n_dataset_cells,default_f1_percent,global_candidate_T,global_candidate_S,global_candidate_f1_percent,exploration_cell_candidates_f1_percent,cell_candidates_minus_global_pp,unit,evaluation_data
+all_27,27,40.15876716062273,0.7,1.0,41.162863126898394,43.92506156607766,2.762198439179265,F1 x100; percentage points,same exploration subset used to choose candidates; handoff to validation
+complete_27,27,39.89302857816243,0.7,1.0,41.892875341523975,44.89173529454447,2.9988599530204922,F1 x100; percentage points,same exploration subset used to choose candidates; handoff to validation
+all_shared18,18,41.858188657339205,0.5,0.9,43.20486509583873,44.725632153823334,1.5207670579846067,F1 x100; percentage points,same exploration subset used to choose candidates; handoff to validation
+complete_shared18,18,41.45958078364876,0.5,0.9,44.276938684984664,46.17564274652355,1.8987040615388864,F1 x100; percentage points,same exploration subset used to choose candidates; handoff to validation
+missing_shared18,18,31.44332424327756,0.5,0.9,32.691073623613306,34.16814593401895,1.4770723104056458,F1 x100; percentage points,same exploration subset used to choose candidates; handoff to validation
+complete_common_ids27,27,40.14111720744541,0.7,1.0,41.90145662752015,45.374514762715656,3.473058135195508,F1 x100; percentage points,same exploration subset used to choose candidates; handoff to validation

@@ -1,0 +1,9 @@
+﻿stratum,overall_n_questions,contribution_to_overall_delta_pp,ci_low_pp,ci_high_pp,unit,seed,replicates
+mapped_4096,510,0.720496038476054,-0.08904480231720711,1.5633039664337383,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+mapped_8192,510,-1.0036860520137822,-2.1259953794091784,0.04168450540941507,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+mapped_16384,510,0.0,0.0,0.0,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+N_1,510,0.5222820488969524,-0.4393836797905043,1.495612652126055,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+N_2,510,-0.8054720624346806,-1.8036573308317272,0.15236515111986493,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+N_3,510,0.0,0.0,0.0,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+support_overlap,510,0.0,0.0,0.0,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000
+support_nonoverlap,510,-0.28319001353772827,-1.6764023088092723,1.0920547891863828,dataset-equal overall dynamic-minus-fixed F1 percentage-point contribution; zero outside stratum,20261116,5000

@@ -1,0 +1,10 @@
+﻿dataset,split,n_sample_ids,expected_ids,n_evidence_groups,n_normalized_questions,denominator_dataset,unit,source
+qasper,explore,17,17,16,17,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+qasper,validation,13,13,10,12,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+qasper,test,170,170,116,165,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+hotpotqa,explore,17,17,17,17,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+hotpotqa,validation,13,13,13,13,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+hotpotqa,test,170,170,170,170,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+musique,explore,16,16,16,16,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+musique,validation,14,14,14,14,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"
+musique,test,170,170,164,170,200,sample IDs / groups / questions,"restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:dataset,split,sample_id,group,question"

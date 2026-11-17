@@ -1,0 +1,4 @@
+﻿case_type,n_targets,denominator,unit
+改善,225,500,auxiliary one-target scores; not corpus BLEU win/loss
+退化,246,500,auxiliary one-target scores; not corpus BLEU win/loss
+持平,29,500,auxiliary one-target scores; not corpus BLEU win/loss

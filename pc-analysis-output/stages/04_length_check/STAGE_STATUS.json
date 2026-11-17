@@ -1,0 +1,15 @@
+{
+  "experiment_stage": 4,
+  "status": "COMPLETED",
+  "research_status": "SUBMITTED",
+  "physical_generations": 120,
+  "paired_input_conditions": 60,
+  "unique_question_ids": 10,
+  "complete_generations": 108,
+  "complete_paired_conditions": 54,
+  "same_parameters_identical_output_pairs": 40,
+  "score_recomputed_count": 0,
+  "test_scores_used": false,
+  "rule_modified": false,
+  "next_stage_executed": false
+}

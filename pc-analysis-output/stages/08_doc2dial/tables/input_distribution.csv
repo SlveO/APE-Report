@@ -1,0 +1,3 @@
+﻿actual_N,n_targets,n_dialogues,n_documents,L_min,L_mean,L_median,L_p90,L_max,mapped_L,mapped_N,dynamic_T,dynamic_S,original_document_count,unit
+1,493,361,171,223,888.3975659229209,808.0,1534.8000000000002,3771,4096,4,1.0,1.0,1,document tokens; actual encoded block counts; target/dialogue/document counts
+2,7,5,1,8611,8611.0,8611.0,8611.0,8611,8192,4,0.7,0.7,1,document tokens; actual encoded block counts; target/dialogue/document counts

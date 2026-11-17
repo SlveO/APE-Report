@@ -1,0 +1,10 @@
+﻿dataset,method,n,limit,cap_hits,eos_at_cap,eos_terminated,output_tokens_mean,unit
+qasper,sequential,200,128,0,0,200,20.565,requests; output tokens include EOS
+qasper,pcw,200,128,0,0,200,13.34,requests; output tokens include EOS
+qasper,ape_default,200,128,0,0,200,19.045,requests; output tokens include EOS
+hotpotqa,sequential,200,32,3,0,197,5.455,requests; output tokens include EOS
+hotpotqa,pcw,200,32,1,0,199,5.51,requests; output tokens include EOS
+hotpotqa,ape_default,200,32,2,0,198,5.935,requests; output tokens include EOS
+musique,sequential,200,32,9,0,191,7.205,requests; output tokens include EOS
+musique,pcw,200,32,9,0,191,7.865,requests; output tokens include EOS
+musique,ape_default,200,32,7,1,194,8.12,requests; output tokens include EOS

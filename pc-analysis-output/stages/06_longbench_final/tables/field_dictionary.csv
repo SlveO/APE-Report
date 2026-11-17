@@ -1,0 +1,11 @@
+﻿field,definition,unit_or_scope
+task_N / actual_N,任务键N为null时由自然分块产生actual_N; 实际参数和块数取结果记录,task key / block count
+L,完整文档token长度; 不含prefix/request; natural chunks最长7500,tokenizer tokens
+original_document_count,"原公开输入资料数, 与分块后编码块数分别登记",documents
+dataset=macro_equal_present_dataset,"对datasets_in_scope内数据集等权; 主表为3个, 分支4K仅Qasper/HotpotQA",F1 weighted mean
+dataset=pooled_requests,按该scope实际题数比例保留数据集权重; 质量分层及效率采用该口径,request/question-weighted mean
+bootstrap subgroup,仅对子组内原始来源组抽样; 分母随组大小变化; 五法共同保留,conditional source composition variation
+context cache timing,cold miss每次重新编码资料; 获取时间为缓存条件查询分支,seconds
+after_ttft_seconds,"total_seconds−ttft_seconds, 含首token后生成及最终文本解码等剩余过程",seconds
+dynamic_selection_seconds,prepare之后选择/固定参数分支的计时; 动态实际查冻结规则,seconds; report µs
+CI scope,固定模型/模板/规则下的问题及来源组构成变动; 当前每方法一次连续worker运行,percentile interval; no repeated timing runs

@@ -1,0 +1,43 @@
+﻿L,role,metric,n_requests,n_question_ids,mean,median,p90,unit,observer_enabled,cache_condition,ci_low,ci_high,ci_method,source_file
+4096,default,ttft_seconds,3,3,0.9004493164053807,0.5691984151490033,1.365180838201195,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,default,total_seconds,3,3,1.549606771984448,0.8719908040948212,2.659996411111206,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,default,cache_build_seconds,3,3,0.7697596746341636,0.4598765738774091,1.204224298754707,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,default,cache_get_seconds,3,3,3.2161672910054523e-07,2.859160304069519e-07,3.771856427192688e-07,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,default,output_tokens,3,3,7.333333333333333,4.0,13.600000000000001,token including EOS,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,default,peak_allocated_bytes,3,3,16.856837431589764,16.973427295684814,16.978615283966064,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,default,peak_reserved_bytes,3,3,21.643880208333332,23.98828125,23.98828125,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,ttft_seconds,3,3,0.570754162579154,0.5719337929040194,0.5728096544742585,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,total_seconds,3,3,1.1829363182963182,0.8718020399101079,1.7815403687767686,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,cache_build_seconds,3,3,0.4594843176503976,0.4599594350438565,0.4610210125800222,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,cache_get_seconds,3,3,3.1533030172189075e-07,3.019813448190689e-07,3.403518348932266e-07,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,output_tokens,3,3,7.0,4.0,12.8,token including EOS,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,peak_allocated_bytes,3,3,16.585344791412354,16.570730686187744,16.606683444976806,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+4096,cell_best,peak_reserved_bytes,3,3,21.643880208333332,23.98828125,23.98828125,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,ttft_seconds,3,3,1.9771178816445172,1.9769208407960832,1.9802965353243054,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,total_seconds,3,3,2.4850132326440266,2.629238926805556,2.633167722262442,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,cache_build_seconds,3,3,1.7447869386523962,1.7424802989698946,1.7489887989126145,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,cache_get_seconds,3,3,3.7462450563907623e-07,3.6391429603099823e-07,3.9669685065746306e-07,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,output_tokens,3,3,3.3333333333333335,4.0,4.0,token including EOS,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,peak_allocated_bytes,3,3,21.319183349609375,21.302725315093994,21.34310350418091,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,default,peak_reserved_bytes,3,3,23.98828125,23.98828125,23.98828125,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,ttft_seconds,3,3,1.9798722700215876,1.981234529055655,1.981243317015469,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,total_seconds,3,3,3.537965134407083,2.643232988193631,5.137667388096451,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,cache_build_seconds,3,3,1.7464463542370747,1.7454583358485252,1.7486196142155677,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,cache_get_seconds,3,3,3.19676473736763e-07,3.450550138950348e-07,3.530643880367279e-07,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,output_tokens,3,3,8.0,4.0,15.200000000000001,token including EOS,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,peak_allocated_bytes,3,3,21.319464842478435,21.302725315093994,21.34377908706665,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+16384,cell_best,peak_reserved_bytes,3,3,23.98828125,23.98828125,23.98828125,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,ttft_seconds,6,3,1.438783599024949,1.7687343945726752,1.979030649876222,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,total_seconds,6,3,2.0173100023142374,2.410444888402708,2.870573866995983,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,cache_build_seconds,6,3,1.25727330664328,1.5657879115315154,1.7465481114340946,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,cache_get_seconds,6,3,3.4812061736981076e-07,3.594905138015747e-07,4.0244776755571365e-07,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,output_tokens,6,3,5.333333333333333,4.0,10.0,token including EOS,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,peak_allocated_bytes,6,3,19.088010390599568,19.140769481658936,21.327961683273315,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,default,peak_reserved_bytes,6,3,22.816080729166668,23.98828125,23.98828125,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,ttft_seconds,6,3,1.2753132163003709,1.2750826934352517,1.9812400215305388,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,total_seconds,6,3,2.3604507263517007,2.1091806889744475,4.202254488132894,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,cache_build_seconds,6,3,1.1029653359437361,1.102878600009717,1.7474341348279268,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,cache_get_seconds,6,3,3.175033877293269e-07,3.2351817935705185e-07,3.525055944919586e-07,s,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,output_tokens,6,3,7.5,4.0,16.5,token including EOS,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,peak_allocated_bytes,6,3,18.952404816945393,18.958649158477783,21.328383922576904,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv
+ALL,cell_best,peak_reserved_bytes,6,3,22.816080729166668,23.98828125,23.98828125,GiB,True,"cold, KV miss",,,descriptive diagnostic observations; no resampling,diagnostic_attempts.csv

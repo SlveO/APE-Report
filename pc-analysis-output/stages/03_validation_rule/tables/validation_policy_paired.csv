@@ -1,0 +1,13 @@
+﻿scope,policy_a,policy_b,n_condition_pairs,n_unique_ids,delta_b_minus_a_pp,ci_low_pp,ci_high_pp,win_b,tie,loss_b,unit,seed,replicates
+all_27,default,global_candidate,357,40,0.08372359306281218,-3.097873976932634,3.453242024673924,39,280,38,macro F1 percentage points; paired input-condition counts,20261116,5000
+all_27,selected_fixed,cell_candidates,357,40,-2.4966341554269436,-5.554198484491389,-0.07159723356520147,28,277,52,macro F1 percentage points; paired input-condition counts,20261116,5000
+all_27,selected_fixed,original_frozen_rule,357,40,0.5970231583775243,-1.2266012097354113,2.137937259064049,15,327,15,macro F1 percentage points; paired input-condition counts,20261116,5000
+all_27,selected_fixed,scope_replay_rule,357,40,0.5970231583775243,-1.2266012097354113,2.137937259064049,15,327,15,macro F1 percentage points; paired input-condition counts,20261116,5000
+complete_27,default,global_candidate,288,40,0.48839229531032724,-2.9643797595468317,3.990416054476363,33,222,33,macro F1 percentage points; paired input-condition counts,20261116,5000
+complete_27,selected_fixed,cell_candidates,288,40,-1.8789276282367744,-4.847937855837364,0.5260669293655799,23,223,42,macro F1 percentage points; paired input-condition counts,20261116,5000
+complete_27,selected_fixed,original_frozen_rule,288,40,0.7245557648010609,-1.1225673937192073,2.3723010508129314,12,265,11,macro F1 percentage points; paired input-condition counts,20261116,5000
+complete_27,selected_fixed,scope_replay_rule,288,40,0.9392787307895322,-0.3618381793028001,2.203593453500499,10,273,5,macro F1 percentage points; paired input-condition counts,20261116,5000
+common_complete_27,default,global_candidate,198,22,0.11244670082535824,-4.8953970646253175,6.145876548652002,25,147,26,macro F1 percentage points; paired input-condition counts,20261116,5000
+common_complete_27,selected_fixed,cell_candidates,198,22,-2.5604223231533965,-6.7852929284825905,0.6978033160704185,17,149,32,macro F1 percentage points; paired input-condition counts,20261116,5000
+common_complete_27,selected_fixed,original_frozen_rule,198,22,0.01412647660732285,-2.5001150925438873,1.9337442459459533,9,179,10,macro F1 percentage points; paired input-condition counts,20261116,5000
+common_complete_27,selected_fixed,scope_replay_rule,198,22,0.6922014790625696,-0.14132466143228384,1.4497802082373479,8,183,7,macro F1 percentage points; paired input-condition counts,20261116,5000

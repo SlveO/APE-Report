@@ -1,0 +1,10 @@
+﻿dataset,method,all_ids,public_length_ge8000_ids,mean_f1_percent_in_subset,unit,scope
+qasper,sequential,200,5,50.2787456445993,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+qasper,pcw,200,5,40.827586206896555,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+qasper,ape_default,200,5,44.51926977687627,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+hotpotqa,sequential,200,143,59.8496652985817,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+hotpotqa,pcw,200,143,55.863681772772665,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+hotpotqa,ape_default,200,143,55.76163082593185,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+musique,sequential,200,190,32.87709495526833,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+musique,pcw,200,190,31.052473105178642,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained
+musique,ape_default,200,190,31.5930700615152,IDs; F1 x100,descriptive sensitivity to observed upstream entry predicate; full600 baseline retained

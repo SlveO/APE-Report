@@ -1,0 +1,16 @@
+{
+  "stage": "01_audit",
+  "stage_delivery": "COMPLETED_WITH_FINDINGS",
+  "research_status": "SUBMITTED",
+  "later_stages_started_this_turn": false,
+  "formal_bootstrap_executed": false,
+  "gpu_executed": false,
+  "new_dependencies_installed": [],
+  "analysis_commit": "227116e4a004153272640cfe31087a033861b8e9",
+  "material_findings": 9,
+  "construction_missing_evidence_count": 80,
+  "construction_affected_generations": 1605,
+  "litm_changed_generations": 501,
+  "litm_changed_questions": 147,
+  "next_step": "用户安排后，优先讨论开发构造补正及参数分析范围"
+}

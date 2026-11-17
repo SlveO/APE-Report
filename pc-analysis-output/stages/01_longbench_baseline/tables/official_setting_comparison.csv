@@ -1,0 +1,9 @@
+﻿item,local,official,interpretation,source
+model,Llama-3.1-8B-Instruct (ModelScope mirror master),Table2 Llama-3.1; Table6 Llama-3,主表选Table2同名模型；Table6补充输入方式对照,https://arxiv.org/html/2502.05431v1
+inputs,full public context; no retrieval; all200 IDs/dataset,Table2 PCW/APE: Contriever top20 x4000 words,论文输入为检索文本；本次为完整文档,https://arxiv.org/html/2502.05431v1
+segmentation,<=7500 tokenizer tokens/block;actual N1-3,Table2 4000-word retrieval chunk; Table6 <7500-token segments,words与tokens分开标注；本次N分布另表,https://arxiv.org/html/2502.05431v1
+T/S,default0.9/0.9 for every baseline sample,paper section4.4 validation search0.1..1.0 step0.1; uses S*T,官方README示例默认0.9/0.9；论文逐任务最终值未列出,https://arxiv.org/html/2502.05431v1
+sample selection,all600 public IDs,pred_parallel9.py:99 skips public length<8000; paper table denominator unspecified,入口代码筛选事实与论文样本分母分别登记,https://arxiv.org/html/2502.05431v1
+official entry,main80 snapshot passes T/S explicitly; three datasets fixed,"pred_parallel9.py:183 passes only model; query definition requires model,T,S",按实际snapshot记录本次设置；官方入口需接口配套,https://arxiv.org/html/2502.05431v1
+efficiency,cold requests; batch1; output128/32; sequential block forwards; TF4.44.2,paper section5.4 H100/vLLM; batch1/4; query256/generation256;contexts2K-128K,并列呈现测量设置；本次给600题配对加速比,https://arxiv.org/html/2502.05431v1
+hardware,physical GPU0; RTX4090 48GB is plan registration;telemetry pending,paper efficiency H100,本次设备实际型号与驱动采集待补,https://arxiv.org/html/2502.05431v1
