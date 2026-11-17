@@ -1,0 +1,670 @@
+{
+  "campaign": "followup2604-20261117T085011",
+  "file_count": 166,
+  "files": [
+    {
+      "path": "COPY-COMPARISONS.json",
+      "bytes": 28423
+    },
+    {
+      "path": "FINAL-REVIEW.json",
+      "bytes": 1575
+    },
+    {
+      "path": "MANIFEST.json",
+      "bytes": 8118
+    },
+    {
+      "path": "PORTABLE-PATHS.json",
+      "bytes": 8284
+    },
+    {
+      "path": "README.md",
+      "bytes": 2299
+    },
+    {
+      "path": "code/001/APE/ape/__init__.py",
+      "bytes": 1653
+    },
+    {
+      "path": "code/001/APE/ape/ape_llama.py",
+      "bytes": 14383
+    },
+    {
+      "path": "code/001/APE/main80/__init__.py",
+      "bytes": 73
+    },
+    {
+      "path": "code/001/APE/main80/campaign.py",
+      "bytes": 29094
+    },
+    {
+      "path": "code/001/APE/main80/common.py",
+      "bytes": 4690
+    },
+    {
+      "path": "code/001/APE/main80/data.py",
+      "bytes": 20485
+    },
+    {
+      "path": "code/001/APE/main80/diagnostics.py",
+      "bytes": 2663
+    },
+    {
+      "path": "code/001/APE/main80/followup_campaign.py",
+      "bytes": 57122
+    },
+    {
+      "path": "code/001/APE/main80/followup_rules.py",
+      "bytes": 27951
+    },
+    {
+      "path": "code/001/APE/main80/jobs.py",
+      "bytes": 6073
+    },
+    {
+      "path": "code/001/APE/main80/methods.py",
+      "bytes": 12277
+    },
+    {
+      "path": "code/001/APE/main80/metrics.py",
+      "bytes": 2150
+    },
+    {
+      "path": "code/001/APE/main80/monitor.py",
+      "bytes": 9160
+    },
+    {
+      "path": "code/001/APE/main80/report.py",
+      "bytes": 7167
+    },
+    {
+      "path": "code/001/APE/main80/rules.py",
+      "bytes": 3992
+    },
+    {
+      "path": "code/001/APE/main80/worker.py",
+      "bytes": 9170
+    },
+    {
+      "path": "code/001/models/Llama-3.1-8B-Instruct/config.json",
+      "bytes": 855
+    },
+    {
+      "path": "code/001/models/Llama-3.1-8B-Instruct/generation_config.json",
+      "bytes": 184
+    },
+    {
+      "path": "code/001/models/Llama-3.1-8B-Instruct/model.safetensors.index.json",
+      "bytes": 23950
+    },
+    {
+      "path": "code/001/models/Llama-3.1-8B-Instruct/special_tokens_map.json",
+      "bytes": 296
+    },
+    {
+      "path": "code/001/models/Llama-3.1-8B-Instruct/tokenizer.json",
+      "bytes": 9085657
+    },
+    {
+      "path": "code/001/models/Llama-3.1-8B-Instruct/tokenizer_config.json",
+      "bytes": 55351
+    },
+    {
+      "path": "code/001/scripts/observe_campaign.py",
+      "bytes": 2249
+    },
+    {
+      "path": "code/001/scripts/run_followup_campaign.sh",
+      "bytes": 236
+    },
+    {
+      "path": "code/001/scripts/with_env.sh",
+      "bytes": 1470
+    },
+    {
+      "path": "code/historical-main80/APE/ape/ape_llama.py",
+      "bytes": 14383
+    },
+    {
+      "path": "code/historical-main80/APE/main80/methods.py",
+      "bytes": 12277
+    },
+    {
+      "path": "code/historical-main80/APE/main80/metrics.py",
+      "bytes": 1946
+    },
+    {
+      "path": "code/historical-main80/APE/main80/rules.py",
+      "bytes": 3678
+    },
+    {
+      "path": "evidence/datasets/raw-main80/ASSET_MANIFEST.json",
+      "bytes": 19516
+    },
+    {
+      "path": "evidence/datasets/raw-main80/references/longbench_metrics.py.txt",
+      "bytes": 5190
+    },
+    {
+      "path": "evidence/docs/DYNAMIC_RULE_V2_PLAN.md",
+      "bytes": 5128
+    },
+    {
+      "path": "evidence/docs/EXPERIMENT_PLAN.md",
+      "bytes": 17669
+    },
+    {
+      "path": "evidence/logs/runs/20261117-followup-v2-prep/independent-freeze-review.json",
+      "bytes": 1460
+    },
+    {
+      "path": "evidence/logs/runs/20261117-followup-v2-prep/review.json",
+      "bytes": 1671
+    },
+    {
+      "path": "evidence/logs/runs/20261117-main80-correction/exploration-review.json",
+      "bytes": 4411
+    },
+    {
+      "path": "inputs/datasets/frozen-followup-v2/frozen.json",
+      "bytes": 15976
+    },
+    {
+      "path": "inputs/datasets/frozen-followup-v2/natural.json",
+      "bytes": 20418385
+    },
+    {
+      "path": "inputs/datasets/frozen-followup-v2/scoring-weights.json",
+      "bytes": 1190
+    },
+    {
+      "path": "inputs/datasets/frozen-followup-v2/selection-report.json",
+      "bytes": 10517
+    },
+    {
+      "path": "inputs/datasets/frozen-followup-v2/split-overlap.json",
+      "bytes": 373
+    },
+    {
+      "path": "inputs/datasets/frozen-main80/development.json",
+      "bytes": 77284290
+    },
+    {
+      "path": "inputs/datasets/frozen-main80/frozen.json",
+      "bytes": 113135
+    },
+    {
+      "path": "inputs/datasets/frozen-main80-corrected-v1/development.json",
+      "bytes": 59866366
+    },
+    {
+      "path": "inputs/datasets/frozen-main80-corrected-v1/frozen.json",
+      "bytes": 113310
+    },
+    {
+      "path": "inputs/logs/runs/20261117-main80-correction/corrected-candidates.json",
+      "bytes": 7621
+    },
+    {
+      "path": "inputs/logs/runs/20261117-main80-correction/correction-validation-jobs.jsonl",
+      "bytes": 181636
+    },
+    {
+      "path": "inputs/logs/runs/20261117-main80-correction/correction-validation-reuse.jsonl",
+      "bytes": 111484
+    },
+    {
+      "path": "inputs/output/runs/main80-20261114T041503/rule.json",
+      "bytes": 1587
+    },
+    {
+      "path": "logical-provenance.jsonl",
+      "bytes": 3292158
+    },
+    {
+      "path": "original-package/MANIFEST.json",
+      "bytes": 1383
+    },
+    {
+      "path": "original-package/README.md",
+      "bytes": 665
+    },
+    {
+      "path": "original-package/attempts.jsonl",
+      "bytes": 3790571
+    },
+    {
+      "path": "original-package/code-versions.json",
+      "bytes": 5287
+    },
+    {
+      "path": "original-package/config.json",
+      "bytes": 2000
+    },
+    {
+      "path": "original-package/confirmation-plan.json",
+      "bytes": 705667
+    },
+    {
+      "path": "original-package/confirmation-results.csv",
+      "bytes": 150687
+    },
+    {
+      "path": "original-package/confirmation-results.jsonl",
+      "bytes": 920223
+    },
+    {
+      "path": "original-package/confirmation-summary.json",
+      "bytes": 3266
+    },
+    {
+      "path": "original-package/corrected-length-plan.json",
+      "bytes": 112425
+    },
+    {
+      "path": "original-package/corrected-length-results.jsonl",
+      "bytes": 196583
+    },
+    {
+      "path": "original-package/corrected-rule.json",
+      "bytes": 1908
+    },
+    {
+      "path": "original-package/corrected-validation-results.jsonl",
+      "bytes": 1330986
+    },
+    {
+      "path": "original-package/environment.json",
+      "bytes": 758
+    },
+    {
+      "path": "original-package/events.jsonl",
+      "bytes": 1607689
+    },
+    {
+      "path": "original-package/input-versions.json",
+      "bytes": 5710
+    },
+    {
+      "path": "original-package/natural-candidates.json",
+      "bytes": 3287
+    },
+    {
+      "path": "original-package/natural-exploration-results.jsonl",
+      "bytes": 1322027
+    },
+    {
+      "path": "original-package/natural-rule.json",
+      "bytes": 2105
+    },
+    {
+      "path": "original-package/natural-splits.json",
+      "bytes": 15976
+    },
+    {
+      "path": "original-package/natural-validation-plan.json",
+      "bytes": 71907
+    },
+    {
+      "path": "original-package/natural-validation-results.jsonl",
+      "bytes": 156008
+    },
+    {
+      "path": "original-package/requested-config.json",
+      "bytes": 2281
+    },
+    {
+      "path": "original-package/reuse.jsonl",
+      "bytes": 247109
+    },
+    {
+      "path": "original-package/sampling.json",
+      "bytes": 13527
+    },
+    {
+      "path": "original-package/scoring-weights.json",
+      "bytes": 1190
+    },
+    {
+      "path": "original-package/split-overlap.json",
+      "bytes": 373
+    },
+    {
+      "path": "provenance/corrected-exploration-for-candidate-reconstruction.jsonl",
+      "bytes": 7747663
+    },
+    {
+      "path": "provenance/historical-reused-attempts.jsonl",
+      "bytes": 715056
+    },
+    {
+      "path": "review/FINAL-COPY-COMPARISONS.json",
+      "bytes": 2371
+    },
+    {
+      "path": "review/FOLLOWUP2604_ACCEPTANCE.md.txt",
+      "bytes": 10024
+    },
+    {
+      "path": "review/ISSUES.md.txt",
+      "bytes": 2729
+    },
+    {
+      "path": "review/MANIFEST-before-final-review.json",
+      "bytes": 7394
+    },
+    {
+      "path": "review/README-before-final-review.md.txt",
+      "bytes": 2032
+    },
+    {
+      "path": "review/RUNS.json",
+      "bytes": 4816
+    },
+    {
+      "path": "review/audit-code.py.txt",
+      "bytes": 66140
+    },
+    {
+      "path": "review/audit-current-source.py.txt",
+      "bytes": 66120
+    },
+    {
+      "path": "review/audit.json",
+      "bytes": 769
+    },
+    {
+      "path": "review/audit_followup_acceptance.py.txt",
+      "bytes": 66140
+    },
+    {
+      "path": "review/checklist.csv",
+      "bytes": 33527
+    },
+    {
+      "path": "review/checklist.json",
+      "bytes": 45622
+    },
+    {
+      "path": "review/confirmation-means.csv",
+      "bytes": 701
+    },
+    {
+      "path": "review/confirmation-paired.csv",
+      "bytes": 41943
+    },
+    {
+      "path": "review/confirmation-summary-rebuilt.json",
+      "bytes": 4493
+    },
+    {
+      "path": "review/execution.json",
+      "bytes": 1042
+    },
+    {
+      "path": "review/finalize-code.py.txt",
+      "bytes": 13531
+    },
+    {
+      "path": "review/issues.json",
+      "bytes": 3563
+    },
+    {
+      "path": "review/length-paired.csv",
+      "bytes": 14727
+    },
+    {
+      "path": "review/length-summary.json",
+      "bytes": 2938
+    },
+    {
+      "path": "review/original-PC-package-review.json",
+      "bytes": 3394
+    },
+    {
+      "path": "review/qasper-N-means.csv",
+      "bytes": 683
+    },
+    {
+      "path": "review/review-record.json",
+      "bytes": 1575
+    },
+    {
+      "path": "review/rules-code-difference.patch.txt",
+      "bytes": 521
+    },
+    {
+      "path": "review/rules-rebuilt.json",
+      "bytes": 3451
+    },
+    {
+      "path": "review/runtime-rebuilt.json",
+      "bytes": 3532
+    },
+    {
+      "path": "review/score-recalculation.csv",
+      "bytes": 340624
+    },
+    {
+      "path": "review/source-comparisons.json",
+      "bytes": 11780
+    },
+    {
+      "path": "samples.json",
+      "bytes": 529410
+    },
+    {
+      "path": "server/attempts.jsonl",
+      "bytes": 3790571
+    },
+    {
+      "path": "server/browser-seen.jsonl",
+      "bytes": 253
+    },
+    {
+      "path": "server/code-versions.json",
+      "bytes": 5287
+    },
+    {
+      "path": "server/config.json",
+      "bytes": 2000
+    },
+    {
+      "path": "server/confirmation-plan.json",
+      "bytes": 705667
+    },
+    {
+      "path": "server/confirmation-results.jsonl",
+      "bytes": 920223
+    },
+    {
+      "path": "server/confirmation-summary.json",
+      "bytes": 3266
+    },
+    {
+      "path": "server/controller-exit.json",
+      "bytes": 387
+    },
+    {
+      "path": "server/corrected-length-plan.json",
+      "bytes": 112425
+    },
+    {
+      "path": "server/corrected-length-results.jsonl",
+      "bytes": 196583
+    },
+    {
+      "path": "server/corrected-rule.json",
+      "bytes": 1908
+    },
+    {
+      "path": "server/corrected-validation-results.jsonl",
+      "bytes": 1330986
+    },
+    {
+      "path": "server/delivery.json",
+      "bytes": 977
+    },
+    {
+      "path": "server/environment.json",
+      "bytes": 758
+    },
+    {
+      "path": "server/events.jsonl",
+      "bytes": 1607965
+    },
+    {
+      "path": "server/final-summary.json",
+      "bytes": 4484
+    },
+    {
+      "path": "server/incomplete.json",
+      "bytes": 179
+    },
+    {
+      "path": "server/input-versions.json",
+      "bytes": 5710
+    },
+    {
+      "path": "server/launch-observation.json",
+      "bytes": 3804
+    },
+    {
+      "path": "server/natural-candidates.json",
+      "bytes": 3287
+    },
+    {
+      "path": "server/natural-exploration-results.jsonl",
+      "bytes": 1322027
+    },
+    {
+      "path": "server/natural-rule.json",
+      "bytes": 2105
+    },
+    {
+      "path": "server/natural-validation-plan.json",
+      "bytes": 71907
+    },
+    {
+      "path": "server/natural-validation-results.jsonl",
+      "bytes": 156008
+    },
+    {
+      "path": "server/requested-config.json",
+      "bytes": 2281
+    },
+    {
+      "path": "server/reuse.jsonl",
+      "bytes": 247109
+    },
+    {
+      "path": "server/runtime.json",
+      "bytes": 3334
+    },
+    {
+      "path": "server/sampling.json",
+      "bytes": 13527
+    },
+    {
+      "path": "server/summary.json",
+      "bytes": 560
+    },
+    {
+      "path": "workers/000-A_CORRECTED_VALIDATION-ape_fixed.bundle.json",
+      "bytes": 297963
+    },
+    {
+      "path": "workers/000-A_CORRECTED_VALIDATION-ape_fixed.stderr",
+      "bytes": 728
+    },
+    {
+      "path": "workers/000-A_CORRECTED_VALIDATION-ape_fixed.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/001-B_LENGTH_TRANSFER-ape_fixed.bundle.json",
+      "bytes": 48459
+    },
+    {
+      "path": "workers/001-B_LENGTH_TRANSFER-ape_fixed.stderr",
+      "bytes": 635
+    },
+    {
+      "path": "workers/001-B_LENGTH_TRANSFER-ape_fixed.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/002-B_LENGTH_TRANSFER-ape_dynamic.bundle.json",
+      "bytes": 35341
+    },
+    {
+      "path": "workers/002-B_LENGTH_TRANSFER-ape_dynamic.stderr",
+      "bytes": 635
+    },
+    {
+      "path": "workers/002-B_LENGTH_TRANSFER-ape_dynamic.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/003-C1_NATURAL_EXPLORATION-ape_fixed.bundle.json",
+      "bytes": 581871
+    },
+    {
+      "path": "workers/003-C1_NATURAL_EXPLORATION-ape_fixed.stderr",
+      "bytes": 728
+    },
+    {
+      "path": "workers/003-C1_NATURAL_EXPLORATION-ape_fixed.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/004-C2_NATURAL_VALIDATION-ape_fixed.bundle.json",
+      "bytes": 72506
+    },
+    {
+      "path": "workers/004-C2_NATURAL_VALIDATION-ape_fixed.stderr",
+      "bytes": 728
+    },
+    {
+      "path": "workers/004-C2_NATURAL_VALIDATION-ape_fixed.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/005-C3_INDEPENDENT_CONFIRMATION-sequential.bundle.json",
+      "bytes": 95167
+    },
+    {
+      "path": "workers/005-C3_INDEPENDENT_CONFIRMATION-sequential.stderr",
+      "bytes": 982
+    },
+    {
+      "path": "workers/005-C3_INDEPENDENT_CONFIRMATION-sequential.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/006-C3_INDEPENDENT_CONFIRMATION-pcw.bundle.json",
+      "bytes": 90953
+    },
+    {
+      "path": "workers/006-C3_INDEPENDENT_CONFIRMATION-pcw.stderr",
+      "bytes": 982
+    },
+    {
+      "path": "workers/006-C3_INDEPENDENT_CONFIRMATION-pcw.stdout",
+      "bytes": 0
+    },
+    {
+      "path": "workers/007-C3_INDEPENDENT_CONFIRMATION-ape_fixed.bundle.json",
+      "bytes": 521794
+    },
+    {
+      "path": "workers/007-C3_INDEPENDENT_CONFIRMATION-ape_fixed.stderr",
+      "bytes": 728
+    },
+    {
+      "path": "workers/007-C3_INDEPENDENT_CONFIRMATION-ape_fixed.stdout",
+      "bytes": 0
+    }
+  ]
+}
