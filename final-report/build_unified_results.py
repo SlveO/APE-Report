@@ -29,6 +29,7 @@ F1_CI = ("delta_pp", "ci_low_pp", "ci_high_pp")
 MAIN_CI = ("delta_b_minus_a_pp", "ci_low_pp", "ci_high_pp")
 TIME_CI = ("delta_comparison_minus_reference_s", "delta_ci_low_s", "delta_ci_high_s")
 MAIN_RUN = "main80-20261114T041503"
+CORRECTION_RUN = "main80-correction-20261117T060352"
 FOLLOWUP_RUN = "followup2604-20261117T085011"
 MAIN_CODE = "MAIN80 执行快照（服务器输入导出版 227116e4）"
 FOLLOWUP_CODE = "FOLLOWUP2604 code/001（服务器输入包 ab816f5）"
@@ -333,13 +334,16 @@ def development():
     counts = groups_by_dataset(counts_rows, "frozen_support_groups")
     explored_questions = sum(int(row["unique_questions"]) for _, _, row in counts_rows)
     origin_counts = FOLLOWUP / "a_generation_origin_counts.csv"
+    correction_archive = f"output/runs/{CORRECTION_RUN}"
     correction_trace = run_trace(
-        f"{MAIN_RUN} | FOLLOWUP2604 前置修正探索（交付未列独立批次ID）", "explore / corrected_exploration",
+        f"{MAIN_RUN} | {CORRECTION_RUN}", "explore / corrected_exploration",
         f"{MAIN_MODEL} | 修正探索沿用 {MODEL}，包内未另记权重版本",
-        f"{MAIN_CODE} | 前置修正探索执行快照未单独登记",
+        f"{MAIN_CODE} | 前置修正探索的 code-version.json 与 snapshot/ 已归档于服务器 {correction_archive}/，"
+        "PC 交付包未附这两项，包内逐项来源见 run_evidence",
         f"{OLD_DEV_INPUT} | {CORRECTED_DEV_INPUT}",
         "修正探索全库含前置修正生成1248条及历史同输入复用4080条，当前行按已冻结参数筛选",
-        f"{origin_counts.as_posix()} | {FOLLOWUP_PACKAGE} → provenance/corrected-exploration-for-candidate-reconstruction.jsonl",
+        f"{origin_counts.as_posix()} | {FOLLOWUP_PACKAGE} → provenance/corrected-exploration-for-candidate-reconstruction.jsonl"
+        f" | 服务器归档（PC 交付包未附）：{correction_archive}/code-version.json 与 {correction_archive}/snapshot/",
     )
     for item in source(FOLLOWUP / "a_exploration_frozen_parameter_pairs.csv"):
         row = item[2]
