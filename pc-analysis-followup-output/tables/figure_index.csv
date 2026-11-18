@@ -1,0 +1,11 @@
+﻿figure_stem,formats,table_sources,meaning
+a_exploration_decomposition,PNG;SVG,a_exploration_scores.csv,old_all/old_common/corrected fixed-parameter means
+a_rule_changes,PNG;SVG,a_rule_changes.csv,"L,N and old/corrected saved candidates/frozen parameters"
+a_validation_policies,PNG;SVG,a_validation_policies.csv,frozen-policy F1 and confidence intervals
+a_natural_rule,PNG;SVG,a_natural_validation.csv;a_natural_development.csv,saved actual-N candidate/fixed/selected parameters
+b_length_quality,PNG;SVG,b_quality.csv,dataset-equal F1 in each L/N
+b_length_delta,PNG;SVG,b_quality.csv,dynamic-fixed paired difference and percentile interval
+b_historical_membership,PNG;SVG,b_old_new_membership.csv,old/new/shared question membership
+c_seven_method_quality,PNG;SVG,c_quality.csv,three dataset means and equal-dataset primary macro
+c_primary_and_strata,PNG;SVG,c_paired.csv,primary/unconditional and Qasper-strata conditional intervals
+c_component_contributions,PNG;SVG,c_component_figure_data.csv,Qasper N2 component sums / 150 * 100

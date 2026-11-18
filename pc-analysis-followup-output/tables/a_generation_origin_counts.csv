@@ -1,0 +1,6 @@
+﻿stage,generation_origin,n_physical_answers,unit
+prior_corrected_exploration,historical_identical_input,4080,actual prior answers; outside FOLLOWUP2604 new2430
+prior_corrected_exploration,corrected_input_answer_from_prior_correction_campaign,1248,actual prior answers; outside FOLLOWUP2604 new2430
+A_corrected_validation,new_corrected_input,240,actual answers; label reuse excluded
+A_corrected_validation,new_candidate_key_on_identical_input,222,actual answers; label reuse excluded
+A_corrected_validation,historical_identical_input,377,actual answers; label reuse excluded

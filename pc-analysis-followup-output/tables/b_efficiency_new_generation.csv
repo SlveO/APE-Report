@@ -1,0 +1,17 @@
+﻿method,metric,n_new_requests,mean,median,p90,unit,scope
+ape_corrected_fixed,ttft_seconds,60,1.1210048500167735,1.393850760499845,1.4612182851029503,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,total_seconds,60,1.3470830026166367,1.5160431895001238,1.7698615704986878,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,cache_build_seconds,60,1.0631357722668326,1.334527523500583,1.403410581499702,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,cache_get_seconds,60,3.4159990415597954e-07,3.3650030673015863e-07,3.641012881416827e-07,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,selection_seconds,60,1.2515499596095955e-06,1.186499503091909e-06,1.5297013305826114e-06,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,output_tokens,60,5.483333333333333,5.0,9.0,tokens,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,peak_allocated_GiB,60,18.533088302612306,18.537087440490723,19.73657512664795,GiB,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_fixed,peak_reserved_GiB,60,22.055208333333333,22.259765625,22.259765625,GiB,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,ttft_seconds,43,1.1535364996747122,1.3999234509974485,1.4595011491997867,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,total_seconds,43,1.372367135139939,1.5514606739998271,1.763601103801193,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,cache_build_seconds,43,1.095262067651611,1.3417022450012155,1.4010512169988942,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,cache_get_seconds,43,2.8292984203543776e-07,2.720007614698261e-07,3.4800032153725637e-07,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,selection_seconds,43,2.471502333254077e-05,2.3478001821786165e-05,3.2627600012347104e-05,seconds,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,output_tokens,43,5.348837209302325,4.0,7.800000000000004,tokens,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,peak_allocated_GiB,43,18.613620447558027,19.689208984375,19.735414886474608,GiB,new cold generations only; fixed/dynamic counts differ; descriptive
+ape_corrected_dynamic,peak_reserved_GiB,43,21.915606831395348,21.9921875,21.9921875,GiB,new cold generations only; fixed/dynamic counts differ; descriptive

@@ -1,0 +1,7 @@
+﻿condition,method_role,n_input_comparisons,n_questions,old_F1_percent,new_F1_percent,delta_pp,unit
+input_changed__parameters_changed,fixed,6,2,53.57142857142857,45.357142857142854,-8.214285714285715,descriptive mixed-request mean; different strata are distinct conditions
+input_changed__parameters_changed,dynamic,2,2,45.00000000000001,37.5,-7.500000000000001,descriptive mixed-request mean; different strata are distinct conditions
+input_changed__parameters_same,dynamic,4,2,53.571428571428584,53.571428571428584,0.0,descriptive mixed-request mean; different strata are distinct conditions
+input_same__parameters_changed,fixed,36,7,53.42185592185592,41.58730158730159,-11.834554334554333,descriptive mixed-request mean; different strata are distinct conditions
+input_same__parameters_changed,dynamic,19,7,51.05263157894736,47.894736842105274,-3.1578947368421053,descriptive mixed-request mean; different strata are distinct conditions
+input_same__parameters_same,dynamic,17,7,45.9857789269554,45.9857789269554,0.0,descriptive mixed-request mean; different strata are distinct conditions

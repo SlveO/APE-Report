@@ -1,0 +1,6 @@
+﻿scope,T,S,f1_percent,selected_parameters,n_questions,unit,candidate,candidate_f1_percent,fixed,fixed_f1_percent,delta_candidate_minus_fixed_pp,decision
+global_fixed_choice,0.9,0.9,57.83389391879958,"[1.0, 0.9]",36,"C2 weighting dataset-equal, Qasper N-equal; selection already frozen",,,,,,
+global_fixed_choice,1.0,0.9,60.27421652421652,"[1.0, 0.9]",36,"C2 weighting dataset-equal, Qasper N-equal; selection already frozen",,,,,,
+N1,,,,"[1.0, 0.9]",28,N1 three-dataset equal; N2/N3 Qasper only; saved decision,"[0.9, 0.7]",56.89051689051689,"[1.0, 0.9]",57.96652421652422,-1.0760073260073222,fixed_fallback
+N2,,,,"[0.9, 1.0]",4,N1 three-dataset equal; N2/N3 Qasper only; saved decision,"[0.9, 1.0]",74.21383647798741,"[1.0, 0.9]",73.3974358974359,0.816400580551524,candidate
+N3,,,,"[1.0, 0.9]",4,N1 three-dataset equal; N2/N3 Qasper only; saved decision,"[1.0, 0.9]",59.23076923076923,"[1.0, 0.9]",59.23076923076923,0.0,fixed_fallback

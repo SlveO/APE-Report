@@ -1,0 +1,8 @@
+﻿method,n_questions,cap_hits,cap_fraction,eos_last,eos_at_cap,note
+sequential,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger
+pcw,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger
+ape_default,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger
+ape_main80_fixed,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger
+ape_main80_dynamic,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger
+ape_natural_fixed,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger
+ape_natural_dynamic,150,0,0.0,150,0,logical-method descriptive counts; common physical sources counted once in physical ledger

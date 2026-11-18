@@ -1,0 +1,10 @@
+﻿L,N,old_candidate,corrected_candidate,candidate_changed,old_frozen_rule,corrected_frozen_rule,frozen_rule_changed,corrected_candidate_f1_percent,corrected_fixed_f1_percent,unit
+4096,4,"[1.0, 1.0]","[0.5, 0.9]",True,"[1.0, 1.0]","[0.5, 1.0]",True,49.433624736598006,52.56651746008306,saved candidates/frozen rules; no parameter selection performed
+4096,8,"[0.7, 0.9]","[0.5, 0.9]",True,"[0.7, 1.0]","[0.5, 1.0]",True,40.559830639680996,42.63814734648068,saved candidates/frozen rules; no parameter selection performed
+4096,16,"[0.5, 1.0]","[0.5, 1.0]",False,"[0.7, 1.0]","[0.5, 1.0]",True,48.852701574528155,48.852701574528155,saved candidates/frozen rules; no parameter selection performed
+8192,4,"[0.7, 0.7]","[0.7, 0.7]",False,"[0.7, 0.7]","[0.7, 0.7]",False,41.10955493308435,40.95252714058857,saved candidates/frozen rules; no parameter selection performed
+8192,8,"[0.9, 0.9]","[0.7, 1.0]",True,"[0.7, 1.0]","[0.7, 1.0]",False,48.921816214499145,42.74153707612354,saved candidates/frozen rules; no parameter selection performed
+8192,16,"[0.5, 0.9]","[0.5, 1.0]",True,"[0.5, 0.9]","[0.5, 1.0]",True,40.97150390029647,40.97150390029647,saved candidates/frozen rules; no parameter selection performed
+16384,4,"[0.7, 1.0]","[0.7, 1.0]",False,"[0.7, 1.0]","[0.7, 1.0]",False,41.454214459540275,40.85575137987419,saved candidates/frozen rules; no parameter selection performed
+16384,8,"[0.9, 1.0]","[0.9, 1.0]",False,"[0.7, 1.0]","[0.5, 1.0]",True,35.71423008195085,35.911937554094415,saved candidates/frozen rules; no parameter selection performed
+16384,16,"[0.5, 0.7]","[0.5, 0.7]",False,"[0.7, 1.0]","[0.5, 1.0]",True,32.69357075904695,36.12484677096812,saved candidates/frozen rules; no parameter selection performed

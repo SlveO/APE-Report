@@ -1,0 +1,11 @@
+[
+  {
+    "command": "python -s -B pc-analysis-followup-output/scripts/validate_delivery.py",
+    "exit_code": 1,
+    "error": "StopIteration while expecting a new_generation boolean in b_records.csv",
+    "cause": "B table exposes answer_origin rather than a boolean new_generation field",
+    "handling": "Use answer_origin to verify 103 new timings and 17 historical rows with empty timings",
+    "statistics_affected": false,
+    "resolved": true
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "analysis_commit": "ab816f5256f83892c83ea71bcf63a0b618e2f18d",
+  "server_delivery_commit": "ab816f5256f83892c83ea71bcf63a0b618e2f18d",
+  "branch": "analysis/main80-pc-results",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Osheepne\\anaconda3\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "1.26.4",
+  "seed": 20261116,
+  "replicates": 5000,
+  "primary_rng": "default_rng(20261116), sequential dataset draws Qasper,HotpotQA,MuSiQue",
+  "strata_rng": "default_rng(SeedSequence([20261116,1])); separate conditional Qasper stream",
+  "confidence_interval": "2.5%/97.5% percentile of paired support-component replicate values",
+  "new_dependencies": [],
+  "historical_package_scripts_executed": false,
+  "source_scoring": "independent normalize/token-overlap F1, max over existing frozen references",
+  "package_root": "restored/followup2604/FOLLOWUP2604_ACCEPTED",
+  "matplotlib": "3.9.2",
+  "package_delivery_status": "ACCEPTED",
+  "raw_run_status": "SUBMITTED",
+  "MAIN80_overall_status": "REVISION_REQUIRED",
+  "server_environment": {
+    "python": "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "packages": {
+      "torch": "2.6.0",
+      "transformers": "4.44.2",
+      "tokenizers": "0.19.1",
+      "flash-attn": "2.7.4.post1",
+      "numpy": "1.26.4",
+      "regex": "2026.3.32",
+      "sacrebleu": "2.4.3",
+      "portalocker": "2.10.1",
+      "colorama": "0.4.6",
+      "tabulate": "0.9.0",
+      "lxml": "5.3.0",
+      "safetensors": "0.7.0"
+    },
+    "physical_gpu": 0,
+    "dtype": "bfloat16",
+    "batch_size": 1,
+    "greedy": true,
+    "seed": 42,
+    "model_path": "/home/shenxiaoyang/project/ape/models/Llama-3.1-8B-Instruct",
+    "overlays": [
+      ".overlays/core-tf44",
+      ".overlays/main80-scoring"
+    ],
+    "local_files_only": true,
+    "trust_remote_code": false,
+    "external_dependencies_modified": false
+  }
+}

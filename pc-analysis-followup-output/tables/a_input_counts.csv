@@ -1,0 +1,11 @@
+﻿split,L,old_applicable,corrected_applicable,identical_inputs,changed_inputs,removed_inputs,unit
+explore,4096,48,32,15,17,16,sample-length construction
+explore,6144,47,34,22,12,13,sample-length construction
+explore,8192,47,35,26,9,12,sample-length construction
+explore,12288,47,44,33,11,3,sample-length construction
+explore,16384,44,44,44,0,0,sample-length construction
+validation,4096,40,27,12,15,13,sample-length construction
+validation,6144,40,32,17,15,8,sample-length construction
+validation,8192,40,34,19,15,6,sample-length construction
+validation,12288,40,38,34,4,2,sample-length construction
+validation,16384,39,39,39,0,0,sample-length construction

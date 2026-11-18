@@ -1,0 +1,7 @@
+﻿phase,physical_source_rows,logical_views,new_answers,historical_answers,extra_labels,source,unit
+corrected_length_transfer,120,120,103,17,0,"logical-provenance.jsonl:phase,new_generation,logical_labels",source containers versus expanded logical views; no extra independent timing
+corrected_validation,839,900,462,377,61,"logical-provenance.jsonl:phase,new_generation,logical_labels",source containers versus expanded logical views; no extra independent timing
+independent_confirmation,897,1050,897,0,153,"logical-provenance.jsonl:phase,new_generation,logical_labels",source containers versus expanded logical views; no extra independent timing
+natural_exploration,864,864,864,0,0,"logical-provenance.jsonl:phase,new_generation,logical_labels",source containers versus expanded logical views; no extra independent timing
+natural_validation,104,108,104,0,4,"logical-provenance.jsonl:phase,new_generation,logical_labels",source containers versus expanded logical views; no extra independent timing
+ALL,2824,3042,2430,394,218,logical-provenance.jsonl; FINAL-REVIEW157 is C2+C3 subset,A61+C2 4+C3 153=218 extra labels

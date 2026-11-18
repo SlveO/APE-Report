@@ -1,0 +1,31 @@
+﻿scope,reference,comparison,delta_pp,ci_low_pp,ci_high_pp,wins,ties,losses,n_questions,n_conditions,unit,seed,replicates
+macro_equal_dataset_cell,default,fixed,1.270090967517662,-3.1039403521403504,5.919628873115022,40,207,53,40,300,F1 percentage points; counts are input-condition pairs,20261116,5000
+macro_equal_dataset_cell,fixed,dynamic,0.7706411122819556,-0.9926392922498756,2.5738590161895805,14,273,13,40,300,F1 percentage points; counts are input-condition pairs,20261116,5000
+macro_equal_dataset_cell,fixed,cell,-0.21160254486797814,-3.098569679956287,2.481670088571466,26,247,27,40,300,F1 percentage points; counts are input-condition pairs,20261116,5000
+qasper,default,fixed,-7.326523135036711,-12.308757276968434,-1.396539650632797,15,60,36,13,111,F1 percentage points; counts are input-condition pairs,20261116,5000
+qasper,fixed,dynamic,0.10174815048016317,-0.2027500807033511,0.5019853709508805,4,102,5,13,111,F1 percentage points; counts are input-condition pairs,20261116,5000
+qasper,fixed,cell,0.3344898227886972,-0.049222613077828374,0.8407269418116503,9,93,9,13,111,F1 percentage points; counts are input-condition pairs,20261116,5000
+hotpotqa,default,fixed,2.363089585311812,-5.424223924223929,10.898148148148143,9,84,9,13,102,F1 percentage points; counts are input-condition pairs,20261116,5000
+hotpotqa,fixed,dynamic,0.5792972459639112,-2.009842009842011,3.093499093499079,3,98,1,13,102,F1 percentage points; counts are input-condition pairs,20261116,5000
+hotpotqa,fixed,cell,-0.31339031339032153,-6.12316001899335,4.411206077872744,6,92,4,13,102,F1 percentage points; counts are input-condition pairs,20261116,5000
+musique,default,fixed,8.77370645227788,-0.09938242973957753,17.96747403430304,16,63,8,14,87,F1 percentage points; counts are input-condition pairs,20261116,5000
+musique,fixed,dynamic,1.6308779404017482,-2.8710356502564194,6.419678073249495,7,73,7,14,87,F1 percentage points; counts are input-condition pairs,20261116,5000
+musique,fixed,cell,-0.6559071440023823,-7.016170133878476,5.655848450491305,11,62,14,14,87,F1 percentage points; counts are input-condition pairs,20261116,5000
+4096/4,fixed,dynamic,0.0,0.0,0.0,0,27,0,27,27,F1 percentage points; three datasets equal,20261116,5000
+4096/4,fixed,cell,-3.1328927234850554,-7.477443518057629,0.21569603451136268,1,24,2,27,27,F1 percentage points; three datasets equal,20261116,5000
+4096/8,fixed,dynamic,0.0,0.0,0.0,0,27,0,27,27,F1 percentage points; three datasets equal,20261116,5000
+4096/8,fixed,cell,-2.0783167067996806,-10.59659421982509,4.197790227201994,2,23,2,27,27,F1 percentage points; three datasets equal,20261116,5000
+4096/16,fixed,dynamic,0.0,0.0,0.0,0,27,0,27,27,F1 percentage points; three datasets equal,20261116,5000
+4096/16,fixed,cell,0.0,0.0,0.0,0,27,0,27,27,F1 percentage points; three datasets equal,20261116,5000
+8192/4,fixed,dynamic,0.15702779249577486,-8.572185269408736,10.142209180034651,2,27,5,34,34,F1 percentage points; three datasets equal,20261116,5000
+8192/4,fixed,cell,0.15702779249577486,-8.572185269408736,10.142209180034651,2,27,5,34,34,F1 percentage points; three datasets equal,20261116,5000
+8192/8,fixed,dynamic,6.1802791383755995,-3.743691774495344,17.63602681444351,7,24,3,34,34,F1 percentage points; three datasets equal,20261116,5000
+8192/8,fixed,cell,6.1802791383755995,-3.743691774495344,17.63602681444351,7,24,3,34,34,F1 percentage points; three datasets equal,20261116,5000
+8192/16,fixed,dynamic,0.0,0.0,0.0,0,34,0,34,34,F1 percentage points; three datasets equal,20261116,5000
+8192/16,fixed,cell,0.0,0.0,0.0,0,34,0,34,34,F1 percentage points; three datasets equal,20261116,5000
+16384/4,fixed,dynamic,0.5984630796660922,-9.316006987999467,10.888146950262449,5,29,5,39,39,F1 percentage points; three datasets equal,20261116,5000
+16384/4,fixed,cell,0.5984630796660922,-9.316006987999467,10.888146950262449,5,29,5,39,39,F1 percentage points; three datasets equal,20261116,5000
+16384/8,fixed,dynamic,0.0,0.0,0.0,0,39,0,39,39,F1 percentage points; three datasets equal,20261116,5000
+16384/8,fixed,cell,-0.1977074721435592,-8.269082004044405,7.980540788576501,8,27,4,39,39,F1 percentage points; three datasets equal,20261116,5000
+16384/16,fixed,dynamic,0.0,0.0,0.0,0,39,0,39,39,F1 percentage points; three datasets equal,20261116,5000
+16384/16,fixed,cell,-3.431276011921177,-9.941842330038812,1.5264911855820922,1,32,6,39,39,F1 percentage points; three datasets equal,20261116,5000
