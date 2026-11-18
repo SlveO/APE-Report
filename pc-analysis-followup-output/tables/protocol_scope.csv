@@ -1,0 +1,48 @@
+scope,dataset,stratum,metric,value,unit,denominator,source_file,filter,note
+all_samples,ALL,ALL,questions,240,question,all frozen natural samples,samples.json,all rows,explore54 validation36 confirmation150
+explore,ALL,ALL,questions,54,question,explore samples,samples.json,split=explore,selection frozen before generation
+validation,ALL,ALL,questions,36,question,validation samples,samples.json,split=validation,rule selection only
+confirmation,ALL,ALL,questions,150,question,confirmation samples,samples.json,split=confirmation,50 per dataset
+confirmation,qasper,ALL,questions,50,question,qasper confirmation,samples.json,split=confirmation;dataset=qasper,primary within-dataset question weighting
+confirmation,qasper,ALL,support_components,15,component,qasper confirmation,samples.json,split=confirmation;dataset=qasper;distinct support_component,paired bootstrap sampling unit
+confirmation,hotpotqa,ALL,questions,50,question,hotpotqa confirmation,samples.json,split=confirmation;dataset=hotpotqa,all actual N1
+confirmation,hotpotqa,ALL,support_components,46,component,hotpotqa confirmation,samples.json,split=confirmation;dataset=hotpotqa;distinct support_component,paired bootstrap sampling unit
+confirmation,musique,ALL,questions,50,question,musique confirmation,samples.json,split=confirmation;dataset=musique,all actual N1
+confirmation,musique,ALL,support_components,7,component,musique confirmation,samples.json,split=confirmation;dataset=musique;distinct support_component,small component count
+confirmation,qasper,N1,questions,17,question,qasper N1 confirmation,samples.json,split=confirmation;dataset=qasper;natural_N=1,subgroup exploratory
+confirmation,qasper,N1,support_components,5,component,qasper N1 confirmation,samples.json,split=confirmation;dataset=qasper;natural_N=1;distinct support_component,all methods retained jointly
+confirmation,qasper,N2,questions,17,question,qasper N2 confirmation,samples.json,split=confirmation;dataset=qasper;natural_N=2,all four nonzero primary differences in this subgroup
+confirmation,qasper,N2,support_components,6,component,qasper N2 confirmation,samples.json,split=confirmation;dataset=qasper;natural_N=2;distinct support_component,local inference exploratory
+confirmation,qasper,N3,questions,16,question,qasper N3 confirmation,samples.json,split=confirmation;dataset=qasper;natural_N=3,subgroup exploratory
+confirmation,qasper,N3,support_components,4,component,qasper N3 confirmation,samples.json,split=confirmation;dataset=qasper;natural_N=3;distinct support_component,small component count
+confirmation,musique,largest_component,questions,25,question,musique confirmation 50 questions,samples.json,split=confirmation;dataset=musique;max component size,50 percent of dataset in one component
+confirmation,qasper,source_train,questions,48,question,qasper confirmation 50 questions,samples.json,split=confirmation;dataset=qasper;source_file=qasper-train-v0.3.json,public source partition retained
+confirmation,qasper,source_dev,questions,2,question,qasper confirmation 50 questions,samples.json,split=confirmation;dataset=qasper;source_file=qasper-dev-v0.3.json,public source partition retained
+all_phases,ALL,ALL,new_answers,2430,physical_generation,new followup answers,FINAL-REVIEW.json,new_answers,unique new generation count
+all_phases,ALL,ALL,historical_reused,394,physical_source_record,consumed historical source rows,FINAL-REVIEW.json,historical_reused,reuse does not add new timing
+all_phases,ALL,ALL,physical_source_records,2824,physical_source_record,logical provenance rows,logical-provenance.jsonl,all rows,2430 new plus394 historical
+natural_C2_C3,ALL,ALL,accepted_extra_same_parameter_labels,157,logical_label,natural validation and confirmation,FINAL-REVIEW.json,same_parameter_extra_labels,C2 four plus C3 153; A61 separately counted
+all_phases,ALL,ALL,all_embedded_extra_labels,218,logical_label,all physical source containers,logical-provenance.jsonl,sum lengths logical_labels minus2824,includes A61 C2 four C3 153
+all_phases,ALL,ALL,fully_expanded_logical_views,3042,logical_result,all candidate and method labels,logical-provenance.jsonl,sum lengths logical_labels,2824 physical source containers plus218 labels
+corrected_validation,ALL,ALL,physical_source_rows,839,physical_source_record,A results,server/corrected-validation-results.jsonl,all rows,462 new plus377 historical
+corrected_validation,ALL,ALL,logical_candidate_views,900,logical_result,A candidate views,server/corrected-validation-results.jsonl,sum lengths logical_labels,61 embedded extra candidate labels
+corrected_validation,ALL,ALL,extra_candidate_labels,61,logical_label,A candidate views,server/corrected-validation-results.jsonl,sum lengths logical_labels minus839,additional to FINAL REVIEW natural label count157
+natural_validation,ALL,ALL,physical_source_rows,104,physical_generation,C2 results,server/natural-validation-results.jsonl,all rows,new generation only
+natural_validation,ALL,ALL,logical_candidate_views,108,logical_result,C2 candidate views,server/natural-validation-results.jsonl,sum lengths logical_labels,four embedded extra labels
+confirmation,ALL,seven_methods,logical_outcomes,1050,logical_result,150 questions times7 methods,server/confirmation-plan.json,logical_outcomes,paired by sample ID
+confirmation,ALL,seven_methods,physical_jobs,897,physical_generation,confirmation physical jobs,server/confirmation-plan.json,physical_jobs,one generation per resolved parameter set
+confirmation,ALL,seven_methods,extra_same_parameter_labels,153,logical_label,confirmation1050 logical outcomes,server/confirmation-plan.json,logical_outcomes minus physical_jobs,133 natural method shares plus20 MAIN80 method shares
+confirmation,ALL,natural_fixed_dynamic,shared_targets,133,question,confirmation150 questions,server/confirmation-results.jsonl,group shared by ape_natural_fixed and ape_natural_dynamic,all N1 and N3 natural parameter pairs
+confirmation,ALL,main80_fixed_dynamic,shared_targets,20,question,confirmation150 questions,server/confirmation-results.jsonl,group shared by ape_main80_fixed and ape_main80_dynamic,exact resolved parameters generated once
+confirmation,ALL,ALL,parameter_reuse_true_rows,306,logical_result,confirmation1050 logical outcomes,server/confirmation-results.jsonl,parameter_reuse=True,both logical labels in each shared pair flagged
+length_transfer,ALL,ALL,logical_outcomes,120,logical_result,B stage results,review/runtime-rebuilt.json,B_LENGTH_TRANSFER and historical sources,paired by question L N method
+length_transfer,ALL,ALL,new_answers,103,physical_generation,B stage new answers,review/runtime-rebuilt.json,fresh_generation_timing stage=corrected_length_transfer,103 new requests
+length_transfer,ALL,ALL,historical_reused,17,physical_source_record,B stage reused answers,logical-provenance.jsonl,phase=corrected_length_transfer;new_generation=False,17 historical source rows
+confirmation,ALL,dynamic_minus_fixed,wins,3,question,150 paired questions,review/confirmation-summary-rebuilt.json,primary_pairing.win,all differences only Qasper N2
+confirmation,ALL,dynamic_minus_fixed,ties,146,question,150 paired questions,review/confirmation-summary-rebuilt.json,primary_pairing.tie,exact saved F1 equality
+confirmation,ALL,dynamic_minus_fixed,losses,1,question,150 paired questions,review/confirmation-summary-rebuilt.json,primary_pairing.loss,unfavorable result retained
+confirmation,qasper,N2,changed_support_components,3,component,Qasper N2 six components,server/confirmation-results.jsonl;samples.json,nonzero dynamic-fixed difference grouped by support_component,component pairing preserved
+acceptance,ALL,ALL,independent_checks_passed,35,check,35 server independent checks,FINAL-REVIEW.json,independent_checks.passed,server final acceptance record
+acceptance,ALL,ALL,computation_delivery_status,ACCEPTED,status,final server review,FINAL-REVIEW.json,computation_and_data_delivery,distinct from research conclusion
+raw_run,ALL,ALL,status,SUBMITTED,status,original run state,FINAL-REVIEW.json,raw_run_status_preserved,original state retained
+main80,ALL,ALL,overall_status,REVISION_REQUIRED,status,MAIN80 overall state,FINAL-REVIEW.json,MAIN80_overall_status,old external tasks remain old-rule results

@@ -1,0 +1,13 @@
+﻿scope,type,n_pairs,denominator,unit
+qasper,改善,41,170,paired questions
+qasper,退化,40,170,paired questions
+qasper,持平,89,170,paired questions
+hotpotqa,改善,5,170,paired questions
+hotpotqa,退化,8,170,paired questions
+hotpotqa,持平,157,170,paired questions
+musique,改善,1,170,paired questions
+musique,退化,0,170,paired questions
+musique,持平,169,170,paired questions
+ALL,改善,47,510,paired questions
+ALL,退化,48,510,paired questions
+ALL,持平,415,510,paired questions

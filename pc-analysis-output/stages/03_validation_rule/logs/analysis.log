@@ -1,0 +1,99 @@
+{
+  "physical_generations": 992,
+  "logical_evaluations": 1071,
+  "reused_generations_saved": 79,
+  "fixed_by_scope": {
+    "all_27": [
+      0.7,
+      1.0
+    ],
+    "complete_27": [
+      0.7,
+      1.0
+    ],
+    "common_complete_27": [
+      0.7,
+      1.0
+    ]
+  },
+  "original_rule_matches": true,
+  "original_adopted_cells": [
+    "4096/4",
+    "8192/4",
+    "8192/16"
+  ],
+  "complete_rule_changes": 1,
+  "common_rule_changes": 4,
+  "common_complete_ids_per_dataset": {
+    "qasper": 11,
+    "hotpotqa": 8,
+    "musique": 3
+  },
+  "new_complete_candidates_missing_all_validation_generations": 120
+}
+[
+  {
+    "scope": "all_27",
+    "policy_a": "default",
+    "policy_b": "global_candidate",
+    "n_condition_pairs": 357,
+    "n_unique_ids": 40,
+    "delta_b_minus_a_pp": 0.08372359306281218,
+    "ci_low_pp": -3.097873976932634,
+    "ci_high_pp": 3.453242024673924,
+    "win_b": 39,
+    "tie": 280,
+    "loss_b": 38,
+    "unit": "macro F1 percentage points; paired input-condition counts",
+    "seed": 20261116,
+    "replicates": 5000
+  },
+  {
+    "scope": "all_27",
+    "policy_a": "selected_fixed",
+    "policy_b": "cell_candidates",
+    "n_condition_pairs": 357,
+    "n_unique_ids": 40,
+    "delta_b_minus_a_pp": -2.4966341554269436,
+    "ci_low_pp": -5.554198484491389,
+    "ci_high_pp": -0.07159723356520147,
+    "win_b": 28,
+    "tie": 277,
+    "loss_b": 52,
+    "unit": "macro F1 percentage points; paired input-condition counts",
+    "seed": 20261116,
+    "replicates": 5000
+  },
+  {
+    "scope": "all_27",
+    "policy_a": "selected_fixed",
+    "policy_b": "original_frozen_rule",
+    "n_condition_pairs": 357,
+    "n_unique_ids": 40,
+    "delta_b_minus_a_pp": 0.5970231583775243,
+    "ci_low_pp": -1.2266012097354113,
+    "ci_high_pp": 2.137937259064049,
+    "win_b": 15,
+    "tie": 327,
+    "loss_b": 15,
+    "unit": "macro F1 percentage points; paired input-condition counts",
+    "seed": 20261116,
+    "replicates": 5000
+  },
+  {
+    "scope": "all_27",
+    "policy_a": "selected_fixed",
+    "policy_b": "scope_replay_rule",
+    "n_condition_pairs": 357,
+    "n_unique_ids": 40,
+    "delta_b_minus_a_pp": 0.5970231583775243,
+    "ci_low_pp": -1.2266012097354113,
+    "ci_high_pp": 2.137937259064049,
+    "win_b": 15,
+    "tie": 327,
+    "loss_b": 15,
+    "unit": "macro F1 percentage points; paired input-condition counts",
+    "seed": 20261116,
+    "replicates": 5000
+  }
+]

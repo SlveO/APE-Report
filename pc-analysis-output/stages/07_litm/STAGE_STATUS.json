@@ -1,0 +1,32 @@
+{
+  "experiment_stage": 7,
+  "status": "COMPLETED",
+  "research_status": "SUBMITTED",
+  "n_questions": 500,
+  "n_position_inputs": 1500,
+  "n_generation_records": 4500,
+  "main_score": "official_first_line_em",
+  "corrected_labels_reused": 501,
+  "corrected_question_ids": 147,
+  "newly_rescored_generation_records": 0,
+  "fixture_pairs_verified": 9,
+  "fixture_em_function_calls": 18,
+  "all_actual_N": 1,
+  "all_original_document_count": 20,
+  "L_min": 2532,
+  "L_max": 3573,
+  "dynamic_parameters": [
+    1,
+    1
+  ],
+  "distractor_order_same_questions": 500,
+  "cap_hits": 1465,
+  "eos_last_count": 3046,
+  "eos_at_cap_count": 11,
+  "empty_first_lines": 0,
+  "normalized_empty_reference_questions": 0,
+  "seed": 20261116,
+  "replicates": 5000,
+  "rule_modified": false,
+  "next_stage_executed": false
+}

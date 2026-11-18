@@ -1,0 +1,11 @@
+{
+  "stage": 5,
+  "record_count_checks": "passed",
+  "stop_and_coverage_checks": "passed",
+  "report_links": "passed",
+  "png_count": 14,
+  "svg_count": 14,
+  "script_review": "independent read-only protocol review passed",
+  "visual_review": "query heads, longest decode trajectory, evidence overview inspected; common coordinates and color scale",
+  "research_status": "SUBMITTED"
+}

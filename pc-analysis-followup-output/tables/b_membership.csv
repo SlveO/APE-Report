@@ -1,0 +1,11 @@
+﻿sample_id,dataset,support_group,n_lengths,n_block_conditions,n_methods,unit
+hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea,hotpotqa,"[[""hotpotqa"",[""wikipedia:common pochard"",""wikipedia:hardley flood""]]]",2,3,2,one question; all L/N/methods jointly retained
+hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867,hotpotqa,"[[""hotpotqa"",[""wikipedia:2013 6 hours of silverstone"",""wikipedia:allan mcnish""]]]",2,3,2,one question; all L/N/methods jointly retained
+hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6,hotpotqa,"[[""hotpotqa"",[""wikipedia:batman: son of the demon"",""wikipedia:jerry bingham""]]]",2,3,2,one question; all L/N/methods jointly retained
+musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e,musique,"[[""musique"",[""wikipedia:lostock dam"",""wikipedia:paterson river""]]]",2,3,2,one question; all L/N/methods jointly retained
+musique:a6e0032c62ece331c56364ced53e1c4076c303e4ae287074,musique,"[[""musique"",[""wikipedia:jerome quinn"",""wikipedia:john c. petersen"",""wikipedia:pulaski high school"",""wikipedia:wapl""]]]",2,3,2,one question; all L/N/methods jointly retained
+musique:c6fe007044674795d280bb474e2adc9dc8bacd8853a9cef5,musique,"[[""musique"",[""wikipedia:bang bon district"",""wikipedia:pao sarasin"",""wikipedia:the beach (film)""]]]",2,3,2,one question; all L/N/methods jointly retained
+qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48,qasper,"[[""qasper"",[""qasper-paper:1904.03288""]],[""qasper"",[""qasper-paper:2001.02885""]]]",2,3,2,one question; all L/N/methods jointly retained
+qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5,qasper,"[[""qasper"",[""qasper-paper:1911.01371""]]]",2,3,2,one question; all L/N/methods jointly retained
+qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336,qasper,"[[""qasper"",[""qasper-paper:1904.03288""]],[""qasper"",[""qasper-paper:2001.02885""]]]",2,3,2,one question; all L/N/methods jointly retained
+qasper:e7efd3969adf95459805233e580d6e0c7539a4de09b4441e,qasper,"[[""qasper"",[""qasper-paper:1611.01576""]]]",2,3,2,one question; all L/N/methods jointly retained

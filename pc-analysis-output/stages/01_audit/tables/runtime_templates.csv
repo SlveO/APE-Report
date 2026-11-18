@@ -1,0 +1,9 @@
+﻿table,dataset,frozen_rows,max_new_tokens,nonempty_prefix,nonempty_suffix,prefix_variants,document_tokens_rows,document_text_rows,adaptation,source
+longbench,hotpotqa,200,32,200,200,1,0,200,,snapshot/datasets/frozen-main80/longbench.json
+longbench,musique,200,32,200,200,1,0,200,,snapshot/datasets/frozen-main80/longbench.json
+longbench,qasper,200,128,200,200,1,0,200,,snapshot/datasets/frozen-main80/longbench.json
+development,hotpotqa,150,32,150,150,1,150,150,,snapshot/datasets/frozen-main80/development.json
+development,musique,150,32,150,150,1,150,150,,snapshot/datasets/frozen-main80/development.json
+development,qasper,132,128,132,132,1,132,132,,snapshot/datasets/frozen-main80/development.json
+litm,litm,1500,128,1500,1500,1,0,1500,,snapshot/datasets/frozen-main80/litm.json
+doc2dial,doc2dial,500,128,500,500,172,0,500,official tags/text2line/reverse history; all earlier turns retained; full document before request history for reusable document-only KV,snapshot/datasets/frozen-main80/doc2dial.json

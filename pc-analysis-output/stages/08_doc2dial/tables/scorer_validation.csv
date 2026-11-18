@@ -1,0 +1,6 @@
+﻿check,statistics,scalar_expected,batch_actual,absolute_difference,status,unit
+upstream example component,"[6, 7, 6, 4, 2, 1, 6, 5, 4, 3]",51.15078115793242,51.15078115793242,0.0,PASS,BLEU0-100; scorer validation fixture
+exact corpus100,"[10, 10, 10, 9, 8, 7, 10, 9, 8, 7]",100.00000000000004,100.00000000000004,0.0,PASS,BLEU0-100; scorer validation fixture
+zero matches,"[10, 10, 0, 0, 0, 0, 10, 9, 8, 7]",0.0,0.0,0.0,PASS,BLEU0-100; scorer validation fixture
+absent4gram effective-order-off,"[2, 2, 2, 1, 0, 0, 2, 1, 0, 0]",0.0,0.0,0.0,PASS,BLEU0-100; scorer validation fixture
+exp smoothing,"[6, 7, 2, 0, 0, 0, 6, 5, 4, 3]",8.170609724417774,8.170609724417774,0.0,PASS,BLEU0-100; scorer validation fixture

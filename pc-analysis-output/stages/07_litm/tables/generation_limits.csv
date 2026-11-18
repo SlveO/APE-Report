@@ -1,0 +1,13 @@
+﻿position,method,n_requests,n_questions,max_new_tokens,cap_hits,cap_hit_fraction,eos_last_count,eos_at_cap_count,cap_after_first_newline_count,cap_unterminated_first_line_count,multiline_count,first_line_empty_count,score_changed_at_cap_count,unit
+0,sequential,500,500,128,159,0.318,342,1,152,7,171,0,44,actual requests; rates0-1; EOS included at cap
+0,ape_fixed,500,500,128,179,0.358,322,1,173,6,199,0,42,actual requests; rates0-1; EOS included at cap
+0,ape_dynamic,500,500,128,163,0.326,338,1,158,5,175,0,46,actual requests; rates0-1; EOS included at cap
+9,sequential,500,500,128,169,0.338,333,2,155,13,168,0,41,actual requests; rates0-1; EOS included at cap
+9,ape_fixed,500,500,128,168,0.336,334,2,164,3,186,0,41,actual requests; rates0-1; EOS included at cap
+9,ape_dynamic,500,500,128,171,0.342,330,1,158,12,171,0,45,actual requests; rates0-1; EOS included at cap
+19,sequential,500,500,128,142,0.284,359,1,134,7,155,0,40,actual requests; rates0-1; EOS included at cap
+19,ape_fixed,500,500,128,165,0.33,335,0,159,6,203,0,55,actual requests; rates0-1; EOS included at cap
+19,ape_dynamic,500,500,128,149,0.298,353,2,138,10,157,0,39,actual requests; rates0-1; EOS included at cap
+ALL,sequential,1500,500,128,470,0.31333333333333335,1034,4,441,27,494,0,125,actual requests; rates0-1; EOS included at cap
+ALL,ape_fixed,1500,500,128,512,0.3413333333333333,991,3,496,15,588,0,138,actual requests; rates0-1; EOS included at cap
+ALL,ape_dynamic,1500,500,128,483,0.322,1021,4,454,27,503,0,130,actual requests; rates0-1; EOS included at cap

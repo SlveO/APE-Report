@@ -1,0 +1,8 @@
+﻿event,count,unit
+attention_figures_exported,1,event count
+model_loaded,16,event count
+request_ended,18116,event count
+request_started,18116,event count
+stage_submitted,8,event count
+worker_ended,16,event count
+worker_started,16,event count

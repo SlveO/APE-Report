@@ -1,0 +1,382 @@
+{
+  "server_environment": {
+    "python": "3.10.20 (main, Mar 11 2026, 17:46:40) [GCC 14.3.0]",
+    "interpreter": "/home/shenxiaoyang/miniconda3/envs/ape/bin/python",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.44.2",
+    "tokenizers": "0.19.1",
+    "flash_attn": "2.7.4.post1",
+    "transformers_file": "/home/shenxiaoyang/project/ape/.overlays/core-tf44/transformers/__init__.py"
+  },
+  "local_environment": {
+    "transformers": "4.46.3",
+    "tokenizers": "0.20.3"
+  },
+  "cases": [
+    {
+      "sample_id": "hotpotqa:de89026c970fbb6dff04176107b9cf20407d155bc1ae2eec",
+      "L": 4096,
+      "question": "Where did the punter for the Dallas Cowboys in the 1980s play college football?",
+      "reference_answers": [
+        "Arizona State University"
+      ],
+      "evidence_mapping_policy": [
+        "exact_evidence_with_whitespace_alignment"
+      ],
+      "evidence_char_spans": [
+        [
+          25446,
+          25555
+        ],
+        [
+          39348,
+          39403
+        ]
+      ],
+      "evidence_source_text": [
+        "Danny White was both quarterback and punter for the Dallas Cowboys in the 1980s and often executed this play.",
+        "He played college football at Arizona State University."
+      ],
+      "n_source_tokens": 11631,
+      "native_auto_token_IDs_equal": true,
+      "native_auto_offsets_equal": true,
+      "retained_source_intervals": [
+        [
+          3791,
+          7887
+        ]
+      ],
+      "deleted_source_intervals": [
+        [
+          0,
+          3791
+        ],
+        [
+          7887,
+          11631
+        ]
+      ],
+      "n_required_evidence_tokens": 33,
+      "n_missing_required_tokens": 9,
+      "missing_source_token_positions": [
+        9025,
+        9026,
+        9027,
+        9028,
+        9029,
+        9030,
+        9031,
+        9032,
+        9033
+      ],
+      "missing_source_token_IDs": [
+        1283,
+        6476,
+        7926,
+        9141,
+        520,
+        17368,
+        3314,
+        3907,
+        382
+      ],
+      "missing_source_offsets": [
+        [
+          39347,
+          39350
+        ],
+        [
+          39350,
+          39357
+        ],
+        [
+          39357,
+          39365
+        ],
+        [
+          39365,
+          39374
+        ],
+        [
+          39374,
+          39377
+        ],
+        [
+          39377,
+          39385
+        ],
+        [
+          39385,
+          39391
+        ],
+        [
+          39391,
+          39402
+        ],
+        [
+          39402,
+          39405
+        ]
+      ],
+      "missing_source_text": " He played college football at Arizona State University.\n\n",
+      "saved_evidence_intervals": [
+        [
+          2047,
+          2049
+        ]
+      ],
+      "saved_evidence_interval_texts": [
+        " punter"
+      ],
+      "source": "restored\\output\\runs\\main80-20261114T041503\\snapshot\\datasets\\frozen-main80/{longbench,development}.json"
+    },
+    {
+      "sample_id": "hotpotqa:de89026c970fbb6dff04176107b9cf20407d155bc1ae2eec",
+      "L": 6144,
+      "question": "Where did the punter for the Dallas Cowboys in the 1980s play college football?",
+      "reference_answers": [
+        "Arizona State University"
+      ],
+      "evidence_mapping_policy": [
+        "exact_evidence_with_whitespace_alignment"
+      ],
+      "evidence_char_spans": [
+        [
+          25446,
+          25555
+        ],
+        [
+          39348,
+          39403
+        ]
+      ],
+      "evidence_source_text": [
+        "Danny White was both quarterback and punter for the Dallas Cowboys in the 1980s and often executed this play.",
+        "He played college football at Arizona State University."
+      ],
+      "n_source_tokens": 11631,
+      "native_auto_token_IDs_equal": true,
+      "native_auto_offsets_equal": true,
+      "retained_source_intervals": [
+        [
+          2767,
+          8911
+        ]
+      ],
+      "deleted_source_intervals": [
+        [
+          0,
+          2767
+        ],
+        [
+          8911,
+          11631
+        ]
+      ],
+      "n_required_evidence_tokens": 33,
+      "n_missing_required_tokens": 9,
+      "missing_source_token_positions": [
+        9025,
+        9026,
+        9027,
+        9028,
+        9029,
+        9030,
+        9031,
+        9032,
+        9033
+      ],
+      "missing_source_token_IDs": [
+        1283,
+        6476,
+        7926,
+        9141,
+        520,
+        17368,
+        3314,
+        3907,
+        382
+      ],
+      "missing_source_offsets": [
+        [
+          39347,
+          39350
+        ],
+        [
+          39350,
+          39357
+        ],
+        [
+          39357,
+          39365
+        ],
+        [
+          39365,
+          39374
+        ],
+        [
+          39374,
+          39377
+        ],
+        [
+          39377,
+          39385
+        ],
+        [
+          39385,
+          39391
+        ],
+        [
+          39391,
+          39402
+        ],
+        [
+          39402,
+          39405
+        ]
+      ],
+      "missing_source_text": " He played college football at Arizona State University.\n\n",
+      "saved_evidence_intervals": [
+        [
+          3071,
+          3073
+        ]
+      ],
+      "saved_evidence_interval_texts": [
+        " punter"
+      ],
+      "source": "restored\\output\\runs\\main80-20261114T041503\\snapshot\\datasets\\frozen-main80/{longbench,development}.json"
+    },
+    {
+      "sample_id": "qasper:e419f2bff9d2ab7c3b60b3250caccd2d9ae1285ec3e8e818",
+      "L": 4096,
+      "question": "By how much does their model outperform the state of the art results?",
+      "reference_answers": [
+        "the attention model, MDREA, also outperforms the best existing research results (WAP 0.690 to 0.688)"
+      ],
+      "evidence_mapping_policy": [
+        "exact_evidence_with_whitespace_alignment"
+      ],
+      "evidence_char_spans": [
+        [
+          16015,
+          17369
+        ]
+      ],
+      "evidence_source_text": [
+        "We examine the WAP values, which are shown in Table 1. First, our ARE model shows the baseline performance because we use minimal audio features, such as the MFCC and prosodic features with simple architectures. On the other hand, the TRE model shows higher performance gain compared to the ARE. From this result, we note that textual data are informative in emotion prediction tasks, and the recurrent encoder model is effective in understanding these types of sequential data. Second, the newly proposed model, MDRE, shows a substantial performance gain. It thus achieves the state-of-the-art performance with a WAP value of 0.718. This result shows that multimodal information is a key factor in affective computing. Lastly, the attention model, MDREA, also outperforms the best existing research results (WAP 0.690 to 0.688) BIBREF19 . However, the MDREA model does not match the performance of the MDRE model, even though it utilizes a more complex architecture. We believe that this result arises because insufficient data are available to properly determine the complex model parameters in the MDREA model. Moreover, we presume that this model will show better performance when the audio signals are aligned with the textual sequence while applying the attention mechanism. We leave the implementation of this point as a future research direction."
+      ],
+      "n_source_tokens": 4188,
+      "native_auto_token_IDs_equal": true,
+      "native_auto_offsets_equal": true,
+      "retained_source_intervals": [
+        [
+          92,
+          4188
+        ]
+      ],
+      "deleted_source_intervals": [
+        [
+          0,
+          92
+        ]
+      ],
+      "n_required_evidence_tokens": 270,
+      "n_missing_required_tokens": 0,
+      "missing_source_token_positions": [],
+      "missing_source_token_IDs": [],
+      "missing_source_offsets": [],
+      "missing_source_text": "",
+      "saved_evidence_intervals": [
+        [
+          3084,
+          3086
+        ],
+        [
+          3115,
+          3117
+        ],
+        [
+          3118,
+          3120
+        ],
+        [
+          3180,
+          3182
+        ],
+        [
+          3200,
+          3202
+        ],
+        [
+          3213,
+          3215
+        ],
+        [
+          3221,
+          3223
+        ],
+        [
+          3231,
+          3233
+        ],
+        [
+          3235,
+          3238
+        ],
+        [
+          3244,
+          3246
+        ],
+        [
+          3256,
+          3259
+        ],
+        [
+          3264,
+          3266
+        ],
+        [
+          3274,
+          3276
+        ],
+        [
+          3307,
+          3309
+        ]
+      ],
+      "saved_evidence_interval_texts": [
+        " WAP",
+        " MFCC",
+        " prosodic",
+        " MDRE",
+        " WAP",
+        " multimodal",
+        " affective",
+        " MDREA",
+        " outperforms",
+        "WAP",
+        " BIBREF",
+        " MDREA",
+        " MDRE",
+        " MDREA"
+      ],
+      "source": "restored\\output\\runs\\main80-20261114T041503\\snapshot\\datasets\\frozen-main80/{longbench,development}.json"
+    }
+  ],
+  "upstream_sources": [
+    {
+      "url": "https://github.com/huggingface/tokenizers/blob/v0.19.1/tokenizers/src/models/bpe/model.rs",
+      "observation": "ignore_merges direct-vocabulary branch returns zero-length token offsets"
+    },
+    {
+      "url": "https://github.com/huggingface/tokenizers/pull/1640",
+      "observation": "merged fix changes ignore_merges offsets to token length"
+    },
+    {
+      "url": "https://github.com/huggingface/tokenizers/issues/1517",
+      "observation": "Llama3 zero-length offset_mapping report"
+    }
+  ],
+  "remaining_root_cause_evidence": "Server tokenizers0.19.1 per-token offset output is not saved in the supplied preparation JSON; reproduce this minimal CPU example in that environment for root-cause archival."
+}

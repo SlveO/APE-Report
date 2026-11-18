@@ -1,0 +1,10 @@
+{
+  "archive": "followup2604-20261117\\FOLLOWUP2604_ACCEPTED.zip",
+  "destination": "restored\\followup2604",
+  "expected_files": 166,
+  "restored": 166,
+  "existing_identical": 0,
+  "different_existing": [],
+  "missing_or_size_mismatch": [],
+  "status": "PASS"
+}

@@ -1,0 +1,4 @@
+﻿L,n_applicable_question_lengths,n_complete,n_missing,n_qasper,n_hotpotqa,n_musique,n_N_values,n_parameter_values,n_physical_generations,unit
+4096,48,31,17,15,17,16,3,16,2304,unique question-length / generation count
+8192,47,35,12,14,17,16,3,16,2256,unique question-length / generation count
+16384,44,44,0,11,17,16,3,16,2112,unique question-length / generation count

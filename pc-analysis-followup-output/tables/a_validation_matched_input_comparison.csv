@@ -1,0 +1,2 @@
+﻿parameter,n_conditions,delta_corrected_minus_old_pp,ci_low_pp,ci_high_pp,unit,replicates,seed
+0.9/0.9,300,0.8944565480513191,-0.6614030385816879,2.715442473285611,"same sample/L/N/default; corrected applicability set, input change classified in a_input_conditions",5000,20261116

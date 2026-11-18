@@ -1,0 +1,5 @@
+﻿position,n_question_position_inputs,n_questions,L_min,L_mean,L_median,L_p90,L_max,actual_N,original_documents,mapped_L,mapped_N,dynamic_T,dynamic_S,unit
+0,500,500,2532,2914.008,2908.5,3087.1,3572,1,20,4096,4,1,1,"document tokens; original20 documents, actual1 encoding block; ALL has1500 position inputs"
+9,500,500,2532,2914.008,2908.5,3087.1,3572,1,20,4096,4,1,1,"document tokens; original20 documents, actual1 encoding block; ALL has1500 position inputs"
+19,500,500,2533,2914.692,2909.5,3088.1,3573,1,20,4096,4,1,1,"document tokens; original20 documents, actual1 encoding block; ALL has1500 position inputs"
+ALL,1500,500,2532,2914.236,2909.0,3088.0,3573,1,20,4096,4,1,1,"document tokens; original20 documents, actual1 encoding block; ALL has1500 position inputs"

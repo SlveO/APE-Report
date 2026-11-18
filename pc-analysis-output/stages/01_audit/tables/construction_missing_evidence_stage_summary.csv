@@ -1,0 +1,14 @@
+﻿stage,dataset,L,n_generations,n_sample_ids,N_values,unit,source
+explore,hotpotqa,4096,336,7,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+explore,hotpotqa,8192,144,3,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+explore,musique,4096,432,9,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+explore,musique,8192,384,8,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+explore,qasper,4096,48,1,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+explore,qasper,8192,48,1,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+length_check,musique,6144,6,1,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+length_check,musique,12288,6,1,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+validation,hotpotqa,4096,45,5,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+validation,hotpotqa,8192,8,1,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+validation,musique,4096,99,11,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+validation,musique,8192,40,5,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv
+validation,qasper,4096,9,1,"[4, 8, 16]",generation records / sample IDs,construction_missing_evidence_generations.csv

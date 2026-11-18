@@ -1,0 +1,19 @@
+﻿dataset,split,policy,n_ids,denominator_dataset_split,unit,source
+hotpotqa,explore,exact_evidence_with_whitespace_alignment,2,17,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+hotpotqa,explore,whole_public_support_document_version_changed,15,17,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+hotpotqa,test,exact_evidence_with_whitespace_alignment,6,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+hotpotqa,test,whole_public_support_document_version_changed,164,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+hotpotqa,validation,whole_public_support_document_version_changed,13,13,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+musique,explore,whole_public_support_document_version_changed,16,16,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+musique,test,exact_evidence_with_whitespace_alignment,7,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+musique,test,whole_public_support_document_version_changed,163,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+musique,validation,exact_evidence_with_whitespace_alignment,1,14,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+musique,validation,whole_public_support_document_version_changed,13,14,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,explore,exact_evidence_with_whitespace_alignment,14,17,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,explore,no_annotated_evidence,2,17,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,explore,whole_public_support_document_version_changed,1,17,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,test,exact_evidence_with_whitespace_alignment,126,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,test,no_annotated_evidence,9,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,test,whole_public_support_document_version_changed,35,170,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,validation,exact_evidence_with_whitespace_alignment,9,13,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy
+qasper,validation,whole_public_support_document_version_changed,4,13,sample IDs,restored/output/runs/main80-20261114T041503/snapshot/datasets/frozen-main80/longbench.json:evidence_mapping_policy

@@ -1,0 +1,9 @@
+﻿at_utc,at_beijing,event,source,stage,method,exit_code,source_line
+2026-11-14T06:03:50.879035+00:00,2026-11-14T14:03:50+08:00,exploration_candidates_frozen,candidates.json,,,,
+2026-11-14T06:03:55.293553+00:00,2026-11-14T14:03:55+08:00,worker_started,events.jsonl,validation,ape_fixed,,16959
+2026-11-14T06:17:49.454791+00:00,2026-11-14T14:17:49+08:00,dynamic_rule_frozen,rule.json,,,,
+2026-11-14T06:17:54.244932+00:00,2026-11-14T14:17:54+08:00,worker_started,events.jsonl,length_check,ape_fixed,,18947
+2026-11-14T06:19:33.362665+00:00,2026-11-14T14:19:33+08:00,worker_started,events.jsonl,length_check,ape_dynamic,,19070
+2026-11-14T06:21:16.156044+00:00,2026-11-14T14:21:16+08:00,worker_started,events.jsonl,attention,ape_fixed,,19194
+2026-11-14T06:22:08.133191+00:00,2026-11-14T14:22:08+08:00,worker_started,events.jsonl,longbench_final,ape_fixed,,19223
+2026-11-14T06:39:24.883379+00:00,2026-11-14T14:39:24+08:00,worker_started,events.jsonl,longbench_final,ape_dynamic,,20246

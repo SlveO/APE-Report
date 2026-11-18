@@ -1,0 +1,13 @@
+﻿method,cache_mode,cap_hit,n_targets,corpus_bleu,mean_output_tokens,mean_total_s,mean_ttft_s,system_reference_length_ratio,unit
+sequential,cold,False,150,4.594030748847909,77.74,2.3261067294872677,0.1309274894107754,3.778046254746289,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+sequential,cold,True,350,3.045049239481434,128.0,3.8194436261170943,0.17138343031717732,6.466403162055336,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+sequential,hot,False,150,4.594030748847909,77.74,2.241124986556048,0.03990270031305651,3.778046254746289,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+sequential,hot,True,350,3.045049239481434,128.0,3.6847030851923464,0.04023841044000749,6.466403162055336,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_fixed,cold,False,119,5.178897151260759,75.5798319327731,3.9812596431745515,0.1894460211707545,3.5371692566148676,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_fixed,cold,True,381,2.8983132165778738,128.0,6.680412259599404,0.22010848002038955,6.4964758951226385,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_fixed,hot,False,119,5.178897151260759,75.5798319327731,3.855838020255852,0.06317138217366104,3.5371692566148676,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_fixed,hot,True,381,2.8983132165778738,128.0,6.523651559425279,0.06464798786076094,6.4964758951226385,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_dynamic,cold,False,150,4.569421436426389,78.68,4.156941453595646,0.18691863937458644,3.8667366211962224,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_dynamic,cold,True,350,3.1201540978585585,128.0,6.71730059299618,0.22384895041185832,6.410671100362757,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_dynamic,hot,False,150,4.569421436426389,78.68,4.04002354579512,0.06426919710356742,3.8667366211962224,descriptive generation-length subgroup corpus BLEU0-100/s/tokens
+ape_dynamic,hot,True,350,3.1201540978585585,128.0,6.562290085890729,0.0648408718340631,6.410671100362757,descriptive generation-length subgroup corpus BLEU0-100/s/tokens

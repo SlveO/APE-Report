@@ -1,0 +1,29 @@
+﻿table,model,method,setting,dataset,f1_percent,unit,paper_task_count_in_original_table,paper_sample_n,url
+2,Llama-3.1-8B-Instruct,sequential_128K,full context;128K model,qasper,47.2,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_128K,full context;128K model,hotpotqa,53.46,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_128K,full context;128K model,musique,28.35,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_model_row,paper model-name row; window not explicitly labeled in Table2,qasper,46.81,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_model_row,paper model-name row; window not explicitly labeled in Table2,hotpotqa,43.97,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_model_row,paper model-name row; window not explicitly labeled in Table2,musique,22.18,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_RAG,Contriever top20 chunks x200 words,qasper,42.33,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_RAG,Contriever top20 chunks x200 words,hotpotqa,49.97,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_RAG,Contriever top20 chunks x200 words,musique,30.62,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,pcw,Contriever top20 chunks x4000 words,qasper,41.52,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,pcw,Contriever top20 chunks x4000 words,hotpotqa,49.47,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,pcw,Contriever top20 chunks x4000 words,musique,21.23,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,ape,Contriever top20 chunks x4000 words,qasper,43.03,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,ape,Contriever top20 chunks x4000 words,hotpotqa,55.41,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,ape,Contriever top20 chunks x4000 words,musique,26.88,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+6,Llama-3-8B-Instruct,sequential,long-context task; limited sequential window,qasper,32.83,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+6,Llama-3-8B-Instruct,sequential,long-context task; limited sequential window,hotpotqa,44.24,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+6,Llama-3-8B-Instruct,sequential,long-context task; limited sequential window,musique,20.47,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+6,Llama-3-8B-Instruct,ape,full long text; segments <7500 tokens,qasper,39.14,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+6,Llama-3-8B-Instruct,ape,full long text; segments <7500 tokens,hotpotqa,50.11,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+6,Llama-3-8B-Instruct,ape,full long text; segments <7500 tokens,musique,25.79,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+2,Llama-3.1-8B-Instruct,sequential_128K,full context;128K model,macro_three_tasks,43.00333333333333,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_model_row,paper model-name row; window not explicitly labeled in Table2,macro_three_tasks,37.653333333333336,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,sequential_RAG,Contriever top20 chunks x200 words,macro_three_tasks,40.973333333333336,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,pcw,Contriever top20 chunks x4000 words,macro_three_tasks,37.40666666666667,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+2,Llama-3.1-8B-Instruct,ape,Contriever top20 chunks x4000 words,macro_three_tasks,41.77333333333333,F1 x100,8,not reported in table,https://arxiv.org/html/2502.05431v1#S5.T2
+6,Llama-3-8B-Instruct,sequential,long-context task; limited sequential window,macro_three_tasks,32.51333333333333,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6
+6,Llama-3-8B-Instruct,ape,full long text; segments <7500 tokens,macro_three_tasks,38.346666666666664,F1 x100,11,not reported in table,https://arxiv.org/html/2502.05431v1#S6.T6

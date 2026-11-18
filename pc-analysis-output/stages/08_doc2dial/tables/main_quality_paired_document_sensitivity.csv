@@ -1,0 +1,10 @@
+﻿scope,cluster_unit,n_targets,n_clusters,replicates,seed,ci_status,comparison_type,reference_method,reference_cache,comparison_method,comparison_cache,delta_bleu,ci_low,ci_high,unit
+all500,document,500,172,5000,20261116,paired cluster percentile,method,sequential,cold,ape_fixed,cold,-0.10913103147416692,-0.4296090951358636,0.22207343575730487,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,method,sequential,hot,ape_fixed,hot,-0.10913103147416692,-0.4296090951358636,0.22207343575730487,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,method,sequential,cold,ape_dynamic,cold,0.05811099959146038,-0.15087739731954744,0.25978686302581283,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,method,sequential,hot,ape_dynamic,hot,0.05811099959146038,-0.15087739731954744,0.25978686302581283,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,method,ape_fixed,cold,ape_dynamic,cold,0.1672420310656273,-0.1916089836993471,0.5136513477949665,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,method,ape_fixed,hot,ape_dynamic,hot,0.1672420310656273,-0.1916089836993471,0.5136513477949665,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,cache,sequential,cold,sequential,hot,0.0,0.0,0.0,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,cache,ape_fixed,cold,ape_fixed,hot,0.0,0.0,0.0,paired difference of re-aggregated corpus BLEU; comparison minus reference
+all500,document,500,172,5000,20261116,paired cluster percentile,cache,ape_dynamic,cold,ape_dynamic,hot,0.0,0.0,0.0,paired difference of re-aggregated corpus BLEU; comparison minus reference

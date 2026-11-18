@@ -1,0 +1,7 @@
+﻿method,cache_mode,n_targets,server_corpus_bleu,current_corpus_bleu,absolute_difference,server_signature,stats_match_preaudit,unit
+sequential,cold,500,3.3600195580277816,3.3600195580277816,0.0,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3,True,"BLEU0-100, six server aggregate/statistic checks"
+sequential,hot,500,3.3600195580277816,3.3600195580277816,0.0,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3,True,"BLEU0-100, six server aggregate/statistic checks"
+ape_fixed,cold,500,3.2508885265536147,3.2508885265536147,0.0,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3,True,"BLEU0-100, six server aggregate/statistic checks"
+ape_fixed,hot,500,3.2508885265536147,3.2508885265536147,0.0,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3,True,"BLEU0-100, six server aggregate/statistic checks"
+ape_dynamic,cold,500,3.418130557619242,3.418130557619242,0.0,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3,True,"BLEU0-100, six server aggregate/statistic checks"
+ape_dynamic,hot,500,3.418130557619242,3.418130557619242,0.0,nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3,True,"BLEU0-100, six server aggregate/statistic checks"

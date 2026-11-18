@@ -1,0 +1,20 @@
+﻿source,marker,text
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:86,def load(cls,"def load(cls, path, method):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:112,def prepare(self,"def prepare(self, row):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:25,def chunks(,"def chunks(tokens, count=None, maximum=7500):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:129,def encode(self,"def encode(self, prefix, parts, suffix, cache_key):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:42,def merge_pcw(,"def merge_pcw(windows, lengths):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:167,def run(self,"def run(self, row, *, param=DEFAULT, rule=None, cache_mode='cold'):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:188,encoding_param =,encoding_param = None if cache_mode == 'search' else tuple(param)
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:203,History/question are intentionally,# History/question are intentionally never part of cached KV.
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:216,token = int(logits.argmax,token = int(logits.argmax(dim=-1).item())
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:212,stops = set(eos,"stops = set(eos if isinstance(eos, list) else [eos])"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:226,total = time.perf_counter() - started,total = time.perf_counter() - started
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/methods.py:235,'peak_allocated_bytes':,"'peak_allocated_bytes': torch.cuda.max_memory_allocated(self.device) if self.device.type == 'cuda' else None,"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/worker.py:86,if cold['output_token_ids'] != result['output_token_ids'],if cold['output_token_ids'] != result['output_token_ids']:
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/worker.py:34,'event': 'model_loaded',"append_json(bundle['events'], {'event': 'model_loaded', 'at': now(), 'method': bundle['method'], 'seconds': time.perf_counter() - started})"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/worker.py:79,with AttentionCapture(,"with AttentionCapture(engine.model, bundle['attention'], {'key': job['key'], 'T': param[0], 'S': param[1], 'diagnostic_roles': job['logical_labels']}):"
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/worker.py:13,def recovery_timing(,"def recovery_timing(result, seconds, peak=None):"
+restored/output/runs/main80-20261114T041503/snapshot/scripts/with_env.sh:18,CUDA_VISIBLE_DEVICES=0,export CUDA_VISIBLE_DEVICES=0
+restored/docs/EXPERIMENT_PLAN.md:9,RTX 4090,- 物理 GPU 0，按用户指定 RTX 4090 48GB，不审查设备/占用，不作资源预检。
+restored/output/runs/main80-20261114T041503/snapshot/APE/main80/freeze.py:63,'template_adaptation','template_adaptation': 'official tags/text2line/reverse history; all earlier turns retained; full document before request history for reusable document-only KV'})

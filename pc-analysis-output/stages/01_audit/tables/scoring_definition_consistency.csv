@@ -1,0 +1,21 @@
+﻿dataset,stage,metric,n_physical_records,mismatch_count,max_abs_difference,tolerance,unit,scope
+doc2dial,doc2dial,single_record_corpus_BLEU_defaults,3000,0,2.1316282072803006e-14,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+hotpotqa,attention,LongBench_v1_F1,4,0,0.0,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+hotpotqa,baseline,LongBench_v1_F1,600,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+hotpotqa,explore,LongBench_v1_F1,2448,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+hotpotqa,length_check,LongBench_v1_F1,36,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+hotpotqa,longbench_final,LongBench_v1_F1,340,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+hotpotqa,validation,LongBench_v1_F1,325,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+litm,litm,campaign_full_answer_EM,4500,0,0.0,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+musique,attention,LongBench_v1_F1,4,0,0.0,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+musique,baseline,LongBench_v1_F1,600,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+musique,explore,LongBench_v1_F1,2304,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+musique,length_check,LongBench_v1_F1,36,0,0.0,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+musique,longbench_final,LongBench_v1_F1,340,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+musique,validation,LongBench_v1_F1,350,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+qasper,attention,LongBench_v1_F1,4,0,0.0,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+qasper,baseline,LongBench_v1_F1,600,0,2.220446049250313e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+qasper,explore,LongBench_v1_F1,1920,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+qasper,length_check,LongBench_v1_F1,48,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+qasper,longbench_final,LongBench_v1_F1,340,0,2.220446049250313e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency
+qasper,validation,LongBench_v1_F1,317,0,1.1102230246251565e-16,1e-08,raw F1/EM or BLEU point,saved score definition consistency

@@ -1,0 +1,13 @@
+{
+  "records": 18116,
+  "expected_physical_tasks": 18116,
+  "statuses": {
+    "success": 18116
+  },
+  "duplicates": 0,
+  "missing_tasks": 0,
+  "unexpected_tasks": 0,
+  "field_or_join_issues": 0,
+  "snapshot_lineage_items": 36,
+  "snapshot_lineage_matches": 36
+}

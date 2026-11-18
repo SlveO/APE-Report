@@ -1,0 +1,115 @@
+﻿scope,axis,value,f1_percent,n_other_parameter_values,n_dataset_cells,unit,aggregation,T,S
+all_27,T,0.5,38.62734295114655,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,T,0.7,37.846974573759454,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,T,0.9,35.870885771213224,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,T,1.0,33.4984095722173,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,S,0.5,28.587716712571208,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,S,0.7,37.43012814424573,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,S,0.9,39.8092349782722,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,S,1.0,40.016533033247384,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+all_27,L,4096,41.55672642100517,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_27,L,4096,40.944623352520956,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+all_27,L,8192,42.15965089367324,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_27,L,8192,41.518173073470635,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+all_27,L,16384,36.75992416718978,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_27,L,16384,41.025792954703604,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+all_27,N,4,43.70216475312166,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_27,N,4,44.57531746032655,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+all_27,N,8,40.96490144209836,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_27,N,8,40.26021159240452,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+all_27,N,16,35.80923528664818,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_27,N,16,38.65306032796413,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_27,T,0.5,38.98082787051854,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,T,0.7,38.11307142065298,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,T,0.9,36.041311602669744,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,T,1.0,33.66694583013644,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,S,0.5,29.151215506853234,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,S,0.7,36.958718949203494,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,S,0.9,40.06169963701377,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,S,1.0,40.63052263090721,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_27,L,4096,42.13301615397541,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_27,L,4096,41.36123888388127,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_27,L,8192,40.7861454133221,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_27,L,8192,43.29159418598703,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_27,L,16384,36.75992416718978,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_27,L,16384,41.025792954703604,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_27,N,4,43.63685825515071,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_27,N,4,46.32218623214495,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_27,N,8,40.08426664490762,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_27,N,8,40.874189978371696,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_27,N,16,35.95796083442897,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_27,N,16,38.482249814055265,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+all_shared18,T,0.5,40.21557272500343,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,T,0.7,38.838125723740625,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,T,0.9,37.264563591800766,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,T,1.0,35.11949133591465,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,S,0.5,29.931348149068977,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,S,0.7,39.00006381883676,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,S,0.9,41.417912004091,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,S,1.0,41.08842940446275,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+all_shared18,L,4096,41.55672642100517,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_shared18,L,4096,42.84298665924764,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+all_shared18,L,8192,42.15965089367324,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_shared18,L,8192,43.56674353242981,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+all_shared18,N,4,45.339657704171614,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_shared18,N,4,46.32155410056743,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+all_shared18,N,8,42.26968307179558,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_shared18,N,8,40.614357087046166,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+all_shared18,N,16,37.965225196050426,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+all_shared18,N,16,42.67868409990258,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+complete_shared18,T,0.5,40.745800104061416,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,T,0.7,39.237270994080916,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,T,0.9,37.520202338985555,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,T,1.0,35.372295722793375,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,S,0.5,30.776596340492013,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,S,0.7,38.29295002627341,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,S,0.9,41.79660899220335,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,S,1.0,42.00941380095249,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_shared18,L,4096,42.13301615397541,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_shared18,L,4096,45.84998426131431,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+complete_shared18,L,8192,40.7861454133221,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_shared18,L,8192,42.70389310865501,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+complete_shared18,N,4,45.2416979572152,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_shared18,N,4,49.75522299721807,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+complete_shared18,N,8,40.948730876009485,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_shared18,N,8,41.073587127158554,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+complete_shared18,N,16,38.188313517721596,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_shared18,N,16,42.002005930577354,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+missing_shared18,T,0.5,29.49539657333191,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,T,0.7,28.358861759256637,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,T,0.9,26.674635146287756,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,T,1.0,26.258953353409435,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,S,0.5,21.847137798504697,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,S,0.7,28.27753049873148,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,S,0.9,30.99264236455407,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,S,1.0,29.6705361704955,4,18,F1 x100,"equal over other parameter, datasets and included cells",,
+missing_shared18,L,4096,31.004451163181322,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+missing_shared18,L,4096,30.126816158562193,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+missing_shared18,L,8192,31.88219732337379,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+missing_shared18,L,8192,35.25533108866442,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+missing_shared18,N,4,38.31322933213689,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+missing_shared18,N,4,38.677449094115765,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+missing_shared18,N,8,29.54416615130901,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+missing_shared18,N,8,28.771959962436156,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+missing_shared18,N,16,26.47257724638677,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+missing_shared18,N,16,30.623811814288004,,6,F1 x100,fixed parameter; equal over datasets/included cells,0.5,0.9
+complete_common_ids27,T,0.5,38.93005844203509,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,T,0.7,38.892235121896285,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,T,0.9,36.965194400175726,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,T,1.0,34.17634636037224,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,S,0.5,30.855896748950872,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,S,0.7,37.88965229003758,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,S,0.9,39.88952444774482,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,S,1.0,40.32876083774607,4,27,F1 x100,"equal over other parameter, datasets and included cells",,
+complete_common_ids27,L,4096,42.582895852761695,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_common_ids27,L,4096,41.04194842920333,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_common_ids27,L,8192,40.65150689384406,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_common_ids27,L,8192,43.769164775012726,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_common_ids27,L,16384,37.18894887573048,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_common_ids27,L,16384,40.8932566783444,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_common_ids27,N,4,46.015870889434105,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_common_ids27,N,4,46.90731961345996,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_common_ids27,N,8,40.82386404445228,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_common_ids27,N,8,41.35140882509303,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0
+complete_common_ids27,N,16,33.583616688449844,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.9,0.9
+complete_common_ids27,N,16,37.445641444007464,,9,F1 x100,fixed parameter; equal over datasets/included cells,0.7,1.0

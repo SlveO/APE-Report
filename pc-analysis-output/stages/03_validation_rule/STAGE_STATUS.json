@@ -1,0 +1,13 @@
+{
+  "experiment_stage": 3,
+  "status": "COMPLETED",
+  "research_status": "SUBMITTED",
+  "score_recomputed_count": 0,
+  "physical_generations": 992,
+  "logical_evaluations": 1071,
+  "reused_generations_saved": 79,
+  "original_rule_matches": true,
+  "original_rule_modified": false,
+  "test_scores_used": false,
+  "next_stage_executed": false
+}

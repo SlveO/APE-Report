@@ -1,0 +1,35 @@
+﻿scope,cluster_unit,n_targets,n_clusters,ci_status
+all500,dialogue,500,366,paired cluster percentile
+all500,document,500,172,paired cluster percentile
+actual_N_1,dialogue,493,361,paired cluster percentile
+actual_N_1,document,493,171,paired cluster percentile
+actual_N_2,dialogue,7,5,paired cluster percentile
+actual_N_2,document,7,1,one cluster; between-source variation unavailable
+previous_user,dialogue,472,350,paired cluster percentile
+previous_user,document,472,167,paired cluster percentile
+consecutive_agent,dialogue,28,28,paired cluster percentile
+consecutive_agent,document,28,24,paired cluster percentile
+reference_repeat,dialogue,7,7,paired cluster percentile
+reference_repeat,document,7,7,paired cluster percentile
+reference_not_repeat,dialogue,493,362,paired cluster percentile
+reference_not_repeat,document,493,171,paired cluster percentile
+clean_user_no_repeat,dialogue,467,347,paired cluster percentile
+clean_user_no_repeat,document,467,167,paired cluster percentile
+history_flagged_union,dialogue,33,33,paired cluster percentile
+history_flagged_union,document,33,27,paired cluster percentile
+history_1_4,dialogue,167,159,paired cluster percentile
+history_1_4,document,167,96,paired cluster percentile
+history_5_8,dialogue,165,157,paired cluster percentile
+history_5_8,document,165,104,paired cluster percentile
+history_9_15,dialogue,168,153,paired cluster percentile
+history_9_15,document,168,90,paired cluster percentile
+domain_dmv,dialogue,125,97,paired cluster percentile
+domain_dmv,document,125,36,paired cluster percentile
+domain_ssa,dialogue,123,91,paired cluster percentile
+domain_ssa,document,123,44,paired cluster percentile
+domain_studentaid,dialogue,98,72,paired cluster percentile
+domain_studentaid,document,98,32,paired cluster percentile
+domain_va,dialogue,154,106,paired cluster percentile
+domain_va,document,154,60,paired cluster percentile
+without_confirmed_spanish_reference,dialogue,499,366,paired cluster percentile
+without_confirmed_spanish_reference,document,499,172,paired cluster percentile

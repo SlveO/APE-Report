@@ -1,0 +1,16 @@
+{
+  "records": 18116,
+  "scheduled_jobs": 18116,
+  "worker_bundles": 16,
+  "workers_exit_zero": 16,
+  "unique_request_event_pairs": 18116,
+  "valid_token_arrays": 18116,
+  "valid_output_lengths": 18116,
+  "cap_hits": 3731,
+  "eos_at_cap": 25,
+  "hot_pairs": 1500,
+  "hot_token_equal_pairs": 1500,
+  "issues": 0,
+  "status": "SUBMITTED",
+  "scope": "stage1 runtime/configuration audit only"
+}

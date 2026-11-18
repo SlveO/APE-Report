@@ -1,0 +1,252 @@
+{
+  "stage": "A corrected selection audit",
+  "records": {
+    "old_exploration": 6672,
+    "corrected_exploration": 5328,
+    "corrected_exploration_new": 1248,
+    "corrected_exploration_historical_reuse": 4080,
+    "A_physical_results": 839,
+    "A_new": 462,
+    "A_historical_reuse": 377,
+    "A_logical_labels": 900,
+    "A_input_conditions": 300,
+    "A_sample_lengths": 100
+  },
+  "input_classification": {
+    "removed_from_applicable": 73,
+    "changed_generation_input": 98,
+    "identical_generation_input": 261
+  },
+  "old_fixed": [
+    0.7,
+    1.0
+  ],
+  "corrected_fixed": [
+    0.5,
+    1.0
+  ],
+  "candidate_changed_cells": 4,
+  "frozen_rule_changed_cells": 6,
+  "validation_macro": {
+    "default": {
+      "scope": "macro_equal_dataset_cell",
+      "policy": "default",
+      "f1_percent": 41.13162794393091,
+      "ci_low_percent": 30.53220933941366,
+      "ci_high_percent": 52.86585646933207,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1×100; nine cells equal",
+      "seed": 20261116,
+      "replicates": 5000
+    },
+    "global": {
+      "scope": "macro_equal_dataset_cell",
+      "policy": "global",
+      "f1_percent": 42.40171891144857,
+      "ci_low_percent": 32.42202714226228,
+      "ci_high_percent": 53.44456224554676,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1×100; nine cells equal",
+      "seed": 20261116,
+      "replicates": 5000
+    },
+    "cell": {
+      "scope": "macro_equal_dataset_cell",
+      "policy": "cell",
+      "f1_percent": 42.1901163665806,
+      "ci_low_percent": 32.67775108404378,
+      "ci_high_percent": 53.06392024719491,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1×100; nine cells equal",
+      "seed": 20261116,
+      "replicates": 5000
+    },
+    "fixed": {
+      "scope": "macro_equal_dataset_cell",
+      "policy": "fixed",
+      "f1_percent": 42.40171891144857,
+      "ci_low_percent": 32.42202714226228,
+      "ci_high_percent": 53.44456224554676,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1×100; nine cells equal",
+      "seed": 20261116,
+      "replicates": 5000
+    },
+    "dynamic": {
+      "scope": "macro_equal_dataset_cell",
+      "policy": "dynamic",
+      "f1_percent": 43.172360023730526,
+      "ci_low_percent": 33.620944887435606,
+      "ci_high_percent": 54.061359973989326,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1×100; nine cells equal",
+      "seed": 20261116,
+      "replicates": 5000
+    }
+  },
+  "validation_paired": [
+    {
+      "scope": "macro_equal_dataset_cell",
+      "reference": "default",
+      "comparison": "fixed",
+      "delta_pp": 1.270090967517662,
+      "ci_low_pp": -3.1039403521403504,
+      "ci_high_pp": 5.919628873115022,
+      "wins": 40,
+      "ties": 207,
+      "losses": 53,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1 percentage points; counts are input-condition pairs",
+      "seed": 20261116,
+      "replicates": 5000
+    },
+    {
+      "scope": "macro_equal_dataset_cell",
+      "reference": "fixed",
+      "comparison": "dynamic",
+      "delta_pp": 0.7706411122819556,
+      "ci_low_pp": -0.9926392922498756,
+      "ci_high_pp": 2.5738590161895805,
+      "wins": 14,
+      "ties": 273,
+      "losses": 13,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1 percentage points; counts are input-condition pairs",
+      "seed": 20261116,
+      "replicates": 5000
+    },
+    {
+      "scope": "macro_equal_dataset_cell",
+      "reference": "fixed",
+      "comparison": "cell",
+      "delta_pp": -0.21160254486797814,
+      "ci_low_pp": -3.098569679956287,
+      "ci_high_pp": 2.481670088571466,
+      "wins": 26,
+      "ties": 247,
+      "losses": 27,
+      "n_questions": 40,
+      "n_conditions": 300,
+      "unit": "F1 percentage points; counts are input-condition pairs",
+      "seed": 20261116,
+      "replicates": 5000
+    }
+  ],
+  "same_parameter_exploration_pairs": [
+    {
+      "scope": "matched corrected-applicable exploration",
+      "T": 0.7,
+      "S": 1.0,
+      "n_input_conditions": 333,
+      "old_common_f1_percent": 42.12211215409412,
+      "corrected_f1_percent": 42.064072103056866,
+      "delta_corrected_minus_old_pp": -0.058040051037250295,
+      "ci_low_pp": -1.602706346179156,
+      "ci_high_pp": 1.5288265740563098,
+      "unit": "fixed parameter across old/corrected inputs; equal dataset/cell means",
+      "replicates": 5000,
+      "seed": 20261116
+    },
+    {
+      "scope": "matched corrected-applicable exploration",
+      "T": 0.5,
+      "S": 1.0,
+      "n_input_conditions": 333,
+      "old_common_f1_percent": 41.70973171327256,
+      "corrected_f1_percent": 42.18556980815828,
+      "delta_corrected_minus_old_pp": 0.4758380948857166,
+      "ci_low_pp": -0.7925995034390994,
+      "ci_high_pp": 1.7884182364804977,
+      "unit": "fixed parameter across old/corrected inputs; equal dataset/cell means",
+      "replicates": 5000,
+      "seed": 20261116
+    }
+  ],
+  "natural_fixed": [
+    1.0,
+    0.9
+  ],
+  "natural_by_N": {
+    "1": [
+      1.0,
+      0.9
+    ],
+    "2": [
+      0.9,
+      1.0
+    ],
+    "3": [
+      1.0,
+      0.9
+    ]
+  },
+  "natural_validation": [
+    {
+      "scope": "global_fixed_choice",
+      "T": 0.9,
+      "S": 0.9,
+      "f1_percent": 57.83389391879958,
+      "selected_parameters": "[1.0, 0.9]",
+      "n_questions": 36,
+      "unit": "C2 weighting dataset-equal, Qasper N-equal; selection already frozen"
+    },
+    {
+      "scope": "global_fixed_choice",
+      "T": 1.0,
+      "S": 0.9,
+      "f1_percent": 60.27421652421652,
+      "selected_parameters": "[1.0, 0.9]",
+      "n_questions": 36,
+      "unit": "C2 weighting dataset-equal, Qasper N-equal; selection already frozen"
+    },
+    {
+      "scope": "N1",
+      "candidate": "[0.9, 0.7]",
+      "candidate_f1_percent": 56.89051689051689,
+      "fixed": "[1.0, 0.9]",
+      "fixed_f1_percent": 57.96652421652422,
+      "delta_candidate_minus_fixed_pp": -1.0760073260073222,
+      "selected_parameters": "[1.0, 0.9]",
+      "decision": "fixed_fallback",
+      "n_questions": 28,
+      "unit": "N1 three-dataset equal; N2/N3 Qasper only; saved decision"
+    },
+    {
+      "scope": "N2",
+      "candidate": "[0.9, 1.0]",
+      "candidate_f1_percent": 74.21383647798741,
+      "fixed": "[1.0, 0.9]",
+      "fixed_f1_percent": 73.3974358974359,
+      "delta_candidate_minus_fixed_pp": 0.816400580551524,
+      "selected_parameters": "[0.9, 1.0]",
+      "decision": "candidate",
+      "n_questions": 4,
+      "unit": "N1 three-dataset equal; N2/N3 Qasper only; saved decision"
+    },
+    {
+      "scope": "N3",
+      "candidate": "[1.0, 0.9]",
+      "candidate_f1_percent": 59.23076923076923,
+      "fixed": "[1.0, 0.9]",
+      "fixed_f1_percent": 59.23076923076923,
+      "delta_candidate_minus_fixed_pp": 0.0,
+      "selected_parameters": "[1.0, 0.9]",
+      "decision": "fixed_fallback",
+      "n_questions": 4,
+      "unit": "N1 three-dataset equal; N2/N3 Qasper only; saved decision"
+    }
+  ],
+  "bootstrap_seed": 20261116,
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "frozen evidence/support group within dataset; retain all question/L/N/policy observations; nine cells equal",
+  "new_parameter_selection_performed": false,
+  "new_model_answers": 0,
+  "historical_scripts_executed": false
+}

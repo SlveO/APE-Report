@@ -1,0 +1,9 @@
+﻿stage,records,cache_modes,timing_conditions,max_new_tokens,cap_hits,first_started_beijing,last_ended_beijing,denominator
+baseline,1800,cold,cold,"32,128",31,2026-11-14T12:15:18+08:00,2026-11-14T13:10:21+08:00,1800
+explore,6672,search,search_immutable_KV,"32,128",41,2026-11-14T13:10:34+08:00,2026-11-14T14:03:47+08:00,6672
+validation,992,search,search_immutable_KV,"32,128",18,2026-11-14T14:04:03+08:00,2026-11-14T14:17:46+08:00,992
+length_check,120,cold,cold,"32,128",1,2026-11-14T14:18:02+08:00,2026-11-14T14:21:07+08:00,120
+attention,12,cold,cold,"32,128",0,2026-11-14T14:21:24+08:00,2026-11-14T14:21:50+08:00,12
+longbench_final,1020,cold,cold,"32,128",13,2026-11-14T14:22:15+08:00,2026-11-14T14:56:43+08:00,1020
+litm,4500,cold,cold,128,1465,2026-11-14T14:57:00+08:00,2026-11-14T19:29:01+08:00,4500
+doc2dial,3000,"cold,hot","application_GPU_KV,cold",128,2162,2026-11-14T19:29:20+08:00,2026-11-14T23:43:10+08:00,3000

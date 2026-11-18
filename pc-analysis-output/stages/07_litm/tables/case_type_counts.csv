@@ -1,0 +1,4 @@
+﻿case_type,n_questions,denominator,unit
+改善,81,500,question mean official EM over all3 positions
+退化,83,500,question mean official EM over all3 positions
+持平,336,500,question mean official EM over all3 positions

@@ -1,0 +1,3 @@
+﻿scope,T,S,n_input_conditions,old_common_f1_percent,corrected_f1_percent,delta_corrected_minus_old_pp,ci_low_pp,ci_high_pp,unit,replicates,seed
+matched corrected-applicable exploration,0.7,1.0,333,42.12211215409412,42.064072103056866,-0.058040051037250295,-1.602706346179156,1.5288265740563098,fixed parameter across old/corrected inputs; equal dataset/cell means,5000,20261116
+matched corrected-applicable exploration,0.5,1.0,333,41.70973171327256,42.18556980815828,0.4758380948857166,-0.7925995034390994,1.7884182364804977,fixed parameter across old/corrected inputs; equal dataset/cell means,5000,20261116

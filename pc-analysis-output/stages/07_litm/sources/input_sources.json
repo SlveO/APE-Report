@@ -1,0 +1,11 @@
+{
+  "raw_position_files": {
+    "0": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_0.jsonl.gz",
+    "9": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_9.jsonl.gz",
+    "19": "datasets/raw-main80/litm/nq-open-20_total_documents_gold_at_19.jsonl.gz"
+  },
+  "prompt": "restored/datasets/raw-main80/references/litm_qa.prompt",
+  "frozen": "snapshot/datasets/frozen-main80/litm.json",
+  "source_join": "sample_id/position -> frozen question -> original per-position question; title/text multiset audited",
+  "cached_corrections": "pc-analysis-output/stages/01_audit/tables/scoring_litm_first_line_changed_IDs.csv"
+}

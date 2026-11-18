@@ -1,0 +1,4 @@
+﻿dataset,n_questions,n_support_groups,replicates_valid,proposed,empty_strata_rejections,min_sampled_questions,max_sampled_questions,rng,unit
+qasper,4,3,5000,5000,0,3,6,"SeedSequence([20261116,2,0])",frozen B support group; cluster size retained; all six conditions paired
+hotpotqa,3,3,5000,5000,0,3,3,"SeedSequence([20261116,2,1])",frozen B support group; cluster size retained; all six conditions paired
+musique,3,3,5000,5000,0,3,3,"SeedSequence([20261116,2,2])",frozen B support group; cluster size retained; all six conditions paired

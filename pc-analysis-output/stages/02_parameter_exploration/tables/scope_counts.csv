@@ -1,0 +1,7 @@
+﻿scope,label,n_generations,n_unique_ids,n_query_length_inputs,n_cells,n_dataset_cells,n_generations_per_parameter,n_qasper_unique_ids,n_hotpotqa_unique_ids,n_musique_unique_ids,unit
+all_27,全部实际输入，27层,6672,48,139,9,27,417,15,17,16,generation / ID / ID-length / cell count
+complete_27,证据完整子集，27层,5280,48,110,9,27,330,15,17,16,generation / ID / ID-length / cell count
+all_shared18,全部输入，仅4K/8K共同18层,4560,48,95,6,18,285,15,17,16,generation / ID / ID-length / cell count
+complete_shared18,证据完整，仅4K/8K共同18层,3168,36,66,6,18,198,14,14,8,generation / ID / ID-length / cell count
+missing_shared18,证据缺失，仅4K/8K共同18层,1392,17,29,6,18,87,1,7,9,generation / ID / ID-length / cell count
+complete_common_ids27,三长度共同完整ID，27层,3888,27,81,9,27,243,10,10,7,generation / ID / ID-length / cell count

@@ -1,0 +1,7 @@
+﻿stage,dataset,method,cache_mode,n,max_new_tokens,cap_hit_count,eos_last_count,eos_at_cap_count,output_tokens_min,output_tokens_max,denominator,unit
+length_check,hotpotqa,ape_dynamic,cold,18,32,0,18,0,2,9,18,record count; output_tokens includes final EOS
+length_check,hotpotqa,ape_fixed,cold,18,32,0,18,0,2,5,18,record count; output_tokens includes final EOS
+length_check,musique,ape_dynamic,cold,18,32,0,18,0,3,28,18,record count; output_tokens includes final EOS
+length_check,musique,ape_fixed,cold,18,32,1,17,0,3,32,18,record count; output_tokens includes final EOS
+length_check,qasper,ape_dynamic,cold,24,128,0,24,0,4,17,24,record count; output_tokens includes final EOS
+length_check,qasper,ape_fixed,cold,24,128,0,24,0,4,17,24,record count; output_tokens includes final EOS

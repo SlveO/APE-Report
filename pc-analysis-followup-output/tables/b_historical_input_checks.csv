@@ -1,0 +1,21 @@
+﻿sample_id,L,has_old_frozen_input,in_old_length_experiment,document_tokens_same,prefix_same,suffix_same,max_new_tokens_same,answers_same,exact_generation_input_same,unit
+hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea,6144,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+hotpotqa:1fd7df3ba224e985f87e976c7a4a67ddc1012a249a542bea,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867,6144,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+hotpotqa:302ee593ca790dfb2dcbfd4341817fc64f8d106f65f61867,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6,6144,True,True,False,True,True,True,True,False,one question/length; direct content comparison; no hash
+hotpotqa:f2da37b927d3f8ce752b69d7149a6eb31aa738d123f8fdb6,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e,6144,True,True,False,True,True,True,True,False,one question/length; direct content comparison; no hash
+musique:517b237e011625d9c5ea0be465bdc9dcd38ef548cfd1a74e,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+musique:a6e0032c62ece331c56364ced53e1c4076c303e4ae287074,6144,True,False,False,True,True,True,True,False,one question/length; direct content comparison; no hash
+musique:a6e0032c62ece331c56364ced53e1c4076c303e4ae287074,12288,True,False,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+musique:c6fe007044674795d280bb474e2adc9dc8bacd8853a9cef5,6144,True,False,False,True,True,True,True,False,one question/length; direct content comparison; no hash
+musique:c6fe007044674795d280bb474e2adc9dc8bacd8853a9cef5,12288,True,False,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48,6144,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:39352d304bd452de69fcc492ad458b72614e329b4509eb48,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5,6144,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:a3aadf47eb153a70559416ba375c57883aec1538a2b17fb5,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336,6144,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:c9d48df129798d2aed0161fa805a289e5f75306af3e22336,12288,True,True,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:e7efd3969adf95459805233e580d6e0c7539a4de09b4441e,6144,True,False,True,True,True,True,True,True,one question/length; direct content comparison; no hash
+qasper:e7efd3969adf95459805233e580d6e0c7539a4de09b4441e,12288,True,False,True,True,True,True,True,True,one question/length; direct content comparison; no hash

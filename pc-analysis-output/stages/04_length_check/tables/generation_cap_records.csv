@@ -1,0 +1,2 @@
+﻿dataset,sample_id,L,N,method,output_tokens,max_new_tokens,saved_f1_0_1,answer,reference_answers,total_seconds,evidence_complete,source_file,source_line,unit
+musique,musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa,6144,4,ape_fixed,32,32,0.0,"2009 Supercopa de España, 2009 Supercopa de España, 2009 Supercopa de España, 2009 Supercopa","[""continental treble""]",2.315927670104429,False,restored/output/runs/main80-20261114T041503/attempts.jsonl,9513,tokens; saved F1 0-1; seconds

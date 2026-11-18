@@ -1,0 +1,127 @@
+{
+  "stage": 8,
+  "main_quality": [
+    {
+      "method": "sequential",
+      "cache_mode": "cold",
+      "corpus_bleu": 3.3600195580277816,
+      "ci_low": 2.911633928359623,
+      "ci_high": 3.8403616991543927
+    },
+    {
+      "method": "sequential",
+      "cache_mode": "hot",
+      "corpus_bleu": 3.3600195580277816,
+      "ci_low": 2.911633928359623,
+      "ci_high": 3.8403616991543927
+    },
+    {
+      "method": "ape_fixed",
+      "cache_mode": "cold",
+      "corpus_bleu": 3.2508885265536147,
+      "ci_low": 2.807748079206609,
+      "ci_high": 3.731731575570432
+    },
+    {
+      "method": "ape_fixed",
+      "cache_mode": "hot",
+      "corpus_bleu": 3.2508885265536147,
+      "ci_low": 2.807748079206609,
+      "ci_high": 3.731731575570432
+    },
+    {
+      "method": "ape_dynamic",
+      "cache_mode": "cold",
+      "corpus_bleu": 3.418130557619242,
+      "ci_low": 2.967420273029468,
+      "ci_high": 3.891105948989095
+    },
+    {
+      "method": "ape_dynamic",
+      "cache_mode": "hot",
+      "corpus_bleu": 3.418130557619242,
+      "ci_low": 2.967420273029468,
+      "ci_high": 3.891105948989095
+    }
+  ],
+  "primary_dynamic_fixed": [
+    {
+      "scope": "all500",
+      "cluster_unit": "dialogue",
+      "n_targets": 500,
+      "n_clusters": 366,
+      "replicates": 5000,
+      "seed": 20261116,
+      "ci_status": "paired cluster percentile",
+      "comparison_type": "method",
+      "reference_method": "ape_fixed",
+      "reference_cache": "cold",
+      "comparison_method": "ape_dynamic",
+      "comparison_cache": "cold",
+      "delta_bleu": 0.1672420310656273,
+      "ci_low": -0.20490506255221683,
+      "ci_high": 0.5622197602240468,
+      "unit": "paired difference of re-aggregated corpus BLEU; comparison minus reference"
+    },
+    {
+      "scope": "all500",
+      "cluster_unit": "dialogue",
+      "n_targets": 500,
+      "n_clusters": 366,
+      "replicates": 5000,
+      "seed": 20261116,
+      "ci_status": "paired cluster percentile",
+      "comparison_type": "method",
+      "reference_method": "ape_fixed",
+      "reference_cache": "hot",
+      "comparison_method": "ape_dynamic",
+      "comparison_cache": "hot",
+      "delta_bleu": 0.1672420310656273,
+      "ci_low": -0.20490506255221683,
+      "ci_high": 0.5622197602240468,
+      "unit": "paired difference of re-aggregated corpus BLEU; comparison minus reference"
+    },
+    {
+      "scope": "all500",
+      "cluster_unit": "document",
+      "n_targets": 500,
+      "n_clusters": 172,
+      "replicates": 5000,
+      "seed": 20261116,
+      "ci_status": "paired cluster percentile",
+      "comparison_type": "method",
+      "reference_method": "ape_fixed",
+      "reference_cache": "cold",
+      "comparison_method": "ape_dynamic",
+      "comparison_cache": "cold",
+      "delta_bleu": 0.1672420310656273,
+      "ci_low": -0.1916089836993471,
+      "ci_high": 0.5136513477949665,
+      "unit": "paired difference of re-aggregated corpus BLEU; comparison minus reference"
+    },
+    {
+      "scope": "all500",
+      "cluster_unit": "document",
+      "n_targets": 500,
+      "n_clusters": 172,
+      "replicates": 5000,
+      "seed": 20261116,
+      "ci_status": "paired cluster percentile",
+      "comparison_type": "method",
+      "reference_method": "ape_fixed",
+      "reference_cache": "hot",
+      "comparison_method": "ape_dynamic",
+      "comparison_cache": "hot",
+      "delta_bleu": 0.1672420310656273,
+      "ci_low": -0.1916089836993471,
+      "ci_high": 0.5136513477949665,
+      "unit": "paired difference of re-aggregated corpus BLEU; comparison minus reference"
+    }
+  ],
+  "history_flags": {
+    "consecutive_agent_targets": 28,
+    "reference_repeated_targets": 7,
+    "clean_user_no_repeat_targets": 467
+  },
+  "status": "SUBMITTED"
+}

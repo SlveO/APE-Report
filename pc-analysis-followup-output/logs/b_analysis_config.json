@@ -1,0 +1,81 @@
+{
+  "seed": 20261116,
+  "replicates": 5000,
+  "datasets": [
+    "qasper",
+    "hotpotqa",
+    "musique"
+  ],
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\Osheepne\\anaconda3\\python.exe",
+  "numpy": "1.26.4",
+  "matplotlib": "3.9.2",
+  "command": "python -s -B pc-analysis-followup-output/scripts/analyze_b_length.py",
+  "cells": [
+    [
+      6144,
+      4
+    ],
+    [
+      6144,
+      8
+    ],
+    [
+      6144,
+      16
+    ],
+    [
+      12288,
+      4
+    ],
+    [
+      12288,
+      8
+    ],
+    [
+      12288,
+      16
+    ]
+  ],
+  "aggregation": "question mean within dataset and selected cells; equal included datasets",
+  "diagnostics": [
+    {
+      "dataset": "qasper",
+      "n_questions": 4,
+      "n_support_groups": 3,
+      "replicates_valid": 5000,
+      "proposed": 5000,
+      "empty_strata_rejections": 0,
+      "min_sampled_questions": 3,
+      "max_sampled_questions": 6,
+      "rng": "SeedSequence([20261116,2,0])",
+      "unit": "frozen B support group; cluster size retained; all six conditions paired"
+    },
+    {
+      "dataset": "hotpotqa",
+      "n_questions": 3,
+      "n_support_groups": 3,
+      "replicates_valid": 5000,
+      "proposed": 5000,
+      "empty_strata_rejections": 0,
+      "min_sampled_questions": 3,
+      "max_sampled_questions": 3,
+      "rng": "SeedSequence([20261116,2,1])",
+      "unit": "frozen B support group; cluster size retained; all six conditions paired"
+    },
+    {
+      "dataset": "musique",
+      "n_questions": 3,
+      "n_support_groups": 3,
+      "replicates_valid": 5000,
+      "proposed": 5000,
+      "empty_strata_rejections": 0,
+      "min_sampled_questions": 3,
+      "max_sampled_questions": 3,
+      "rng": "SeedSequence([20261116,2,2])",
+      "unit": "frozen B support group; cluster size retained; all six conditions paired"
+    }
+  ],
+  "new_timing_only": true,
+  "historical_scripts_executed": false
+}

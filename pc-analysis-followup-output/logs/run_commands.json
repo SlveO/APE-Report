@@ -1,0 +1,19 @@
+{
+  "working_directory": "D:\\_Greatest_programmer\\_Projects\\APEReport",
+  "commands": [
+    "python -s -B pc-analysis-followup-output/scripts/prepare_inputs.py",
+    "python -s -B pc-analysis-followup-output/scripts/analyze_a_correction.py",
+    "python -s -B pc-analysis-followup-output/scripts/analyze_b_length.py",
+    "python -s -B pc-analysis-followup-output/scripts/analyze_c_confirmation.py",
+    "python -s -B pc-analysis-followup-output/scripts/plot_c_confirmation.py",
+    "python -s -B pc-analysis-followup-output/scripts/assemble_report.py",
+    "python -s -B pc-analysis-followup-output/scripts/validate_delivery.py"
+  ],
+  "environment": {
+    "PYTHONUTF8": "1",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "mode": "CPU only; own scripts",
+  "server_historical_scripts_executed": false
+}

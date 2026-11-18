@@ -1,0 +1,5 @@
+﻿scope,stream,components,proposed,rejected_missing_N,effective,sampled_question_count_min,sampled_question_count_max,seed,note
+qasper,"primary default_rng(seed), dataset order Q/H/M",15,5000,0,5000,37,66,20261116,primary draws never rejected for N-strata coverage
+hotpotqa,"primary default_rng(seed), dataset order Q/H/M",46,5000,0,5000,46,59,20261116,primary draws never rejected for N-strata coverage
+musique,"primary default_rng(seed), dataset order Q/H/M",7,5000,0,5000,7,160,20261116,primary draws never rejected for N-strata coverage
+qasper_N_strata_and_equal_N,"SeedSequence([20261116,1])",15,5069,69,5000,,,20261116,condition on every N present; never replaces the primary overall draw distribution

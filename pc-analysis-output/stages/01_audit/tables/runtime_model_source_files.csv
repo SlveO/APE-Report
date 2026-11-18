@@ -1,0 +1,14 @@
+﻿path,bytes,observed_source_revision,fetch_branch,source,unit
+LICENSE,7627,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+README.md,44044,359efdbb8af05b788a4ad4185215c6b8caa9052c,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+USE_POLICY.md,4691,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+config.json,855,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+generation_config.json,184,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+model.safetensors.index.json,23950,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+special_tokens_map.json,296,86283db58aba4be4ffa058c48e36fa3eb53e3dfd,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+tokenizer.json,9085657,86283db58aba4be4ffa058c48e36fa3eb53e3dfd,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+tokenizer_config.json,55351,d02f94ee4a1a317d00309c1a9019f89428034720,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+model-00001-of-00004.safetensors,4976698672,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+model-00002-of-00004.safetensors,4999802720,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+model-00003-of-00004.safetensors,4915916176,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata
+model-00004-of-00004.safetensors,1168138808,043efdca396f2b6f4b5714d76d70df7840856ed7,master,logs/runs/20261113-main80-assets/model-manifest.json,bytes; Revision copied from existing source metadata

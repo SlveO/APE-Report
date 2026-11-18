@@ -1,0 +1,16 @@
+﻿file,grain,denominator,filter,join_key,definition_and_units
+diagnostic_attempts.csv,一条真实生成,12,"stage=attention, success, attempt=1, explore, cold",sample_id/L/N/T/S; source_line,保存F1/答案/token/计时/显存; observer开启
+answer_pairs.csv,同题同L/N的两参数配对,6; 3个问题,默认0.9/0.9 对探索格点最佳,pair_id; sample_id/L/N,差值=(best-default)*100; F1原值0-1
+evidence_regions.csv,一份冻结文档构造,6,三题×两个长度,sample_id/L,字符证据→当前token偏移→retained区间投影; 半开区间
+capture_audit.csv,一层一次forward最后查询,231,12任务; query+全部实际decode,pair_id/role/layer/step; source_line,保存重建误差/容差; token质量和分支质量误差
+step_coverage.csv,配置×层,36,层0/15/31,pair_id/role/layer,实际step=0..output_tokens-1
+head_steps.csv,一个指定头的一次查询,924,头0/8/16/24,pair_id/role/layer/head/step,五区域原始权重质量; 文档条件熵; 证据占比
+layer_steps.csv,一层一次查询的四头均值,231,四头等权,pair_id/role/layer/step,比例为mean_h(Eh/Ch); 熵为头内先算后平均
+paired_head_steps.csv,同题同层同头同step的参数配对,共同step×3层×4头,共同保存step; 保留same_history标签,pair_id/layer/head/step,best-default; decode历史分歧另标
+paired_layer_steps.csv,逐头配对差异的四头均值,共同step×3层,与paired_head_steps相同,pair_id/layer/step,四头等权
+query_region_pairs.csv,同输入请求末token的层级配对,18,step=0; 六对×三层,pair_id/layer,图中证据占文档比例及原始区域质量
+decode_history_alignment.csv,同题同step的生成历史,31,两配置共同step,pair_id/step,先比较完整output_token_ids[:step]
+physical_cache_bins.csv,64-token物理箱×实际步骤×层,见CSV行数,四头先平均、箱内求和,pair_id/role/layer/step/bin,decode热图数据; 最末箱按实际token数
+query_head_bins.csv,64-token物理箱×头×层,12配置×3层×4头×箱,step=0; 保留逐头,pair_id/role/layer/head/bin,query逐头热图数据; 原始质量
+selected_cases.csv,改善/退化/持平选例,改善1、退化0、持平1,正负最大差; 同分按sample_id/L/N,pair_id,保留两答案、参考、配置、源行号
+diagnostic_efficiency.csv,长度×参数角色×指标,每格3请求; ALL每角色6,只含注意力诊断冷请求,L/role/metric,均值/中位数/P90; 时间s、显存GiB; CI留空

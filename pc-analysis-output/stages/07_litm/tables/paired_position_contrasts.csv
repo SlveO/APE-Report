@@ -1,0 +1,25 @@
+﻿score_metric,reference_method,comparison_method,contrast,n_questions,delta_contrast_pp,ci_low_pp,ci_high_pp,wins_comparison,ties,losses_comparison,unit,seed,replicates
+official_first_line_em,sequential,ape_fixed,middle_minus_ends_mean,500,1.7999999999999998,-1.8000000000000127,5.399999999999993,91,331,78,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_dynamic,middle_minus_ends_mean,500,-0.1,-1.6000000000000014,1.399999999999996,14,471,15,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,ape_fixed,ape_dynamic,middle_minus_ends_mean,500,-1.9,-5.499999999999999,1.8000000000000016,77,332,91,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_fixed,last_minus_first,500,-6.800000000000001,-11.405000000000008,-2.200000000000002,49,368,83,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_dynamic,last_minus_first,500,1.0,-0.7999999999999899,2.8000000000000025,12,481,7,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,ape_fixed,ape_dynamic,last_minus_first,500,7.8,3.200000000000003,12.400000000000011,84,369,47,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_fixed,middle_minus_first,500,-1.6,-5.600000000000005,2.400000000000002,48,397,55,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_dynamic,middle_minus_first,500,0.4,-1.200000000000001,2.0000000000000018,10,482,8,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,ape_fixed,ape_dynamic,middle_minus_first,500,2.0,-2.199999999999991,6.199999999999994,56,395,49,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_fixed,last_minus_middle,500,-5.2,-9.599999999999998,-0.6000000000000005,44,385,71,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,sequential,ape_dynamic,last_minus_middle,500,0.6,-1.200000000000001,2.400000000000002,12,479,9,"comparison minus reference within-question contrast, EMpp",20261116,5000
+official_first_line_em,ape_fixed,ape_dynamic,last_minus_middle,500,5.800000000000001,1.200000000000001,10.20000000000001,72,384,44,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_fixed,middle_minus_ends_mean,500,-1.0999999999999999,-4.499999999999998,2.200000000000002,69,355,76,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_dynamic,middle_minus_ends_mean,500,0.7000000000000001,-0.8000000000000007,2.300000000000002,19,465,16,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,ape_fixed,ape_dynamic,middle_minus_ends_mean,500,1.7999999999999998,-1.5000000000000013,5.300000000000004,76,359,65,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_fixed,last_minus_first,500,-1.7999999999999998,-6.000000000000005,2.400000000000002,48,394,58,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_dynamic,last_minus_first,500,0.2,-1.8000000000000016,2.004999999999929,13,475,12,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,ape_fixed,ape_dynamic,last_minus_first,500,2.0,-2.399999999999991,6.2000000000000055,58,393,49,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_fixed,middle_minus_first,500,-2.0,-5.800000000000005,1.7999999999999905,42,407,51,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_dynamic,middle_minus_first,500,0.8,-1.0000000000000009,2.5999999999999917,12,480,8,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,ape_fixed,ape_dynamic,middle_minus_first,500,2.8000000000000003,-0.9999999999999898,6.799999999999995,51,409,40,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_fixed,last_minus_middle,500,0.2,-3.9999999999999925,4.400000000000004,49,403,48,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,sequential,ape_dynamic,last_minus_middle,500,-0.6,-2.6000000000000023,1.4000000000000012,11,475,14,"comparison minus reference within-question contrast, EMpp",20261116,5000
+saved_full_answer_em,ape_fixed,ape_dynamic,last_minus_middle,500,-0.8,-5.000000000000004,3.400000000000003,49,402,49,"comparison minus reference within-question contrast, EMpp",20261116,5000

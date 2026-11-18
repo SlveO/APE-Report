@@ -1,0 +1,4 @@
+﻿case_type,n_pairs,denominator,unit,selection_rule
+改善,1,6,paired input conditions; 3 unique questions,"maximum positive/negative saved F1 delta, zero/ties sample_id then L/N ascending"
+退化,0,6,paired input conditions; 3 unique questions,"maximum positive/negative saved F1 delta, zero/ties sample_id then L/N ascending"
+持平,5,6,paired input conditions; 3 unique questions,"maximum positive/negative saved F1 delta, zero/ties sample_id then L/N ascending"

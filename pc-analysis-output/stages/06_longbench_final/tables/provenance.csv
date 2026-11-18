@@ -1,0 +1,13 @@
+﻿result,raw_fields,filter_and_join,aggregation_units_denominator,output_tables
+样本范围,attempts.jsonl:key.stage/sample_id/method + snapshot frozen.json:orders.test,baseline三方法与final两方法; 按同ID严格连接,每DS170题; 总510题/2550条; 每法510,membership.csv; scope_counts.csv
+质量主表,"attempts.jsonl:score,reference_answers + frozen longbench.json:answers",保存score; 参考严格连接; 空生成保留零分; 成功first attempt,每DS题目均值; 宏平均三DS等权; 展示乘100,main_quality.csv; per_request_records.csv
+质量差及胜平负,同ID两方法score,同510配对; 差=比较−参照; 绝对差≤1e-12记平,F1百分点; 胜/平/负按题数; 95%配对聚类Bootstrap,main_quality_paired.csv; primary_dynamic_fixed.csv
+置信区间,snapshot longbench.json:group/support_documents,"DS内有放回抽来源组, 同组五法共同保留; 参数冻结",seed20261116; 5000次; 2.5%/97.5%分位数; 450组主/413组件敏感性,bootstrap_diagnostics.csv; bootstrap_membership.csv
+规则映射,"attempts.jsonl:L,N,T,S + rule.json:cells,mapping",用实际N; log2空间最近格; 平距较小L/N,题数/510; 自然块长≤7500; 映射贡献采用完整主表分母,rule_mapping_counts.csv; mapping_interpretation.csv; membership.csv
+资料重合,snapshot longbench.json:input_documents/support_documents; dev=explore∪validation,按公开资料ID求交集; 与前置审核affected IDs核对,支撑重合29题; 单篇输入重合59题; 绝对质量分层,development_overlap_affected_ids.csv; quality.csv
+时间,"attempts.jsonl:ttft_seconds,total_seconds,cache_build_seconds,cache_get_seconds,dynamic_selection_seconds",cold miss; 关闭注意力采集; 同ID配对,均值/中位数/P90/均值95%CI; s; 选参展示µs,main_efficiency.csv; efficiency_paired.csv
+加速比,同ID两方法ttft/total,逐对比值=参照耗时/比较耗时; 同一配对组重采样,比值均值/中位数/P90; 均值耗时之比另列; 无量纲,efficiency_paired.csv
+显存,"attempts.jsonl:peak_allocated_bytes,peak_reserved_bytes",请求前重置峰值计数; 含模型、开始时存活缓存和本次请求,GiB=bytes/2^30; allocated/reserved分别报告,main_efficiency.csv
+生成停止,output_tokens/output_token_ids + frozen max_new_tokens + model generation_config:eos_token_id,cap=token数等于上限; EOS=最后ID属于停止集合,Qasper128; HotpotQA/MuSiQue32; EOS计入长度,generation_limits.csv; generation_cap_records.csv
+案例,"dynamic_fixed_per_sample.csv:score,answer,reference,params,source_line",最大正差/负差/零差; 同分按sample_id字典序,全局及各DS各类型; 保留原答案,selected_cases.csv; case_type_counts.csv
+模型加载/执行顺序,"前置审核runtime_workers.csv, 来自events.jsonl",只取baseline三worker和longbench_final两worker,加载s; worker完整起止时间; 排除加载于请求时延,model_load_workers.csv

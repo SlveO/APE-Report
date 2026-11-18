@@ -1,0 +1,17 @@
+﻿field,definition,unit,notes
+L,实际document_tokens长度,token,与原始文本字符数、原始文档数分别登记
+N,实际编码块数,block,本阶段4/16; 原始文档数另列1/10/17
+step,0=请求末token; s>0输入前s个已生成token后取最后查询,forward index,终止EOS之后没有forward
+prefix_mass,共享前缀位置权重之和,raw mass,prefix独立于文档与请求
+evidence_mass,完整证据token掩码内权重之和E,raw mass,掩码来自字符证据投影
+background_mass,文档中证据掩码以外权重之和,raw mass,含未标为证据的原文、构造补充token
+request_mass,完整suffix请求权重之和,raw mass,包括模板、当前问题及assistant起始标记
+decoded_history_mass,已生成并再次送入网络的token权重之和,raw mass,step0为0; s步长度为s
+context_mass,C=evidence_mass+background_mass,raw mass,等于文档分支质量，保留数值舍入
+evidence_fraction_context,每个头E/C; 层级值为mean_h(Eh/Ch),fraction 0-1,逐头先求比例，再四头等权平均
+evidence_enrichment_vs_uniform_context,(E/C)/(证据token数/L),ratio,1对应文档内均匀权重参照
+context_entropy_nats,"-sum_i p_i ln(p_i), p_i=w_i/C, i属于文档",nats,文档内归一; 四头值先算后平均
+max_abs_output_error_saved,服务器比较重建weighted-V与实际o_proj前输出的最大绝对误差,activation absolute error,PC核对保存值与tolerance; 未保存Q/K/V/target向量
+tolerance_saved,0.03+0.02*max(abs(target)),activation absolute error,由服务器诊断保存
+difference_pp,(探索格点最佳保存F1-默认保存F1)*100,percentage points,保存score直接复用
+same_history_before_forward,两方法output_token_ids[:step]完全相同,boolean,共同输入token历史; 参数对应的隐状态各自生成

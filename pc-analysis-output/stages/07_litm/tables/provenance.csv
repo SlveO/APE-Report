@@ -1,0 +1,11 @@
+﻿result,raw_fields,filter_and_definition,denominator_units,outputs
+样本与原始输入,attempts.jsonl:key.stage/sample_id/method/position + snapshot litm.json,stage=litm; 500 IDs×3位置×3方法; all success attempt1 cold miss,4500生成;1500输入;500问题,membership.csv;per_request_records.csv
+文档集合与位置,前置scoring_litm_input_checks.csv + frozen public_document_ids,前置逐title/text多重集合、唯一gold/参考/模板PASS; 本阶段删gold后19篇ID顺序相同,"1500输入, 每份20篇;500问题配对",preaudit_input_checks.csv;membership.csv
+官方首行EM,answer/refs + 前置501条修正表,先取首个换行前内容并strip; 按官方规范化子串EM; 保存分数不改,0–1; 展示×100; 501条修正147问题;9实例复核,scoring_changed_records.csv;official_entrypoint_fixtures.csv;main_quality.csv
+总体EM和方法差,每题三位置三方法EM,每题三位置等权平均再汇总; 方法差=比较−参照,分母500问题; 每法1500请求; EM百分点,per_question_scores.csv;main_quality_paired.csv
+位置效应,同问题EM0/EM9/EM19,"中间−两端均值: [-.5,1,-.5];末−首:[-1,0,1]",500问题配对;各95%区间单独计算,main_position_contrasts.csv;main_paired_position_contrasts.csv
+重采样,sorted500 sample_id以及全部3位置/3方法向量,"default_rng(20261116),5000次;每次500问题有放回;2.5/97.5分位数",500问题;9条件共同保留,bootstrap_questions.csv;environment.json
+效率,"ttft,total,cache_build/get,dynamic_selection,peak allocated/reserved",cold miss;文档重新编码;无注意力观察器,均值/中位数/P90;均值CI问题配对;秒/GiB,efficiency_descriptive.csv;efficiency_paired.csv
+加速比,同题同位置的两方法耗时,逐请求比值=参照/比较;另算两均值之比,总体均值/中位数/P90基于1500实际请求;CI基于500问题,efficiency_paired.csv
+生成上限/EOS,output_tokens/token_ids; frozen max_new_tokens; generation_config:eos_token_id,cap=128;EOS看最后token;首行是否完成由换行及EOS记录,上限1465/4500;EOS3046;EOS恰上限11,generation_limits.csv;generation_cap_records.csv
+案例,dynamic−fixed的每题三位置平均官方EM,最大正差/负差/零差;同分sample_id排序;保留全部位置,三题×三位置;原答案/首行/参考/参数/源行号,selected_cases.csv;selected_case_positions.csv

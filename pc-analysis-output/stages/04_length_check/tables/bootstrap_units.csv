@@ -1,0 +1,7 @@
+﻿scope,dataset,unique_ids,evidence_groups,paired_input_conditions,replicates,seed,rng,unit
+all10,qasper,4,3,24,5000,20261116,"SeedSequence([seed, scope_index]); dataset order qasper/hotpotqa/musique",ID / source evidence group / condition count
+all10,hotpotqa,3,3,18,5000,20261116,"SeedSequence([seed, scope_index]); dataset order qasper/hotpotqa/musique",ID / source evidence group / condition count
+all10,musique,3,3,18,5000,20261116,"SeedSequence([seed, scope_index]); dataset order qasper/hotpotqa/musique",ID / source evidence group / condition count
+evidence_complete9,qasper,4,3,24,5000,20261116,"SeedSequence([seed, scope_index]); dataset order qasper/hotpotqa/musique",ID / source evidence group / condition count
+evidence_complete9,hotpotqa,3,3,18,5000,20261116,"SeedSequence([seed, scope_index]); dataset order qasper/hotpotqa/musique",ID / source evidence group / condition count
+evidence_complete9,musique,2,2,12,5000,20261116,"SeedSequence([seed, scope_index]); dataset order qasper/hotpotqa/musique",ID / source evidence group / condition count

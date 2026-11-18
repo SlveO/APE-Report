@@ -1,0 +1,3 @@
+﻿role,n,cap_hit_count,eos_last_count,output_tokens_min,output_tokens_max,denominator,unit
+default,6,0,6,2,16,6,generation records / output tokens including EOS
+cell_best,6,0,6,2,18,6,generation records / output tokens including EOS

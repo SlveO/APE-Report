@@ -1,0 +1,41 @@
+﻿field,unit,definition,present_records,nonnull_records,denominator,source
+L,token,实际编码资料长度，前缀与请求另外记录,18116,18116,18116,attempts.jsonl:L
+N,block,实际编码块数；与original_document_count分列,18116,18116,18116,attempts.jsonl:N
+S,dimensionless,实际缩放参数；sequential/pcw为null,18116,14416,18116,attempts.jsonl:S
+T,dimensionless,实际注意力温度；sequential/pcw为null,18116,14416,18116,attempts.jsonl:T
+answer,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:answer
+attempt,integer,同一逻辑任务的尝试编号,18116,18116,18116,attempts.jsonl:attempt
+block_lengths,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:block_lengths
+cache_build_seconds,s,计时范围见STAGE1_RUNTIME及方法源码,18116,18116,18116,attempts.jsonl:cache_build_seconds
+cache_get_seconds,s,计时范围见STAGE1_RUNTIME及方法源码,18116,18116,18116,attempts.jsonl:cache_get_seconds
+cache_hit,boolean,本进程实际资料KV命中,18116,18116,18116,attempts.jsonl:cache_hit
+cache_mode,enum,cold/search/hot请求条件,18116,18116,18116,attempts.jsonl:cache_mode
+dataset,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:dataset
+dynamic_selection_seconds,s,计时范围见STAGE1_RUNTIME及方法源码,18116,18116,18116,attempts.jsonl:dynamic_selection_seconds
+ended_at,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:ended_at
+group,evidence group,原论文／完整支撑文档组；统计聚类依据,18116,18116,18116,attempts.jsonl:group
+key,JSON,冻结任务键；key.N=null表示自然分块，实际块数见N；attempt另列,18116,18116,18116,attempts.jsonl:key
+logical_labels,label list,同次生成对应的候选角色；validation复用按一次生成计数,18116,18116,18116,attempts.jsonl:logical_labels
+method,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:method
+original_document_count,source document,分块前资料数量，区别于实际编码块数N,18116,18116,18116,attempts.jsonl:original_document_count
+output_token_ids,token ID list,实际生成序列，包含生成的终止token,18116,18116,18116,attempts.jsonl:output_token_ids
+output_tokens,token,包含终止token的生成长度,18116,18116,18116,attempts.jsonl:output_tokens
+peak_allocated_bytes,byte,进程显存峰值（含模型与存活缓存），定义见STAGE1_RUNTIME,18116,18116,18116,attempts.jsonl:peak_allocated_bytes
+peak_reserved_bytes,byte,进程显存峰值（含模型与存活缓存），定义见STAGE1_RUNTIME,18116,18116,18116,attempts.jsonl:peak_reserved_bytes
+position,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,4500,18116,attempts.jsonl:position
+prefix_tokens,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:prefix_tokens
+query_start_position,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:query_start_position
+reference_answers,string list,与frozen_table/index连接并逐项核对的参考答案,18116,18116,18116,attempts.jsonl:reference_answers
+request_tokens,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:request_tokens
+resume_cache_rebuild_seconds,s,计时范围见STAGE1_RUNTIME及方法源码,18116,18116,18116,attempts.jsonl:resume_cache_rebuild_seconds
+sample_id,ID,对应冻结样本；LITM同一问题跨三个位置共享ID；Doc2Dial按目标轮次区分,18116,18116,18116,attempts.jsonl:sample_id
+score,F1/EM 0–1; Doc2Dial sentence BLEU 0–100,原保存评分；官方口径复核见STAGE1_SCORING,18116,18116,18116,attempts.jsonl:score
+source,source IDs,原始来源ID；沿用记录，不计算新增摘要,18116,13616,18116,attempts.jsonl:source
+split,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:split
+stage_calls,call counts,APE首层prefill阶段调用计数；原生sequential/pcw保持0,18116,18116,18116,attempts.jsonl:stage_calls
+started_at,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:started_at
+status,enum,success或保留的失败状态；空生成在质量表保留零分,18116,18116,18116,attempts.jsonl:status
+timing_condition,enum,cold/search_immutable_KV/application_GPU_KV,18116,18116,18116,attempts.jsonl:timing_condition
+total_seconds,s,计时范围见STAGE1_RUNTIME及方法源码,18116,18116,18116,attempts.jsonl:total_seconds
+ttft_seconds,s,计时范围见STAGE1_RUNTIME及方法源码,18116,18116,18116,attempts.jsonl:ttft_seconds
+window_order,raw JSON field,保留的原始逐题字段，见methods.py/worker.py,18116,18116,18116,attempts.jsonl:window_order

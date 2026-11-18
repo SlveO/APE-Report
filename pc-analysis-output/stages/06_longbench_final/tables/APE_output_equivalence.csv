@@ -1,0 +1,13 @@
+﻿dataset,method_a,method_b,n_questions,same_parameters,same_token_sequences,same_scores,unit
+qasper,ape_default,ape_fixed,170,0,85,95,paired ID counts; EOS included in token equality
+qasper,ape_default,ape_dynamic,170,0,96,104,paired ID counts; EOS included in token equality
+qasper,ape_fixed,ape_dynamic,170,4,73,89,paired ID counts; EOS included in token equality
+hotpotqa,ape_default,ape_fixed,170,0,129,145,paired ID counts; EOS included in token equality
+hotpotqa,ape_default,ape_dynamic,170,0,127,144,paired ID counts; EOS included in token equality
+hotpotqa,ape_fixed,ape_dynamic,170,121,154,157,paired ID counts; EOS included in token equality
+musique,ape_default,ape_fixed,170,0,102,139,paired ID counts; EOS included in token equality
+musique,ape_default,ape_dynamic,170,0,101,139,paired ID counts; EOS included in token equality
+musique,ape_fixed,ape_dynamic,170,163,166,169,paired ID counts; EOS included in token equality
+ALL,ape_default,ape_fixed,510,0,316,379,paired ID counts; EOS included in token equality
+ALL,ape_default,ape_dynamic,510,0,324,387,paired ID counts; EOS included in token equality
+ALL,ape_fixed,ape_dynamic,510,288,393,415,paired ID counts; EOS included in token equality

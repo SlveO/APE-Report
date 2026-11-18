@@ -1,0 +1,134 @@
+{
+  "phase": "B_LENGTH_TRANSFER",
+  "research_status": "SUBMITTED",
+  "logical_results": 120,
+  "new_generations": 103,
+  "historical_reuse": 17,
+  "new_generation_timing_requests": 103,
+  "new_generation_timing_pairs": 43,
+  "unique_questions": 10,
+  "n_pairs": 60,
+  "group_counts": {
+    "qasper": 3,
+    "hotpotqa": 3,
+    "musique": 3
+  },
+  "new_fixed_parameters": [
+    0.5,
+    1.0
+  ],
+  "main_equal_dataset_result": {
+    "scope": "ALL",
+    "dataset": "macro_equal_dataset",
+    "n_questions": 10,
+    "n_input_pairs": 60,
+    "n_support_groups": 9,
+    "fixed_F1_percent": 39.76778365667255,
+    "dynamic_F1_percent": 41.836589336589334,
+    "delta_pp": 2.0688056799167853,
+    "delta_ci_low_pp": -2.3550626328404114,
+    "delta_ci_high_pp": 7.000633111744214,
+    "fixed_ci_low_percent": 25.654027042915935,
+    "fixed_ci_high_percent": 54.88683127572016,
+    "dynamic_ci_low_percent": 26.07922941256275,
+    "dynamic_ci_high_percent": 59.25925925925925,
+    "wins": 5,
+    "ties": 53,
+    "losses": 2,
+    "seed": 20261116,
+    "replicates": 5000,
+    "aggregation": "question mean within dataset and selected cells; equal included datasets",
+    "unit": "F1 x100; difference percentage points; W/T/L counts input pairs"
+  },
+  "descriptive_mixed_request_mean": {
+    "fixed_F1_percent": 41.52513227513228,
+    "dynamic_F1_percent": 43.57295482295483,
+    "delta_pp": 2.0478225478225474
+  },
+  "same_parameter_pairs": 30,
+  "identical_output_pairs": 51,
+  "historical_comparison": {
+    "old_questions": 10,
+    "new_questions": 10,
+    "common_questions": 7,
+    "new_only": [
+      "musique:a6e0032c62ece331c56364ced53e1c4076c303e4ae287074",
+      "musique:c6fe007044674795d280bb474e2adc9dc8bacd8853a9cef5",
+      "qasper:e7efd3969adf95459805233e580d6e0c7539a4de09b4441e"
+    ],
+    "old_only": [
+      "musique:6b6d8f1f4a1c7ecab4f8c3f8205f8bfc531627d12c21a3c4",
+      "musique:e21823470386531b4456eec33d0709c7eb82b63bc394f6fa",
+      "qasper:591249c5522d87dcf4eeb6e1fc35bbf56a2290d23c83544d"
+    ],
+    "matched_method_inputs": 84,
+    "strata": [
+      {
+        "condition": "input_changed__parameters_changed",
+        "method_role": "fixed",
+        "n_input_comparisons": 6,
+        "n_questions": 2,
+        "old_F1_percent": 53.57142857142857,
+        "new_F1_percent": 45.357142857142854,
+        "delta_pp": -8.214285714285715,
+        "unit": "descriptive mixed-request mean; different strata are distinct conditions"
+      },
+      {
+        "condition": "input_changed__parameters_changed",
+        "method_role": "dynamic",
+        "n_input_comparisons": 2,
+        "n_questions": 2,
+        "old_F1_percent": 45.00000000000001,
+        "new_F1_percent": 37.5,
+        "delta_pp": -7.500000000000001,
+        "unit": "descriptive mixed-request mean; different strata are distinct conditions"
+      },
+      {
+        "condition": "input_changed__parameters_same",
+        "method_role": "dynamic",
+        "n_input_comparisons": 4,
+        "n_questions": 2,
+        "old_F1_percent": 53.571428571428584,
+        "new_F1_percent": 53.571428571428584,
+        "delta_pp": 0.0,
+        "unit": "descriptive mixed-request mean; different strata are distinct conditions"
+      },
+      {
+        "condition": "input_same__parameters_changed",
+        "method_role": "fixed",
+        "n_input_comparisons": 36,
+        "n_questions": 7,
+        "old_F1_percent": 53.42185592185592,
+        "new_F1_percent": 41.58730158730159,
+        "delta_pp": -11.834554334554333,
+        "unit": "descriptive mixed-request mean; different strata are distinct conditions"
+      },
+      {
+        "condition": "input_same__parameters_changed",
+        "method_role": "dynamic",
+        "n_input_comparisons": 19,
+        "n_questions": 7,
+        "old_F1_percent": 51.05263157894736,
+        "new_F1_percent": 47.894736842105274,
+        "delta_pp": -3.1578947368421053,
+        "unit": "descriptive mixed-request mean; different strata are distinct conditions"
+      },
+      {
+        "condition": "input_same__parameters_same",
+        "method_role": "dynamic",
+        "n_input_comparisons": 17,
+        "n_questions": 7,
+        "old_F1_percent": 45.9857789269554,
+        "new_F1_percent": 45.9857789269554,
+        "delta_pp": 0.0,
+        "unit": "descriptive mixed-request mean; different strata are distinct conditions"
+      }
+    ]
+  },
+  "score_recalculation_max_abs_error": 1.1102230246251565e-16,
+  "seed": 20261116,
+  "replicates": 5000,
+  "accepted_delivery": "ACCEPTED",
+  "model_run": false,
+  "parameters_reselected": false
+}
